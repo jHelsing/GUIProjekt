@@ -5,6 +5,9 @@
  */
 package imat;
 
+import java.awt.Dimension;
+import javax.swing.JFrame;
+
 /**
  *
  * @author jonathan
@@ -42,6 +45,7 @@ public class GUIView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         mainMenu.setPreferredSize(new java.awt.Dimension(532, 50));
 
