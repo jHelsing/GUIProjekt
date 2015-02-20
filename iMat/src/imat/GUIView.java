@@ -6,6 +6,7 @@
 package imat;
 
 import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JFrame;
 
 /**
@@ -19,6 +20,7 @@ public class GUIView extends javax.swing.JFrame {
      */
     public GUIView() {
         initComponents();
+        setFullScreen(this);
     }
 
     /**
@@ -153,6 +155,13 @@ public class GUIView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void setFullScreen(JFrame jFrame) {
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        int xSize = ((int) tk.getScreenSize().getWidth());
+        int ySize = ((int) tk.getScreenSize().getHeight());
+        jFrame.setSize(xSize,ySize);
+    }
+    
     /**
      * @param args the command line arguments
      */
