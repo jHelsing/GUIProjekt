@@ -15,7 +15,8 @@ public class IMat {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        GUIView g = new GUIView();
+        g.setVisible(true);
     }
     
 }
