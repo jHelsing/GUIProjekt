@@ -56,7 +56,6 @@ public class GUIView extends javax.swing.JFrame {
         profileImage = new imat.ImageLabel("profilLogo.png");
         contentPanel = new javax.swing.JPanel();
         wholePanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         splitPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -233,10 +232,6 @@ public class GUIView extends javax.swing.JFrame {
         contentPanel.setLayout(new java.awt.CardLayout());
 
         wholePanel.setLayout(new java.awt.CardLayout());
-
-        jLabel1.setText("WholePanel");
-        wholePanel.add(jLabel1, "card2");
-
         contentPanel.add(wholePanel, "wholeCard");
 
         splitPanel.setLayout(new java.awt.CardLayout());
@@ -348,7 +343,6 @@ public class GUIView extends javax.swing.JFrame {
     private javax.swing.JLabel firstNameLabel;
     private imat.ImageLabel helpImage;
     private javax.swing.JLabel homeLabel;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

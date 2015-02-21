@@ -29,6 +29,7 @@ public class ImageLabel extends JLabel {
      * Default constructor to work with drag-and-drop in NetBeans.
      */
     public ImageLabel() {
+        super();
         displayedImage = null;
         normalImage = null;
         pressedImage = null;
