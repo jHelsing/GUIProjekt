@@ -14,12 +14,19 @@ import javax.swing.JLabel;
  *
  * @author Jonathan Helsing
  */
-public class ImageLabel extends JLabel{
+public class ImageLabel extends JLabel {
     
     private BufferedImage displayedImage;
     private BufferedImage normalImage;
     private BufferedImage pressedImage;
-    private BufferedImage hoverImage;
+    private BufferedImage hoverImage; 
+    
+    public ImageLabel() {
+        displayedImage = null;
+        normalImage = null;
+        pressedImage = null;
+        hoverImage = null;
+    }
     
      /**
      * Creates a new JLabel with an image.
@@ -34,12 +41,13 @@ public class ImageLabel extends JLabel{
         try {
             File f = new File(getClass().getResource("/imat/resources/" + normal).toURI());
             normalImage = ImageIO.read(f);
-            pressedImage = ImageIO.read(f);
-            hoverImage = ImageIO.read(f);
+            displayedImage = normalImage;
+            pressedImage = normalImage;
+            hoverImage = normalImage;
         } catch(URISyntaxException | IOException e) {
             e.printStackTrace();
+        } finally {
         }
-        
     }
     
     /**

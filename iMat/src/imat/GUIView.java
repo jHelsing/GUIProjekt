@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
@@ -45,12 +46,12 @@ public class GUIView extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         purchaseHistoryLabel = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
-        jTextField1 = new javax.swing.JTextField();
+        searchField = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         firstNameLabel = new javax.swing.JLabel();
         lastNameLabel = new javax.swing.JLabel();
-        profileImage = new ImageLabel("profilLogo.png");
-        helpImage = new ImageLabel("helpLogo.png");
+        helpImage = new imat.ImageLabel("helpLogo.png");
+        profileImage = new imat.ImageLabel("profilLogo.png");
         contentPanel = new javax.swing.JPanel();
         wholePanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -76,34 +77,59 @@ public class GUIView extends javax.swing.JFrame {
         productLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         productLabel.setForeground(new java.awt.Color(255, 255, 255));
         productLabel.setText("Produkter");
+        productLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                productLabelMouseClicked(evt);
+            }
+        });
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         recipieLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         recipieLabel.setForeground(new java.awt.Color(255, 255, 255));
         recipieLabel.setText("Recept");
+        recipieLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                recipieLabelMouseClicked(evt);
+            }
+        });
 
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         shoppingListLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         shoppingListLabel.setForeground(new java.awt.Color(255, 255, 255));
         shoppingListLabel.setText("Inköpslistor");
+        shoppingListLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                shoppingListLabelMouseClicked(evt);
+            }
+        });
 
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         purchaseHistoryLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         purchaseHistoryLabel.setForeground(new java.awt.Color(255, 255, 255));
         purchaseHistoryLabel.setText("Köphistorik");
+        purchaseHistoryLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                purchaseHistoryLabelMouseClicked(evt);
+            }
+        });
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jTextField1.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        jTextField1.setText("Sök");
-        jTextField1.setToolTipText("Sök bland produkter, recept och inköpslistor. Tryck på Enter för att söka.");
-        jTextField1.setActionCommand("<Not Set>");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        searchField.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        searchField.setText("Sök");
+        searchField.setToolTipText("Sök bland produkter, recept och inköpslistor. Tryck på Enter för att söka.");
+        searchField.setActionCommand("<Not Set>");
+        searchField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                searchFieldActionPerformed(evt);
+            }
+        });
+        searchField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                searchFieldKeyTyped(evt);
             }
         });
 
@@ -115,27 +141,17 @@ public class GUIView extends javax.swing.JFrame {
         lastNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         lastNameLabel.setText("Efternamn");
 
-        profileImage.setText("Profile");
-        profileImage.setToolTipText("Click to go to profile");
-        profileImage.setMaximumSize(new java.awt.Dimension(50, 50));
-        profileImage.setMinimumSize(new java.awt.Dimension(50, 50));
-        profileImage.setPreferredSize(new java.awt.Dimension(50, 50));
-        profileImage.setSize(new java.awt.Dimension(50, 50));
-        profileImage.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                profileImageMouseExited(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                profileImageMouseEntered(evt);
-            }
-        });
-
-        helpImage.setText("Help");
-        helpImage.setToolTipText("Click to go to Help");
+        helpImage.setText("Help logotype");
+        helpImage.setToolTipText("Click to go to the help page.");
         helpImage.setMaximumSize(new java.awt.Dimension(50, 50));
         helpImage.setMinimumSize(new java.awt.Dimension(50, 50));
         helpImage.setPreferredSize(new java.awt.Dimension(50, 50));
-        helpImage.setSize(new java.awt.Dimension(50, 50));
+
+        profileImage.setText("Profile Picture");
+        profileImage.setToolTipText("Click to go to your profile.");
+        profileImage.setMaximumSize(new java.awt.Dimension(50, 50));
+        profileImage.setMinimumSize(new java.awt.Dimension(50, 50));
+        profileImage.setPreferredSize(new java.awt.Dimension(50, 50));
 
         javax.swing.GroupLayout mainMenuLayout = new javax.swing.GroupLayout(mainMenu);
         mainMenu.setLayout(mainMenuLayout);
@@ -163,28 +179,27 @@ public class GUIView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lastNameLabel)
                     .addGroup(mainMenuLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(lastNameLabel))
-                    .addGroup(mainMenuLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
+                        .addGap(8, 8, 8)
                         .addComponent(firstNameLabel)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(profileImage, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(helpImage, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(profileImage, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(helpImage, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         mainMenuLayout.setVerticalGroup(
             mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1)
+                    .addComponent(searchField)
                     .addComponent(jSeparator5)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -192,81 +207,55 @@ public class GUIView extends javax.swing.JFrame {
                     .addComponent(jSeparator4)
                     .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(mainMenuLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(homeLabel)
-                                .addComponent(productLabel)
-                                .addComponent(recipieLabel)
-                                .addComponent(shoppingListLabel)
-                                .addComponent(purchaseHistoryLabel))
+                        .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mainMenuLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
                                 .addComponent(firstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lastNameLabel)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(profileImage, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(helpImage, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lastNameLabel))
+                            .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(helpImage, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(profileImage, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(mainMenuLayout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(homeLabel)
+                                    .addComponent(productLabel)
+                                    .addComponent(recipieLabel)
+                                    .addComponent(shoppingListLabel)
+                                    .addComponent(purchaseHistoryLabel))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
         contentPanel.setLayout(new java.awt.CardLayout());
 
+        wholePanel.setLayout(new java.awt.CardLayout());
+
         jLabel1.setText("WholePanel");
+        wholePanel.add(jLabel1, "card2");
 
-        javax.swing.GroupLayout wholePanelLayout = new javax.swing.GroupLayout(wholePanel);
-        wholePanel.setLayout(wholePanelLayout);
-        wholePanelLayout.setHorizontalGroup(
-            wholePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(wholePanelLayout.createSequentialGroup()
-                .addGap(258, 258, 258)
-                .addComponent(jLabel1)
-                .addContainerGap(844, Short.MAX_VALUE))
-        );
-        wholePanelLayout.setVerticalGroup(
-            wholePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(wholePanelLayout.createSequentialGroup()
-                .addGap(143, 143, 143)
-                .addComponent(jLabel1)
-                .addContainerGap(209, Short.MAX_VALUE))
-        );
+        contentPanel.add(wholePanel, "wholeCard");
 
-        contentPanel.add(wholePanel, "card2");
+        splitPanel.setLayout(new java.awt.CardLayout());
 
         jLabel2.setText("Split Panel");
+        splitPanel.add(jLabel2, "card2");
 
-        javax.swing.GroupLayout splitPanelLayout = new javax.swing.GroupLayout(splitPanel);
-        splitPanel.setLayout(splitPanelLayout);
-        splitPanelLayout.setHorizontalGroup(
-            splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(splitPanelLayout.createSequentialGroup()
-                .addGap(279, 279, 279)
-                .addComponent(jLabel2)
-                .addContainerGap(829, Short.MAX_VALUE))
-        );
-        splitPanelLayout.setVerticalGroup(
-            splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, splitPanelLayout.createSequentialGroup()
-                .addContainerGap(183, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(169, 169, 169))
-        );
-
-        contentPanel.add(splitPanel, "card3");
+        contentPanel.add(splitPanel, "splitCard");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1173, Short.MAX_VALUE)
+            .addComponent(mainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1174, Short.MAX_VALUE)
             .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(mainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 371, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
                 .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -274,21 +263,41 @@ public class GUIView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void searchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void profileImageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileImageMouseEntered
-        //TODO add your handling code here:
-    }//GEN-LAST:event_profileImageMouseEntered
-
-    private void profileImageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileImageMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_profileImageMouseExited
+    }//GEN-LAST:event_searchFieldActionPerformed
 
     private void homeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeLabelMouseClicked
-       // TODO add your handling code here:
+        // changes the content panel to contain the shopping cart and the homepage
+        CardLayout card = (CardLayout)contentPanel.getLayout();
+        card.show(contentPanel, "splitCard");
     }//GEN-LAST:event_homeLabelMouseClicked
+
+    private void productLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productLabelMouseClicked
+        // changes the content panel to contain the shopping cart and the product page
+        CardLayout contentCard = (CardLayout)contentPanel.getLayout();
+        contentCard.show(contentPanel, "splitCard");
+        CardLayout splitCard = (CardLayout)splitPanel.getLayout();
+        splitCard.show(splitPanel, "productPage");
+    }//GEN-LAST:event_productLabelMouseClicked
+
+    private void recipieLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recipieLabelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recipieLabelMouseClicked
+
+    private void shoppingListLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shoppingListLabelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_shoppingListLabelMouseClicked
+
+    private void purchaseHistoryLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_purchaseHistoryLabelMouseClicked
+        
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_purchaseHistoryLabelMouseClicked
+
+    private void searchFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyTyped
+        // TODO lägg in sökfunktionen
+    }//GEN-LAST:event_searchFieldKeyTyped
 
     private void setFullScreen(JFrame jFrame) {
         Toolkit tk = Toolkit.getDefaultToolkit();
@@ -335,7 +344,7 @@ public class GUIView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel firstNameLabel;
-    private javax.swing.JLabel helpImage;
+    private imat.ImageLabel helpImage;
     private javax.swing.JLabel homeLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -345,13 +354,13 @@ public class GUIView extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JPanel mainMenu;
     private javax.swing.JLabel productLabel;
-    private javax.swing.JLabel profileImage;
+    private imat.ImageLabel profileImage;
     private javax.swing.JLabel purchaseHistoryLabel;
     private javax.swing.JLabel recipieLabel;
+    private javax.swing.JTextField searchField;
     private javax.swing.JLabel shoppingListLabel;
     private javax.swing.JPanel splitPanel;
     private javax.swing.JPanel wholePanel;
