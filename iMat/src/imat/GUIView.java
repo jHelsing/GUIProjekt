@@ -224,7 +224,7 @@ public class GUIView extends javax.swing.JFrame {
                                     .addComponent(recipieLabel)
                                     .addComponent(shoppingListLabel)
                                     .addComponent(purchaseHistoryLabel))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 4, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 

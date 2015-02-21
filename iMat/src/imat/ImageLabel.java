@@ -16,11 +16,18 @@ import javax.swing.JLabel;
  */
 public class ImageLabel extends JLabel {
     
+    /* The image to be displayed on screen. Used when repainting/drawing the ImageLabel */
     private BufferedImage displayedImage;
+    /* The image that will be displayed when the mouse isn't near or isn't pressed on the ImageLabel */
     private BufferedImage normalImage;
+    /* The image that will be displayed when the mouse is pressed on the ImageLabel */
     private BufferedImage pressedImage;
+    /* The image that will be displayed when the mouse is on the ImageLabel but not pressed */
     private BufferedImage hoverImage; 
     
+    /**
+     * Default constructor to work with drag-and-drop in NetBeans.
+     */
     public ImageLabel() {
         displayedImage = null;
         normalImage = null;
@@ -56,6 +63,32 @@ public class ImageLabel extends JLabel {
      * @param normal - the  name of the image that will be displayed when
      * the ImageLabel isn't hovered over or pressed. Must be placed in the
      * imat.resources!
+     * @param hover - the file name of the image that will be displayed when
+     * the mouse is hovering over the ImageLabel. Will also be displayed if
+     * the left mouse button is pressed. Must be placed in the
+     * imat.resources!
+     */
+    
+    public ImageLabel(String normal, String hover) {
+        super();
+        try {
+            File f = new File(getClass().getResource("/imat/resources/" + normal).toURI());
+            normalImage = ImageIO.read(f);
+            pressedImage = hoverImage;
+            f = new File(getClass().getResource("/imat/resources/" + hover).toURI());
+            hoverImage = ImageIO.read(f);
+        } catch(URISyntaxException | IOException e) {
+            e.printStackTrace();
+        }
+        
+    }
+    
+    /**
+     * Creates a new JLabel with an image.
+     * 
+     * @param normal - the  name of the image that will be displayed when
+     * the ImageLabel isn't hovered over or pressed. Must be placed in the
+     * imat.resources!
      * @param pressed - the file name of the image that will be displayed when
      * the ImageLabel is pressed. Must be placed in the
      * imat.resources!
@@ -64,7 +97,7 @@ public class ImageLabel extends JLabel {
      * imat.resources!
      */
     
-    public ImageLabel(String normal, String pressed, String hover) {
+    public ImageLabel(String normal, String hover, String pressed) {
         super();
         try {
             File f = new File(getClass().getResource("/imat/resources/" + normal).toURI());
