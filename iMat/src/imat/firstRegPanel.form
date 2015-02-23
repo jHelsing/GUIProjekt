@@ -62,7 +62,7 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
-              <Component id="imageLabel1" min="-2" pref="838" max="-2" attributes="0"/>
+              <Component id="imageLabelRegPil1" min="-2" pref="838" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -71,7 +71,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-              <Component id="imageLabel1" min="-2" pref="80" max="-2" attributes="0"/>
+              <Component id="imageLabelRegPil1" min="-2" pref="80" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -84,7 +84,7 @@
                           <Component id="jLabelAdress" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextFieldAdress" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabelOrt" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextFieldOrt" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -107,19 +107,19 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabelMobilnr" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldMobilnr" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonNastaSteg1" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="47" max="32767" attributes="0"/>
+              <EmptySpace pref="44" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="imat.ImageLabel" name="imageLabel1">
+    <Component class="imat.ImageLabel" name="imageLabelRegPil1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/imat/resources/RegPil1.png"/>
