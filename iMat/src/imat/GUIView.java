@@ -52,8 +52,6 @@ public class GUIView extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JSeparator();
         firstNameLabel = new javax.swing.JLabel();
         lastNameLabel = new javax.swing.JLabel();
-        helpImage = new imat.ImageLabel("helpLogo.png");
-        profileImage = new imat.ImageLabel("profilLogo.png");
         contentPanel = new javax.swing.JPanel();
         wholePanel = new javax.swing.JPanel();
         splitPanel = new javax.swing.JPanel();
@@ -122,7 +120,6 @@ public class GUIView extends javax.swing.JFrame {
         searchField.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         searchField.setText("Sök");
         searchField.setToolTipText("Sök bland produkter, recept och inköpslistor. Tryck på Enter för att söka.");
-        searchField.setActionCommand("<Not Set>");
         searchField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchFieldActionPerformed(evt);
@@ -141,18 +138,6 @@ public class GUIView extends javax.swing.JFrame {
 
         lastNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         lastNameLabel.setText("Efternamn");
-
-        helpImage.setText("Help logotype");
-        helpImage.setToolTipText("Click to go to the help page.");
-        helpImage.setMaximumSize(new java.awt.Dimension(50, 50));
-        helpImage.setMinimumSize(new java.awt.Dimension(50, 50));
-        helpImage.setPreferredSize(new java.awt.Dimension(50, 50));
-
-        profileImage.setText("Profile Picture");
-        profileImage.setToolTipText("Click to go to your profile.");
-        profileImage.setMaximumSize(new java.awt.Dimension(50, 50));
-        profileImage.setMinimumSize(new java.awt.Dimension(50, 50));
-        profileImage.setPreferredSize(new java.awt.Dimension(50, 50));
 
         javax.swing.GroupLayout mainMenuLayout = new javax.swing.GroupLayout(mainMenu);
         mainMenu.setLayout(mainMenuLayout);
@@ -183,17 +168,13 @@ public class GUIView extends javax.swing.JFrame {
                 .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lastNameLabel)
                     .addGroup(mainMenuLayout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addComponent(firstNameLabel)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(profileImage, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(helpImage, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(151, 151, 151))
         );
         mainMenuLayout.setVerticalGroup(
             mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,9 +195,6 @@ public class GUIView extends javax.swing.JFrame {
                                 .addComponent(firstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lastNameLabel))
-                            .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(helpImage, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(profileImage, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(mainMenuLayout.createSequentialGroup()
                                 .addGap(19, 19, 19)
                                 .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -225,7 +203,7 @@ public class GUIView extends javax.swing.JFrame {
                                     .addComponent(recipieLabel)
                                     .addComponent(shoppingListLabel)
                                     .addComponent(purchaseHistoryLabel))))
-                        .addGap(0, 4, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -252,9 +230,8 @@ public class GUIView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(mainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
-                .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE))
         );
 
         pack();
@@ -341,7 +318,6 @@ public class GUIView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel firstNameLabel;
-    private imat.ImageLabel helpImage;
     private javax.swing.JLabel homeLabel;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
@@ -353,7 +329,6 @@ public class GUIView extends javax.swing.JFrame {
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JPanel mainMenu;
     private javax.swing.JLabel productLabel;
-    private imat.ImageLabel profileImage;
     private javax.swing.JLabel purchaseHistoryLabel;
     private javax.swing.JLabel recipieLabel;
     private javax.swing.JTextField searchField;
