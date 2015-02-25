@@ -52,10 +52,12 @@ public class GUIView extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JSeparator();
         firstNameLabel = new javax.swing.JLabel();
         lastNameLabel = new javax.swing.JLabel();
+        helpImage = new imat.ImageLabel("helpLogo.png");
+        profileImage = new imat.ImageLabel("profilLogo.png");
         contentPanel = new javax.swing.JPanel();
         wholePanel = new javax.swing.JPanel();
         splitPanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        imageLabel1 = new imat.ImageLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -139,6 +141,18 @@ public class GUIView extends javax.swing.JFrame {
         lastNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         lastNameLabel.setText("Efternamn");
 
+        helpImage.setText("imageLabel2");
+        helpImage.setMaximumSize(new java.awt.Dimension(57, 57));
+        helpImage.setMinimumSize(new java.awt.Dimension(57, 57));
+        helpImage.setName(""); // NOI18N
+        helpImage.setPreferredSize(new java.awt.Dimension(57, 57));
+
+        profileImage.setText("imageLabel2");
+        profileImage.setMaximumSize(new java.awt.Dimension(57, 57));
+        profileImage.setMinimumSize(new java.awt.Dimension(57, 57));
+        profileImage.setName(""); // NOI18N
+        profileImage.setPreferredSize(new java.awt.Dimension(57, 57));
+
         javax.swing.GroupLayout mainMenuLayout = new javax.swing.GroupLayout(mainMenu);
         mainMenu.setLayout(mainMenuLayout);
         mainMenuLayout.setHorizontalGroup(
@@ -168,27 +182,33 @@ public class GUIView extends javax.swing.JFrame {
                 .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lastNameLabel)
                     .addGroup(mainMenuLayout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addComponent(firstNameLabel)))
-                .addGap(151, 151, 151))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(profileImage, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(helpImage, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         mainMenuLayout.setVerticalGroup(
             mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainMenuLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(searchField)
-                    .addComponent(jSeparator5)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator3)
-                    .addComponent(jSeparator4)
-                    .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(mainMenuLayout.createSequentialGroup()
+                .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(profileImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(helpImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(searchField, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1)
+                    .addComponent(jSeparator2)
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator6)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainMenuLayout.createSequentialGroup()
                         .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(mainMenuLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
@@ -214,8 +234,8 @@ public class GUIView extends javax.swing.JFrame {
 
         splitPanel.setLayout(new java.awt.CardLayout());
 
-        jLabel2.setText("Split Panel");
-        splitPanel.add(jLabel2, "card2");
+        imageLabel1.setText("imageLabel1");
+        splitPanel.add(imageLabel1, "card2");
 
         contentPanel.add(splitPanel, "splitCard");
 
@@ -318,8 +338,9 @@ public class GUIView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel firstNameLabel;
+    private imat.ImageLabel helpImage;
     private javax.swing.JLabel homeLabel;
-    private javax.swing.JLabel jLabel2;
+    private imat.ImageLabel imageLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -329,6 +350,7 @@ public class GUIView extends javax.swing.JFrame {
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JPanel mainMenu;
     private javax.swing.JLabel productLabel;
+    private imat.ImageLabel profileImage;
     private javax.swing.JLabel purchaseHistoryLabel;
     private javax.swing.JLabel recipieLabel;
     private javax.swing.JTextField searchField;
