@@ -23,7 +23,7 @@ public class GUIView extends javax.swing.JFrame {
      */
     public GUIView() {
         initComponents();
-        setFullScreen(this);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     //test
@@ -84,6 +84,9 @@ public class GUIView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMaximumSize(new java.awt.Dimension(1174, 553));
+        setMinimumSize(new java.awt.Dimension(1174, 553));
 
         mainMenu.setPreferredSize(new java.awt.Dimension(532, 50));
 
@@ -283,19 +286,27 @@ public class GUIView extends javax.swing.JFrame {
             .addGroup(firstRegPanelLayout.createSequentialGroup()
                 .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(firstRegPanelLayout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(imageLabelRegPil1, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(firstRegPanelLayout.createSequentialGroup()
                         .addGap(218, 218, 218)
                         .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabelAdress)
-                            .addComponent(jLabelFornamn)
-                            .addComponent(jLabelOrt)
-                            .addComponent(jLabelMobilnr))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(firstRegPanelLayout.createSequentialGroup()
+                                .addComponent(jLabelMobilnr)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldMobilnr, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(firstRegPanelLayout.createSequentialGroup()
+                                .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabelAdress)
+                                    .addComponent(jLabelFornamn)
+                                    .addComponent(jLabelOrt))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextFieldFornamn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldOrt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jTextFieldOrt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(firstRegPanelLayout.createSequentialGroup()
                                 .addGap(128, 128, 128)
                                 .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabelEfternamn)
@@ -306,13 +317,9 @@ public class GUIView extends javax.swing.JFrame {
                                     .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldPostnr, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldEfternamn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(firstRegPanelLayout.createSequentialGroup()
-                                .addComponent(jTextFieldMobilnr, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(imageLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(firstRegPanelLayout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(imageLabelRegPil1, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, firstRegPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(imageLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(168, Short.MAX_VALUE))
         );
         firstRegPanelLayout.setVerticalGroup(
@@ -346,12 +353,12 @@ public class GUIView extends javax.swing.JFrame {
                         .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(21, 21, 21)
+                .addGap(35, 35, 35)
                 .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelMobilnr)
                     .addComponent(jTextFieldMobilnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(imageLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         wholePanel.add(firstRegPanel, "card2");
@@ -364,7 +371,7 @@ public class GUIView extends javax.swing.JFrame {
         );
         secondRegPanelLayout.setVerticalGroup(
             secondRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
+            .addGap(0, 475, Short.MAX_VALUE)
         );
 
         wholePanel.add(secondRegPanel, "card3");
@@ -377,7 +384,7 @@ public class GUIView extends javax.swing.JFrame {
         );
         thirdRegPanelLayout.setVerticalGroup(
             thirdRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
+            .addGap(0, 475, Short.MAX_VALUE)
         );
 
         wholePanel.add(thirdRegPanel, "card4");
@@ -390,7 +397,7 @@ public class GUIView extends javax.swing.JFrame {
         );
         firstPanelLayout.setVerticalGroup(
             firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 475, Short.MAX_VALUE)
         );
 
         wholePanel.add(firstPanel, "card5");
@@ -403,7 +410,7 @@ public class GUIView extends javax.swing.JFrame {
         );
         checkoutPanelLayout.setVerticalGroup(
             checkoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 475, Short.MAX_VALUE)
         );
 
         wholePanel.add(checkoutPanel, "card6");
@@ -416,7 +423,7 @@ public class GUIView extends javax.swing.JFrame {
         );
         checkoutConfirmPanelLayout.setVerticalGroup(
             checkoutConfirmPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 475, Short.MAX_VALUE)
         );
 
         wholePanel.add(checkoutConfirmPanel, "card7");
@@ -429,7 +436,7 @@ public class GUIView extends javax.swing.JFrame {
         );
         regConfirmPanelLayout.setVerticalGroup(
             regConfirmPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 475, Short.MAX_VALUE)
         );
 
         wholePanel.add(regConfirmPanel, "card8");
