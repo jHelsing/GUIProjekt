@@ -28,7 +28,7 @@ public class secondRegPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jComboBoxGiltAr = new javax.swing.JComboBox();
-        imageLabelRegPil2 = new imat.ImageLabel("RegPil2.png");
+        imageLabelRegPil2 = new imat.ImageLabel("RegPil2Text.png");
         jLabelKortnummer = new javax.swing.JLabel();
         imageLabel1 = new imat.ImageLabel("prevStepButton.png");
         jLabelGiltighetstid = new javax.swing.JLabel();

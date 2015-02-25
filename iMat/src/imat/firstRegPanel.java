@@ -38,7 +38,7 @@ public class firstRegPanel extends javax.swing.JPanel {
         jLabelEmail = new javax.swing.JLabel();
         jTextFieldOrt = new javax.swing.JTextField();
         jLabelEfternamn = new javax.swing.JLabel();
-        imageLabelRegPil1 = new imat.ImageLabel("RegPil1.png");
+        imageLabelRegPil1 = new imat.ImageLabel("RegPil1Text.png");
         jLabelPostnr = new javax.swing.JLabel();
         jTextFieldMobilnr = new javax.swing.JTextField();
         jLabelOrt = new javax.swing.JLabel();
@@ -148,7 +148,7 @@ public class firstRegPanel extends javax.swing.JPanel {
                     .addComponent(jLabelMobilnr)
                     .addComponent(jTextFieldMobilnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nextStepButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(311, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

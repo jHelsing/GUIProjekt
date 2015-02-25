@@ -16,7 +16,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
@@ -116,7 +116,7 @@
                   <Component id="jTextFieldMobilnr" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="nextStepButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="59" max="32767" attributes="0"/>
+              <EmptySpace pref="311" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -167,7 +167,7 @@
         <Property name="text" type="java.lang.String" value="imageLabel1"/>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new imat.ImageLabel(&quot;RegPil1.png&quot;)"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new imat.ImageLabel(&quot;RegPil1Text.png&quot;)"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelPostnr">
