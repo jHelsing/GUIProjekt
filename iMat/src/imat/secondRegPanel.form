@@ -114,7 +114,7 @@
         <Property name="text" type="java.lang.String" value="imageLabel1"/>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new imat.ImageLabel(&quot;RegPil2.png&quot;)"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new imat.ImageLabel(&quot;RegPil2Text.png&quot;)"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelKortnummer">
