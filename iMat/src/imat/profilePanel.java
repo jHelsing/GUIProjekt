@@ -16,6 +16,9 @@ public class profilePanel extends javax.swing.JPanel {
      */
     public profilePanel() {
         initComponents();
+        profileInfoEditable = false;
+        expDateMonth.setEnabled(false);
+        expDateYear.setEnabled(false);
     }
 
     /**
@@ -405,17 +408,35 @@ public class profilePanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField8ActionPerformed
 
+    /**
+     * Changes if the text fields and comboboxes in the profilePanel are editable or not.
+     * @param evt 
+     */
     private void editProfileInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProfileInfoActionPerformed
-        //profileInfoEditable ^= true;
-        //if (profileInfoEditable) {
-        //    contactInfoChangeState(true);
-        //    editProfileInfo.setText("Okej");
-        //} else {
-        //    contactInfoChangeState(false);
-        //    editProfileInfo.setText("Ändra");
-        //}
+        profileInfoEditable ^= true;
+        if (profileInfoEditable) {
+            makeProfileEditable(true);
+            editProfileInfo.setText("Okej");
+        } else {
+            makeProfileEditable(false);
+            editProfileInfo.setText("Ändra");
+        }
     }//GEN-LAST:event_editProfileInfoActionPerformed
 
+    private void makeProfileEditable(boolean b) {
+        firstNameTF.setEditable(b);
+        surNameTF.setEditable(b);
+        adressTF.setEditable(b);
+        postalCodeTF.setEditable(b);
+        cityTF.setEditable(b);
+        phoneNbrTF.setEditable(b);
+        emailTF.setEditable(b);
+        cardHolderTF.setEditable(b);
+        cardNumberTF.setEditable(b);
+        expDateMonth.setEnabled(b);
+        expDateYear.setEnabled(b);
+    }
+    
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField9ActionPerformed
@@ -492,7 +513,8 @@ public class profilePanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_emailTFActionPerformed
 
-
+    //Variable that tells whether or not the text fields in the profilePanel are editable.
+    private boolean profileInfoEditable;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adressLabel;
     private javax.swing.JTextField adressTF;
