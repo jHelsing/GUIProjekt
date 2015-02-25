@@ -16,8 +16,9 @@ public class profilePanel extends javax.swing.JFrame {
      */
     public profilePanel() {
         initComponents();
-        changeStateContact = false;
-        changeStateCard = false;
+        profileInfoEditable = false;
+        expDateMonth.setEnabled(false);
+        expDateYear.setEnabled(false);
     }
 
     /**
@@ -37,14 +38,13 @@ public class profilePanel extends javax.swing.JFrame {
         emailTF = new javax.swing.JTextField();
         surNameTF = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
-        changeContact = new javax.swing.JButton();
+        editProfileInfo = new javax.swing.JButton();
         jTextField9 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
         cardNumberTF = new javax.swing.JTextField();
         expDateMonth = new javax.swing.JComboBox();
         expDateYear = new javax.swing.JComboBox();
-        jButton2 = new javax.swing.JButton();
         jTextField11 = new javax.swing.JTextField();
         firstNameLabel = new javax.swing.JTextField();
         jTextField14 = new javax.swing.JTextField();
@@ -124,10 +124,10 @@ public class profilePanel extends javax.swing.JFrame {
             }
         });
 
-        changeContact.setText("Ändra");
-        changeContact.addActionListener(new java.awt.event.ActionListener() {
+        editProfileInfo.setText("Ändra");
+        editProfileInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                changeContactActionPerformed(evt);
+                editProfileInfoActionPerformed(evt);
             }
         });
 
@@ -171,7 +171,7 @@ public class profilePanel extends javax.swing.JFrame {
 
         expDateMonth.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         expDateMonth.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December" }));
-        expDateMonth.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        expDateMonth.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         expDateMonth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 expDateMonthActionPerformed(evt);
@@ -180,14 +180,7 @@ public class profilePanel extends javax.swing.JFrame {
 
         expDateYear.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         expDateYear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2015", "2016", "2017", "2018", "2019", "2020", "2021" }));
-        expDateYear.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jButton2.setText("Ändra");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        expDateYear.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jTextField11.setEditable(false);
         jTextField11.setBackground(new java.awt.Color(255, 228, 181));
@@ -292,42 +285,39 @@ public class profilePanel extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField9)
+                    .addComponent(jTextField11)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField9)
-                            .addComponent(jTextField11)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(firstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextField21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(adressLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(adressTF, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
-                                            .addComponent(firstNameTF)
-                                            .addComponent(cityTF))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jTextField23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(firstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(surNameTF)
-                                    .addComponent(postalCodeTF)
-                                    .addComponent(phoneNbrTF, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(changeContact, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(63, 63, 63)))
+                                    .addComponent(adressTF, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
+                                    .addComponent(firstNameTF)
+                                    .addComponent(cityTF))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(surNameTF)
+                            .addComponent(postalCodeTF)
+                            .addComponent(phoneNbrTF, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -350,8 +340,8 @@ public class profilePanel extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58))))
+                        .addComponent(editProfileInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(94, 94, 94))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -386,16 +376,16 @@ public class profilePanel extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cardNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(expDateMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(expDateYear, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(77, 77, 77)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(82, 82, 82))
+                        .addGap(90, 90, 90)
+                        .addComponent(editProfileInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(5, 5, 5)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -408,8 +398,6 @@ public class profilePanel extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(changeContact, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(76, 76, 76))))
         );
 
@@ -500,27 +488,20 @@ public class profilePanel extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField16ActionPerformed
 
-    private void changeContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeContactActionPerformed
-        changeStateContact ^= true;
-        if (changeStateContact) {
+    private void editProfileInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProfileInfoActionPerformed
+        profileInfoEditable ^= true;
+        if (profileInfoEditable) {
             contactInfoChangeState(true);
+            editProfileInfo.setText("Okej");
         } else {
             contactInfoChangeState(false);
+            editProfileInfo.setText("Ändra");
         }
-    }//GEN-LAST:event_changeContactActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        changeStateCard ^= true;
-        if (changeStateContact) {
-            cardInfoChangeState(true);
-        } else {
-            cardInfoChangeState(false);
-        }
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_editProfileInfoActionPerformed
 
     /**
-     * Changes all of the edit states on the contact-info text fields in profilePanel to state.
+     * Changes whether or not the text fields in contactInfo are editable.
+     * Changes to state.
      * @param state 
      */
     private void contactInfoChangeState(boolean state) {
@@ -531,17 +512,10 @@ public class profilePanel extends javax.swing.JFrame {
         cityTF.setEditable(state);
         phoneNbrTF.setEditable(state);
         emailTF.setEditable(state);
-    }
-    
-    /**
-     * Changes all of the edit states on the card-info text fields in profilePanel to state.
-     * @param state 
-     */
-    private void cardInfoChangeState(boolean state) {
         cardHolderTF.setEditable(state);
         cardNumberTF.setEditable(state);
-        expDateMonth.setEditable(state);
-        expDateYear.setEditable(state);
+        expDateMonth.setEnabled(state);
+        expDateYear.setEnabled(state);
     }
     
     /**
@@ -579,21 +553,20 @@ public class profilePanel extends javax.swing.JFrame {
         });
     }
 
-    private boolean changeStateContact;
-    private boolean changeStateCard;
+    //Variable that determines whether or not the text fields in the profilepanel are editable.
+    private boolean profileInfoEditable;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adressLabel;
     private javax.swing.JTextField adressTF;
     private javax.swing.JTextField cardHolderTF;
     private javax.swing.JTextField cardNumberTF;
-    private javax.swing.JButton changeContact;
     private javax.swing.JTextField cityTF;
+    private javax.swing.JButton editProfileInfo;
     private javax.swing.JTextField emailTF;
     private javax.swing.JComboBox expDateMonth;
     private javax.swing.JComboBox expDateYear;
     private javax.swing.JTextField firstNameLabel;
     private javax.swing.JTextField firstNameTF;
-    private javax.swing.JButton jButton2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;

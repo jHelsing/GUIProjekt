@@ -24,53 +24,49 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jTextField9" max="32767" attributes="0"/>
+                  <Component id="jTextField11" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextField9" max="32767" attributes="0"/>
-                          <Component id="jTextField11" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="firstNameLabel" min="-2" max="-2" attributes="0"/>
                                   <Component id="jTextField21" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Component id="adressLabel" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Component id="jTextField23" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="adressTF" alignment="0" pref="242" max="32767" attributes="0"/>
-                                          <Component id="firstNameTF" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="cityTF" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jTextField20" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField14" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField22" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="emailTF" min="-2" pref="272" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="surNameTF" max="32767" attributes="0"/>
-                                  <Component id="postalCodeTF" max="32767" attributes="0"/>
-                                  <Component id="phoneNbrTF" pref="229" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
+                          <Component id="firstNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="changeContact" min="-2" pref="200" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="adressTF" alignment="0" pref="242" max="32767" attributes="0"/>
+                                  <Component id="firstNameTF" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="cityTF" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jTextField20" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextField14" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextField22" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="emailTF" min="-2" pref="272" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="surNameTF" max="32767" attributes="0"/>
+                          <Component id="postalCodeTF" max="32767" attributes="0"/>
+                          <Component id="phoneNbrTF" pref="229" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="24" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -99,8 +95,8 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton2" min="-2" pref="200" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                      <Component id="editProfileInfo" min="-2" pref="234" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -146,7 +142,7 @@
                       </Group>
                   </Group>
               </Group>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -154,9 +150,9 @@
                           <Component id="expDateMonth" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
                           <Component id="expDateYear" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" pref="70" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="editProfileInfo" min="-2" pref="87" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
@@ -173,8 +169,6 @@
                           <Component id="emailTF" alignment="0" min="-2" pref="43" max="-2" attributes="0"/>
                           <Component id="jTextField23" min="-2" pref="43" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="changeContact" min="-2" pref="70" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -301,12 +295,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField8ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="changeContact">
+    <Component class="javax.swing.JButton" name="editProfileInfo">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xc4;ndra"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="changeContactActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editProfileInfoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField9">
@@ -393,8 +387,8 @@
           </StringArray>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-            <EtchetBorder/>
+          <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+            <EmptyBorder/>
           </Border>
         </Property>
       </Properties>
@@ -419,19 +413,11 @@
           </StringArray>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-            <EtchetBorder/>
+          <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+            <EmptyBorder/>
           </Border>
         </Property>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#xc4;ndra"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField11">
       <Properties>
