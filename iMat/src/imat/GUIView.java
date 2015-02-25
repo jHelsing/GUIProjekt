@@ -79,7 +79,6 @@ public class GUIView extends javax.swing.JFrame {
         checkoutPanel = new javax.swing.JPanel();
         checkoutConfirmPanel = new javax.swing.JPanel();
         regConfirmPanel = new javax.swing.JPanel();
-        profilePanel = new javax.swing.JPanel();
         splitPanel = new javax.swing.JPanel();
         imageLabel1 = new imat.ImageLabel();
 
@@ -442,19 +441,6 @@ public class GUIView extends javax.swing.JFrame {
 
         wholePanel.add(regConfirmPanel, "card8");
 
-        javax.swing.GroupLayout profilePanelLayout = new javax.swing.GroupLayout(profilePanel);
-        profilePanel.setLayout(profilePanelLayout);
-        profilePanelLayout.setHorizontalGroup(
-            profilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1174, Short.MAX_VALUE)
-        );
-        profilePanelLayout.setVerticalGroup(
-            profilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 475, Short.MAX_VALUE)
-        );
-
-        wholePanel.add(profilePanel, "card9");
-
         contentPanel.add(wholePanel, "wholeCard");
 
         splitPanel.setLayout(new java.awt.CardLayout());
@@ -596,7 +582,6 @@ public class GUIView extends javax.swing.JFrame {
     private javax.swing.JPanel mainMenu;
     private javax.swing.JLabel productLabel;
     private imat.ImageLabel profileImage;
-    private javax.swing.JPanel profilePanel;
     private javax.swing.JLabel purchaseHistoryLabel;
     private javax.swing.JLabel recipieLabel;
     private javax.swing.JPanel regConfirmPanel;
