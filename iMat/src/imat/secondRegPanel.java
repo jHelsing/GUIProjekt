@@ -7,9 +7,9 @@ package imat;
 
 /**
  *
- * @author jonathan
+ * @author Johan
  */
-public class secondRegPanel extends javax.swing.JFrame {
+public class secondRegPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form secondRegPanel
@@ -27,27 +27,41 @@ public class secondRegPanel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        imageLabelRegPil2 = new imat.ImageLabel();
+        jComboBoxGiltAr = new javax.swing.JComboBox();
+        imageLabelRegPil2 = new imat.ImageLabel("RegPil2.png");
         jLabelKortnummer = new javax.swing.JLabel();
+        imageLabel1 = new imat.ImageLabel("prevStepButton.png");
         jLabelGiltighetstid = new javax.swing.JLabel();
+        imageLabel3 = new imat.ImageLabel("nextStepButton.png");
         jLabelCCV = new javax.swing.JLabel();
         jLabelKortNamn = new javax.swing.JLabel();
         jTextFieldKortnummer = new javax.swing.JTextField();
         jTextFieldCCV = new javax.swing.JTextField();
         jTextFieldKortNamn = new javax.swing.JTextField();
         jComboBoxGiltMånad = new javax.swing.JComboBox();
-        jComboBoxGiltAr = new javax.swing.JComboBox();
-        jButtonNastaSteg2 = new javax.swing.JButton();
-        jButtonForegaendeSteg2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jComboBoxGiltAr.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "åååå", "2015", "2016", "2017", "2018", "2019" }));
 
         imageLabelRegPil2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/RegPil2.png"))); // NOI18N
         imageLabelRegPil2.setText("imageLabel1");
 
         jLabelKortnummer.setText("Kortnummer:");
 
+        imageLabel1.setText("imageLabel1");
+        imageLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imageLabel1MouseClicked(evt);
+            }
+        });
+
         jLabelGiltighetstid.setText("Giltighetstid:");
+
+        imageLabel3.setText("imageLabel3");
+        imageLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imageLabel3MouseClicked(evt);
+            }
+        });
 
         jLabelCCV.setText("CCV:");
 
@@ -55,14 +69,8 @@ public class secondRegPanel extends javax.swing.JFrame {
 
         jComboBoxGiltMånad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "mm", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
-        jComboBoxGiltAr.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "åååå", "2015", "2016", "2017", "2018", "2019" }));
-
-        jButtonNastaSteg2.setText("Nästa Steg >>");
-
-        jButtonForegaendeSteg2.setText("<< Föregående steg");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -74,28 +82,27 @@ public class secondRegPanel extends javax.swing.JFrame {
                         .addGap(372, 372, 372)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButtonForegaendeSteg2)
+                                .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonNastaSteg2))
+                                .addComponent(imageLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabelGiltighetstid)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jComboBoxGiltMånad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jComboBoxGiltAr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabelKortnummer)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextFieldKortnummer, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabelCCV)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextFieldCCV, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabelKortNamn)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextFieldKortNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabelKortnummer)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldKortnummer, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelCCV)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldCCV, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelKortNamn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldKortNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(168, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -118,55 +125,29 @@ public class secondRegPanel extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelKortNamn)
                     .addComponent(jTextFieldKortNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonNastaSteg2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonForegaendeSteg2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(imageLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(imageLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(secondRegPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(secondRegPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(secondRegPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(secondRegPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void imageLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabel1MouseClicked
+        //CardLayout wholePanelCard = (CardLayout)wholePanel.getLayout();
+        //wholePanelCard.show(wholePanel, "firstRegPanel");
+    }//GEN-LAST:event_imageLabel1MouseClicked
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new secondRegPanel().setVisible(true);
-            }
-        });
-    }
+    private void imageLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabel3MouseClicked
+        //CardLayout wholePanelCard = (CardLayout)wholePanel.getLayout();
+        //wholePanelCard.show(wholePanel, "thirdRegPanel");
+    }//GEN-LAST:event_imageLabel3MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private imat.ImageLabel imageLabel1;
+    private imat.ImageLabel imageLabel3;
     private imat.ImageLabel imageLabelRegPil2;
-    private javax.swing.JButton jButtonForegaendeSteg2;
-    private javax.swing.JButton jButtonNastaSteg2;
     private javax.swing.JComboBox jComboBoxGiltAr;
     private javax.swing.JComboBox jComboBoxGiltMånad;
     private javax.swing.JLabel jLabelCCV;
