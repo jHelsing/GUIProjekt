@@ -27,7 +27,7 @@ public class firstRegPanel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        imageLabelRegPil1 = new imat.ImageLabel();
+        imageLabelRegPil1 = new imat.ImageLabel("RegPil1.png");
         jTextFieldFornamn = new javax.swing.JTextField();
         jLabelFornamn = new javax.swing.JLabel();
         jLabelAdress = new javax.swing.JLabel();
