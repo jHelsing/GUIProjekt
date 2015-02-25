@@ -37,7 +37,7 @@ public class GUIView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainMenu = new BackgroundPanel("test.jpg");
+        mainMenu = new BackgroundPanel("menuBar.png");
         homeLabel = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         productLabel = new javax.swing.JLabel();
@@ -72,15 +72,22 @@ public class GUIView extends javax.swing.JFrame {
         jLabelEfternamn = new javax.swing.JLabel();
         jLabelPostnr = new javax.swing.JLabel();
         jLabelOrt = new javax.swing.JLabel();
-        imageLabel2 = new imat.ImageLabel("nextStep.png");
+        imageLabel2 = new imat.ImageLabel("nextStepButton.png");
         secondRegPanel = new javax.swing.JPanel();
         thirdRegPanel = new javax.swing.JPanel();
         firstPanel = new javax.swing.JPanel();
         checkoutPanel = new javax.swing.JPanel();
         checkoutConfirmPanel = new javax.swing.JPanel();
         regConfirmPanel = new javax.swing.JPanel();
+        profilePanel = new javax.swing.JPanel();
+        helpPanel = new javax.swing.JPanel();
         splitPanel = new javax.swing.JPanel();
-        imageLabel1 = new imat.ImageLabel();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        smallContentPanel = new javax.swing.JPanel();
+        homePanel = new javax.swing.JPanel();
+        productPanel = new javax.swing.JPanel();
+        recipePanel = new javax.swing.JPanel();
+        shoppingListPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -441,12 +448,110 @@ public class GUIView extends javax.swing.JFrame {
 
         wholePanel.add(regConfirmPanel, "card8");
 
+        javax.swing.GroupLayout profilePanelLayout = new javax.swing.GroupLayout(profilePanel);
+        profilePanel.setLayout(profilePanelLayout);
+        profilePanelLayout.setHorizontalGroup(
+            profilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1174, Short.MAX_VALUE)
+        );
+        profilePanelLayout.setVerticalGroup(
+            profilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 475, Short.MAX_VALUE)
+        );
+
+        wholePanel.add(profilePanel, "card9");
+
+        javax.swing.GroupLayout helpPanelLayout = new javax.swing.GroupLayout(helpPanel);
+        helpPanel.setLayout(helpPanelLayout);
+        helpPanelLayout.setHorizontalGroup(
+            helpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1174, Short.MAX_VALUE)
+        );
+        helpPanelLayout.setVerticalGroup(
+            helpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 475, Short.MAX_VALUE)
+        );
+
+        wholePanel.add(helpPanel, "card10");
+
         contentPanel.add(wholePanel, "wholeCard");
 
-        splitPanel.setLayout(new java.awt.CardLayout());
+        smallContentPanel.setLayout(new java.awt.CardLayout());
 
-        imageLabel1.setText("imageLabel1");
-        splitPanel.add(imageLabel1, "card2");
+        javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
+        homePanel.setLayout(homePanelLayout);
+        homePanelLayout.setHorizontalGroup(
+            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        homePanelLayout.setVerticalGroup(
+            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        smallContentPanel.add(homePanel, "card2");
+
+        javax.swing.GroupLayout productPanelLayout = new javax.swing.GroupLayout(productPanel);
+        productPanel.setLayout(productPanelLayout);
+        productPanelLayout.setHorizontalGroup(
+            productPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        productPanelLayout.setVerticalGroup(
+            productPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        smallContentPanel.add(productPanel, "card3");
+
+        javax.swing.GroupLayout recipePanelLayout = new javax.swing.GroupLayout(recipePanel);
+        recipePanel.setLayout(recipePanelLayout);
+        recipePanelLayout.setHorizontalGroup(
+            recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        recipePanelLayout.setVerticalGroup(
+            recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        smallContentPanel.add(recipePanel, "card4");
+
+        jSplitPane1.setLeftComponent(smallContentPanel);
+
+        javax.swing.GroupLayout shoppingListPanelLayout = new javax.swing.GroupLayout(shoppingListPanel);
+        shoppingListPanel.setLayout(shoppingListPanelLayout);
+        shoppingListPanelLayout.setHorizontalGroup(
+            shoppingListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        shoppingListPanelLayout.setVerticalGroup(
+            shoppingListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jSplitPane1.setRightComponent(shoppingListPanel);
+
+        javax.swing.GroupLayout splitPanelLayout = new javax.swing.GroupLayout(splitPanel);
+        splitPanel.setLayout(splitPanelLayout);
+        splitPanelLayout.setHorizontalGroup(
+            splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1174, Short.MAX_VALUE)
+            .addGroup(splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(splitPanelLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        splitPanelLayout.setVerticalGroup(
+            splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 475, Short.MAX_VALUE)
+            .addGroup(splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(splitPanelLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         contentPanel.add(splitPanel, "splitCard");
 
@@ -554,8 +659,9 @@ public class GUIView extends javax.swing.JFrame {
     private javax.swing.JPanel firstPanel;
     private javax.swing.JPanel firstRegPanel;
     private imat.ImageLabel helpImage;
+    private javax.swing.JPanel helpPanel;
     private javax.swing.JLabel homeLabel;
-    private imat.ImageLabel imageLabel1;
+    private javax.swing.JPanel homePanel;
     private imat.ImageLabel imageLabel2;
     private imat.ImageLabel imageLabelRegPil1;
     private javax.swing.JLabel jLabelAdress;
@@ -571,6 +677,7 @@ public class GUIView extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTextField jTextFieldAdress;
     private javax.swing.JTextField jTextFieldEfternamn;
     private javax.swing.JTextField jTextFieldEmail;
@@ -581,13 +688,18 @@ public class GUIView extends javax.swing.JFrame {
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JPanel mainMenu;
     private javax.swing.JLabel productLabel;
+    private javax.swing.JPanel productPanel;
     private imat.ImageLabel profileImage;
+    private javax.swing.JPanel profilePanel;
     private javax.swing.JLabel purchaseHistoryLabel;
+    private javax.swing.JPanel recipePanel;
     private javax.swing.JLabel recipieLabel;
     private javax.swing.JPanel regConfirmPanel;
     private javax.swing.JTextField searchField;
     private javax.swing.JPanel secondRegPanel;
     private javax.swing.JLabel shoppingListLabel;
+    private javax.swing.JPanel shoppingListPanel;
+    private javax.swing.JPanel smallContentPanel;
     private javax.swing.JPanel splitPanel;
     private javax.swing.JPanel thirdRegPanel;
     private javax.swing.JPanel wholePanel;
