@@ -56,38 +56,7 @@ public class GUIView extends javax.swing.JFrame {
         profileImage = new imat.ImageLabel("profilLogo.png");
         contentPanel = new javax.swing.JPanel();
         wholePanel = new javax.swing.JPanel();
-        firstRegPanel = new javax.swing.JPanel();
-        jTextFieldAdress = new javax.swing.JTextField();
-        jTextFieldOrt = new javax.swing.JTextField();
-        imageLabelRegPil1 = new imat.ImageLabel("RegPil1.png");
-        jTextFieldMobilnr = new javax.swing.JTextField();
-        jTextFieldFornamn = new javax.swing.JTextField();
-        jTextFieldEfternamn = new javax.swing.JTextField();
-        jLabelFornamn = new javax.swing.JLabel();
-        jTextFieldPostnr = new javax.swing.JTextField();
-        jLabelAdress = new javax.swing.JLabel();
-        jTextFieldEmail = new javax.swing.JTextField();
-        jLabelMobilnr = new javax.swing.JLabel();
-        jLabelEmail = new javax.swing.JLabel();
-        jLabelEfternamn = new javax.swing.JLabel();
-        jLabelPostnr = new javax.swing.JLabel();
-        jLabelOrt = new javax.swing.JLabel();
-        imageLabel2 = new imat.ImageLabel("nextStepButton.png");
-        secondRegPanel = new javax.swing.JPanel();
-        thirdRegPanel = new javax.swing.JPanel();
-        firstPanel = new javax.swing.JPanel();
-        checkoutPanel = new javax.swing.JPanel();
-        checkoutConfirmPanel = new javax.swing.JPanel();
-        regConfirmPanel = new javax.swing.JPanel();
-        profilePanel = new javax.swing.JPanel();
-        helpPanel = new javax.swing.JPanel();
         splitPanel = new javax.swing.JPanel();
-        jSplitPane1 = new javax.swing.JSplitPane();
-        smallContentPanel = new javax.swing.JPanel();
-        homePanel = new javax.swing.JPanel();
-        productPanel = new javax.swing.JPanel();
-        recipePanel = new javax.swing.JPanel();
-        shoppingListPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -263,294 +232,17 @@ public class GUIView extends javax.swing.JFrame {
         contentPanel.setLayout(new java.awt.CardLayout());
 
         wholePanel.setLayout(new java.awt.CardLayout());
-
-        firstRegPanel.setName(""); // NOI18N
-
-        imageLabelRegPil1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/RegPil1.png"))); // NOI18N
-        imageLabelRegPil1.setText("imageLabel1");
-
-        jLabelFornamn.setText("Förnamn:");
-
-        jLabelAdress.setText("Adress:");
-
-        jLabelMobilnr.setText("Mobilnr:");
-
-        jLabelEmail.setText("E-mail:");
-
-        jLabelEfternamn.setText("Efternamn:");
-
-        jLabelPostnr.setText("Postnr:");
-
-        jLabelOrt.setText("Ort:");
-
-        imageLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/nextStep.png"))); // NOI18N
-        imageLabel2.setText("imageLabel2");
-
-        javax.swing.GroupLayout firstRegPanelLayout = new javax.swing.GroupLayout(firstRegPanel);
-        firstRegPanel.setLayout(firstRegPanelLayout);
-        firstRegPanelLayout.setHorizontalGroup(
-            firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(firstRegPanelLayout.createSequentialGroup()
-                .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(firstRegPanelLayout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(imageLabelRegPil1, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(firstRegPanelLayout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(firstRegPanelLayout.createSequentialGroup()
-                                .addComponent(jLabelMobilnr)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextFieldMobilnr, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(firstRegPanelLayout.createSequentialGroup()
-                                .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabelAdress)
-                                    .addComponent(jLabelFornamn)
-                                    .addComponent(jLabelOrt))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldFornamn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldOrt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(firstRegPanelLayout.createSequentialGroup()
-                                .addGap(128, 128, 128)
-                                .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelEfternamn)
-                                    .addComponent(jLabelPostnr, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabelEmail, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldPostnr, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldEfternamn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, firstRegPanelLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(imageLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(168, Short.MAX_VALUE))
-        );
-        firstRegPanelLayout.setVerticalGroup(
-            firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(firstRegPanelLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(imageLabelRegPil1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(firstRegPanelLayout.createSequentialGroup()
-                        .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldFornamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelFornamn))
-                        .addGap(42, 42, 42)
-                        .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelAdress)
-                            .addComponent(jTextFieldAdress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(42, 42, 42)
-                        .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelOrt)
-                            .addComponent(jTextFieldOrt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(firstRegPanelLayout.createSequentialGroup()
-                        .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelEfternamn)
-                            .addComponent(jTextFieldEfternamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(42, 42, 42)
-                        .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelPostnr)
-                            .addComponent(jTextFieldPostnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(39, 39, 39)
-                        .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(35, 35, 35)
-                .addGroup(firstRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelMobilnr)
-                    .addComponent(jTextFieldMobilnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(imageLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
-
-        wholePanel.add(firstRegPanel, "card2");
-
-        javax.swing.GroupLayout secondRegPanelLayout = new javax.swing.GroupLayout(secondRegPanel);
-        secondRegPanel.setLayout(secondRegPanelLayout);
-        secondRegPanelLayout.setHorizontalGroup(
-            secondRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1174, Short.MAX_VALUE)
-        );
-        secondRegPanelLayout.setVerticalGroup(
-            secondRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 475, Short.MAX_VALUE)
-        );
-
-        wholePanel.add(secondRegPanel, "card3");
-
-        javax.swing.GroupLayout thirdRegPanelLayout = new javax.swing.GroupLayout(thirdRegPanel);
-        thirdRegPanel.setLayout(thirdRegPanelLayout);
-        thirdRegPanelLayout.setHorizontalGroup(
-            thirdRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1174, Short.MAX_VALUE)
-        );
-        thirdRegPanelLayout.setVerticalGroup(
-            thirdRegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 475, Short.MAX_VALUE)
-        );
-
-        wholePanel.add(thirdRegPanel, "card4");
-
-        javax.swing.GroupLayout firstPanelLayout = new javax.swing.GroupLayout(firstPanel);
-        firstPanel.setLayout(firstPanelLayout);
-        firstPanelLayout.setHorizontalGroup(
-            firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        firstPanelLayout.setVerticalGroup(
-            firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 475, Short.MAX_VALUE)
-        );
-
-        wholePanel.add(firstPanel, "card5");
-
-        javax.swing.GroupLayout checkoutPanelLayout = new javax.swing.GroupLayout(checkoutPanel);
-        checkoutPanel.setLayout(checkoutPanelLayout);
-        checkoutPanelLayout.setHorizontalGroup(
-            checkoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        checkoutPanelLayout.setVerticalGroup(
-            checkoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 475, Short.MAX_VALUE)
-        );
-
-        wholePanel.add(checkoutPanel, "card6");
-
-        javax.swing.GroupLayout checkoutConfirmPanelLayout = new javax.swing.GroupLayout(checkoutConfirmPanel);
-        checkoutConfirmPanel.setLayout(checkoutConfirmPanelLayout);
-        checkoutConfirmPanelLayout.setHorizontalGroup(
-            checkoutConfirmPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        checkoutConfirmPanelLayout.setVerticalGroup(
-            checkoutConfirmPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 475, Short.MAX_VALUE)
-        );
-
-        wholePanel.add(checkoutConfirmPanel, "card7");
-
-        javax.swing.GroupLayout regConfirmPanelLayout = new javax.swing.GroupLayout(regConfirmPanel);
-        regConfirmPanel.setLayout(regConfirmPanelLayout);
-        regConfirmPanelLayout.setHorizontalGroup(
-            regConfirmPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        regConfirmPanelLayout.setVerticalGroup(
-            regConfirmPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 475, Short.MAX_VALUE)
-        );
-
-        wholePanel.add(regConfirmPanel, "card8");
-
-        javax.swing.GroupLayout profilePanelLayout = new javax.swing.GroupLayout(profilePanel);
-        profilePanel.setLayout(profilePanelLayout);
-        profilePanelLayout.setHorizontalGroup(
-            profilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1174, Short.MAX_VALUE)
-        );
-        profilePanelLayout.setVerticalGroup(
-            profilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 475, Short.MAX_VALUE)
-        );
-
-        wholePanel.add(profilePanel, "card9");
-
-        javax.swing.GroupLayout helpPanelLayout = new javax.swing.GroupLayout(helpPanel);
-        helpPanel.setLayout(helpPanelLayout);
-        helpPanelLayout.setHorizontalGroup(
-            helpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1174, Short.MAX_VALUE)
-        );
-        helpPanelLayout.setVerticalGroup(
-            helpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 475, Short.MAX_VALUE)
-        );
-
-        wholePanel.add(helpPanel, "card10");
-
         contentPanel.add(wholePanel, "wholeCard");
-
-        smallContentPanel.setLayout(new java.awt.CardLayout());
-
-        javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
-        homePanel.setLayout(homePanelLayout);
-        homePanelLayout.setHorizontalGroup(
-            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        homePanelLayout.setVerticalGroup(
-            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        smallContentPanel.add(homePanel, "card2");
-
-        javax.swing.GroupLayout productPanelLayout = new javax.swing.GroupLayout(productPanel);
-        productPanel.setLayout(productPanelLayout);
-        productPanelLayout.setHorizontalGroup(
-            productPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        productPanelLayout.setVerticalGroup(
-            productPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        smallContentPanel.add(productPanel, "card3");
-
-        javax.swing.GroupLayout recipePanelLayout = new javax.swing.GroupLayout(recipePanel);
-        recipePanel.setLayout(recipePanelLayout);
-        recipePanelLayout.setHorizontalGroup(
-            recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        recipePanelLayout.setVerticalGroup(
-            recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        smallContentPanel.add(recipePanel, "card4");
-
-        jSplitPane1.setLeftComponent(smallContentPanel);
-
-        javax.swing.GroupLayout shoppingListPanelLayout = new javax.swing.GroupLayout(shoppingListPanel);
-        shoppingListPanel.setLayout(shoppingListPanelLayout);
-        shoppingListPanelLayout.setHorizontalGroup(
-            shoppingListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        shoppingListPanelLayout.setVerticalGroup(
-            shoppingListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jSplitPane1.setRightComponent(shoppingListPanel);
 
         javax.swing.GroupLayout splitPanelLayout = new javax.swing.GroupLayout(splitPanel);
         splitPanel.setLayout(splitPanelLayout);
         splitPanelLayout.setHorizontalGroup(
             splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1174, Short.MAX_VALUE)
-            .addGroup(splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(splitPanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         splitPanelLayout.setVerticalGroup(
             splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 475, Short.MAX_VALUE)
-            .addGroup(splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(splitPanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         contentPanel.add(splitPanel, "splitCard");
@@ -652,56 +344,25 @@ public class GUIView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel checkoutConfirmPanel;
-    private javax.swing.JPanel checkoutPanel;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel firstNameLabel;
-    private javax.swing.JPanel firstPanel;
-    private javax.swing.JPanel firstRegPanel;
     private imat.ImageLabel helpImage;
-    private javax.swing.JPanel helpPanel;
     private javax.swing.JLabel homeLabel;
-    private javax.swing.JPanel homePanel;
-    private imat.ImageLabel imageLabel2;
-    private imat.ImageLabel imageLabelRegPil1;
-    private javax.swing.JLabel jLabelAdress;
-    private javax.swing.JLabel jLabelEfternamn;
-    private javax.swing.JLabel jLabelEmail;
-    private javax.swing.JLabel jLabelFornamn;
-    private javax.swing.JLabel jLabelMobilnr;
-    private javax.swing.JLabel jLabelOrt;
-    private javax.swing.JLabel jLabelPostnr;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JTextField jTextFieldAdress;
-    private javax.swing.JTextField jTextFieldEfternamn;
-    private javax.swing.JTextField jTextFieldEmail;
-    private javax.swing.JTextField jTextFieldFornamn;
-    private javax.swing.JTextField jTextFieldMobilnr;
-    private javax.swing.JTextField jTextFieldOrt;
-    private javax.swing.JTextField jTextFieldPostnr;
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JPanel mainMenu;
     private javax.swing.JLabel productLabel;
-    private javax.swing.JPanel productPanel;
     private imat.ImageLabel profileImage;
-    private javax.swing.JPanel profilePanel;
     private javax.swing.JLabel purchaseHistoryLabel;
-    private javax.swing.JPanel recipePanel;
     private javax.swing.JLabel recipieLabel;
-    private javax.swing.JPanel regConfirmPanel;
     private javax.swing.JTextField searchField;
-    private javax.swing.JPanel secondRegPanel;
     private javax.swing.JLabel shoppingListLabel;
-    private javax.swing.JPanel shoppingListPanel;
-    private javax.swing.JPanel smallContentPanel;
     private javax.swing.JPanel splitPanel;
-    private javax.swing.JPanel thirdRegPanel;
     private javax.swing.JPanel wholePanel;
     // End of variables declaration//GEN-END:variables
 }

@@ -7,15 +7,18 @@ package imat;
 
 /**
  *
- * @author Johan
+ * @author jonathan
  */
-public class profilePanel extends javax.swing.JPanel {
+public class ProfilpanelFRAME extends javax.swing.JFrame {
 
     /**
      * Creates new form profilePanel
      */
-    public profilePanel() {
+    public ProfilpanelFRAME() {
         initComponents();
+        profileInfoEditable = false;
+        expDateMonth.setEnabled(false);
+        expDateYear.setEnabled(false);
     }
 
     /**
@@ -27,6 +30,12 @@ public class profilePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        firstNameTF = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        postalCodeTF = new javax.swing.JTextField();
+        adressTF = new javax.swing.JTextField();
+        phoneNbrTF = new javax.swing.JTextField();
+        emailTF = new javax.swing.JTextField();
         surNameTF = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         editProfileInfo = new javax.swing.JButton();
@@ -43,16 +52,57 @@ public class profilePanel extends javax.swing.JPanel {
         jTextField20 = new javax.swing.JTextField();
         cityTF = new javax.swing.JTextField();
         jTextField21 = new javax.swing.JTextField();
-        firstNameTF = new javax.swing.JTextField();
         jTextField22 = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
         jTextField23 = new javax.swing.JTextField();
-        postalCodeTF = new javax.swing.JTextField();
         cardHolderTF = new javax.swing.JTextField();
-        adressTF = new javax.swing.JTextField();
         jTextField16 = new javax.swing.JTextField();
-        phoneNbrTF = new javax.swing.JTextField();
-        emailTF = new javax.swing.JTextField();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        firstNameTF.setEditable(false);
+        firstNameTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        firstNameTF.setText("Tage");
+        firstNameTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        firstNameTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                firstNameTFActionPerformed(evt);
+            }
+        });
+
+        postalCodeTF.setEditable(false);
+        postalCodeTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        postalCodeTF.setText("413 62");
+        postalCodeTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        postalCodeTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                postalCodeTFActionPerformed(evt);
+            }
+        });
+
+        adressTF.setEditable(false);
+        adressTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        adressTF.setText("Oscarsgatang 15");
+        adressTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        adressTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adressTFActionPerformed(evt);
+            }
+        });
+
+        phoneNbrTF.setEditable(false);
+        phoneNbrTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        phoneNbrTF.setText("0708-636271");
+        phoneNbrTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        emailTF.setEditable(false);
+        emailTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        emailTF.setText("hejhej@hotmail.com");
+        emailTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        emailTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailTFActionPerformed(evt);
+            }
+        });
 
         surNameTF.setEditable(false);
         surNameTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -193,16 +243,6 @@ public class profilePanel extends javax.swing.JPanel {
             }
         });
 
-        firstNameTF.setEditable(false);
-        firstNameTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        firstNameTF.setText("Tage");
-        firstNameTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        firstNameTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstNameTFActionPerformed(evt);
-            }
-        });
-
         jTextField22.setEditable(false);
         jTextField22.setText(" Telefon:");
         jTextField22.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -221,16 +261,6 @@ public class profilePanel extends javax.swing.JPanel {
             }
         });
 
-        postalCodeTF.setEditable(false);
-        postalCodeTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        postalCodeTF.setText("413 62");
-        postalCodeTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        postalCodeTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                postalCodeTFActionPerformed(evt);
-            }
-        });
-
         cardHolderTF.setEditable(false);
         cardHolderTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cardHolderTF.setText("Tage Pettson");
@@ -238,16 +268,6 @@ public class profilePanel extends javax.swing.JPanel {
         cardHolderTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cardHolderTFActionPerformed(evt);
-            }
-        });
-
-        adressTF.setEditable(false);
-        adressTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        adressTF.setText("Oscarsgatang 15");
-        adressTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        adressTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adressTFActionPerformed(evt);
             }
         });
 
@@ -260,23 +280,8 @@ public class profilePanel extends javax.swing.JPanel {
             }
         });
 
-        phoneNbrTF.setEditable(false);
-        phoneNbrTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        phoneNbrTF.setText("0708-636271");
-        phoneNbrTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        emailTF.setEditable(false);
-        emailTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        emailTF.setText("hejhej@hotmail.com");
-        emailTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        emailTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailTFActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -395,7 +400,21 @@ public class profilePanel extends javax.swing.JPanel {
                             .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(76, 76, 76))))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void firstNameTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_firstNameTFActionPerformed
+
+    private void postalCodeTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postalCodeTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_postalCodeTFActionPerformed
+
+    private void emailTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTFActionPerformed
 
     private void surNameTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_surNameTFActionPerformed
         // TODO add your handling code here:
@@ -404,17 +423,6 @@ public class profilePanel extends javax.swing.JPanel {
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField8ActionPerformed
-
-    private void editProfileInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProfileInfoActionPerformed
-        //profileInfoEditable ^= true;
-        //if (profileInfoEditable) {
-        //    contactInfoChangeState(true);
-        //    editProfileInfo.setText("Okej");
-        //} else {
-        //    contactInfoChangeState(false);
-        //    editProfileInfo.setText("Ändra");
-        //}
-    }//GEN-LAST:event_editProfileInfoActionPerformed
 
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
         // TODO add your handling code here:
@@ -456,13 +464,13 @@ public class profilePanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField20ActionPerformed
 
+    private void adressTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adressTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adressTFActionPerformed
+
     private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField21ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField21ActionPerformed
-
-    private void firstNameTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_firstNameTFActionPerformed
 
     private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField22ActionPerformed
         // TODO add your handling code here:
@@ -472,27 +480,82 @@ public class profilePanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField23ActionPerformed
 
-    private void postalCodeTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postalCodeTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_postalCodeTFActionPerformed
-
     private void cardHolderTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardHolderTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cardHolderTFActionPerformed
-
-    private void adressTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adressTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adressTFActionPerformed
 
     private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField16ActionPerformed
 
-    private void emailTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailTFActionPerformed
+    private void editProfileInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProfileInfoActionPerformed
+        profileInfoEditable ^= true;
+        if (profileInfoEditable) {
+            contactInfoChangeState(true);
+            editProfileInfo.setText("Okej");
+        } else {
+            contactInfoChangeState(false);
+            editProfileInfo.setText("Ändra");
+        }
+    }//GEN-LAST:event_editProfileInfoActionPerformed
 
+    /**
+     * Changes whether or not the text fields in contactInfo are editable.
+     * Changes to state.
+     * @param state 
+     */
+    private void contactInfoChangeState(boolean state) {
+        firstNameTF.setEditable(state);
+        surNameTF.setEditable(state);
+        adressTF.setEditable(state);
+        postalCodeTF.setEditable(state);
+        cityTF.setEditable(state);
+        phoneNbrTF.setEditable(state);
+        emailTF.setEditable(state);
+        cardHolderTF.setEditable(state);
+        cardNumberTF.setEditable(state);
+        expDateMonth.setEnabled(state);
+        expDateYear.setEnabled(state);
+    }
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(ProfilpanelFRAME.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(ProfilpanelFRAME.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(ProfilpanelFRAME.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(ProfilpanelFRAME.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
 
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new ProfilpanelFRAME().setVisible(true);
+            }
+        });
+    }
+
+    //Variable that determines whether or not the text fields in the profilepanel are editable.
+    private boolean profileInfoEditable;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adressLabel;
     private javax.swing.JTextField adressTF;

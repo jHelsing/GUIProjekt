@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
-  </Properties>
-  <SyntheticProperties>
-    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
-  </SyntheticProperties>
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -23,47 +16,57 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabelAdress" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelFornamn" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelOrt" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelMobilnr" alignment="1" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jTextFieldMobilnr" min="-2" pref="200" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButtonNastaSteg1" min="-2" pref="150" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextFieldFornamn" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="jTextFieldAdress" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="jTextFieldOrt" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="128" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabelEfternamn" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabelPostnr" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabelEmail" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextFieldEmail" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="jTextFieldPostnr" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="jTextFieldEfternamn" min="-2" pref="200" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
-              <Component id="imageLabelRegPil1" min="-2" pref="838" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
+                      <Component id="imageLabelRegPil1" min="-2" pref="838" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jLabelMobilnr" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jTextFieldMobilnr" min="-2" pref="200" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabelAdress" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelFornamn" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelOrt" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextFieldFornamn" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAdress" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldOrt" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabelEfternamn" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelPostnr" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelEmail" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextFieldEmail" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldPostnr" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldEfternamn" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="nextStepButton" min="-2" pref="100" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="168" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -74,7 +77,7 @@
               <Component id="imageLabelRegPil1" min="-2" pref="80" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jTextFieldFornamn" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelFornamn" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -90,7 +93,7 @@
                           <Component id="jTextFieldOrt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabelEfternamn" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextFieldEfternamn" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -107,18 +110,55 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabelMobilnr" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldMobilnr" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButtonNastaSteg1" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="nextStepButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="44" max="32767" attributes="0"/>
+              <EmptySpace pref="59" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
+    <Component class="javax.swing.JTextField" name="jTextFieldFornamn">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldEfternamn">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelFornamn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="F&#xf6;rnamn:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldPostnr">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelAdress">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Adress:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldEmail">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelMobilnr">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mobilnr:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldAdress">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelEmail">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="E-mail:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldOrt">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelEfternamn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Efternamn:"/>
+      </Properties>
+    </Component>
     <Component class="imat.ImageLabel" name="imageLabelRegPil1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -130,59 +170,31 @@
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new imat.ImageLabel(&quot;RegPil1.png&quot;)"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldFornamn">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabelFornamn">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="F&#xf6;rnamn:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabelAdress">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Adress:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabelMobilnr">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Mobilnr:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabelEmail">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="E-mail:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabelEfternamn">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Efternamn:"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabelPostnr">
       <Properties>
         <Property name="text" type="java.lang.String" value="Postnr:"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldMobilnr">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelOrt">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ort:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldAdress">
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldOrt">
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldMobilnr">
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldEfternamn">
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldPostnr">
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldEmail">
-    </Component>
-    <Component class="javax.swing.JButton" name="jButtonNastaSteg1">
+    <Component class="imat.ImageLabel" name="nextStepButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="N&#xe4;sta Steg &gt;&gt;"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imat/resources/nextStep.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="imageLabel2"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="nextStepButtonMouseClicked"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new imat.ImageLabel(&quot;nextStepButton.png&quot;)"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>
