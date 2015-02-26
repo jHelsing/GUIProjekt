@@ -24,6 +24,7 @@ public class GUIView extends javax.swing.JFrame {
     public GUIView() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+        initContentPanel();
     }
 
     //test
@@ -56,13 +57,14 @@ public class GUIView extends javax.swing.JFrame {
         profileImage = new imat.ImageLabel("profilLogo.png");
         contentPanel = new javax.swing.JPanel();
         wholePanel = new javax.swing.JPanel();
+        firstRegPanel1 = new imat.firstRegPanel();
+        secondRegPanel1 = new imat.secondRegPanel();
         profilePanel1 = new imat.profilePanel();
         splitPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(1174, 553));
         setMinimumSize(new java.awt.Dimension(1174, 553));
 
         mainMenu.setPreferredSize(new java.awt.Dimension(532, 50));
@@ -233,6 +235,8 @@ public class GUIView extends javax.swing.JFrame {
         contentPanel.setLayout(new java.awt.CardLayout());
 
         wholePanel.setLayout(new java.awt.CardLayout());
+        wholePanel.add(firstRegPanel1, "card3");
+        wholePanel.add(secondRegPanel1, "card4");
         wholePanel.add(profilePanel1, "card2");
 
         contentPanel.add(wholePanel, "wholeCard");
@@ -262,7 +266,7 @@ public class GUIView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(mainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE))
+                .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 656, Short.MAX_VALUE))
         );
 
         pack();
@@ -312,6 +316,16 @@ public class GUIView extends javax.swing.JFrame {
     }
     
     /**
+     * Makes sure the right first view is displayed when it comes to choosing
+     * between firstPanel and homePanel. First panel is displayed on first
+     * start-up when no user exists. When a user exists it will display the
+     * homePanel instead.
+     */
+    private void initContentPanel() {
+        
+    }
+    
+    /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -349,6 +363,7 @@ public class GUIView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel firstNameLabel;
+    private imat.firstRegPanel firstRegPanel1;
     private imat.ImageLabel helpImage;
     private javax.swing.JLabel homeLabel;
     private javax.swing.JSeparator jSeparator1;
@@ -365,6 +380,7 @@ public class GUIView extends javax.swing.JFrame {
     private javax.swing.JLabel purchaseHistoryLabel;
     private javax.swing.JLabel recipieLabel;
     private javax.swing.JTextField searchField;
+    private imat.secondRegPanel secondRegPanel1;
     private javax.swing.JLabel shoppingListLabel;
     private javax.swing.JPanel splitPanel;
     private javax.swing.JPanel wholePanel;
