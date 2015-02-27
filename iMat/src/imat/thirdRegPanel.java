@@ -30,7 +30,10 @@ public class thirdRegPanel extends javax.swing.JPanel {
         imageLabelRegPil2 = new imat.ImageLabel("RegPil3Text.png");
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBoxVillkor = new javax.swing.JCheckBox();
+        jCheckBoxVillkor1 = new javax.swing.JCheckBox();
+        imageLabel1 = new imat.ImageLabel("createAccButton.png");
+        imageLabel2 = new imat.ImageLabel("prevStepButton.png");
 
         imageLabelRegPil2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/RegPil2.png"))); // NOI18N
         imageLabelRegPil2.setText("imageLabel1");
@@ -46,7 +49,18 @@ public class thirdRegPanel extends javax.swing.JPanel {
         jTextArea1.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jScrollPane1.setViewportView(jTextArea1);
 
-        jCheckBox1.setText("jCheckBox1");
+        jCheckBoxVillkor.setText("Jag accepterar iMat:s villkor");
+
+        jCheckBoxVillkor1.setText("Jag vill få iMat:s nyhetsbrev till min mejladress");
+
+        imageLabel1.setText("imageLabel1");
+
+        imageLabel2.setText("imageLabel1");
+        imageLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imageLabel2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -55,9 +69,17 @@ public class thirdRegPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(168, 168, 168)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(168, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(imageLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(542, 542, 542))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCheckBoxVillkor1)
+                            .addComponent(jCheckBoxVillkor)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(168, Short.MAX_VALUE))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(168, 168, 168)
@@ -70,8 +92,14 @@ public class thirdRegPanel extends javax.swing.JPanel {
                 .addGap(161, 161, 161)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox1)
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addComponent(jCheckBoxVillkor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBoxVillkor1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(imageLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(imageLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(50, 50, 50)
@@ -80,10 +108,18 @@ public class thirdRegPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void imageLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabel2MouseClicked
+        //CardLayout wholePanelCard = (CardLayout)wholePanel.getLayout();
+        //wholePanelCard.show(wholePanel, "firstRegPanel");
+    }//GEN-LAST:event_imageLabel2MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private imat.ImageLabel imageLabel1;
+    private imat.ImageLabel imageLabel2;
     private imat.ImageLabel imageLabelRegPil2;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBoxVillkor;
+    private javax.swing.JCheckBox jCheckBoxVillkor1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

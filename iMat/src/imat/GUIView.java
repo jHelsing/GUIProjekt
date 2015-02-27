@@ -25,7 +25,7 @@ public class GUIView extends javax.swing.JFrame {
      */
     public GUIView() {
         initComponents();
-        setFullScreen(this);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         initContentPanel();
     }
 
@@ -59,6 +59,7 @@ public class GUIView extends javax.swing.JFrame {
         profileImage = new imat.ImageLabel("profilLogo.png");
         contentPanel = new javax.swing.JPanel();
         wholePanel = new javax.swing.JPanel();
+        thirdRegPanel1 = new imat.thirdRegPanel();
         firstRegPanel1 = new imat.firstRegPanel();
         secondRegPanel1 = new imat.secondRegPanel();
         profilePanel1 = new imat.profilePanel();
@@ -239,6 +240,7 @@ public class GUIView extends javax.swing.JFrame {
         contentPanel.setLayout(new java.awt.CardLayout());
 
         wholePanel.setLayout(new java.awt.CardLayout());
+        wholePanel.add(thirdRegPanel1, "card7");
         wholePanel.add(firstRegPanel1, "card3");
         wholePanel.add(secondRegPanel1, "card4");
         wholePanel.add(profilePanel1, "card2");
@@ -289,14 +291,14 @@ public class GUIView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(mainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1369, Short.MAX_VALUE)
-            .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1369, Short.MAX_VALUE)
+            .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1369, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(mainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 656, Short.MAX_VALUE))
+                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -425,6 +427,7 @@ public class GUIView extends javax.swing.JFrame {
     private imat.secondRegPanel secondRegPanel1;
     private javax.swing.JLabel shoppingListLabel;
     private javax.swing.JPanel splitPanel;
+    private imat.thirdRegPanel thirdRegPanel1;
     private javax.swing.JPanel wholePanel;
     // End of variables declaration//GEN-END:variables
 }
