@@ -33,6 +33,8 @@ public class firstPanel extends BackgroundPanel {
 
         imageLabel1 = new imat.ImageLabel("startUsingButton.png");
 
+        setMaximumSize(new java.awt.Dimension(1240, 765));
+        setOpaque(false);
         setRequestFocusEnabled(false);
 
         imageLabel1.setText("imageLabel1");
@@ -50,16 +52,14 @@ public class firstPanel extends BackgroundPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(191, 191, 191)
                 .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addGap(0, 427, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(159, 159, 159)
                 .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addGap(0, 320, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

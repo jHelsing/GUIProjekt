@@ -34,6 +34,7 @@ public class ImageLabel extends JLabel {
         normalImage = null;
         pressedImage = null;
         hoverImage = null;
+        setVisible(true);
     }
     
      /**
@@ -54,8 +55,8 @@ public class ImageLabel extends JLabel {
             hoverImage = normalImage;
         } catch(URISyntaxException | IOException e) {
             e.printStackTrace();
-        } finally {
         }
+        setVisible(true);
     }
     
     /**
@@ -81,7 +82,7 @@ public class ImageLabel extends JLabel {
         } catch(URISyntaxException | IOException e) {
             e.printStackTrace();
         }
-        
+        setVisible(true);
     }
     
     /**

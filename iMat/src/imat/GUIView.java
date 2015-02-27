@@ -25,7 +25,7 @@ public class GUIView extends javax.swing.JFrame {
      */
     public GUIView() {
         initComponents();
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setFullScreen(this);
         initContentPanel();
     }
 
@@ -63,7 +63,7 @@ public class GUIView extends javax.swing.JFrame {
         secondRegPanel1 = new imat.secondRegPanel();
         profilePanel1 = new imat.profilePanel();
         homePanel = new imat.homePanel();
-        firstPanel = new imat.firstPanel();
+        firstPanel = new firstPanel();
         splitPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -342,7 +342,7 @@ public class GUIView extends javax.swing.JFrame {
         Toolkit tk = Toolkit.getDefaultToolkit();
         int xSize = ((int) tk.getScreenSize().getWidth());
         int ySize = ((int) tk.getScreenSize().getHeight());
-        jFrame.setSize(xSize,ySize);
+        jFrame.setSize(1240,765);
     }
     
     /**
@@ -403,7 +403,7 @@ public class GUIView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel firstNameLabel;
-    private imat.firstPanel firstPanel;
+    private javax.swing.JPanel firstPanel;
     private imat.firstRegPanel firstRegPanel1;
     private imat.ImageLabel helpImage;
     private javax.swing.JLabel homeLabel;
