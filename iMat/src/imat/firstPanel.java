@@ -32,12 +32,13 @@ public class firstPanel extends BackgroundPanel {
     private void initComponents() {
 
         imageLabel1 = new imat.ImageLabel("startUsingButton.png");
+        jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1240, 765));
         setOpaque(false);
         setRequestFocusEnabled(false);
 
-        imageLabel1.setText("imageLabel1");
+        imageLabel1.setText("Hej");
         imageLabel1.setMaximumSize(new java.awt.Dimension(85, 40));
         imageLabel1.setMinimumSize(new java.awt.Dimension(85, 40));
         imageLabel1.setPreferredSize(new java.awt.Dimension(85, 40));
@@ -47,6 +48,8 @@ public class firstPanel extends BackgroundPanel {
             }
         });
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -54,17 +57,22 @@ public class firstPanel extends BackgroundPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 427, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 320, Short.MAX_VALUE))
+                .addGap(56, 56, 56)
+                .addComponent(jLabel1)
+                .addGap(0, 248, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void imageLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabel1MouseClicked
-        // TODO add your handling code here:
         JPanel parentParentPanel = (JPanel)super.getParent().getParent();
         CardLayout card = (CardLayout)parentParentPanel.getLayout();
         card.show(parentParentPanel, "wholePanel");
@@ -76,5 +84,6 @@ public class firstPanel extends BackgroundPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private imat.ImageLabel imageLabel1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
