@@ -5,16 +5,20 @@
  */
 package imat;
 
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Johan
  */
-public class firstPanel extends javax.swing.JPanel {
+public class firstPanel extends BackgroundPanel {
 
     /**
      * Creates new form firstPanel
      */
     public firstPanel() {
+        super("firstPageImage.png");
         initComponents();
     }
 
@@ -27,19 +31,50 @@ public class firstPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        imageLabel1 = new imat.ImageLabel("startUsingButton.png");
+
+        setRequestFocusEnabled(false);
+
+        imageLabel1.setText("imageLabel1");
+        imageLabel1.setMaximumSize(new java.awt.Dimension(85, 40));
+        imageLabel1.setMinimumSize(new java.awt.Dimension(85, 40));
+        imageLabel1.setPreferredSize(new java.awt.Dimension(85, 40));
+        imageLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imageLabel1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(191, 191, 191)
+                .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(236, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(159, 159, 159)
+                .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(161, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void imageLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabel1MouseClicked
+        // TODO add your handling code here:
+        JPanel parentParentPanel = (JPanel)super.getParent().getParent();
+        CardLayout card = (CardLayout)parentParentPanel.getLayout();
+        card.show(parentParentPanel, "wholePanel");
+        parentParentPanel = (JPanel)super.getParent();
+        card = (CardLayout)parentParentPanel.getLayout();
+        card.show(parentParentPanel,"homePanel");
+    }//GEN-LAST:event_imageLabel1MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private imat.ImageLabel imageLabel1;
     // End of variables declaration//GEN-END:variables
 }

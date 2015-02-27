@@ -18,6 +18,8 @@ public class BackgroundPanel extends JPanel {
     
     private BufferedImage img;
     
+    public BackgroundPanel() {}
+    
     /**
      * Creates a new JPanel with a background image.
      * 

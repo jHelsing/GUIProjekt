@@ -17,6 +17,8 @@ import se.chalmers.ait.dat215.project.util.*;
  * @author jonathan
  */
 public class GUIView extends javax.swing.JFrame {
+    
+    private IMatDataHandler userData;
 
     /**
      * Creates new form GUIView
@@ -60,6 +62,8 @@ public class GUIView extends javax.swing.JFrame {
         firstRegPanel1 = new imat.firstRegPanel();
         secondRegPanel1 = new imat.secondRegPanel();
         profilePanel1 = new imat.profilePanel();
+        homePanel = new imat.homePanel();
+        firstPanel = new imat.firstPanel();
         splitPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -239,7 +243,33 @@ public class GUIView extends javax.swing.JFrame {
         wholePanel.add(secondRegPanel1, "card4");
         wholePanel.add(profilePanel1, "card2");
 
-        contentPanel.add(wholePanel, "wholeCard");
+        javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
+        homePanel.setLayout(homePanelLayout);
+        homePanelLayout.setHorizontalGroup(
+            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1369, Short.MAX_VALUE)
+        );
+        homePanelLayout.setVerticalGroup(
+            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 656, Short.MAX_VALUE)
+        );
+
+        wholePanel.add(homePanel, "homePanel");
+
+        javax.swing.GroupLayout firstPanelLayout = new javax.swing.GroupLayout(firstPanel);
+        firstPanel.setLayout(firstPanelLayout);
+        firstPanelLayout.setHorizontalGroup(
+            firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1369, Short.MAX_VALUE)
+        );
+        firstPanelLayout.setVerticalGroup(
+            firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 656, Short.MAX_VALUE)
+        );
+
+        wholePanel.add(firstPanel, "firstPanel");
+
+        contentPanel.add(wholePanel, "wholePanel");
 
         javax.swing.GroupLayout splitPanelLayout = new javax.swing.GroupLayout(splitPanel);
         splitPanel.setLayout(splitPanelLayout);
@@ -252,7 +282,7 @@ public class GUIView extends javax.swing.JFrame {
             .addGap(0, 656, Short.MAX_VALUE)
         );
 
-        contentPanel.add(splitPanel, "splitCard");
+        contentPanel.add(splitPanel, "splitPanel");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -322,7 +352,17 @@ public class GUIView extends javax.swing.JFrame {
      * homePanel instead.
      */
     private void initContentPanel() {
-        
+        userData = IMatDataHandler.getInstance();
+        userData.resetFirstRun();
+        if(userData.isFirstRun()) {
+            //Show the firstPanel
+            CardLayout card = (CardLayout)contentPanel.getLayout();
+            card.show(contentPanel, "wholePanel");
+            card = (CardLayout)wholePanel.getLayout();
+            card.show(wholePanel,"firstPanel");
+        } else {
+            //Show the homePanel
+        }
     }
     
     /**
@@ -363,9 +403,11 @@ public class GUIView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel firstNameLabel;
+    private imat.firstPanel firstPanel;
     private imat.firstRegPanel firstRegPanel1;
     private imat.ImageLabel helpImage;
     private javax.swing.JLabel homeLabel;
+    private imat.homePanel homePanel;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
