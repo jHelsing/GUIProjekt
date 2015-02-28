@@ -188,43 +188,57 @@ public class CategoryPanel extends javax.swing.JPanel {
         categoryProducts.add(data.getProduct(116)); // Lägger till potatis
         categoryProducts.add(data.getProduct(117)); // Lägger till röd potatis
         categoryProducts.add(data.getProduct(118)); // lägger till ngn typ av potatis
+        
         // Skicka dessa produkter till sökvyn
+        
     }//GEN-LAST:event_category1MouseClicked
 
     private void category2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_category2MouseClicked
         // Visar upp sökresultat på de kategorier som tillhör Bröd
         List<Product> categoryProducts = data.getProducts(ProductCategory.BREAD);
+        
         // Skicka dessa produkter till sökvyn
+        
     }//GEN-LAST:event_category2MouseClicked
 
     private void category3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_category3MouseClicked
         // Visar upp de sökresultat på de kategorier som tillhör Fisk & Skaldjur
         List<Product> categoryProducts = data.getProducts(ProductCategory.FISH);
+        
         // Skicka dessa produkter till sökvyn
+        
     }//GEN-LAST:event_category3MouseClicked
 
     private void category4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_category4MouseClicked
         // Visar upp de sökresultat på de kategorier som tillhör Kött
         List<Product> categoryProducts = data.getProducts(ProductCategory.MEAT);
+        
         // Skicka dessa produkter till sökvyn
+        
     }//GEN-LAST:event_category4MouseClicked
 
     private void category5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_category5MouseClicked
         // Visar upp de sökresultat på de kategorier som tillhör Mejeriprodukter
         List<Product> categoryProducts = data.getProducts(ProductCategory.DAIRIES);
+        
         // Skicka dessa produkter till sökvyn
+        
     }//GEN-LAST:event_category5MouseClicked
 
     private void category6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_category6MouseClicked
         // Visar upp de sökresultat på de kategorier som tillhör Kalla drycker
         List<Product> categoryProducts = data.getProducts(ProductCategory.COLD_DRINKS);
+        
         // Skicka dessa produkter till sökvyn
+        
     }//GEN-LAST:event_category6MouseClicked
 
     private void category7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_category7MouseClicked
         // Visar de sökresultat på de kategorier som tillhör Sötsaker
         List<Product> categoryProducts = data.getProducts(ProductCategory.SWEET);
+        
         // Skicka dessa produkter till sökvyn
+        
     }//GEN-LAST:event_category7MouseClicked
 
     private void category8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_category8MouseClicked
@@ -239,6 +253,7 @@ public class CategoryPanel extends javax.swing.JPanel {
         categoryProducts.remove(data.getProduct(118)); //Finns bland Frukt & Grönt
         
         // Skicka dessa produkter till sökvyn
+        
     }//GEN-LAST:event_category8MouseClicked
 
 
