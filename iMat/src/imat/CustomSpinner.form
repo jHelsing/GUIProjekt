@@ -16,23 +16,24 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="decrement" alignment="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="increment" alignment="1" min="-2" pref="18" max="-2" attributes="0"/>
-              </Group>
+          <Group type="102" attributes="0">
+              <Component id="decrement" min="-2" pref="18" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="nbrTextField" min="-2" pref="40" max="-2" attributes="0"/>
+              <Component id="increment" min="-2" pref="18" max="-2" attributes="0"/>
           </Group>
+          <Component id="nbrTextField" min="-2" pref="40" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="nbrTextField" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
-              <Component id="increment" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="increment" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="decrement" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="decrement" min="-2" max="-2" attributes="0"/>
+              <Component id="nbrTextField" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
