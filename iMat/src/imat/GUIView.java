@@ -132,11 +132,6 @@ public class GUIView extends javax.swing.JFrame {
         searchField.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         searchField.setText("Sök");
         searchField.setToolTipText("Sök bland produkter, recept och inköpslistor. Tryck på Enter för att söka.");
-        searchField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchFieldActionPerformed(evt);
-            }
-        });
         searchField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 searchFieldKeyTyped(evt);
@@ -281,7 +276,7 @@ public class GUIView extends javax.swing.JFrame {
         );
         splitPanelLayout.setVerticalGroup(
             splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 656, Short.MAX_VALUE)
+            .addGap(0, 668, Short.MAX_VALUE)
         );
 
         contentPanel.add(splitPanel, "splitPanel");
@@ -291,7 +286,7 @@ public class GUIView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(mainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1369, Short.MAX_VALUE)
-            .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1369, Short.MAX_VALUE)
+            .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1369, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -303,10 +298,6 @@ public class GUIView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void searchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchFieldActionPerformed
 
     private void homeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeLabelMouseClicked
         // changes the content panel to contain the shopping cart and the homepage
@@ -338,6 +329,15 @@ public class GUIView extends javax.swing.JFrame {
 
     private void searchFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyTyped
         // TODO lägg in sökfunktionen
+        CardLayout card = (CardLayout)contentPanel.getLayout();
+        card.show(contentPanel, "splitPanel");
+       
+        // Fixa visningen utav search result
+        /*card = (CardLayout)splitPanel.getLayout();
+        card.show(splitPanel, "searchPanel"); */
+        
+        
+        
     }//GEN-LAST:event_searchFieldKeyTyped
 
     private void setFullScreen(JFrame jFrame) {

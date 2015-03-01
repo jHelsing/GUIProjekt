@@ -50,7 +50,7 @@ public class SearchResultPanel extends javax.swing.JPanel {
     public void displayResults(List<Product> results) {
         int nbrOfResults = results.size();
         
-        // Räkna ut antalet rader för layouten av areaOfSearchResult.
+        // Räkna ut antalet rader för layouten av areaOfSearchResult
         int nbrOfRows = nbrOfResults/2;
         areaOfSearchResult.setLayout(new GridLayout(nbrOfRows, 2));
         
