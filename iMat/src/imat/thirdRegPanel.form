@@ -20,14 +20,14 @@
               <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="imageLabel2" min="-2" pref="140" max="-2" attributes="0"/>
+                      <Component id="imageLabelForegaendesteg" min="-2" pref="140" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="imageLabel1" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="imageLabelSkapaKonto" min="-2" pref="90" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="542" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jCheckBoxVillkor1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jCheckBoxNyhetsbrev" min="-2" max="-2" attributes="0"/>
                           <Component id="jCheckBoxVillkor" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="838" max="-2" attributes="0"/>
                       </Group>
@@ -38,7 +38,7 @@
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
-                  <Component id="imageLabelRegPil2" min="-2" pref="838" max="-2" attributes="0"/>
+                  <Component id="imageLabelRegPil3" min="-2" pref="838" max="-2" attributes="0"/>
                   <EmptySpace pref="168" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -47,23 +47,23 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="147" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jCheckBoxVillkor" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jCheckBoxVillkor1" min="-2" max="-2" attributes="0"/>
+              <Component id="jCheckBoxNyhetsbrev" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="imageLabel1" pref="40" max="32767" attributes="0"/>
-                  <Component id="imageLabel2" max="32767" attributes="0"/>
+                  <Component id="imageLabelSkapaKonto" pref="40" max="32767" attributes="0"/>
+                  <Component id="imageLabelForegaendesteg" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="38" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="imageLabelRegPil2" min="-2" pref="80" max="-2" attributes="0"/>
+                  <Component id="imageLabelRegPil3" min="-2" pref="80" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -71,7 +71,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="imat.ImageLabel" name="imageLabelRegPil2">
+    <Component class="imat.ImageLabel" name="imageLabelRegPil3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/imat/resources/RegPil2.png"/>
@@ -89,7 +89,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="jTextArea1">
+        <Component class="javax.swing.JTextArea" name="jTextAreaVillkor">
           <Properties>
             <Property name="columns" type="int" value="1"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -113,12 +113,12 @@
         <Property name="text" type="java.lang.String" value="Jag accepterar iMat:s villkor"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBoxVillkor1">
+    <Component class="javax.swing.JCheckBox" name="jCheckBoxNyhetsbrev">
       <Properties>
         <Property name="text" type="java.lang.String" value="Jag vill f&#xe5; iMat:s nyhetsbrev till min mejladress"/>
       </Properties>
     </Component>
-    <Component class="imat.ImageLabel" name="imageLabel1">
+    <Component class="imat.ImageLabel" name="imageLabelSkapaKonto">
       <Properties>
         <Property name="text" type="java.lang.String" value="imageLabel1"/>
       </Properties>
@@ -126,12 +126,12 @@
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new imat.ImageLabel(&quot;createAccButton.png&quot;)"/>
       </AuxValues>
     </Component>
-    <Component class="imat.ImageLabel" name="imageLabel2">
+    <Component class="imat.ImageLabel" name="imageLabelForegaendesteg">
       <Properties>
         <Property name="text" type="java.lang.String" value="imageLabel1"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="imageLabel2MouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="imageLabelForegaendestegMouseClicked"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new imat.ImageLabel(&quot;prevStepButton.png&quot;)"/>
