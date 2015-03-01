@@ -16,32 +16,48 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Component id="imageLabelMinska" min="-2" pref="25" max="-2" attributes="0"/>
+              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+              <Component id="imageLabelÖka1" min="-2" pref="25" max="-2" attributes="0"/>
+              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
               <Component id="jLabelAntal" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
               <Component id="jLabelAntalStEllerKg" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
               <Component id="jLabelProduktnamn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
               <Component id="jLabelPris" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
               <Component id="jLabelPerStEllerKg" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="58" max="32767" attributes="0"/>
+              <EmptySpace pref="19" max="32767" attributes="0"/>
+              <Component id="imageLabelÖka" min="-2" pref="25" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Component id="imageLabelMinska" min="-2" pref="25" max="-2" attributes="0"/>
+          <Component id="imageLabelÖka1" min="-2" pref="25" max="-2" attributes="0"/>
+          <Component id="jLabelAntal" min="-2" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+              <Component id="jLabelAntalStEllerKg" min="-2" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+              <Component id="jLabelProduktnamn" min="-2" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+              <Component id="jLabelPris" min="-2" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabelAntal" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelAntalStEllerKg" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelProduktnamn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelPris" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelPerStEllerKg" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="imageLabelÖka" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="3" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -74,6 +90,30 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="/st"/>
       </Properties>
+    </Component>
+    <Component class="imat.ImageLabel" name="imageLabel&#xd6;ka">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="imageLabel1"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new imat.ImageLabel(&quot;checkoutPlusButton.png&quot;)"/>
+      </AuxValues>
+    </Component>
+    <Component class="imat.ImageLabel" name="imageLabelMinska">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="imageLabel1"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new imat.ImageLabel(&quot;checkoutMinusButton.png&quot;)"/>
+      </AuxValues>
+    </Component>
+    <Component class="imat.ImageLabel" name="imageLabel&#xd6;ka1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="imageLabel1"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new imat.ImageLabel(&quot;checkoutPlusButton.png&quot;)"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

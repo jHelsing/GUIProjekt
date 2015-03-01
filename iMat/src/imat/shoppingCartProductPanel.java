@@ -32,6 +32,9 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         jLabelProduktnamn = new javax.swing.JLabel();
         jLabelPris = new javax.swing.JLabel();
         jLabelPerStEllerKg = new javax.swing.JLabel();
+        imageLabelÖka = new imat.ImageLabel("checkoutPlusButton.png");
+        imageLabelMinska = new imat.ImageLabel("checkoutMinusButton.png");
+        imageLabelÖka1 = new imat.ImageLabel("checkoutPlusButton.png");
 
         jLabelAntal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelAntal.setText("X");
@@ -44,38 +47,60 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
 
         jLabelPerStEllerKg.setText("/st");
 
+        imageLabelÖka.setText("imageLabel1");
+
+        imageLabelMinska.setText("imageLabel1");
+
+        imageLabelÖka1.setText("imageLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addComponent(imageLabelMinska, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(imageLabelÖka1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
                 .addComponent(jLabelAntal)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(jLabelAntalStEllerKg)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(10, 10, 10)
                 .addComponent(jLabelProduktnamn)
                 .addGap(18, 18, 18)
                 .addComponent(jLabelPris)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(jLabelPerStEllerKg)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addComponent(imageLabelÖka, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imageLabelMinska, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(imageLabelÖka1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabelAntal)
             .addGroup(layout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addComponent(jLabelAntalStEllerKg))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addComponent(jLabelProduktnamn))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addComponent(jLabelPris))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(3, 3, 3)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelAntal)
-                    .addComponent(jLabelAntalStEllerKg)
-                    .addComponent(jLabelProduktnamn)
-                    .addComponent(jLabelPris)
-                    .addComponent(jLabelPerStEllerKg))
-                .addGap(0, 3, Short.MAX_VALUE))
+                    .addComponent(jLabelPerStEllerKg)
+                    .addComponent(imageLabelÖka, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private imat.ImageLabel imageLabelMinska;
+    private imat.ImageLabel imageLabelÖka;
+    private imat.ImageLabel imageLabelÖka1;
     private javax.swing.JLabel jLabelAntal;
     private javax.swing.JLabel jLabelAntalStEllerKg;
     private javax.swing.JLabel jLabelPerStEllerKg;

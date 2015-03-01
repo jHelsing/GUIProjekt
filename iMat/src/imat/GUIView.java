@@ -28,8 +28,6 @@ public class GUIView extends javax.swing.JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         initContentPanel();
     }
-
-    //test
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,6 +64,8 @@ public class GUIView extends javax.swing.JFrame {
         homePanel = new imat.homePanel();
         firstPanel = new firstPanel();
         splitPanel = new javax.swing.JPanel();
+        splitPanelContent = new javax.swing.JPanel();
+        shoppingCartPanel1 = new imat.shoppingCartPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -268,15 +268,29 @@ public class GUIView extends javax.swing.JFrame {
 
         contentPanel.add(wholePanel, "wholePanel");
 
+        splitPanelContent.setLayout(new java.awt.CardLayout());
+
         javax.swing.GroupLayout splitPanelLayout = new javax.swing.GroupLayout(splitPanel);
         splitPanel.setLayout(splitPanelLayout);
         splitPanelLayout.setHorizontalGroup(
             splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1369, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, splitPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(shoppingCartPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         splitPanelLayout.setVerticalGroup(
             splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 668, Short.MAX_VALUE)
+            .addGroup(splitPanelLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(shoppingCartPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(149, Short.MAX_VALUE))
+            .addGroup(splitPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         contentPanel.add(splitPanel, "splitPanel");
@@ -425,8 +439,10 @@ public class GUIView extends javax.swing.JFrame {
     private javax.swing.JLabel recipieLabel;
     private javax.swing.JTextField searchField;
     private imat.secondRegPanel secondRegPanel1;
+    private imat.shoppingCartPanel shoppingCartPanel1;
     private javax.swing.JLabel shoppingListLabel;
     private javax.swing.JPanel splitPanel;
+    private javax.swing.JPanel splitPanelContent;
     private imat.thirdRegPanel thirdRegPanel1;
     private javax.swing.JPanel wholePanel;
     // End of variables declaration//GEN-END:variables
