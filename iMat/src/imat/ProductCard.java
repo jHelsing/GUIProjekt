@@ -16,7 +16,7 @@ public class ProductCard extends javax.swing.JPanel {
     
     private IMatDataHandler data = IMatDataHandler.getInstance();
     
-    private final Dimension IMGDIMENSION = new Dimension(40,40);
+    private final Dimension IMGDIMENSION = new Dimension(50,50);
     
     private final Product p;
 
@@ -53,6 +53,7 @@ public class ProductCard extends javax.swing.JPanel {
         productNameLabel = new javax.swing.JLabel();
         productPriceLabel = new javax.swing.JLabel();
         addToShoppingListButton = new imat.ImageLabel("addToShoppingListButton.png");
+        favoriteButton = new imat.ImageLabel("unmarkedFavButton.png", "markedFavButton.png");
 
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -61,11 +62,11 @@ public class ProductCard extends javax.swing.JPanel {
         });
 
         productImage.setText("jLabel1");
-        productImage.setMaximumSize(new java.awt.Dimension(50, 50));
-        productImage.setMinimumSize(new java.awt.Dimension(50, 50));
-        productImage.setPreferredSize(new java.awt.Dimension(50, 50));
+        productImage.setMaximumSize(new java.awt.Dimension(60, 60));
+        productImage.setMinimumSize(new java.awt.Dimension(60, 60));
+        productImage.setPreferredSize(new java.awt.Dimension(60, 60));
         productImage.setRequestFocusEnabled(false);
-        productImage.setSize(new java.awt.Dimension(50, 50));
+        productImage.setSize(new java.awt.Dimension(60, 60));
 
         addToCartButton.setText("imageLabel1");
         addToCartButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -92,36 +93,50 @@ public class ProductCard extends javax.swing.JPanel {
             }
         });
 
+        favoriteButton.setText("imageLabel1");
+        favoriteButton.setMaximumSize(new java.awt.Dimension(30, 30));
+        favoriteButton.setMinimumSize(new java.awt.Dimension(30, 30));
+        favoriteButton.setPreferredSize(new java.awt.Dimension(30, 30));
+        favoriteButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                favoriteButtonMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(productNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addComponent(addToShoppingListButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(addToCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(productImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(addToShoppingListButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(nbrOfProductsSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(addToCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(productImage, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(nbrOfProductsSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(productUnitsLabel))
-                                    .addComponent(productPriceLabel))))))
+                                .addComponent(productUnitsLabel))
+                            .addComponent(productPriceLabel))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(productNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(favoriteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(productNameLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(favoriteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(productNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(productPriceLabel)
@@ -132,8 +147,8 @@ public class ProductCard extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(34, 34, 34)
                                 .addComponent(productUnitsLabel))))
-                    .addComponent(productImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(productImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(addToShoppingListButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addToCartButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -155,10 +170,24 @@ public class ProductCard extends javax.swing.JPanel {
         data.getShoppingCart().addProduct(p, nbrOfProductsSpinner.getValue());
     }//GEN-LAST:event_addToCartButtonMouseClicked
 
+    private void favoriteButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favoriteButtonMouseClicked
+        
+        if(data.isFavorite(p)) {
+             // Om produkten redan är favoritmarkerad -> ta bort favorit markeringen
+            data.removeFavorite(p);
+            favoriteButton.imageNormal();
+        } else {
+            //Om produkten inte är favoritmarkerad -> markera den som favorit
+            data.addFavorite(p);
+            favoriteButton.imageHover();
+        }
+    }//GEN-LAST:event_favoriteButtonMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private imat.ImageLabel addToCartButton;
     private imat.ImageLabel addToShoppingListButton;
+    private imat.ImageLabel favoriteButton;
     private imat.CustomSpinner nbrOfProductsSpinner;
     private javax.swing.JLabel productImage;
     private javax.swing.JLabel productNameLabel;
