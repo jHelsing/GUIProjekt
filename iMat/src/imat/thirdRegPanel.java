@@ -51,6 +51,7 @@ public class thirdRegPanel extends javax.swing.JPanel {
         imageLabelRegPil3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/RegPil2.png"))); // NOI18N
         imageLabelRegPil3.setText("imageLabel1");
 
+        jTextAreaVillkor.setEditable(false);
         jTextAreaVillkor.setColumns(1);
         jTextAreaVillkor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextAreaVillkor.setLineWrap(true);
@@ -86,7 +87,7 @@ public class thirdRegPanel extends javax.swing.JPanel {
                         .addComponent(imageLabelForegaendesteg, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(imageLabelSkapaKonto, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(542, 542, 542))
+                        .addContainerGap(713, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jCheckBoxNyhetsbrev)
