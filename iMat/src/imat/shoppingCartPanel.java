@@ -5,12 +5,17 @@
  */
 package imat;
 
+import java.beans.PropertyChangeSupport;
+
+
 /**
  *
  * @author Johan
  */
 public class shoppingCartPanel extends javax.swing.JPanel {
 
+    PropertyChangeSupport pcs = new PropertyChangeSupport(this);
+    
     /**
      * Creates new form shoppingCartPanel
      */
@@ -30,8 +35,8 @@ public class shoppingCartPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         imageLabel1 = new imat.ImageLabel("kundvagn.png");
-        imageLabel2 = new imat.ImageLabel();
-        imageLabel3 = new imat.ImageLabel("nextStepButton.png");
+        imageLabelEmptyCart = new imat.ImageLabel("prevStepButton.png");
+        imageLabelToCheckout = new imat.ImageLabel("nextStepButton.png");
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -52,10 +57,15 @@ public class shoppingCartPanel extends javax.swing.JPanel {
 
         imageLabel1.setText("imageLabel1");
 
-        imageLabel2.setText("imageLabel2");
+        imageLabelEmptyCart.setText("imageLabel2");
 
-        imageLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        imageLabel3.setText("imageLabel3");
+        imageLabelToCheckout.setBackground(new java.awt.Color(255, 255, 255));
+        imageLabelToCheckout.setText("imageLabel3");
+        imageLabelToCheckout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imageLabelToCheckoutMouseClicked(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Totalt:");
@@ -75,9 +85,9 @@ public class shoppingCartPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(imageLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(imageLabelEmptyCart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(imageLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(imageLabelToCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabel1)
@@ -111,17 +121,22 @@ public class shoppingCartPanel extends javax.swing.JPanel {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(imageLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(imageLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(imageLabelEmptyCart, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(imageLabelToCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void imageLabelToCheckoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelToCheckoutMouseClicked
+        pcs.firePropertyChange("ToCheckout", 0 , 1);
+        System.out.println("Händelse skickad!");
+    }//GEN-LAST:event_imageLabelToCheckoutMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private imat.ImageLabel imageLabel1;
-    private imat.ImageLabel imageLabel2;
-    private imat.ImageLabel imageLabel3;
+    private imat.ImageLabel imageLabelEmptyCart;
+    private imat.ImageLabel imageLabelToCheckout;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

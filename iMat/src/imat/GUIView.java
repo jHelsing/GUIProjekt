@@ -8,18 +8,20 @@ package imat;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.beans.PropertyChangeEvent;
 import javax.swing.JFrame;
 import se.chalmers.ait.dat215.project.*;
 import se.chalmers.ait.dat215.project.util.*;
+import java.beans.PropertyChangeListener;
 
 /**
  *
  * @author jonathan
  */
-public class GUIView extends javax.swing.JFrame {
+public class GUIView extends javax.swing.JFrame implements PropertyChangeListener {
     
     private IMatDataHandler userData;
-
+    PropertyChangeListener pcl;
     /**
      * Creates new form GUIView
      */
@@ -28,6 +30,7 @@ public class GUIView extends javax.swing.JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         initContentPanel();
         homeLabel.requestFocus();
+        addPropertyChangeListener(pcl);
     }
     
     /**
@@ -449,9 +452,21 @@ public class GUIView extends javax.swing.JFrame {
             card = (CardLayout)wholePanel.getLayout();
             card.show(wholePanel,"firstPanel");
         } else {
-            //Show the homePanel
+            CardLayout card = (CardLayout)contentPanel.getLayout();
+            card.show(contentPanel, "splitPanel");
+            card = (CardLayout)splitPanelContent.getLayout();
+            card.show(splitPanelContent, "homePanel");
         }
     }
+    
+        @Override
+        public void propertyChange(PropertyChangeEvent evt) {
+            if (evt.getPropertyName().equals("ToCheckout")){
+
+            }
+            System.out.println("Händelse mottagen!");
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
     
     /**
      * @param args the command line arguments
@@ -526,4 +541,6 @@ public class GUIView extends javax.swing.JFrame {
     private imat.thirdRegPanel thirdRegPanel;
     private javax.swing.JPanel wholePanel;
     // End of variables declaration//GEN-END:variables
+
+
 }
