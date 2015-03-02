@@ -5,17 +5,27 @@
  */
 package imat;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+
 /**
  *
  * @author Johan
  */
 public class firstRegPanel extends javax.swing.JPanel {
-
+    private IMatDataHandler userData;
+    private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
     /**
      * Creates new form firstRegPanel
      */
     public firstRegPanel() {
         initComponents();
+        userData = IMatDataHandler.getInstance();
+    }
+    
+    public void addObserver(PropertyChangeListener observer){
+        pcs.addPropertyChangeListener(observer);
     }
 
     /**
@@ -48,7 +58,7 @@ public class firstRegPanel extends javax.swing.JPanel {
 
         jLabelAdress.setText("Adress:");
 
-        jLabelMobilnr.setText("Mobilnr:");
+        jLabelMobilnr.setText("Telefonnr:");
 
         jLabelEmail.setText("E-mail:");
 
@@ -79,7 +89,7 @@ public class firstRegPanel extends javax.swing.JPanel {
                         .addGap(168, 168, 168)
                         .addComponent(imageLabelRegPil1, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
+                        .addGap(258, 258, 258)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabelMobilnr)
@@ -139,21 +149,37 @@ public class firstRegPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelPostnr)
                             .addComponent(jTextFieldPostnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(39, 39, 39)
+                        .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(35, 35, 35)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelMobilnr)
                     .addComponent(jTextFieldMobilnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nextStepButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void nextStepButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextStepButtonMouseClicked
-        //CardLayout wholePanelCard = (CardLayout)wholePanel.getLayout();
+        userData.getCustomer().setFirstName(jTextFieldFornamn.getText());
+        userData.getCustomer().setLastName(jTextFieldEfternamn.getText());
+        userData.getCustomer().setAddress(jTextFieldAdress.getText());
+        userData.getCustomer().setEmail(jTextFieldEmail.getText());
+        userData.getCustomer().setMobilePhoneNumber(jTextFieldMobilnr.getText());
+        userData.getCustomer().setPhoneNumber(jTextFieldMobilnr.getText());
+        userData.getCustomer().setPostAddress(jTextFieldOrt.getText());
+        userData.getCustomer().setPostCode(jTextFieldPostnr.getText());
+        
+        if (userData.isCustomerComplete()){
+            pcs.firePropertyChange("ToSecondRegPanel", 0, 1);
+        } else {
+            //TODO feedback till användaren, fyll i alla fält
+        }
+        
+
+//CardLayout wholePanelCard = (CardLayout)wholePanel.getLayout();
         //wholePanelCard.show(wholePanel, "secondRegPanel");
     }//GEN-LAST:event_nextStepButtonMouseClicked
 

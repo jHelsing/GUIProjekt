@@ -15,7 +15,7 @@ import java.beans.PropertyChangeSupport;
  */
 public class shoppingCartPanel extends javax.swing.JPanel {
 
-    public PropertyChangeSupport pcs = new PropertyChangeSupport(this);
+    private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
     
     /**
      * Creates new form shoppingCartPanel
@@ -134,7 +134,6 @@ public class shoppingCartPanel extends javax.swing.JPanel {
 
     private void imageLabelToCheckoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelToCheckoutMouseClicked
         pcs.firePropertyChange("ToCheckout", 0 , 1);
-        System.out.println("Händelse skickad!");
     }//GEN-LAST:event_imageLabelToCheckoutMouseClicked
 
 

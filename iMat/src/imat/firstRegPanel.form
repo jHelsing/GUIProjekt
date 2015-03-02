@@ -18,12 +18,12 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
                       <Component id="imageLabelRegPil1" min="-2" pref="838" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="258" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabelMobilnr" min="-2" max="-2" attributes="0"/>
@@ -103,20 +103,20 @@
                           <Component id="jLabelPostnr" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextFieldPostnr" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabelEmail" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           <Component id="jTextFieldEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabelMobilnr" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldMobilnr" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="nextStepButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="59" max="32767" attributes="0"/>
+              <EmptySpace pref="62" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -142,7 +142,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelMobilnr">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Mobilnr:"/>
+        <Property name="text" type="java.lang.String" value="Telefonnr:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldAdress">

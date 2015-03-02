@@ -21,7 +21,7 @@ import java.beans.PropertyChangeListener;
 public class GUIView extends javax.swing.JFrame implements PropertyChangeListener {
     
     private IMatDataHandler userData;
-    PropertyChangeListener pcl;
+    //PropertyChangeListener pcl;
     /**
      * Creates new form GUIView
      */
@@ -31,6 +31,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         initContentPanel();
         homeLabel.requestFocus();
         shoppingCartPanel.addObserver(this);
+        firstRegPanel.addObserver(this);
     }
     
     /**
@@ -273,8 +274,8 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
 
         wholePanel.setLayout(new java.awt.CardLayout());
         wholePanel.add(thirdRegPanel, "card7");
-        wholePanel.add(firstRegPanel, "card3");
-        wholePanel.add(secondRegPanel, "card4");
+        wholePanel.add(firstRegPanel, "firstRegPanel");
+        wholePanel.add(secondRegPanel, "secondRegPanel");
         wholePanel.add(profilePanel, "profilePanel");
 
         javax.swing.GroupLayout firstPanelLayout = new javax.swing.GroupLayout(firstPanel);
@@ -400,10 +401,15 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     }//GEN-LAST:event_searchFieldKeyTyped
 
     private void profileImageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileImageMouseClicked
+        
         CardLayout card = (CardLayout)contentPanel.getLayout();
         card.show(contentPanel, "wholePanel");
         card = (CardLayout)wholePanel.getLayout();
-        card.show(wholePanel, "profilePanel");
+        if (userData.isCustomerComplete()){ 
+            card.show(wholePanel, "profilePanel");
+        } else {
+            card.show(wholePanel, "firstRegPanel");
+        }
     }//GEN-LAST:event_profileImageMouseClicked
 
     private void helpImageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpImageMouseClicked
@@ -467,11 +473,15 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 CardLayout card = (CardLayout)contentPanel.getLayout();
                 card.show(contentPanel, "wholePanel");
                 card = (CardLayout)wholePanel.getLayout();
-                card.show(wholePanel,"checkoutPanel");
-                
+                card.show(wholePanel,"checkoutPanel");   
+            } else if(evt.getPropertyName().equals("ToSecondRegPanel")){
+                CardLayout card = (CardLayout)contentPanel.getLayout();
+                card.show(contentPanel, "wholePanel");
+                card = (CardLayout)wholePanel.getLayout();
+                card.show(wholePanel, "secondRegPanel");
             }
-        System.out.println("Händelse mottagen!");
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
