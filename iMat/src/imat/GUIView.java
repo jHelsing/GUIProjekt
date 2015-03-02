@@ -157,6 +157,11 @@ public class GUIView extends javax.swing.JFrame {
         profileImage.setMinimumSize(new java.awt.Dimension(57, 57));
         profileImage.setName(""); // NOI18N
         profileImage.setPreferredSize(new java.awt.Dimension(57, 57));
+        profileImage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                profileImageMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout mainMenuLayout = new javax.swing.GroupLayout(mainMenu);
         mainMenu.setLayout(mainMenuLayout);
@@ -238,7 +243,7 @@ public class GUIView extends javax.swing.JFrame {
         wholePanel.add(thirdRegPanel1, "card7");
         wholePanel.add(firstRegPanel1, "card3");
         wholePanel.add(secondRegPanel1, "card4");
-        wholePanel.add(profilePanel1, "card2");
+        wholePanel.add(profilePanel1, "profilePanel");
 
         javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
         homePanel.setLayout(homePanelLayout);
@@ -322,7 +327,7 @@ public class GUIView extends javax.swing.JFrame {
     private void productLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productLabelMouseClicked
         // changes the content panel to contain the shopping cart and the product page
         CardLayout contentCard = (CardLayout)contentPanel.getLayout();
-        contentCard.show(contentPanel, "splitCard");
+        contentCard.show(contentPanel, "splitPanel");
         CardLayout splitCard = (CardLayout)splitPanel.getLayout();
         splitCard.show(splitPanel, "productPage");
     }//GEN-LAST:event_productLabelMouseClicked
@@ -353,6 +358,13 @@ public class GUIView extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_searchFieldKeyTyped
+
+    private void profileImageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileImageMouseClicked
+        CardLayout card = (CardLayout)contentPanel.getLayout();
+        card.show(contentPanel, "wholePanel");
+        card = (CardLayout)wholePanel.getLayout();
+        card.show(wholePanel, "profilePanel");
+    }//GEN-LAST:event_profileImageMouseClicked
 
     private void setFullScreen(JFrame jFrame) {
         Toolkit tk = Toolkit.getDefaultToolkit();
