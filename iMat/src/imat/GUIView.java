@@ -27,6 +27,7 @@ public class GUIView extends javax.swing.JFrame {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         initContentPanel();
+        homeLabel.requestFocus();
     }
     
     /**
@@ -69,6 +70,10 @@ public class GUIView extends javax.swing.JFrame {
         categoryPanel = new imat.CategoryPanel();
         productPanel = new imat.productPanel();
         homePanel = new imat.homePanel();
+        searchSplitPanel = new javax.swing.JSplitPane();
+        categorySearchPanel = new imat.CategoryPanel();
+        searchResultPanel = new imat.SearchResultPanel();
+        recipePanel = new imat.recipePanel();
         shoppingCartPanel = new imat.shoppingCartPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -134,8 +139,21 @@ public class GUIView extends javax.swing.JFrame {
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         searchField.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        searchField.setText("Sök");
+        searchField.setText("Sök...");
         searchField.setToolTipText("Sök bland produkter, recept och inköpslistor. Tryck på Enter för att söka.");
+        searchField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                searchFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                searchFieldFocusLost(evt);
+            }
+        });
+        searchField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchFieldActionPerformed(evt);
+            }
+        });
         searchField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 searchFieldKeyTyped(evt);
@@ -279,6 +297,12 @@ public class GUIView extends javax.swing.JFrame {
         splitPanelContent.add(productSplitPanel, "productPanel");
         splitPanelContent.add(homePanel, "homePanel");
 
+        searchSplitPanel.setLeftComponent(categorySearchPanel);
+        searchSplitPanel.setRightComponent(searchResultPanel);
+
+        splitPanelContent.add(searchSplitPanel, "searchPanel");
+        splitPanelContent.add(recipePanel, "recipePanel");
+
         javax.swing.GroupLayout splitPanelLayout = new javax.swing.GroupLayout(splitPanel);
         splitPanel.setLayout(splitPanelLayout);
         splitPanelLayout.setHorizontalGroup(
@@ -298,7 +322,7 @@ public class GUIView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(splitPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
+                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -339,7 +363,10 @@ public class GUIView extends javax.swing.JFrame {
     }//GEN-LAST:event_productLabelMouseClicked
 
     private void recipieLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recipieLabelMouseClicked
-        // TODO add your handling code here:
+        CardLayout card = (CardLayout)contentPanel.getLayout();
+        card.show(contentPanel, "splitPanel");
+        card = (CardLayout)splitPanelContent.getLayout();
+        card.show(splitPanelContent, "recipePanel");
     }//GEN-LAST:event_recipieLabelMouseClicked
 
     private void shoppingListLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shoppingListLabelMouseClicked
@@ -356,6 +383,8 @@ public class GUIView extends javax.swing.JFrame {
         // TODO lägg in sökfunktionen
         CardLayout card = (CardLayout)contentPanel.getLayout();
         card.show(contentPanel, "splitPanel");
+        card = (CardLayout)splitPanelContent.getLayout();
+        card.show(splitPanelContent, "searchPanel");
        
         // Fixa visningen utav search result
         /*card = (CardLayout)splitPanel.getLayout();
@@ -378,6 +407,24 @@ public class GUIView extends javax.swing.JFrame {
         card = (CardLayout)wholePanel.getLayout();
         card.show(wholePanel, "helpPanel");
     }//GEN-LAST:event_helpImageMouseClicked
+
+    private void searchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchFieldActionPerformed
+
+    private void searchFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchFieldFocusGained
+        if (searchField.getText().equals("Sök...")){
+            searchField.setText("");
+        } else {
+            searchField.selectAll();
+        }
+    }//GEN-LAST:event_searchFieldFocusGained
+
+    private void searchFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchFieldFocusLost
+        if (searchField.getText().equals("")){
+            searchField.setText("Sök...");
+        }
+    }//GEN-LAST:event_searchFieldFocusLost
 
     private void setFullScreen(JFrame jFrame) {
         Toolkit tk = Toolkit.getDefaultToolkit();
@@ -443,6 +490,7 @@ public class GUIView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private imat.CategoryPanel categoryPanel;
+    private imat.CategoryPanel categorySearchPanel;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel firstNameLabel;
     private javax.swing.JPanel firstPanel;
@@ -465,8 +513,11 @@ public class GUIView extends javax.swing.JFrame {
     private imat.ImageLabel profileImage;
     private imat.profilePanel profilePanel;
     private javax.swing.JLabel purchaseHistoryLabel;
+    private imat.recipePanel recipePanel;
     private javax.swing.JLabel recipieLabel;
     private javax.swing.JTextField searchField;
+    private imat.SearchResultPanel searchResultPanel;
+    private javax.swing.JSplitPane searchSplitPanel;
     private imat.secondRegPanel secondRegPanel;
     private imat.shoppingCartPanel shoppingCartPanel;
     private javax.swing.JLabel shoppingListLabel;
