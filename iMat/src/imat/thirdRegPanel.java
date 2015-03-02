@@ -5,19 +5,32 @@
  */
 package imat;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+
 /**
  *
  * @author Johan
  */
 public class thirdRegPanel extends javax.swing.JPanel {
 
+    private IMatDataHandler userData;
+    private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
+    
+    
     /**
      * Creates new form thirdRegPanel
      */
     public thirdRegPanel() {
         initComponents();
+        userData = IMatDataHandler.getInstance();
     }
 
+    public void addObserver(PropertyChangeListener observer){
+        pcs.addPropertyChangeListener(observer);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -109,8 +122,7 @@ public class thirdRegPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void imageLabelForegaendestegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelForegaendestegMouseClicked
-        //CardLayout wholePanelCard = (CardLayout)wholePanel.getLayout();
-        //wholePanelCard.show(wholePanel, "firstRegPanel");
+        pcs.firePropertyChange("ToSecondRegPanel", 0, 1);
     }//GEN-LAST:event_imageLabelForegaendestegMouseClicked
 
 

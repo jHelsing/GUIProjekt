@@ -28,11 +28,13 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     public GUIView() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //setFullScreen(this);
         initContentPanel();
         homeLabel.requestFocus();
         shoppingCartPanel.addObserver(this);
         firstRegPanel.addObserver(this);
         secondRegPanel.addObserver(this);
+        thirdRegPanel.addObserver(this);
     }
     
     /**
@@ -225,7 +227,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 283, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lastNameLabel)
                     .addGroup(mainMenuLayout.createSequentialGroup()
@@ -244,7 +246,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(profileImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(helpImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(helpImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(searchField, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1)
@@ -253,13 +255,13 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                     .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator6)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainMenuLayout.createSequentialGroup()
-                        .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(mainMenuLayout.createSequentialGroup()
+                        .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainMenuLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(firstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lastNameLabel))
-                            .addGroup(mainMenuLayout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainMenuLayout.createSequentialGroup()
                                 .addGap(19, 19, 19)
                                 .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(homeLabel)
@@ -283,7 +285,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         firstPanel.setLayout(firstPanelLayout);
         firstPanelLayout.setHorizontalGroup(
             firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1369, Short.MAX_VALUE)
+            .addGap(0, 1319, Short.MAX_VALUE)
         );
         firstPanelLayout.setVerticalGroup(
             firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -339,8 +341,8 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1369, Short.MAX_VALUE)
-            .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1369, Short.MAX_VALUE)
+            .addComponent(mainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1319, Short.MAX_VALUE)
+            .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1319, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -442,7 +444,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         Toolkit tk = Toolkit.getDefaultToolkit();
         int xSize = ((int) tk.getScreenSize().getWidth());
         int ySize = ((int) tk.getScreenSize().getHeight());
-        jFrame.setSize(1240,765);
+        jFrame.setSize(1280,720);
     }
     
     /**
