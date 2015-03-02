@@ -30,7 +30,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         initContentPanel();
         homeLabel.requestFocus();
-        //addPropertyChangeListener(pcs);
+        shoppingCartPanel.addObserver(this);
     }
     
     /**
@@ -67,6 +67,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         profilePanel = new imat.profilePanel();
         firstPanel = new firstPanel();
         helpPanel = new imat.helpPanel();
+        checkoutPanel = new imat.checkoutPanel();
         splitPanel = new javax.swing.JPanel();
         splitPanelContent = new javax.swing.JPanel();
         productSplitPanel = new javax.swing.JSplitPane();
@@ -289,6 +290,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
 
         wholePanel.add(firstPanel, "firstPanel");
         wholePanel.add(helpPanel, "helpPanel");
+        wholePanel.add(checkoutPanel, "checkoutPanel");
 
         contentPanel.add(wholePanel, "wholePanel");
 
@@ -459,14 +461,19 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         }
     }
     
-        @Override
-        public void propertyChange(PropertyChangeEvent evt) {
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) { 
             if (evt.getPropertyName().equals("ToCheckout")){
-
+                CardLayout card = (CardLayout)contentPanel.getLayout();
+                card.show(contentPanel, "wholePanel");
+                card = (CardLayout)wholePanel.getLayout();
+                card.show(wholePanel,"checkoutPanel");
+                
             }
-            System.out.println("Händelse mottagen!");
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
+        System.out.println("Händelse mottagen!");
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
     /**
      * @param args the command line arguments
@@ -506,6 +513,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private imat.CategoryPanel categoryPanel;
     private imat.CategoryPanel categorySearchPanel;
+    private imat.checkoutPanel checkoutPanel;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel firstNameLabel;
     private javax.swing.JPanel firstPanel;
@@ -541,6 +549,8 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     private imat.thirdRegPanel thirdRegPanel;
     private javax.swing.JPanel wholePanel;
     // End of variables declaration//GEN-END:variables
+
+    
 
 
 }

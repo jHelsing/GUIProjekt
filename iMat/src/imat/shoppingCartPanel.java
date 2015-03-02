@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
 
@@ -21,6 +22,10 @@ public class shoppingCartPanel extends javax.swing.JPanel {
      */
     public shoppingCartPanel() {
         initComponents();
+    }
+    
+    public void addObserver(PropertyChangeListener observer){
+        pcs.addPropertyChangeListener(observer);
     }
 
     /**
