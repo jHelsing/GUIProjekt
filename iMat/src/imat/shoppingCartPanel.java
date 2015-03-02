@@ -14,7 +14,7 @@ import java.beans.PropertyChangeSupport;
  */
 public class shoppingCartPanel extends javax.swing.JPanel {
 
-    PropertyChangeSupport pcs = new PropertyChangeSupport(this);
+    public PropertyChangeSupport pcs = new PropertyChangeSupport(this);
     
     /**
      * Creates new form shoppingCartPanel

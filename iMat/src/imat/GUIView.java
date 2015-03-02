@@ -30,7 +30,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         initContentPanel();
         homeLabel.requestFocus();
-        addPropertyChangeListener(pcl);
+        //addPropertyChangeListener(pcs);
     }
     
     /**
