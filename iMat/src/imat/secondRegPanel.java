@@ -5,17 +5,29 @@
  */
 package imat;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+
 /**
  *
  * @author Johan
  */
 public class secondRegPanel extends javax.swing.JPanel {
 
+    private IMatDataHandler userData;
+    private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
+    
     /**
      * Creates new form secondRegPanel
      */
     public secondRegPanel() {
         initComponents();
+        userData = IMatDataHandler.getInstance();
+    }
+    
+    public void addObserver(PropertyChangeListener observer){
+        pcs.addPropertyChangeListener(observer);
     }
 
     /**
@@ -30,9 +42,9 @@ public class secondRegPanel extends javax.swing.JPanel {
         jComboBoxGiltAr = new javax.swing.JComboBox();
         imageLabelRegPil2 = new imat.ImageLabel("RegPil2Text.png");
         jLabelKortnummer = new javax.swing.JLabel();
-        imageLabel1 = new imat.ImageLabel("prevStepButton.png");
+        imageLabelForegaendeSteg = new imat.ImageLabel("prevStepButton.png");
         jLabelGiltighetstid = new javax.swing.JLabel();
-        imageLabel3 = new imat.ImageLabel("nextStepButton.png");
+        imageLabelNastaSteg = new imat.ImageLabel("nextStepButton.png");
         jLabelCCV = new javax.swing.JLabel();
         jLabelKortNamn = new javax.swing.JLabel();
         jTextFieldKortnummer = new javax.swing.JTextField();
@@ -47,19 +59,19 @@ public class secondRegPanel extends javax.swing.JPanel {
 
         jLabelKortnummer.setText("Kortnummer:");
 
-        imageLabel1.setText("imageLabel1");
-        imageLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        imageLabelForegaendeSteg.setText("imageLabel1");
+        imageLabelForegaendeSteg.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                imageLabel1MouseClicked(evt);
+                imageLabelForegaendeStegMouseClicked(evt);
             }
         });
 
         jLabelGiltighetstid.setText("Giltighetstid:");
 
-        imageLabel3.setText("imageLabel3");
-        imageLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        imageLabelNastaSteg.setText("imageLabel3");
+        imageLabelNastaSteg.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                imageLabel3MouseClicked(evt);
+                imageLabelNastaStegMouseClicked(evt);
             }
         });
 
@@ -82,9 +94,9 @@ public class secondRegPanel extends javax.swing.JPanel {
                         .addGap(372, 372, 372)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(imageLabelForegaendeSteg, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(imageLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(imageLabelNastaSteg, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabelGiltighetstid)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -127,26 +139,24 @@ public class secondRegPanel extends javax.swing.JPanel {
                     .addComponent(jTextFieldKortNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(imageLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(imageLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(imageLabelNastaSteg, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(imageLabelForegaendeSteg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void imageLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabel1MouseClicked
-        //CardLayout wholePanelCard = (CardLayout)wholePanel.getLayout();
-        //wholePanelCard.show(wholePanel, "firstRegPanel");
-    }//GEN-LAST:event_imageLabel1MouseClicked
+    private void imageLabelForegaendeStegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelForegaendeStegMouseClicked
+        pcs.firePropertyChange("ToFirstRegPanel", 0, 1);
+    }//GEN-LAST:event_imageLabelForegaendeStegMouseClicked
 
-    private void imageLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabel3MouseClicked
-        //CardLayout wholePanelCard = (CardLayout)wholePanel.getLayout();
-        //wholePanelCard.show(wholePanel, "thirdRegPanel");
-    }//GEN-LAST:event_imageLabel3MouseClicked
+    private void imageLabelNastaStegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelNastaStegMouseClicked
+        pcs.firePropertyChange("ToThirdRegPanel", 0, 1);
+    }//GEN-LAST:event_imageLabelNastaStegMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private imat.ImageLabel imageLabel1;
-    private imat.ImageLabel imageLabel3;
+    private imat.ImageLabel imageLabelForegaendeSteg;
+    private imat.ImageLabel imageLabelNastaSteg;
     private imat.ImageLabel imageLabelRegPil2;
     private javax.swing.JComboBox jComboBoxGiltAr;
     private javax.swing.JComboBox jComboBoxGiltMånad;

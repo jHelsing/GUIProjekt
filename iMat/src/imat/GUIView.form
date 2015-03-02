@@ -336,7 +336,7 @@
             <Component class="imat.thirdRegPanel" name="thirdRegPanel">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="card7"/>
+                  <CardConstraints cardName="thirdRegPanel"/>
                 </Constraint>
               </Constraints>
             </Component>

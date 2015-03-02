@@ -26,9 +26,9 @@
                       <EmptySpace min="-2" pref="372" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="imageLabel1" min="-2" pref="140" max="-2" attributes="0"/>
+                              <Component id="imageLabelForegaendeSteg" min="-2" pref="140" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="imageLabel3" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="imageLabelNastaSteg" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabelGiltighetstid" min="-2" max="-2" attributes="0"/>
@@ -83,8 +83,8 @@
               </Group>
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="imageLabel3" alignment="0" pref="40" max="32767" attributes="0"/>
-                  <Component id="imageLabel1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="imageLabelNastaSteg" alignment="0" pref="40" max="32767" attributes="0"/>
+                  <Component id="imageLabelForegaendeSteg" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="53" max="32767" attributes="0"/>
           </Group>
@@ -122,12 +122,12 @@
         <Property name="text" type="java.lang.String" value="Kortnummer:"/>
       </Properties>
     </Component>
-    <Component class="imat.ImageLabel" name="imageLabel1">
+    <Component class="imat.ImageLabel" name="imageLabelForegaendeSteg">
       <Properties>
         <Property name="text" type="java.lang.String" value="imageLabel1"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="imageLabel1MouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="imageLabelForegaendeStegMouseClicked"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new imat.ImageLabel(&quot;prevStepButton.png&quot;)"/>
@@ -138,12 +138,12 @@
         <Property name="text" type="java.lang.String" value="Giltighetstid:"/>
       </Properties>
     </Component>
-    <Component class="imat.ImageLabel" name="imageLabel3">
+    <Component class="imat.ImageLabel" name="imageLabelNastaSteg">
       <Properties>
         <Property name="text" type="java.lang.String" value="imageLabel3"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="imageLabel3MouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="imageLabelNastaStegMouseClicked"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new imat.ImageLabel(&quot;nextStepButton.png&quot;)"/>

@@ -32,6 +32,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         homeLabel.requestFocus();
         shoppingCartPanel.addObserver(this);
         firstRegPanel.addObserver(this);
+        secondRegPanel.addObserver(this);
     }
     
     /**
@@ -273,7 +274,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         contentPanel.setLayout(new java.awt.CardLayout());
 
         wholePanel.setLayout(new java.awt.CardLayout());
-        wholePanel.add(thirdRegPanel, "card7");
+        wholePanel.add(thirdRegPanel, "thirdRegPanel");
         wholePanel.add(firstRegPanel, "firstRegPanel");
         wholePanel.add(secondRegPanel, "secondRegPanel");
         wholePanel.add(profilePanel, "profilePanel");
@@ -474,13 +475,22 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 card.show(contentPanel, "wholePanel");
                 card = (CardLayout)wholePanel.getLayout();
                 card.show(wholePanel,"checkoutPanel");   
+            } else if(evt.getPropertyName().equals("ToFirstRegPanel")){
+                CardLayout card = (CardLayout)contentPanel.getLayout();
+                card.show(contentPanel, "wholePanel");
+                card = (CardLayout)wholePanel.getLayout();
+                card.show(wholePanel, "firstRegPanel");
             } else if(evt.getPropertyName().equals("ToSecondRegPanel")){
                 CardLayout card = (CardLayout)contentPanel.getLayout();
                 card.show(contentPanel, "wholePanel");
                 card = (CardLayout)wholePanel.getLayout();
                 card.show(wholePanel, "secondRegPanel");
+            }  else if(evt.getPropertyName().equals("ToThirdRegPanel")){
+                CardLayout card = (CardLayout)contentPanel.getLayout();
+                card.show(contentPanel, "wholePanel");
+                card = (CardLayout)wholePanel.getLayout();
+                card.show(wholePanel, "thirdRegPanel");
             }
-            
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
