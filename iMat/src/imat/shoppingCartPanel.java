@@ -31,7 +31,7 @@ public class shoppingCartPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         imageLabel1 = new imat.ImageLabel("kundvagn.png");
         imageLabel2 = new imat.ImageLabel();
-        imageLabel3 = new imat.ImageLabel();
+        imageLabel3 = new imat.ImageLabel("nextStepButton.png");
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -44,7 +44,7 @@ public class shoppingCartPanel extends javax.swing.JPanel {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 311, Short.MAX_VALUE)
+            .addGap(0, 411, Short.MAX_VALUE)
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -54,6 +54,7 @@ public class shoppingCartPanel extends javax.swing.JPanel {
 
         imageLabel2.setText("imageLabel2");
 
+        imageLabel3.setBackground(new java.awt.Color(255, 255, 255));
         imageLabel3.setText("imageLabel3");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
