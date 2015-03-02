@@ -57,15 +57,19 @@ public class GUIView extends javax.swing.JFrame {
         profileImage = new imat.ImageLabel("profilLogo.png");
         contentPanel = new javax.swing.JPanel();
         wholePanel = new javax.swing.JPanel();
-        thirdRegPanel1 = new imat.thirdRegPanel();
-        firstRegPanel1 = new imat.firstRegPanel();
-        secondRegPanel1 = new imat.secondRegPanel();
-        profilePanel1 = new imat.profilePanel();
-        homePanel = new imat.homePanel();
+        thirdRegPanel = new imat.thirdRegPanel();
+        firstRegPanel = new imat.firstRegPanel();
+        secondRegPanel = new imat.secondRegPanel();
+        profilePanel = new imat.profilePanel();
         firstPanel = new firstPanel();
+        helpPanel = new imat.helpPanel();
         splitPanel = new javax.swing.JPanel();
         splitPanelContent = new javax.swing.JPanel();
-        shoppingCartPanel1 = new imat.shoppingCartPanel();
+        productSplitPanel = new javax.swing.JSplitPane();
+        categoryPanel = new imat.CategoryPanel();
+        productPanel = new imat.productPanel();
+        homePanel = new imat.homePanel();
+        shoppingCartPanel = new imat.shoppingCartPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -151,6 +155,11 @@ public class GUIView extends javax.swing.JFrame {
         helpImage.setMinimumSize(new java.awt.Dimension(57, 57));
         helpImage.setName(""); // NOI18N
         helpImage.setPreferredSize(new java.awt.Dimension(57, 57));
+        helpImage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                helpImageMouseClicked(evt);
+            }
+        });
 
         profileImage.setText("imageLabel2");
         profileImage.setMaximumSize(new java.awt.Dimension(57, 57));
@@ -192,15 +201,15 @@ public class GUIView extends javax.swing.JFrame {
                 .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 283, Short.MAX_VALUE)
                 .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lastNameLabel)
                     .addGroup(mainMenuLayout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addComponent(firstNameLabel)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(14, 14, 14)
                 .addComponent(profileImage, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(helpImage, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -209,8 +218,9 @@ public class GUIView extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(profileImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(helpImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(profileImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(helpImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(searchField, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1)
@@ -240,23 +250,10 @@ public class GUIView extends javax.swing.JFrame {
         contentPanel.setLayout(new java.awt.CardLayout());
 
         wholePanel.setLayout(new java.awt.CardLayout());
-        wholePanel.add(thirdRegPanel1, "card7");
-        wholePanel.add(firstRegPanel1, "card3");
-        wholePanel.add(secondRegPanel1, "card4");
-        wholePanel.add(profilePanel1, "profilePanel");
-
-        javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
-        homePanel.setLayout(homePanelLayout);
-        homePanelLayout.setHorizontalGroup(
-            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1369, Short.MAX_VALUE)
-        );
-        homePanelLayout.setVerticalGroup(
-            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 656, Short.MAX_VALUE)
-        );
-
-        wholePanel.add(homePanel, "homePanel");
+        wholePanel.add(thirdRegPanel, "card7");
+        wholePanel.add(firstRegPanel, "card3");
+        wholePanel.add(secondRegPanel, "card4");
+        wholePanel.add(profilePanel, "profilePanel");
 
         javax.swing.GroupLayout firstPanelLayout = new javax.swing.GroupLayout(firstPanel);
         firstPanel.setLayout(firstPanelLayout);
@@ -270,10 +267,17 @@ public class GUIView extends javax.swing.JFrame {
         );
 
         wholePanel.add(firstPanel, "firstPanel");
+        wholePanel.add(helpPanel, "helpPanel");
 
         contentPanel.add(wholePanel, "wholePanel");
 
         splitPanelContent.setLayout(new java.awt.CardLayout());
+
+        productSplitPanel.setLeftComponent(categoryPanel);
+        productSplitPanel.setRightComponent(productPanel);
+
+        splitPanelContent.add(productSplitPanel, "productPanel");
+        splitPanelContent.add(homePanel, "homePanel");
 
         javax.swing.GroupLayout splitPanelLayout = new javax.swing.GroupLayout(splitPanel);
         splitPanel.setLayout(splitPanelLayout);
@@ -283,18 +287,18 @@ public class GUIView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(shoppingCartPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(shoppingCartPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         splitPanelLayout.setVerticalGroup(
             splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(splitPanelLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(shoppingCartPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addComponent(shoppingCartPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(splitPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -312,7 +316,7 @@ public class GUIView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(mainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE))
         );
 
         pack();
@@ -321,15 +325,17 @@ public class GUIView extends javax.swing.JFrame {
     private void homeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeLabelMouseClicked
         // changes the content panel to contain the shopping cart and the homepage
         CardLayout card = (CardLayout)contentPanel.getLayout();
-        card.show(contentPanel, "splitCard");
+        card.show(contentPanel, "splitPanel");
+        card = (CardLayout)splitPanelContent.getLayout();
+        card.show(splitPanelContent, "homePanel");
     }//GEN-LAST:event_homeLabelMouseClicked
 
     private void productLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productLabelMouseClicked
         // changes the content panel to contain the shopping cart and the product page
-        CardLayout contentCard = (CardLayout)contentPanel.getLayout();
-        contentCard.show(contentPanel, "splitPanel");
-        CardLayout splitCard = (CardLayout)splitPanel.getLayout();
-        splitCard.show(splitPanel, "productPage");
+        CardLayout card = (CardLayout)contentPanel.getLayout();
+        card.show(contentPanel, "splitPanel");
+        card = (CardLayout)splitPanelContent.getLayout();
+        card.show(splitPanelContent, "productPanel");
     }//GEN-LAST:event_productLabelMouseClicked
 
     private void recipieLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recipieLabelMouseClicked
@@ -365,6 +371,13 @@ public class GUIView extends javax.swing.JFrame {
         card = (CardLayout)wholePanel.getLayout();
         card.show(wholePanel, "profilePanel");
     }//GEN-LAST:event_profileImageMouseClicked
+
+    private void helpImageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpImageMouseClicked
+        CardLayout card = (CardLayout)contentPanel.getLayout();
+        card.show(contentPanel, "wholePanel");
+        card = (CardLayout)wholePanel.getLayout();
+        card.show(wholePanel, "helpPanel");
+    }//GEN-LAST:event_helpImageMouseClicked
 
     private void setFullScreen(JFrame jFrame) {
         Toolkit tk = Toolkit.getDefaultToolkit();
@@ -429,11 +442,13 @@ public class GUIView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private imat.CategoryPanel categoryPanel;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel firstNameLabel;
     private javax.swing.JPanel firstPanel;
-    private imat.firstRegPanel firstRegPanel1;
+    private imat.firstRegPanel firstRegPanel;
     private imat.ImageLabel helpImage;
+    private imat.helpPanel helpPanel;
     private javax.swing.JLabel homeLabel;
     private imat.homePanel homePanel;
     private javax.swing.JSeparator jSeparator1;
@@ -445,17 +460,19 @@ public class GUIView extends javax.swing.JFrame {
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JPanel mainMenu;
     private javax.swing.JLabel productLabel;
+    private imat.productPanel productPanel;
+    private javax.swing.JSplitPane productSplitPanel;
     private imat.ImageLabel profileImage;
-    private imat.profilePanel profilePanel1;
+    private imat.profilePanel profilePanel;
     private javax.swing.JLabel purchaseHistoryLabel;
     private javax.swing.JLabel recipieLabel;
     private javax.swing.JTextField searchField;
-    private imat.secondRegPanel secondRegPanel1;
-    private imat.shoppingCartPanel shoppingCartPanel1;
+    private imat.secondRegPanel secondRegPanel;
+    private imat.shoppingCartPanel shoppingCartPanel;
     private javax.swing.JLabel shoppingListLabel;
     private javax.swing.JPanel splitPanel;
     private javax.swing.JPanel splitPanelContent;
-    private imat.thirdRegPanel thirdRegPanel1;
+    private imat.thirdRegPanel thirdRegPanel;
     private javax.swing.JPanel wholePanel;
     // End of variables declaration//GEN-END:variables
 }
