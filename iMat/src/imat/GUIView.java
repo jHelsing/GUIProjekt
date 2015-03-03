@@ -66,7 +66,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         contentPanel = new javax.swing.JPanel();
         wholePanel = new javax.swing.JPanel();
         firstPanel = new firstPanel();
-        profilePanel1 = new imat.profilePanel();
         splitPanel = new javax.swing.JPanel();
         splitPanelContent = new javax.swing.JPanel();
         productSplitPanel = new javax.swing.JSplitPane();
@@ -240,17 +239,11 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         firstPanel.setLayout(firstPanelLayout);
         firstPanelLayout.setHorizontalGroup(
             firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(firstPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(profilePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 1464, Short.MAX_VALUE)
         );
         firstPanelLayout.setVerticalGroup(
             firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(firstPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(profilePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 693, Short.MAX_VALUE)
         );
 
         wholePanel.add(firstPanel, "firstPanel");
@@ -500,7 +493,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     private javax.swing.JPanel mainMenu;
     private javax.swing.JLabel productLabel;
     private javax.swing.JSplitPane productSplitPanel;
-    private imat.profilePanel profilePanel1;
     private javax.swing.JLabel purchaseHistoryLabel;
     private javax.swing.JLabel recipieLabel;
     private javax.swing.JTextField searchField;
