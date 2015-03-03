@@ -5,8 +5,10 @@
  */
 package imat;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.beans.PropertyChangeEvent;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
@@ -81,6 +83,8 @@ public class SearchResultPanel extends JPanel {
                 .addComponent(areaOfSearchResult, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        areaOfSearchResult.getVerticalScrollBar().setUnitIncrement(16);
     }// </editor-fold>//GEN-END:initComponents
 
     public void displayResults(List<Product> results) {
@@ -91,13 +95,38 @@ public class SearchResultPanel extends JPanel {
         int nbrOfRows = nbrOfResults/2;
         searchResultCardContainer.setLayout(new GridLayout(nbrOfRows,2));
         
-        // Lägger till alla sökresultat
+        int height = nbrOfRows*200 + (nbrOfRows-2)*10 + 20;
+        int width = 2*200 + 30;
+        
+        Dimension d = new Dimension(width,height);
+        
+        searchResultCardContainer.setPreferredSize(d);
+        searchResultCardContainer.setMaximumSize(d);
+        searchResultCardContainer.setMinimumSize(d);
+        searchResultCardContainer.setSize(d);
+        
+        areaOfSearchResult.setPreferredSize(d);
+        areaOfSearchResult.setMaximumSize(d);
+        areaOfSearchResult.setMinimumSize(d);
+        areaOfSearchResult.setSize(d);
+        
+        ArrayList<ProductCard> pc = new ArrayList(results.size());
+        
+        // Skapar ProductCard för alla sökresultat
         for(int i=0; i<nbrOfResults; i++) {
-            ProductCard pc = new ProductCard(results.get(i));
-            pc.setVisible(true);
-            areaOfSearchResult.add(pc);
+            pc.add(new ProductCard(results.get(i)));
+            pc.get(i).setVisible(true);
         }
-        searchResultCardContainer.setVisible(true);
+        
+        for(int i=0; i<nbrOfResults; i++) {
+            searchResultCardContainer.add(pc.get(i), i);
+        }
+        
+        searchResultCardContainer.repaint();
+        searchResultCardContainer.revalidate();
+        areaOfSearchResult.repaint();
+        areaOfSearchResult.revalidate();
+        repaint();
         revalidate();
     }
     
