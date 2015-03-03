@@ -94,6 +94,7 @@ public class SearchResultPanel extends JPanel {
         // Lägger till alla sökresultat
         for(int i=0; i<nbrOfResults; i++) {
             ProductCard pc = new ProductCard(results.get(i));
+            pc.setVisible(true);
             areaOfSearchResult.add(pc);
         }
         searchResultCardContainer.setVisible(true);
