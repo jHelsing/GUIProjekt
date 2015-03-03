@@ -556,6 +556,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     
     public void sendToSearchResultPanel(List<Product> searchFor) {
         searchResultPanel.displayResults(searchFor);
+        revalidate();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

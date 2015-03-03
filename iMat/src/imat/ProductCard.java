@@ -37,6 +37,7 @@ public class ProductCard extends javax.swing.JPanel {
         productNameLabel.setText(p.getName());
         productPriceLabel.setText(p.getPrice() + " " + p.getUnit());
         this.setBackground(new Color(255,255,255));
+        this.setVisible(true);
         repaint();
         revalidate();
     }
@@ -62,6 +63,7 @@ public class ProductCard extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(200, 200));
         setMinimumSize(new java.awt.Dimension(200, 200));
         setPreferredSize(new java.awt.Dimension(200, 200));
+        setSize(new java.awt.Dimension(200, 200));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
