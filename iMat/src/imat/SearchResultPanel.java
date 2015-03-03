@@ -88,6 +88,7 @@ public class SearchResultPanel extends JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     public void displayResults(List<Product> results) {
+        searchResultCardContainer.removeAll();
         revalidate();
         int nbrOfResults = results.size();
         
