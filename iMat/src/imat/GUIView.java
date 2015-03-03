@@ -470,7 +470,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         userData.resetFirstRun();
         if(userData.isFirstRun()) {
             //Show the firstPanel
-            CardLayout card = (CardLayout)contentPanel.getLayout();
+            CardLayout card = (CardLayout)contentPanel.getLayout();   
             card.show(contentPanel, "wholePanel");
             card = (CardLayout)wholePanel.getLayout();
             card.show(wholePanel,"firstPanel");
