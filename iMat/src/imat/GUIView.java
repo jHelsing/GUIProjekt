@@ -372,7 +372,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         CardLayout card = (CardLayout)contentPanel.getLayout();
         card.show(contentPanel, "splitPanel");
         card = (CardLayout)splitPanelContent.getLayout();
-        card.show(splitPanelContent, "productPanel");
+        card.show(splitPanelContent, "searchPanel");
     }//GEN-LAST:event_productLabelMouseClicked
 
     private void recipieLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recipieLabelMouseClicked

@@ -44,6 +44,9 @@
           <Dimension value="[734, 281]"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="areaOfSearchResult.getVerticalScrollBar().setUnitIncrement(16);"/>
+      </AuxValues>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>

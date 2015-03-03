@@ -36,7 +36,7 @@ public class ProductCard extends javax.swing.JPanel {
         productUnitsLabel.setText(p.getUnitSuffix());
         productNameLabel.setText(p.getName());
         productPriceLabel.setText(p.getPrice() + " " + p.getUnit());
-        this.setBackground(new Color(255,255,255));
+        this.setBackground(new Color(130,130,130));
         this.setVisible(true);
         repaint();
         revalidate();
