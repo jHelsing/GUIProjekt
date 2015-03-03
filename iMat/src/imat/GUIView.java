@@ -26,7 +26,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
      * Creates new form GUIView
      */
     public GUIView() {
-        //testhejhopp
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         //setFullScreen(this);
