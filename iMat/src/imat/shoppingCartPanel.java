@@ -15,6 +15,7 @@ import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 import java.awt.Dimension;
 import java.beans.PropertyChangeEvent;
+import java.util.ArrayList;
 import se.chalmers.ait.dat215.project.CartEvent;
 import se.chalmers.ait.dat215.project.ShoppingCartListener;
 
@@ -169,27 +170,40 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         userData.getShoppingCart().clear();
         jPanel1.removeAll();
     }//GEN-LAST:event_imageLabelEmptyCartMouseClicked
-
+    
+    
+    
     @Override
     public void shoppingCartChanged(CartEvent evt){
             jPanel1.removeAll();
-            revalidate();
-            repaint();
+            //revalidate();
+            //repaint();
             jLabelAntalProdukter.setText(userData.getShoppingCart().getItems().size() + " produkter");
             jLabelTotalKostnad.setText(userData.getShoppingCart().getTotal() + " kr");
-                    
-        for (int i = 0; i < userData.getShoppingCart().getItems().size(); i++) {
-            ShoppingItem si = userData.getShoppingCart().getItems().get(i);
+                  
+            int visibleItems = 0;
+            List<String> avp = new ArrayList<String>();
             
-            if (i < 10) {
-                jPanel1.add(new shoppingCartProductPanel(1, si.getProduct().getUnitSuffix(),si.getProduct().getName(), si.getProduct().getPrice()));
-            } else {
-                break;
-            }
+        for (int i = userData.getShoppingCart().getItems().size() -1; i >= 0 ; i--) {
+            
+                ShoppingItem si = userData.getShoppingCart().getItems().get(i);
+                
+                if (visibleItems < 10 && !avp.contains(si.getProduct().getName())) {
+                    int antal = (int)si.getAmount();
+                    
+                    for (int k = i-1; k >= 0; k--){
+                        if (userData.getShoppingCart().getItems().get(k).getProduct().getName().equals(si.getProduct().getName())){
+                            antal += (int)userData.getShoppingCart().getItems().get(k).getAmount();
+                        }
+                    }
+                    
+                    jPanel1.add(new shoppingCartProductPanel(antal, si.getProduct().getUnitSuffix(),si.getProduct().getName(), si.getProduct().getPrice()));
+                    avp.add(si.getProduct().getName());
+                    visibleItems++;
+                }
+            
         }
         revalidate(); 
-        
-        System.out.println("Handla mera!");
     }
     
 
