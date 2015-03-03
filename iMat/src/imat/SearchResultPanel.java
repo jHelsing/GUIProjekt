@@ -6,22 +6,36 @@
 package imat;
 
 import java.awt.GridLayout;
+import java.beans.PropertyChangeEvent;
 import java.util.List;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import se.chalmers.ait.dat215.project.Product;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import javax.swing.JPanel;
 
 /**
  *
  * @author jonathan
  */
-public class SearchResultPanel extends javax.swing.JPanel {
+public class SearchResultPanel extends JPanel {
 
     /**
      * Creates new form SearchResultPanel
      */
+    
+    private static SearchResultPanel test = new SearchResultPanel("hej");
+    
+    private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
+    
     public SearchResultPanel() {
         initComponents();
+    }
+    
+    private SearchResultPanel(String s) {
+        initComponents();
+        this.test = this;
     }
 
     /**
@@ -33,27 +47,28 @@ public class SearchResultPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        areaOfSearchResult = new javax.swing.JScrollPane();
-        jLabel1 = new javax.swing.JLabel();
+        areaOfSearchResult = new javax.swing.JPanel();
 
-        jLabel1.setText("SearchView");
-        areaOfSearchResult.setViewportView(jLabel1);
+        javax.swing.GroupLayout areaOfSearchResultLayout = new javax.swing.GroupLayout(areaOfSearchResult);
+        areaOfSearchResult.setLayout(areaOfSearchResultLayout);
+        areaOfSearchResultLayout.setHorizontalGroup(
+            areaOfSearchResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 592, Short.MAX_VALUE)
+        );
+        areaOfSearchResultLayout.setVerticalGroup(
+            areaOfSearchResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(257, 257, 257)
-                .addComponent(areaOfSearchResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(261, Short.MAX_VALUE))
+            .addComponent(areaOfSearchResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(151, 151, 151)
-                .addComponent(areaOfSearchResult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(209, Short.MAX_VALUE))
+            .addComponent(areaOfSearchResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -62,18 +77,27 @@ public class SearchResultPanel extends javax.swing.JPanel {
         
         // Räkna ut antalet rader för layouten av areaOfSearchResult
         int nbrOfRows = nbrOfResults/2;
-        areaOfSearchResult.setLayout(new GridLayout(nbrOfRows, 2));
+        JPanel test = new JPanel(new GridLayout(nbrOfRows, 2));
+        
         
         // Lägger till alla sökresultat
         for(int i=0; i<nbrOfResults; i++) {
-            ProductCard card = new ProductCard(results.get(i));
-            card.setVisible(true);
-            areaOfSearchResult.add(card);
+            ProductCard pc = new ProductCard(results.get(i));
+            pc.setVisible(true);
+            test.add(pc);
         }
+    }
+    
+    public static SearchResultPanel getInstance() {
+        return test;
+    }
+    
+    public void addObserver(PropertyChangeListener observer){
+        pcs.addPropertyChangeListener(observer);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane areaOfSearchResult;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel areaOfSearchResult;
     // End of variables declaration//GEN-END:variables
+    
 }

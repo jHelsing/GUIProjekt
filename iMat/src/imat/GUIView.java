@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import se.chalmers.ait.dat215.project.*;
 import se.chalmers.ait.dat215.project.util.*;
 import java.beans.PropertyChangeListener;
+import java.util.List;
 
 /**
  *
@@ -82,7 +83,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         homePanel = new imat.homePanel();
         searchSplitPanel = new javax.swing.JSplitPane();
         categorySearchPanel = new imat.CategoryPanel();
-        searchResultPanel = new imat.SearchResultPanel();
+        searchResultPanel = SearchResultPanel.getInstance();
         recipePanel = new imat.recipePanel();
         shoppingCartPanel = new imat.shoppingCartPanel();
 
@@ -151,17 +152,17 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         searchField.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         searchField.setText("Sök...");
         searchField.setToolTipText("Sök bland produkter, recept och inköpslistor. Tryck på Enter för att söka.");
+        searchField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchFieldActionPerformed(evt);
+            }
+        });
         searchField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 searchFieldFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 searchFieldFocusLost(evt);
-            }
-        });
-        searchField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchFieldActionPerformed(evt);
             }
         });
         searchField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -345,14 +346,14 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(mainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1319, Short.MAX_VALUE)
-            .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1319, Short.MAX_VALUE)
+            .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1319, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(mainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE))
+                .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 656, Short.MAX_VALUE))
         );
 
         pack();
@@ -393,10 +394,18 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
 
     private void searchFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyTyped
         // TODO lägg in sökfunktionen
-        CardLayout card = (CardLayout)contentPanel.getLayout();
-        card.show(contentPanel, "splitPanel");
-        card = (CardLayout)splitPanelContent.getLayout();
-        card.show(splitPanelContent, "searchPanel");
+        
+        String s = searchField.getText();
+        searchField.setText(s);
+        if(s != null) {
+            searchResultPanel.displayResults(userData.findProducts(s));
+            CardLayout card = (CardLayout)contentPanel.getLayout();
+            card.show(contentPanel, "splitPanel");
+            card = (CardLayout)splitPanelContent.getLayout();
+            card.show(splitPanelContent, "searchPanel");
+        }
+        
+        
        
         // Fixa visningen utav search result
         /*card = (CardLayout)splitPanel.getLayout();
@@ -543,6 +552,10 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 new GUIView().setVisible(true);
             }
         });
+    }
+    
+    public void sendToSearchResultPanel(List<Product> searchFor) {
+        searchResultPanel.displayResults(searchFor);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
