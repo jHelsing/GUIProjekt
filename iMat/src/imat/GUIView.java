@@ -31,12 +31,12 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         //setFullScreen(this);
         initContentPanel();
-        homeLabel.requestFocus();
+        homeLabel.requestFocus(); /*
         shoppingCartPanel.addObserver(this);
         firstRegPanel.addObserver(this);
         secondRegPanel.addObserver(this);
         thirdRegPanel.addObserver(this);
-        confirmRegPanel.addObserver(this);
+        confirmRegPanel.addObserver(this); */
     }
     
     /**
@@ -63,29 +63,14 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         jSeparator6 = new javax.swing.JSeparator();
         firstNameLabel = new javax.swing.JLabel();
         lastNameLabel = new javax.swing.JLabel();
-        helpImage = new imat.ImageLabel("helpLogo.png");
-        profileImage = new imat.ImageLabel("profilLogo.png");
         contentPanel = new javax.swing.JPanel();
         wholePanel = new javax.swing.JPanel();
-        thirdRegPanel = new imat.thirdRegPanel();
-        firstRegPanel = new imat.firstRegPanel();
-        secondRegPanel = new imat.secondRegPanel();
-        profilePanel = new imat.profilePanel();
         firstPanel = new firstPanel();
-        helpPanel = new imat.helpPanel();
-        checkoutPanel = new imat.checkoutPanel();
-        confirmRegPanel = new imat.confirmRegPanel();
+        profilePanel1 = new imat.profilePanel();
         splitPanel = new javax.swing.JPanel();
         splitPanelContent = new javax.swing.JPanel();
         productSplitPanel = new javax.swing.JSplitPane();
-        categoryPanel = new imat.CategoryPanel();
-        productPanel = new imat.productPanel();
-        homePanel = new imat.homePanel();
         searchSplitPanel = new javax.swing.JSplitPane();
-        categorySearchPanel = new imat.CategoryPanel();
-        searchResultPanel = new imat.SearchResultPanel();
-        recipePanel = new imat.recipePanel();
-        shoppingCartPanel = new imat.shoppingCartPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -179,28 +164,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         lastNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         lastNameLabel.setText("Efternamn");
 
-        helpImage.setText("imageLabel2");
-        helpImage.setMaximumSize(new java.awt.Dimension(57, 57));
-        helpImage.setMinimumSize(new java.awt.Dimension(57, 57));
-        helpImage.setName(""); // NOI18N
-        helpImage.setPreferredSize(new java.awt.Dimension(57, 57));
-        helpImage.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                helpImageMouseClicked(evt);
-            }
-        });
-
-        profileImage.setText("imageLabel2");
-        profileImage.setMaximumSize(new java.awt.Dimension(57, 57));
-        profileImage.setMinimumSize(new java.awt.Dimension(57, 57));
-        profileImage.setName(""); // NOI18N
-        profileImage.setPreferredSize(new java.awt.Dimension(57, 57));
-        profileImage.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                profileImageMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout mainMenuLayout = new javax.swing.GroupLayout(mainMenu);
         mainMenu.setLayout(mainMenuLayout);
         mainMenuLayout.setHorizontalGroup(
@@ -236,20 +199,13 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                     .addGroup(mainMenuLayout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addComponent(firstNameLabel)))
-                .addGap(14, 14, 14)
-                .addComponent(profileImage, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(helpImage, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(152, 152, 152))
         );
         mainMenuLayout.setVerticalGroup(
             mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(profileImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(helpImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(searchField, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1)
@@ -279,42 +235,31 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         contentPanel.setLayout(new java.awt.CardLayout());
 
         wholePanel.setLayout(new java.awt.CardLayout());
-        wholePanel.add(thirdRegPanel, "thirdRegPanel");
-        wholePanel.add(firstRegPanel, "firstRegPanel");
-        wholePanel.add(secondRegPanel, "secondRegPanel");
-        wholePanel.add(profilePanel, "profilePanel");
 
         javax.swing.GroupLayout firstPanelLayout = new javax.swing.GroupLayout(firstPanel);
         firstPanel.setLayout(firstPanelLayout);
         firstPanelLayout.setHorizontalGroup(
             firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1319, Short.MAX_VALUE)
+            .addGroup(firstPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(profilePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         firstPanelLayout.setVerticalGroup(
             firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 656, Short.MAX_VALUE)
+            .addGroup(firstPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(profilePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         wholePanel.add(firstPanel, "firstPanel");
-        wholePanel.add(helpPanel, "helpPanel");
-        wholePanel.add(checkoutPanel, "checkoutPanel");
-        wholePanel.add(confirmRegPanel, "confirmRegPanel");
 
         contentPanel.add(wholePanel, "wholePanel");
 
         splitPanelContent.setLayout(new java.awt.CardLayout());
-
-        productSplitPanel.setLeftComponent(categoryPanel);
-        productSplitPanel.setRightComponent(productPanel);
-
         splitPanelContent.add(productSplitPanel, "productPanel");
-        splitPanelContent.add(homePanel, "homePanel");
-
-        searchSplitPanel.setLeftComponent(categorySearchPanel);
-        searchSplitPanel.setRightComponent(searchResultPanel);
-
         splitPanelContent.add(searchSplitPanel, "searchPanel");
-        splitPanelContent.add(recipePanel, "recipePanel");
 
         javax.swing.GroupLayout splitPanelLayout = new javax.swing.GroupLayout(splitPanel);
         splitPanel.setLayout(splitPanelLayout);
@@ -322,20 +267,14 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
             splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, splitPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(shoppingCartPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, 1371, Short.MAX_VALUE)
+                .addGap(78, 78, 78))
         );
         splitPanelLayout.setVerticalGroup(
             splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(splitPanelLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(shoppingCartPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(splitPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, 661, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -345,15 +284,15 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1319, Short.MAX_VALUE)
-            .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1319, Short.MAX_VALUE)
+            .addComponent(mainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1464, Short.MAX_VALUE)
+            .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(mainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE))
+                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -547,18 +486,10 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private imat.CategoryPanel categoryPanel;
-    private imat.CategoryPanel categorySearchPanel;
-    private imat.checkoutPanel checkoutPanel;
-    private imat.confirmRegPanel confirmRegPanel;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel firstNameLabel;
     private javax.swing.JPanel firstPanel;
-    private imat.firstRegPanel firstRegPanel;
-    private imat.ImageLabel helpImage;
-    private imat.helpPanel helpPanel;
     private javax.swing.JLabel homeLabel;
-    private imat.homePanel homePanel;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -568,22 +499,15 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JPanel mainMenu;
     private javax.swing.JLabel productLabel;
-    private imat.productPanel productPanel;
     private javax.swing.JSplitPane productSplitPanel;
-    private imat.ImageLabel profileImage;
-    private imat.profilePanel profilePanel;
+    private imat.profilePanel profilePanel1;
     private javax.swing.JLabel purchaseHistoryLabel;
-    private imat.recipePanel recipePanel;
     private javax.swing.JLabel recipieLabel;
     private javax.swing.JTextField searchField;
-    private imat.SearchResultPanel searchResultPanel;
     private javax.swing.JSplitPane searchSplitPanel;
-    private imat.secondRegPanel secondRegPanel;
-    private imat.shoppingCartPanel shoppingCartPanel;
     private javax.swing.JLabel shoppingListLabel;
     private javax.swing.JPanel splitPanel;
     private javax.swing.JPanel splitPanelContent;
-    private imat.thirdRegPanel thirdRegPanel;
     private javax.swing.JPanel wholePanel;
     // End of variables declaration//GEN-END:variables
 
