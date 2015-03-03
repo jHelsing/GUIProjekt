@@ -68,6 +68,11 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         imageLabelMinska.setText("imageLabel1");
 
         imageLabelÖka.setText("imageLabel1");
+        imageLabelÖka.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imageLabelÖkaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -94,12 +99,11 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
             .addComponent(imageLabelMinska, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(imageLabelÖka, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabelAntal)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(imageLabelTaBort, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelPris)
-                    .addComponent(jLabelProduktnamn)
-                    .addComponent(jLabelAntalStEllerKg)))
+                .addComponent(imageLabelTaBort, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabelPris)
+                .addComponent(jLabelProduktnamn)
+                .addComponent(jLabelAntalStEllerKg))
+            .addComponent(jLabelAntal)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -114,6 +118,10 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         }
         
     }//GEN-LAST:event_imageLabelTaBortMouseClicked
+
+    private void imageLabelÖkaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelÖkaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_imageLabelÖkaMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

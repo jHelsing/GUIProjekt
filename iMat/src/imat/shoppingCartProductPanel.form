@@ -38,15 +38,13 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="imageLabelMinska" min="-2" pref="25" max="-2" attributes="0"/>
           <Component id="imageLabelÖka" min="-2" pref="25" max="-2" attributes="0"/>
-          <Group type="103" groupAlignment="3" attributes="0">
-              <Component id="jLabelAntal" alignment="3" min="-2" max="-2" attributes="0"/>
-              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
-                  <Component id="imageLabelTaBort" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="jLabelPris" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelProduktnamn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelAntalStEllerKg" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+              <Component id="imageLabelTaBort" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+              <Component id="jLabelPris" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Component id="jLabelProduktnamn" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Component id="jLabelAntalStEllerKg" alignment="3" min="-2" max="-2" attributes="0"/>
           </Group>
+          <Component id="jLabelAntal" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -97,6 +95,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="imageLabel1"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="imageLabel&#xd6;kaMouseClicked"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new imat.ImageLabel(&quot;checkoutPlusButton.png&quot;)"/>
       </AuxValues>

@@ -68,8 +68,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         contentPanel = new javax.swing.JPanel();
         wholePanel = new javax.swing.JPanel();
         thirdRegPanel = new imat.thirdRegPanel();
-        firstRegPanel = new imat.firstRegPanel();
-        secondRegPanel = new imat.secondRegPanel();
         profilePanel = new imat.profilePanel();
         firstPanel = new firstPanel();
         helpPanel = new imat.helpPanel();
@@ -280,8 +278,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
 
         wholePanel.setLayout(new java.awt.CardLayout());
         wholePanel.add(thirdRegPanel, "thirdRegPanel");
-        wholePanel.add(firstRegPanel, "firstRegPanel");
-        wholePanel.add(secondRegPanel, "secondRegPanel");
         wholePanel.add(profilePanel, "profilePanel");
 
         javax.swing.GroupLayout firstPanelLayout = new javax.swing.GroupLayout(firstPanel);
@@ -567,7 +563,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel firstNameLabel;
     private javax.swing.JPanel firstPanel;
-    private imat.firstRegPanel firstRegPanel;
     private imat.ImageLabel helpImage;
     private imat.helpPanel helpPanel;
     private javax.swing.JLabel homeLabel;
@@ -591,7 +586,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     private javax.swing.JTextField searchField;
     private imat.SearchResultPanel searchResultPanel;
     private javax.swing.JSplitPane searchSplitPanel;
-    private imat.secondRegPanel secondRegPanel;
     private imat.shoppingCartPanel shoppingCartPanel;
     private javax.swing.JLabel shoppingListLabel;
     private javax.swing.JPanel splitPanel;
