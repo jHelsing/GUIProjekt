@@ -68,6 +68,11 @@ public class thirdRegPanel extends javax.swing.JPanel {
         jCheckBoxNyhetsbrev.setText("Jag vill få iMat:s nyhetsbrev till min mejladress");
 
         imageLabelSkapaKonto.setText("imageLabel1");
+        imageLabelSkapaKonto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imageLabelSkapaKontoMouseClicked(evt);
+            }
+        });
 
         imageLabelForegaendesteg.setText("imageLabel1");
         imageLabelForegaendesteg.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -125,6 +130,10 @@ public class thirdRegPanel extends javax.swing.JPanel {
     private void imageLabelForegaendestegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelForegaendestegMouseClicked
         pcs.firePropertyChange("ToSecondRegPanel", 0, 1);
     }//GEN-LAST:event_imageLabelForegaendestegMouseClicked
+
+    private void imageLabelSkapaKontoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelSkapaKontoMouseClicked
+        pcs.firePropertyChange("ToConfirmRegPanel", 0, 1);
+    }//GEN-LAST:event_imageLabelSkapaKontoMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

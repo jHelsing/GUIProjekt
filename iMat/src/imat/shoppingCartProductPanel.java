@@ -5,17 +5,31 @@
  */
 package imat;
 
+import java.util.List;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.ShoppingItem;
+
 /**
  *
  * @author Johan
  */
 public class shoppingCartProductPanel extends javax.swing.JPanel {
 
+    private IMatDataHandler userData = IMatDataHandler.getInstance();
+    
     /**
      * Creates new form shoppingCartProductPanel
      */
     public shoppingCartProductPanel() {
         initComponents();
+    }
+    
+    public shoppingCartProductPanel(int antal, String stKgForp, String produktnamn, double pris) {
+        initComponents();
+        jLabelAntal.setText("" + antal);
+        jLabelAntalStEllerKg.setText(stKgForp);
+        jLabelProduktnamn.setText(produktnamn);
+        jLabelPris.setText(pris + " kr/" + stKgForp);
     }
 
     /**
@@ -31,10 +45,9 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         jLabelAntalStEllerKg = new javax.swing.JLabel();
         jLabelProduktnamn = new javax.swing.JLabel();
         jLabelPris = new javax.swing.JLabel();
-        jLabelPerStEllerKg = new javax.swing.JLabel();
-        imageLabelÖka = new imat.ImageLabel("checkoutPlusButton.png");
+        imageLabelTaBort = new imat.ImageLabel("deleteItemCheckoutButton.png");
         imageLabelMinska = new imat.ImageLabel("checkoutMinusButton.png");
-        imageLabelÖka1 = new imat.ImageLabel("checkoutPlusButton.png");
+        imageLabelÖka = new imat.ImageLabel("checkoutPlusButton.png");
 
         jLabelAntal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelAntal.setText("X");
@@ -43,15 +56,18 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
 
         jLabelProduktnamn.setText("<produktnamn>");
 
-        jLabelPris.setText("x kr");
+        jLabelPris.setText("x kr/st");
 
-        jLabelPerStEllerKg.setText("/st");
-
-        imageLabelÖka.setText("imageLabel1");
+        imageLabelTaBort.setText("imageLabel1");
+        imageLabelTaBort.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imageLabelTaBortMouseClicked(evt);
+            }
+        });
 
         imageLabelMinska.setText("imageLabel1");
 
-        imageLabelÖka1.setText("imageLabel1");
+        imageLabelÖka.setText("imageLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -60,50 +76,52 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(imageLabelMinska, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(imageLabelÖka1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(imageLabelÖka, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addComponent(jLabelAntal)
-                .addGap(6, 6, 6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelAntalStEllerKg)
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(jLabelProduktnamn)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelPris)
-                .addGap(6, 6, 6)
-                .addComponent(jLabelPerStEllerKg)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addComponent(imageLabelÖka, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(imageLabelTaBort, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(imageLabelMinska, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(imageLabelÖka1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jLabelAntal)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(jLabelAntalStEllerKg))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(jLabelProduktnamn))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(jLabelPris))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(3, 3, 3)
+            .addComponent(imageLabelÖka, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jLabelAntal)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelPerStEllerKg)
-                    .addComponent(imageLabelÖka, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(imageLabelTaBort, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelPris)
+                    .addComponent(jLabelProduktnamn)
+                    .addComponent(jLabelAntalStEllerKg)))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void imageLabelTaBortMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelTaBortMouseClicked
+        List<ShoppingItem> items = userData.getShoppingCart().getItems();
+        
+        for (int i = items.size() - 1; i >= 0; i--){
+            if (items.get(i).getProduct().getName().equals(this.jLabelProduktnamn.getText())){
+                userData.getShoppingCart().removeItem(i);
+                userData.getShoppingCart().fireShoppingCartChanged(null, true);
+            }
+        }
+        
+    }//GEN-LAST:event_imageLabelTaBortMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private imat.ImageLabel imageLabelMinska;
+    private imat.ImageLabel imageLabelTaBort;
     private imat.ImageLabel imageLabelÖka;
-    private imat.ImageLabel imageLabelÖka1;
     private javax.swing.JLabel jLabelAntal;
     private javax.swing.JLabel jLabelAntalStEllerKg;
-    private javax.swing.JLabel jLabelPerStEllerKg;
     private javax.swing.JLabel jLabelPris;
     private javax.swing.JLabel jLabelProduktnamn;
     // End of variables declaration//GEN-END:variables

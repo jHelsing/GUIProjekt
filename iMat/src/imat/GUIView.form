@@ -398,6 +398,13 @@
                 </Constraint>
               </Constraints>
             </Component>
+            <Component class="imat.confirmRegPanel" name="confirmRegPanel">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                  <CardConstraints cardName="confirmRegPanel"/>
+                </Constraint>
+              </Constraints>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="splitPanel">

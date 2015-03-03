@@ -5,17 +5,27 @@
  */
 package imat;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+
 /**
  *
  * @author Johan
  */
 public class confirmRegPanel extends javax.swing.JPanel {
 
+    
+    private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
+    
     /**
      * Creates new form confirmRegPanel
      */
     public confirmRegPanel() {
         initComponents();
+    }
+    
+    public void addObserver(PropertyChangeListener observer){
+        pcs.addPropertyChangeListener(observer);
     }
 
     /**
@@ -40,6 +50,11 @@ public class confirmRegPanel extends javax.swing.JPanel {
         jLabel3.setText("Om du vill ändra dina uppgifter kan du göra detta via din profilsida.");
 
         imageLabel1.setText("imageLabel1");
+        imageLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imageLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -75,6 +90,10 @@ public class confirmRegPanel extends javax.swing.JPanel {
                 .addContainerGap(241, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void imageLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabel1MouseClicked
+        pcs.firePropertyChange("ToProducts", 0, 1);
+    }//GEN-LAST:event_imageLabel1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

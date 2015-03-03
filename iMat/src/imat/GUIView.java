@@ -35,6 +35,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         firstRegPanel.addObserver(this);
         secondRegPanel.addObserver(this);
         thirdRegPanel.addObserver(this);
+        confirmRegPanel.addObserver(this);
     }
     
     /**
@@ -72,6 +73,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         firstPanel = new firstPanel();
         helpPanel = new imat.helpPanel();
         checkoutPanel = new imat.checkoutPanel();
+        confirmRegPanel = new imat.confirmRegPanel();
         splitPanel = new javax.swing.JPanel();
         splitPanelContent = new javax.swing.JPanel();
         productSplitPanel = new javax.swing.JSplitPane();
@@ -295,6 +297,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         wholePanel.add(firstPanel, "firstPanel");
         wholePanel.add(helpPanel, "helpPanel");
         wholePanel.add(checkoutPanel, "checkoutPanel");
+        wholePanel.add(confirmRegPanel, "confirmRegPanel");
 
         contentPanel.add(wholePanel, "wholePanel");
 
@@ -379,13 +382,13 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     }//GEN-LAST:event_recipieLabelMouseClicked
 
     private void shoppingListLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shoppingListLabelMouseClicked
-        // TODO add your handling code here:
+        userData.getShoppingCart().addProduct(userData.getProducts().get(0));
+        userData.getShoppingCart().fireShoppingCartChanged(null, true);
     }//GEN-LAST:event_shoppingListLabelMouseClicked
 
     private void purchaseHistoryLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_purchaseHistoryLabelMouseClicked
-        
-        
-        // TODO add your handling code here:
+        userData.getShoppingCart().addProduct(userData.getProducts().get(1));
+        userData.getShoppingCart().fireShoppingCartChanged(null, true);
     }//GEN-LAST:event_purchaseHistoryLabelMouseClicked
 
     private void searchFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyTyped
@@ -492,6 +495,16 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 card.show(contentPanel, "wholePanel");
                 card = (CardLayout)wholePanel.getLayout();
                 card.show(wholePanel, "thirdRegPanel");
+            } else if(evt.getPropertyName().equals("ToConfirmRegPanel")){
+                CardLayout card = (CardLayout)contentPanel.getLayout();
+                card.show(contentPanel, "wholePanel");
+                card = (CardLayout)wholePanel.getLayout();
+                card.show(wholePanel, "confirmRegPanel");
+            } else if(evt.getPropertyName().equals("ToProducts")){
+                CardLayout card = (CardLayout)contentPanel.getLayout();
+                card.show(contentPanel, "splitPanel");
+                card = (CardLayout)splitPanelContent.getLayout();
+                card.show(splitPanelContent, "productPanel");
             }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -536,6 +549,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     private imat.CategoryPanel categoryPanel;
     private imat.CategoryPanel categorySearchPanel;
     private imat.checkoutPanel checkoutPanel;
+    private imat.confirmRegPanel confirmRegPanel;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel firstNameLabel;
     private javax.swing.JPanel firstPanel;
