@@ -21,7 +21,7 @@ import java.beans.PropertyChangeListener;
 public class GUIView extends javax.swing.JFrame implements PropertyChangeListener {
     
     private IMatDataHandler userData;
-    //PropertyChangeListener pcl;
+    PropertyChangeListener pcl;
     /**
      * Creates new form GUIView
      */
@@ -29,14 +29,14 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         //testhejhopp
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        //setFullScreen(this);
+        setFullScreen(this);
         initContentPanel();
-        homeLabel.requestFocus(); /*
+        homeLabel.requestFocus();
         shoppingCartPanel.addObserver(this);
         firstRegPanel.addObserver(this);
         secondRegPanel.addObserver(this);
         thirdRegPanel.addObserver(this);
-        confirmRegPanel.addObserver(this); */
+        confirmRegPanel.addObserver(this);
     }
     
     /**
