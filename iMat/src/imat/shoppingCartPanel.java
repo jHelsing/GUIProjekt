@@ -99,7 +99,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 311, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,28 +111,25 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addGap(32, 32, 32)
                 .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addGap(43, 43, 43))
             .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(imageLabelEmptyCart, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelTotalKostnad)
-                            .addComponent(jLabelAntalProdukter)
-                            .addComponent(imageLabelToCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(21, 21, 21))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                    .addComponent(jLabel2)
+                    .addComponent(imageLabelEmptyCart, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelTotalKostnad)
+                    .addComponent(jLabelAntalProdukter)
+                    .addComponent(imageLabelToCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,35 +172,37 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
     
     @Override
     public void shoppingCartChanged(CartEvent evt){
-            jPanel1.removeAll();
-            //revalidate();
-            //repaint();
-            jLabelAntalProdukter.setText(userData.getShoppingCart().getItems().size() + " produkter");
-            jLabelTotalKostnad.setText(userData.getShoppingCart().getTotal() + " kr");
-                  
+        jPanel1.removeAll();
+        //revalidate();
+        //repaint();
+        jLabelAntalProdukter.setText(userData.getShoppingCart().getItems().size() + " produkter");
+        jLabelTotalKostnad.setText(userData.getShoppingCart().getTotal() + " kr");
+        if (userData.getShoppingCart().getItems().size() > 0){     
             int visibleItems = 0;
             List<String> avp = new ArrayList<String>();
-            
-        for (int i = userData.getShoppingCart().getItems().size() -1; i >= 0 ; i--) {
-            
+
+            for (int i = userData.getShoppingCart().getItems().size() -1; i >= 0 ; i--) {
+
                 ShoppingItem si = userData.getShoppingCart().getItems().get(i);
-                
-                if (visibleItems < 10 && !avp.contains(si.getProduct().getName())) {
+
+                if (visibleItems < 10 && si != null && !avp.contains(si.getProduct().getName())) {
                     int antal = (int)si.getAmount();
-                    
+
                     for (int k = i-1; k >= 0; k--){
                         if (userData.getShoppingCart().getItems().get(k).getProduct().getName().equals(si.getProduct().getName())){
                             antal += (int)userData.getShoppingCart().getItems().get(k).getAmount();
                         }
                     }
-                    
+
                     jPanel1.add(new shoppingCartProductPanel(antal, si.getProduct().getUnitSuffix(),si.getProduct().getName(), si.getProduct().getPrice()));
                     avp.add(si.getProduct().getName());
                     visibleItems++;
                 }
-            
+
+            }
         }
-        revalidate(); 
+        revalidate();
+        repaint();
     }
     
 

@@ -66,6 +66,11 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         });
 
         imageLabelMinska.setText("imageLabel1");
+        imageLabelMinska.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imageLabelMinskaMouseClicked(evt);
+            }
+        });
 
         imageLabelÖka.setText("imageLabel1");
         imageLabelÖka.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -122,6 +127,10 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
     private void imageLabelÖkaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelÖkaMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_imageLabelÖkaMouseClicked
+
+    private void imageLabelMinskaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMinskaMouseClicked
+        userData.getShoppingCart().addProduct(null);
+    }//GEN-LAST:event_imageLabelMinskaMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
