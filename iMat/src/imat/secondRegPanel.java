@@ -54,7 +54,7 @@ public class secondRegPanel extends javax.swing.JPanel {
 
         jComboBoxGiltAr.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "åååå", "2015", "2016", "2017", "2018", "2019" }));
 
-        imageLabelRegPil2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/RegPil2.png"))); // NOI18N
+        imageLabelRegPil2.setIcon(null);
         imageLabelRegPil2.setText("imageLabel1");
 
         jLabelKortnummer.setText("Kortnummer:");

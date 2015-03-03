@@ -161,8 +161,8 @@
     </Component>
     <Component class="imat.ImageLabel" name="imageLabelRegPil1">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imat/resources/RegPil1.png"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="null" type="code"/>
         </Property>
         <Property name="text" type="java.lang.String" value="imageLabel1"/>
       </Properties>
@@ -184,8 +184,8 @@
     </Component>
     <Component class="imat.ImageLabel" name="nextStepButton">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imat/resources/nextStep.png"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="null" type="code"/>
         </Property>
         <Property name="text" type="java.lang.String" value="imageLabel2"/>
       </Properties>

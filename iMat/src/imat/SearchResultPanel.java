@@ -11,8 +11,6 @@ import java.util.List;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import se.chalmers.ait.dat215.project.Product;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
 import javax.swing.JPanel;
 
 /**
@@ -26,8 +24,6 @@ public class SearchResultPanel extends JPanel {
      */
     
     private static SearchResultPanel test = new SearchResultPanel("hej");
-    
-    private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
     
     public SearchResultPanel() {
         initComponents();
@@ -47,57 +43,70 @@ public class SearchResultPanel extends JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        areaOfSearchResult = new javax.swing.JPanel();
+        areaOfSearchResult = new javax.swing.JScrollPane();
+        searchResultCardContainer = new javax.swing.JPanel();
 
-        javax.swing.GroupLayout areaOfSearchResultLayout = new javax.swing.GroupLayout(areaOfSearchResult);
-        areaOfSearchResult.setLayout(areaOfSearchResultLayout);
-        areaOfSearchResultLayout.setHorizontalGroup(
-            areaOfSearchResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 592, Short.MAX_VALUE)
+        areaOfSearchResult.setMaximumSize(new java.awt.Dimension(734, 281));
+        areaOfSearchResult.setMinimumSize(new java.awt.Dimension(734, 281));
+        areaOfSearchResult.setPreferredSize(new java.awt.Dimension(734, 281));
+
+        searchResultCardContainer.setMaximumSize(new java.awt.Dimension(734, 281));
+        searchResultCardContainer.setMinimumSize(new java.awt.Dimension(734, 281));
+        searchResultCardContainer.setPreferredSize(new java.awt.Dimension(734, 281));
+
+        javax.swing.GroupLayout searchResultCardContainerLayout = new javax.swing.GroupLayout(searchResultCardContainer);
+        searchResultCardContainer.setLayout(searchResultCardContainerLayout);
+        searchResultCardContainerLayout.setHorizontalGroup(
+            searchResultCardContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 734, Short.MAX_VALUE)
         );
-        areaOfSearchResultLayout.setVerticalGroup(
-            areaOfSearchResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
+        searchResultCardContainerLayout.setVerticalGroup(
+            searchResultCardContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 281, Short.MAX_VALUE)
         );
+
+        areaOfSearchResult.setViewportView(searchResultCardContainer);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(areaOfSearchResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(areaOfSearchResult, javax.swing.GroupLayout.PREFERRED_SIZE, 734, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(areaOfSearchResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(areaOfSearchResult, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     public void displayResults(List<Product> results) {
+        revalidate();
         int nbrOfResults = results.size();
         
         // Räkna ut antalet rader för layouten av areaOfSearchResult
         int nbrOfRows = nbrOfResults/2;
-        JPanel test = new JPanel(new GridLayout(nbrOfRows, 2));
-        
+        searchResultCardContainer.setLayout(new GridLayout(nbrOfRows,2));
         
         // Lägger till alla sökresultat
         for(int i=0; i<nbrOfResults; i++) {
             ProductCard pc = new ProductCard(results.get(i));
-            pc.setVisible(true);
-            test.add(pc);
+            areaOfSearchResult.add(pc);
         }
+        searchResultCardContainer.setVisible(true);
+        revalidate();
     }
     
     public static SearchResultPanel getInstance() {
         return test;
     }
-    
-    public void addObserver(PropertyChangeListener observer){
-        pcs.addPropertyChangeListener(observer);
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel areaOfSearchResult;
+    private javax.swing.JScrollPane areaOfSearchResult;
+    private javax.swing.JPanel searchResultCardContainer;
     // End of variables declaration//GEN-END:variables
     
 }

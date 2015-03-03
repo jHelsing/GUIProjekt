@@ -64,14 +64,14 @@ public class firstRegPanel extends javax.swing.JPanel {
 
         jLabelEfternamn.setText("Efternamn:");
 
-        imageLabelRegPil1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/RegPil1.png"))); // NOI18N
+        imageLabelRegPil1.setIcon(null);
         imageLabelRegPil1.setText("imageLabel1");
 
         jLabelPostnr.setText("Postnr:");
 
         jLabelOrt.setText("Ort:");
 
-        nextStepButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/nextStep.png"))); // NOI18N
+        nextStepButton.setIcon(null);
         nextStepButton.setText("imageLabel2");
         nextStepButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
