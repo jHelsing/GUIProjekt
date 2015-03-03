@@ -173,9 +173,17 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
     @Override
     public void shoppingCartChanged(CartEvent evt){
         jPanel1.removeAll();
-        //revalidate();
-        //repaint();
-        jLabelAntalProdukter.setText(userData.getShoppingCart().getItems().size() + " produkter");
+        
+        
+        
+        int totAntalProdukter = 0;
+        for (int i = 0; i < userData.getShoppingCart().getItems().size();i++){
+            totAntalProdukter += (int)userData.getShoppingCart().getItems().get(i).getAmount();
+        }
+        jLabelAntalProdukter.setText(totAntalProdukter + " produkter");
+        
+        
+        
         jLabelTotalKostnad.setText(userData.getShoppingCart().getTotal() + " kr");
         if (userData.getShoppingCart().getItems().size() > 0){     
             int visibleItems = 0;
@@ -194,7 +202,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
                         }
                     }
 
-                    jPanel1.add(new shoppingCartProductPanel(antal, si.getProduct().getUnitSuffix(),si.getProduct().getName(), si.getProduct().getPrice()));
+                    jPanel1.add(new shoppingCartProductPanel(antal, si.getProduct()));
                     avp.add(si.getProduct().getName());
                     visibleItems++;
                 }
