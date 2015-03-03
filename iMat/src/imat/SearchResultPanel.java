@@ -32,7 +32,7 @@ public class SearchResultPanel extends JPanel {
     private SearchResultPanel(String s) {
         initComponents();
         this.test = this;
-    }
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
