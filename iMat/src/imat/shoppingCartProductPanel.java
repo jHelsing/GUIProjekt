@@ -7,6 +7,7 @@ package imat;
 
 import java.util.List;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 /**
@@ -16,7 +17,8 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 public class shoppingCartProductPanel extends javax.swing.JPanel {
 
     private IMatDataHandler userData = IMatDataHandler.getInstance();
-    
+    private Product p;
+    private int antal;
     /**
      * Creates new form shoppingCartProductPanel
      */
@@ -24,13 +26,23 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         initComponents();
     }
     
-    public shoppingCartProductPanel(int antal, String stKgForp, String produktnamn, double pris) {
+    public shoppingCartProductPanel(int antal, Product p){
+        initComponents();
+        this.p = p;
+        this.antal = antal;
+        jLabelAntal.setText("" + antal);
+        jLabelAntalStEllerKg.setText(p.getUnitSuffix());
+        jLabelProduktnamn.setText(p.getName());
+        jLabelPris.setText(p.getPrice() + " kr/" + p.getUnitSuffix());
+    }
+    
+    /**public shoppingCartProductPanel(int antal, String stKgForp, String produktnamn, double pris) {
         initComponents();
         jLabelAntal.setText("" + antal);
         jLabelAntalStEllerKg.setText(stKgForp);
         jLabelProduktnamn.setText(produktnamn);
         jLabelPris.setText(pris + " kr/" + stKgForp);
-    }
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,6 +78,11 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         });
 
         imageLabelMinska.setText("imageLabel1");
+        imageLabelMinska.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imageLabelMinskaMouseClicked(evt);
+            }
+        });
 
         imageLabelÖka.setText("imageLabel1");
         imageLabelÖka.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -120,8 +137,24 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_imageLabelTaBortMouseClicked
 
     private void imageLabelÖkaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelÖkaMouseClicked
-        // TODO add your handling code here:
+        userData.getShoppingCart().addProduct(p);
+        userData.getShoppingCart().fireShoppingCartChanged(null, true);
     }//GEN-LAST:event_imageLabelÖkaMouseClicked
+
+    private void imageLabelMinskaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMinskaMouseClicked
+        antal--;
+        List<ShoppingItem> items = userData.getShoppingCart().getItems();
+        
+        for (int i = items.size() - 1; i >= 0; i--){
+            if (items.get(i).getProduct().getName().equals(this.jLabelProduktnamn.getText())){
+                userData.getShoppingCart().removeItem(i);
+            }
+        }
+        if (antal > 0){
+            userData.getShoppingCart().addProduct(p, antal);
+        }
+        userData.getShoppingCart().fireShoppingCartChanged(null, true);
+    }//GEN-LAST:event_imageLabelMinskaMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

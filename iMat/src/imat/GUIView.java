@@ -73,6 +73,8 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         helpPanel = new imat.helpPanel();
         checkoutPanel = new imat.checkoutPanel();
         confirmRegPanel = new imat.confirmRegPanel();
+        firstRegPanel = new imat.firstRegPanel();
+        secondRegPanel = new imat.secondRegPanel();
         splitPanel = new javax.swing.JPanel();
         splitPanelContent = new javax.swing.JPanel();
         productSplitPanel = new javax.swing.JSplitPane();
@@ -295,6 +297,8 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         wholePanel.add(helpPanel, "helpPanel");
         wholePanel.add(checkoutPanel, "checkoutPanel");
         wholePanel.add(confirmRegPanel, "confirmRegPanel");
+        wholePanel.add(firstRegPanel, "firstRegPanel");
+        wholePanel.add(secondRegPanel, "secondRegPanel");
 
         contentPanel.add(wholePanel, "wholePanel");
 
@@ -342,14 +346,14 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(mainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1319, Short.MAX_VALUE)
-            .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1319, Short.MAX_VALUE)
+            .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1319, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(mainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 656, Short.MAX_VALUE))
+                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE))
         );
 
         pack();
@@ -563,6 +567,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel firstNameLabel;
     private javax.swing.JPanel firstPanel;
+    private imat.firstRegPanel firstRegPanel;
     private imat.ImageLabel helpImage;
     private imat.helpPanel helpPanel;
     private javax.swing.JLabel homeLabel;
@@ -586,6 +591,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     private javax.swing.JTextField searchField;
     private imat.SearchResultPanel searchResultPanel;
     private javax.swing.JSplitPane searchSplitPanel;
+    private imat.secondRegPanel secondRegPanel;
     private imat.shoppingCartPanel shoppingCartPanel;
     private javax.swing.JLabel shoppingListLabel;
     private javax.swing.JPanel splitPanel;
