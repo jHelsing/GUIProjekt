@@ -53,6 +53,7 @@ public class firstRegPanel extends javax.swing.JPanel {
         jTextFieldMobilnr = new javax.swing.JTextField();
         jLabelOrt = new javax.swing.JLabel();
         nextStepButton = new imat.ImageLabel("nextStepButton.png");
+        errorTF = new javax.swing.JTextField();
 
         jLabelFornamn.setText("Förnamn:");
 
@@ -78,6 +79,12 @@ public class firstRegPanel extends javax.swing.JPanel {
                 nextStepButtonMouseClicked(evt);
             }
         });
+
+        errorTF.setEditable(false);
+        errorTF.setForeground(new java.awt.Color(200, 20, 20));
+        errorTF.setText("                             ");
+        errorTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        errorTF.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -119,7 +126,10 @@ public class firstRegPanel extends javax.swing.JPanel {
                                     .addComponent(jTextFieldEfternamn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nextStepButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(nextStepButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(470, 470, 470)
+                        .addComponent(errorTF, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(168, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -127,7 +137,9 @@ public class firstRegPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(imageLabelRegPil1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errorTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -159,7 +171,7 @@ public class firstRegPanel extends javax.swing.JPanel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabelMobilnr)
                         .addComponent(jTextFieldMobilnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -176,7 +188,7 @@ public class firstRegPanel extends javax.swing.JPanel {
         if (userData.isCustomerComplete()){
             pcs.firePropertyChange("ToSecondRegPanel", 0, 1);
         } else {
-            //TODO feedback till användaren, fyll i alla fält
+            errorTF.setText("Var god fyll i alla fält nedan.");
         }
         
 
@@ -186,6 +198,7 @@ public class firstRegPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField errorTF;
     private imat.ImageLabel imageLabelRegPil1;
     private javax.swing.JLabel jLabelAdress;
     private javax.swing.JLabel jLabelEfternamn;

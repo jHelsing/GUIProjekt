@@ -10,7 +10,7 @@ package imat;
  * @author Johan
  */
 public class profilePanel extends javax.swing.JPanel {
-
+  
     /**
      * Creates new form profilePanel
      */
@@ -20,7 +20,7 @@ public class profilePanel extends javax.swing.JPanel {
         expDateMonth.setEnabled(false);
         expDateYear.setEnabled(false);
     }
-
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -66,7 +66,7 @@ public class profilePanel extends javax.swing.JPanel {
 
         surNameTF.setEditable(false);
         surNameTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        surNameTF.setText("Pettson");
+        surNameTF.setText("             ");
         surNameTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         surNameTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,7 +121,7 @@ public class profilePanel extends javax.swing.JPanel {
 
         cardNumberTF.setEditable(false);
         cardNumberTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cardNumberTF.setText("4014 - xxxx - xxxx - xxxx");
+        cardNumberTF.setText("                 ");
         cardNumberTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         cardNumberTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,7 +191,7 @@ public class profilePanel extends javax.swing.JPanel {
 
         cityTF.setEditable(false);
         cityTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cityTF.setText("Göteborg");
+        cityTF.setText("                ");
         cityTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jTextField21.setEditable(false);
@@ -205,7 +205,7 @@ public class profilePanel extends javax.swing.JPanel {
 
         firstNameTF.setEditable(false);
         firstNameTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        firstNameTF.setText("Tage");
+        firstNameTF.setText("                 ");
         firstNameTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         firstNameTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,7 +233,7 @@ public class profilePanel extends javax.swing.JPanel {
 
         postalCodeTF.setEditable(false);
         postalCodeTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        postalCodeTF.setText("413 62");
+        postalCodeTF.setText("              ");
         postalCodeTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         postalCodeTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -243,7 +243,7 @@ public class profilePanel extends javax.swing.JPanel {
 
         cardHolderTF.setEditable(false);
         cardHolderTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cardHolderTF.setText("Tage Pettson");
+        cardHolderTF.setText("               ");
         cardHolderTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         cardHolderTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -253,7 +253,7 @@ public class profilePanel extends javax.swing.JPanel {
 
         adressTF.setEditable(false);
         adressTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        adressTF.setText("Oscarsgatang 15");
+        adressTF.setText("               ");
         adressTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         adressTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -272,12 +272,12 @@ public class profilePanel extends javax.swing.JPanel {
 
         phoneNbrTF.setEditable(false);
         phoneNbrTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        phoneNbrTF.setText("0708-636271");
+        phoneNbrTF.setText("             ");
         phoneNbrTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         emailTF.setEditable(false);
         emailTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        emailTF.setText("hejhej@hotmail.com");
+        emailTF.setText("                ");
         emailTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         emailTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

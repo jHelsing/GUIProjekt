@@ -14,7 +14,6 @@ import java.beans.PropertyChangeSupport;
  */
 public class confirmRegPanel extends javax.swing.JPanel {
 
-    
     private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
     
     /**
@@ -27,7 +26,7 @@ public class confirmRegPanel extends javax.swing.JPanel {
     public void addObserver(PropertyChangeListener observer){
         pcs.addPropertyChangeListener(observer);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -94,7 +93,6 @@ public class confirmRegPanel extends javax.swing.JPanel {
     private void imageLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabel1MouseClicked
         pcs.firePropertyChange("ToProducts", 0, 1);
     }//GEN-LAST:event_imageLabel1MouseClicked
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private imat.ImageLabel imageLabel1;
