@@ -36,14 +36,6 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         jLabelProduktnamn.setText(p.getName());
         jLabelPris.setText(p.getPrice() + " kr/" + p.getUnitSuffix());
     }
-    
-    /**public shoppingCartProductPanel(int antal, String stKgForp, String produktnamn, double pris) {
-        initComponents();
-        jLabelAntal.setText("" + antal);
-        jLabelAntalStEllerKg.setText(stKgForp);
-        jLabelProduktnamn.setText(produktnamn);
-        jLabelPris.setText(pris + " kr/" + stKgForp);
-    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
