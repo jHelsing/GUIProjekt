@@ -60,11 +60,11 @@ public class SearchResultPanel extends JPanel {
         searchResultCardContainer.setLayout(searchResultCardContainerLayout);
         searchResultCardContainerLayout.setHorizontalGroup(
             searchResultCardContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 734, Short.MAX_VALUE)
+            .addGap(0, 829, Short.MAX_VALUE)
         );
         searchResultCardContainerLayout.setVerticalGroup(
             searchResultCardContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 281, Short.MAX_VALUE)
+            .addGap(0, 533, Short.MAX_VALUE)
         );
 
         areaOfSearchResult.setViewportView(searchResultCardContainer);
@@ -73,14 +73,12 @@ public class SearchResultPanel extends JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(areaOfSearchResult, javax.swing.GroupLayout.PREFERRED_SIZE, 734, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(areaOfSearchResult, javax.swing.GroupLayout.DEFAULT_SIZE, 831, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(areaOfSearchResult, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(areaOfSearchResult, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
