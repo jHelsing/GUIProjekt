@@ -38,6 +38,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         secondRegPanel.addObserver(this);
         thirdRegPanel.addObserver(this);
         confirmRegPanel.addObserver(this);
+        profilePanel.addObserver(this);
     }
     
     /**
@@ -536,10 +537,11 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 card.show(contentPanel, "splitPanel");
                 card = (CardLayout)splitPanelContent.getLayout();
                 card.show(splitPanelContent, "productPanel");
-            } else if (evt.getPropertyName().equals("setText")) {
+            } else if (evt.getPropertyName().equals("setInfo")) {
+                profilePanel.setProfileInfo();
+                checkoutPanel.setCheckoutInfo();
                 firstNameLabel.setText(userData.getCustomer().getFirstName());
                 lastNameLabel.setText(userData.getCustomer().getLastName());
-                profilePanel.setProfileInfo(userData);
             }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
