@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,11 +14,16 @@ import javax.swing.JOptionPane;
  */
 public class CustomSpinner extends javax.swing.JPanel {
 
+    private int value;
+    
     /**
      * Creates new form CustomSpinner
      */
     public CustomSpinner() {
         initComponents();
+        this.setBackground(new Color(0,0,0,1));
+        this.nbrTextField.setBorder(null);
+        this.value=1;
     }
 
     /**
@@ -30,13 +36,16 @@ public class CustomSpinner extends javax.swing.JPanel {
     private void initComponents() {
 
         nbrTextField = new javax.swing.JTextField();
-        decrement = new imat.ImageLabel();
-        increment = new imat.ImageLabel();
+        decrement = new imat.ImageLabel("checkoutMinusButton.png");
+        increment = new imat.ImageLabel("checkoutPlusButton.png");
+
+        setAlignmentX(0.0F);
+        setAlignmentY(0.0F);
 
         nbrTextField.setText("1");
         nbrTextField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                nbrTextFieldKeyTyped(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nbrTextFieldKeyReleased(evt);
             }
         });
 
@@ -71,22 +80,9 @@ public class CustomSpinner extends javax.swing.JPanel {
                     .addComponent(increment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(decrement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nbrTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(nbrTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void nbrTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nbrTextFieldKeyTyped
-        // TODO make sure that the typed character is a number!
-        char latestKey = evt.getKeyChar();
-        int i;
-        try {
-            i = Integer.parseInt(latestKey + "");
-        } catch(NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Du måste ange ett tal!");
-        }
-
-    }//GEN-LAST:event_nbrTextFieldKeyTyped
 
     private void decrementMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decrementMouseClicked
         // TODO add your handling code here:
@@ -97,9 +93,27 @@ public class CustomSpinner extends javax.swing.JPanel {
         // TODO should increase the nbr of products with 1
         increment();
     }//GEN-LAST:event_incrementMouseClicked
+
+    private void nbrTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nbrTextFieldKeyReleased
+        int i = 0;
+        try {
+            i = Integer.parseInt(nbrTextField.getText());
+        } catch(NumberFormatException e) {
+            this.value = 0;
+            i = 0;
+        }
+        if(i < 0) {
+            JOptionPane.showMessageDialog(this, "Du måste ange ett positivt tal eller noll");
+        } else if(i > 99) {
+            this.value = 99;
+        } else {
+            this.value = i;
+        }
+        nbrTextField.setText(value + "");
+        nbrTextField.repaint();
+    }//GEN-LAST:event_nbrTextFieldKeyReleased
     
     private void increment() {
-        int value = Integer.parseInt(nbrTextField.getText());
         if(value!=99) {
             value++;
         }
@@ -107,8 +121,7 @@ public class CustomSpinner extends javax.swing.JPanel {
     }
     
     private void decrement() {
-        int value = Integer.parseInt(nbrTextField.getText());
-        if(!(value <= -99)) {
+        if(!(value < 2)) {
             value--;
         }
         nbrTextField.setText(value + "");
@@ -119,7 +132,7 @@ public class CustomSpinner extends javax.swing.JPanel {
      * @return the value of the spinner
      */
     public int getValue() {
-        return Integer.parseInt(nbrTextField.getText());
+        return value;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

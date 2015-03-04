@@ -92,10 +92,10 @@ public class SearchResultPanel extends JPanel {
         
         // Räkna ut antalet rader för layouten av areaOfSearchResult
         int nbrOfRows = nbrOfResults/2;
-        searchResultCardContainer.setLayout(new GridLayout(nbrOfRows,2));
+        searchResultCardContainer.setLayout(new GridLayout(nbrOfRows,3));
         
         int height = nbrOfRows*200 + (nbrOfRows-2)*10 + 20;
-        int width = 2*200 + 30;
+        int width = 3*200 + 40;
         
         Dimension d = new Dimension(width,height);
         

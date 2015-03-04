@@ -7,6 +7,8 @@ package imat;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import javax.swing.BorderFactory;
+import javax.swing.border.Border;
 import se.chalmers.ait.dat215.project.*;
 
 /**
@@ -37,6 +39,9 @@ public class ProductCard extends javax.swing.JPanel {
         productNameLabel.setText(p.getName());
         productPriceLabel.setText(p.getPrice() + " " + p.getUnit());
         this.setBackground(new Color(130,130,130));
+        this.setToolTipText(p.getName());
+        Border margin = (Border)BorderFactory.createEmptyBorder(0,5,10,5);
+        this.setBorder(margin);
         this.setVisible(true);
         repaint();
         revalidate();
@@ -144,7 +149,7 @@ public class ProductCard extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(favoriteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(productNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(productNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -154,10 +159,10 @@ public class ProductCard extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(nbrOfProductsSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
+                                .addGap(30, 30, 30)
                                 .addComponent(productUnitsLabel))))
                     .addComponent(productImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(addToShoppingListButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addToCartButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -176,7 +181,9 @@ public class ProductCard extends javax.swing.JPanel {
     private void addToCartButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addToCartButtonMouseClicked
         // Add the product to the shoppingCart with the amount of products
         // that's specified by the nbrOfProductsSpinner.
-        data.getShoppingCart().addProduct(p, nbrOfProductsSpinner.getValue());
+        if(!(nbrOfProductsSpinner.getValue() <= 0)) {
+            data.getShoppingCart().addProduct(p, nbrOfProductsSpinner.getValue());
+        }
     }//GEN-LAST:event_addToCartButtonMouseClicked
 
     private void favoriteButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favoriteButtonMouseClicked
