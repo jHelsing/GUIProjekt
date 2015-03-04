@@ -92,6 +92,9 @@
     <Component class="javax.swing.JLabel" name="category1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Frukt &amp; Gr&#xf6;nt"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="category1MouseClicked"/>
@@ -100,6 +103,9 @@
     <Component class="javax.swing.JLabel" name="category2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Br&#xf6;d"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="category2MouseClicked"/>
@@ -108,6 +114,9 @@
     <Component class="javax.swing.JLabel" name="category3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Fisk &amp; Skaldjur"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="category3MouseClicked"/>
@@ -116,6 +125,9 @@
     <Component class="javax.swing.JLabel" name="category4">
       <Properties>
         <Property name="text" type="java.lang.String" value="K&#xf6;tt"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="category4MouseClicked"/>
@@ -124,6 +136,9 @@
     <Component class="javax.swing.JLabel" name="category5">
       <Properties>
         <Property name="text" type="java.lang.String" value="Mejeriprodukter"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="category5MouseClicked"/>
@@ -132,6 +147,9 @@
     <Component class="javax.swing.JLabel" name="category6">
       <Properties>
         <Property name="text" type="java.lang.String" value="Kalla drycker"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="category6MouseClicked"/>
@@ -140,6 +158,9 @@
     <Component class="javax.swing.JLabel" name="category7">
       <Properties>
         <Property name="text" type="java.lang.String" value="S&#xf6;tsaker"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="category7MouseClicked"/>
@@ -148,6 +169,9 @@
     <Component class="javax.swing.JLabel" name="category8">
       <Properties>
         <Property name="text" type="java.lang.String" value="Skafferi"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="category8MouseClicked"/>
@@ -172,6 +196,9 @@
     <Component class="javax.swing.JLabel" name="favorites">
       <Properties>
         <Property name="text" type="java.lang.String" value="Favoriter"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="favoritesMouseClicked"/>

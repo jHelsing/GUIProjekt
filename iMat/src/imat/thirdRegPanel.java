@@ -132,6 +132,7 @@ public class thirdRegPanel extends javax.swing.JPanel {
 
     private void imageLabelSkapaKontoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelSkapaKontoMouseClicked
         pcs.firePropertyChange("ToConfirmRegPanel", 0, 1);
+        
     }//GEN-LAST:event_imageLabelSkapaKontoMouseClicked
 
 

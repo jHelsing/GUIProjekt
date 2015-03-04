@@ -6,6 +6,7 @@
 package imat;
 
 import java.awt.CardLayout;
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.beans.PropertyChangeEvent;
@@ -97,6 +98,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         homeLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         homeLabel.setForeground(new java.awt.Color(255, 255, 255));
         homeLabel.setText("Hem");
+        homeLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         homeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 homeLabelMouseClicked(evt);
@@ -108,6 +110,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         productLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         productLabel.setForeground(new java.awt.Color(255, 255, 255));
         productLabel.setText("Produkter");
+        productLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         productLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 productLabelMouseClicked(evt);
@@ -119,6 +122,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         recipieLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         recipieLabel.setForeground(new java.awt.Color(255, 255, 255));
         recipieLabel.setText("Recept");
+        recipieLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         recipieLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 recipieLabelMouseClicked(evt);
@@ -130,6 +134,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         shoppingListLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         shoppingListLabel.setForeground(new java.awt.Color(255, 255, 255));
         shoppingListLabel.setText("Inköpslistor");
+        shoppingListLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         shoppingListLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shoppingListLabelMouseClicked(evt);
@@ -141,6 +146,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         purchaseHistoryLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         purchaseHistoryLabel.setForeground(new java.awt.Color(255, 255, 255));
         purchaseHistoryLabel.setText("Köphistorik");
+        purchaseHistoryLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         purchaseHistoryLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 purchaseHistoryLabelMouseClicked(evt);
@@ -184,6 +190,11 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         helpImage.setMinimumSize(new java.awt.Dimension(57, 57));
         helpImage.setName(""); // NOI18N
         helpImage.setPreferredSize(new java.awt.Dimension(57, 57));
+        helpImage.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                helpImageMouseMoved(evt);
+            }
+        });
         helpImage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 helpImageMouseClicked(evt);
@@ -195,6 +206,11 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         profileImage.setMinimumSize(new java.awt.Dimension(57, 57));
         profileImage.setName(""); // NOI18N
         profileImage.setPreferredSize(new java.awt.Dimension(57, 57));
+        profileImage.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                profileImageMouseMoved(evt);
+            }
+        });
         profileImage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 profileImageMouseClicked(evt);
@@ -346,14 +362,14 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(mainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1319, Short.MAX_VALUE)
-            .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1319, Short.MAX_VALUE)
+            .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1319, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(mainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE))
+                .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 656, Short.MAX_VALUE))
         );
 
         pack();
@@ -451,6 +467,14 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
             searchField.setText("Sök...");
         }
     }//GEN-LAST:event_searchFieldFocusLost
+
+    private void profileImageMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileImageMouseMoved
+        profileImage.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_profileImageMouseMoved
+
+    private void helpImageMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpImageMouseMoved
+        helpImage.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_helpImageMouseMoved
 
     private void setFullScreen(JFrame jFrame) {
         Toolkit tk = Toolkit.getDefaultToolkit();

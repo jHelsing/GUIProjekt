@@ -56,6 +56,7 @@ public class CategoryPanel extends javax.swing.JPanel {
         favorites = new javax.swing.JLabel();
 
         category1.setText("Frukt & Grönt");
+        category1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         category1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 category1MouseClicked(evt);
@@ -63,6 +64,7 @@ public class CategoryPanel extends javax.swing.JPanel {
         });
 
         category2.setText("Bröd");
+        category2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         category2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 category2MouseClicked(evt);
@@ -70,6 +72,7 @@ public class CategoryPanel extends javax.swing.JPanel {
         });
 
         category3.setText("Fisk & Skaldjur");
+        category3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         category3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 category3MouseClicked(evt);
@@ -77,6 +80,7 @@ public class CategoryPanel extends javax.swing.JPanel {
         });
 
         category4.setText("Kött");
+        category4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         category4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 category4MouseClicked(evt);
@@ -84,6 +88,7 @@ public class CategoryPanel extends javax.swing.JPanel {
         });
 
         category5.setText("Mejeriprodukter");
+        category5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         category5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 category5MouseClicked(evt);
@@ -91,6 +96,7 @@ public class CategoryPanel extends javax.swing.JPanel {
         });
 
         category6.setText("Kalla drycker");
+        category6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         category6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 category6MouseClicked(evt);
@@ -98,6 +104,7 @@ public class CategoryPanel extends javax.swing.JPanel {
         });
 
         category7.setText("Sötsaker");
+        category7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         category7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 category7MouseClicked(evt);
@@ -105,6 +112,7 @@ public class CategoryPanel extends javax.swing.JPanel {
         });
 
         category8.setText("Skafferi");
+        category8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         category8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 category8MouseClicked(evt);
@@ -112,6 +120,7 @@ public class CategoryPanel extends javax.swing.JPanel {
         });
 
         favorites.setText("Favoriter");
+        favorites.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         favorites.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 favoritesMouseClicked(evt);
@@ -184,7 +193,7 @@ public class CategoryPanel extends javax.swing.JPanel {
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(category8)
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

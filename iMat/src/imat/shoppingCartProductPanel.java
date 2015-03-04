@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.Cursor;
 import java.util.List;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
@@ -71,6 +72,11 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         jLabelPris.setText("x kr/st");
 
         imageLabelTaBort.setText("imageLabel1");
+        imageLabelTaBort.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                imageLabelTaBortMouseMoved(evt);
+            }
+        });
         imageLabelTaBort.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelTaBortMouseClicked(evt);
@@ -78,6 +84,11 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         });
 
         imageLabelMinska.setText("imageLabel1");
+        imageLabelMinska.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                imageLabelMinskaMouseMoved(evt);
+            }
+        });
         imageLabelMinska.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelMinskaMouseClicked(evt);
@@ -85,6 +96,11 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         });
 
         imageLabelÖka.setText("imageLabel1");
+        imageLabelÖka.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                imageLabelÖkaMouseMoved(evt);
+            }
+        });
         imageLabelÖka.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelÖkaMouseClicked(evt);
@@ -155,6 +171,18 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         }
         userData.getShoppingCart().fireShoppingCartChanged(null, true);
     }//GEN-LAST:event_imageLabelMinskaMouseClicked
+
+    private void imageLabelTaBortMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelTaBortMouseMoved
+        imageLabelTaBort.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_imageLabelTaBortMouseMoved
+
+    private void imageLabelÖkaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelÖkaMouseMoved
+        imageLabelÖka.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_imageLabelÖkaMouseMoved
+
+    private void imageLabelMinskaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMinskaMouseMoved
+        imageLabelMinska.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_imageLabelMinskaMouseMoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
