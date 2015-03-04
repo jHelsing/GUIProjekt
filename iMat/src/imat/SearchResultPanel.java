@@ -5,11 +5,13 @@
  */
 package imat;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.beans.PropertyChangeEvent;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.BorderFactory;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import se.chalmers.ait.dat215.project.Product;
@@ -91,11 +93,11 @@ public class SearchResultPanel extends JPanel {
         int nbrOfResults = results.size();
         
         // Räkna ut antalet rader för layouten av areaOfSearchResult
-        int nbrOfRows = nbrOfResults/2;
+        int nbrOfRows = nbrOfResults/3;
         searchResultCardContainer.setLayout(new GridLayout(nbrOfRows,3));
         
-        int height = nbrOfRows*200 + (nbrOfRows-2)*10 + 20;
-        int width = 3*200 + 40;
+        int height = nbrOfRows*144 + (nbrOfRows-2)*10 + 20;
+        int width = 3*170 + 40;
         
         Dimension d = new Dimension(width,height);
         
