@@ -184,7 +184,6 @@ public class firstRegPanel extends javax.swing.JPanel {
         userData.getCustomer().setPhoneNumber(jTextFieldMobilnr.getText());
         userData.getCustomer().setPostAddress(jTextFieldOrt.getText());
         userData.getCustomer().setPostCode(jTextFieldPostnr.getText());
-        
         if (userData.isCustomerComplete()){
             pcs.firePropertyChange("ToSecondRegPanel", 0, 1);
         } else {
