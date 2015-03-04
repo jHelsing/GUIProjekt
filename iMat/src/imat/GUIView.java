@@ -246,12 +246,10 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
                 .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lastNameLabel)
-                    .addGroup(mainMenuLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(firstNameLabel)))
+                    .addComponent(firstNameLabel))
                 .addGap(14, 14, 14)
                 .addComponent(profileImage, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -538,6 +536,10 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 card.show(contentPanel, "splitPanel");
                 card = (CardLayout)splitPanelContent.getLayout();
                 card.show(splitPanelContent, "productPanel");
+            } else if (evt.getPropertyName().equals("setText")) {
+                firstNameLabel.setText(userData.getCustomer().getFirstName());
+                lastNameLabel.setText(userData.getCustomer().getLastName());
+                profilePanel.setProfileInfo(userData);
             }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
