@@ -169,46 +169,64 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
     }//GEN-LAST:event_imageLabelEmptyCartMouseClicked
     
     
+    List<Product> avp = new ArrayList<>();
     
     @Override
     public void shoppingCartChanged(CartEvent evt){
         jPanel1.removeAll();
-        
-        
-        
-        int totAntalProdukter = 0;
-        for (int i = 0; i < userData.getShoppingCart().getItems().size();i++){
-            totAntalProdukter += (int)userData.getShoppingCart().getItems().get(i).getAmount();
-        }
-        jLabelAntalProdukter.setText(totAntalProdukter + " produkter");
-        
-        
-        
-        jLabelTotalKostnad.setText(userData.getShoppingCart().getTotal() + " kr");
-        if (userData.getShoppingCart().getItems().size() > 0){     
-            int visibleItems = 0;
-            List<String> avp = new ArrayList<String>();
+        if(!avp.contains(evt.getShoppingItem().getProduct())){
+          
+            if (userData.getShoppingCart().getItems().size() > 0){    
+                
+                int visibleItems = 0;
+                avp.clear();
 
-            for (int i = userData.getShoppingCart().getItems().size() -1; i >= 0 ; i--) {
+                for (int i = userData.getShoppingCart().getItems().size() -1; i >= 0 ; i--) {
 
-                ShoppingItem si = userData.getShoppingCart().getItems().get(i);
+                    ShoppingItem si = userData.getShoppingCart().getItems().get(i);
 
-                if (visibleItems < 10 && si != null && !avp.contains(si.getProduct().getName())) {
-                    int antal = (int)si.getAmount();
+                    if (visibleItems < 10 && si != null && !avp.contains(si.getProduct())) {
+                        int antal = (int)si.getAmount();
 
-                    for (int k = i-1; k >= 0; k--){
-                        if (userData.getShoppingCart().getItems().get(k).getProduct().getName().equals(si.getProduct().getName())){
-                            antal += (int)userData.getShoppingCart().getItems().get(k).getAmount();
+                        for (int k = i-1; k >= 0; k--){
+                            if (userData.getShoppingCart().getItems().get(k).getProduct().getName().equals(si.getProduct().getName())){
+                                antal += (int)userData.getShoppingCart().getItems().get(k).getAmount();
+                            }
                         }
+                        jPanel1.add(new shoppingCartProductPanel(antal, si.getProduct()));
+                        
+                        avp.add(si.getProduct());
+                        visibleItems++;
                     }
 
-                    jPanel1.add(new shoppingCartProductPanel(antal, si.getProduct()));
-                    avp.add(si.getProduct().getName());
-                    visibleItems++;
                 }
-
             }
+        } else {
+            
+            for (Product pr: avp){
+                int antalPr = 0;
+                for (int i = 0; i < userData.getShoppingCart().getItems().size(); i++){
+                    System.out.println("1");
+                    if (userData.getShoppingCart().getItems().get(i).getProduct().equals(pr)){
+                        antalPr += (int)userData.getShoppingCart().getItems().get(i).getAmount();
+                        System.out.println("2");
+                    }  
+                }
+                if (antalPr > 0){
+                    jPanel1.add(new shoppingCartProductPanel(antalPr, pr));
+                }
+            }
+            
         }
+        int totAntalProdukter = 0;
+            
+            for (int i = 0; i < userData.getShoppingCart().getItems().size();i++){
+                totAntalProdukter += (int)userData.getShoppingCart().getItems().get(i).getAmount();
+            }
+            
+            jLabelAntalProdukter.setText(totAntalProdukter + " produkter");
+            jLabelTotalKostnad.setText(userData.getShoppingCart().getTotal() + " kr");
+        
         revalidate();
         repaint();
     }

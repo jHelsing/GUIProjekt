@@ -146,7 +146,6 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         for (int i = items.size() - 1; i >= 0; i--){
             if (items.get(i).getProduct().getName().equals(this.jLabelProduktnamn.getText())){
                 userData.getShoppingCart().removeItem(i);
-                userData.getShoppingCart().fireShoppingCartChanged(null, true);
             }
         }
         
@@ -154,7 +153,6 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
 
     private void imageLabelÖkaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelÖkaMouseClicked
         userData.getShoppingCart().addProduct(p);
-        userData.getShoppingCart().fireShoppingCartChanged(null, true);
     }//GEN-LAST:event_imageLabelÖkaMouseClicked
 
     private void imageLabelMinskaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMinskaMouseClicked
@@ -169,7 +167,6 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         if (antal > 0){
             userData.getShoppingCart().addProduct(p, antal);
         }
-        userData.getShoppingCart().fireShoppingCartChanged(null, true);
     }//GEN-LAST:event_imageLabelMinskaMouseClicked
 
     private void imageLabelTaBortMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelTaBortMouseMoved
