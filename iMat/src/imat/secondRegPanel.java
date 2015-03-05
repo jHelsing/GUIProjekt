@@ -15,7 +15,7 @@ import se.chalmers.ait.dat215.project.IMatDataHandler;
  */
 public class secondRegPanel extends javax.swing.JPanel {
 
-    private IMatDataHandler userData;
+    private IMatDataHandler userData= IMatDataHandler.getInstance();
     private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
     
     /**
@@ -23,7 +23,6 @@ public class secondRegPanel extends javax.swing.JPanel {
      */
     public secondRegPanel() {
         initComponents();
-        userData = IMatDataHandler.getInstance();
     }
     
     public void addObserver(PropertyChangeListener observer){
@@ -86,12 +85,6 @@ public class secondRegPanel extends javax.swing.JPanel {
         jLabelKortNamn.setText("Kortinnehavarens namn:");
 
         jComboBoxGiltMånad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "mm", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
-
-        jTextFieldKortnummer4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldKortnummer4ActionPerformed(evt);
-            }
-        });
 
         jLabel1.setText("-");
 
@@ -193,10 +186,6 @@ public class secondRegPanel extends javax.swing.JPanel {
     private void imageLabelNastaStegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelNastaStegMouseClicked
         pcs.firePropertyChange("ToThirdRegPanel", 0, 1);
     }//GEN-LAST:event_imageLabelNastaStegMouseClicked
-
-    private void jTextFieldKortnummer4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldKortnummer4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

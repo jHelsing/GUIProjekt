@@ -35,10 +35,10 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         homeLabel.requestFocus();
         shoppingCartPanel.addObserver(this);
         firstRegPanel.addObserver(this);
-        //secondRegPanel.addObserver(this);
+        secondRegPanel.addObserver(this);
         thirdRegPanel.addObserver(this);
         confirmRegPanel.addObserver(this);
-        //profilePanel.addObserver(this);
+        profilePanel.addObserver(this);
     }
     
     /**
@@ -76,6 +76,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         checkoutPanel = new imat.checkoutPanel();
         confirmRegPanel = new imat.confirmRegPanel();
         firstRegPanel = new imat.firstRegPanel();
+        secondRegPanel = new imat.secondRegPanel();
         splitPanel = new javax.swing.JPanel();
         splitPanelContent = new javax.swing.JPanel();
         productSplitPanel = new javax.swing.JSplitPane();
@@ -312,6 +313,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         wholePanel.add(checkoutPanel, "checkoutPanel");
         wholePanel.add(confirmRegPanel, "confirmRegPanel");
         wholePanel.add(firstRegPanel, "firstRegPanel");
+        wholePanel.add(secondRegPanel, "secondRegPanel");
 
         contentPanel.add(wholePanel, "wholePanel");
 
@@ -615,6 +617,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     private javax.swing.JTextField searchField;
     private imat.SearchResultPanel searchResultPanel;
     private javax.swing.JSplitPane searchSplitPanel;
+    private imat.secondRegPanel secondRegPanel;
     private imat.shoppingCartPanel shoppingCartPanel;
     private javax.swing.JLabel shoppingListLabel;
     private javax.swing.JPanel splitPanel;

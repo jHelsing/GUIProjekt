@@ -219,9 +219,6 @@
     <Component class="javax.swing.JTextField" name="jTextFieldKortnummer3">
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldKortnummer4">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldKortnummer4ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
