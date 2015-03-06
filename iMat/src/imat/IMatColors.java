@@ -21,11 +21,10 @@ public class IMatColors {
     private final static Color BUTTONCOLOR_NORMAL = new Color(0,0,0);
     private final static Color BUTTONCOLOR_HOOVER = new Color(0,0,0);
     private final static Color BUTTONCOLOR_PRESSED = new Color(0,0,0);
+    private final static Color BUTTONCOLOR_HIGHLIGHT = new Color(30, 105, 18);
     private final static Color TEXTCOLOR_LIGHT = new Color(0,0,0);
     private final static Color TEXTCOLOR_DARK = new Color(0,0,0);
-    
-    private final static Color BUTTONCOLOR_HIGHLIGHT = new Color(255,255,255);
-    
+    private final static Color TRANSPARENT = new Color(0,0,0,1);
     
     private IMatColors() {}
     
@@ -53,16 +52,33 @@ public class IMatColors {
         return BUTTONCOLOR_PRESSED;
     }
     
+    /**
+     * Getter for the color of a "notice" me button. Like the to checkout
+     * button.
+     * @return the color of a highlight button
+     */
     public static Color getButtonColorHighlight() {
         return BUTTONCOLOR_HIGHLIGHT;
     }
     
+    /**
+     * Getter for the light color of the text in iMat.
+     * @return the light color.
+     */
     public static Color getTextColorLight() {
         return TEXTCOLOR_LIGHT;
     }
     
+    /**
+     * Getter for the dark color of the text in iMat.
+     * @return the dark color.
+     */
     public static Color getTextColorDark() {
         return TEXTCOLOR_DARK;
+    }
+    
+    public static Color getTransparent() {
+        return TRANSPARENT;
     }
     
 }
