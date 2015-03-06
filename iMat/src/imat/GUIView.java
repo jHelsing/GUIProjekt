@@ -121,9 +121,17 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         productLabel.setForeground(new java.awt.Color(255, 255, 255));
         productLabel.setText("Produkter");
         productLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        productLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                productLabelMouseMoved(evt);
+            }
+        });
         productLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 productLabelMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                productLabelMouseExited(evt);
             }
         });
 
@@ -133,9 +141,17 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         recipieLabel.setForeground(new java.awt.Color(255, 255, 255));
         recipieLabel.setText(" Recept");
         recipieLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        recipieLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                recipieLabelMouseMoved(evt);
+            }
+        });
         recipieLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 recipieLabelMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                recipieLabelMouseExited(evt);
             }
         });
 
@@ -145,9 +161,17 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         shoppingListLabel.setForeground(new java.awt.Color(255, 255, 255));
         shoppingListLabel.setText(" Inköpslistor");
         shoppingListLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        shoppingListLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                shoppingListLabelMouseMoved(evt);
+            }
+        });
         shoppingListLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shoppingListLabelMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                shoppingListLabelMouseExited(evt);
             }
         });
 
@@ -157,9 +181,17 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         purchaseHistoryLabel.setForeground(new java.awt.Color(255, 255, 255));
         purchaseHistoryLabel.setText("Köphistorik");
         purchaseHistoryLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        purchaseHistoryLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                purchaseHistoryLabelMouseMoved(evt);
+            }
+        });
         purchaseHistoryLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 purchaseHistoryLabelMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                purchaseHistoryLabelMouseExited(evt);
             }
         });
 
@@ -344,7 +376,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 .addContainerGap()
                 .addComponent(splitPanelContent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(shoppingCartPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
+                .addComponent(shoppingCartPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         splitPanelLayout.setVerticalGroup(
@@ -355,7 +387,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(splitPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
+                .addComponent(splitPanelContent, javax.swing.GroupLayout.PREFERRED_SIZE, 644, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -373,7 +405,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
             .addGroup(layout.createSequentialGroup()
                 .addComponent(mainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE))
+                .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 656, Short.MAX_VALUE))
         );
 
         pack();
@@ -479,12 +511,44 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     }//GEN-LAST:event_helpImageMouseMoved
 
     private void homeLabelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeLabelMouseMoved
-        homeLabel.setForeground(java.awt.Color.red);
+        homeLabel.setForeground(java.awt.Color.black);
     }//GEN-LAST:event_homeLabelMouseMoved
 
     private void homeLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeLabelMouseExited
-        homeLabel.setOpaque(false);
+        homeLabel.setForeground(java.awt.Color.white);
     }//GEN-LAST:event_homeLabelMouseExited
+
+    private void productLabelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productLabelMouseMoved
+        productLabel.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_productLabelMouseMoved
+
+    private void productLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productLabelMouseExited
+        productLabel.setForeground(java.awt.Color.white);
+    }//GEN-LAST:event_productLabelMouseExited
+
+    private void recipieLabelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recipieLabelMouseMoved
+        recipieLabel.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_recipieLabelMouseMoved
+
+    private void recipieLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recipieLabelMouseExited
+        recipieLabel.setForeground(java.awt.Color.white);
+    }//GEN-LAST:event_recipieLabelMouseExited
+
+    private void shoppingListLabelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shoppingListLabelMouseMoved
+        shoppingListLabel.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_shoppingListLabelMouseMoved
+
+    private void shoppingListLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shoppingListLabelMouseExited
+        shoppingListLabel.setForeground(java.awt.Color.white);
+    }//GEN-LAST:event_shoppingListLabelMouseExited
+
+    private void purchaseHistoryLabelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_purchaseHistoryLabelMouseMoved
+        purchaseHistoryLabel.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_purchaseHistoryLabelMouseMoved
+
+    private void purchaseHistoryLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_purchaseHistoryLabelMouseExited
+        purchaseHistoryLabel.setForeground(java.awt.Color.white);
+    }//GEN-LAST:event_purchaseHistoryLabelMouseExited
 
     private void setFullScreen(JFrame jFrame) {
         Toolkit tk = Toolkit.getDefaultToolkit();
