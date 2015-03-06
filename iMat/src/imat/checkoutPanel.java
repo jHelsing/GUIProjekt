@@ -32,6 +32,7 @@ public class checkoutPanel extends javax.swing.JPanel {
 
         jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
+        jPanelAllProducts = new javax.swing.JPanel();
         jTextField2 = new javax.swing.JTextField();
         totalAmountTF = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
@@ -61,6 +62,19 @@ public class checkoutPanel extends javax.swing.JPanel {
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jTextField1.setText("Kassa");
         jTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        javax.swing.GroupLayout jPanelAllProductsLayout = new javax.swing.GroupLayout(jPanelAllProducts);
+        jPanelAllProducts.setLayout(jPanelAllProductsLayout);
+        jPanelAllProductsLayout.setHorizontalGroup(
+            jPanelAllProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 725, Short.MAX_VALUE)
+        );
+        jPanelAllProductsLayout.setVerticalGroup(
+            jPanelAllProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 508, Short.MAX_VALUE)
+        );
+
+        jScrollPane1.setViewportView(jPanelAllProducts);
 
         jTextField2.setEditable(false);
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -311,6 +325,7 @@ public class checkoutPanel extends javax.swing.JPanel {
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JPanel jPanelAllProducts;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField12;

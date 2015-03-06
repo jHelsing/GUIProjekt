@@ -96,8 +96,9 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         jLabelTotalKostnad.setText("X kr");
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
         jScrollPane1.setViewportView(jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -145,6 +146,8 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
                     .addComponent(imageLabelEmptyCart, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
+
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(16);
     }// </editor-fold>//GEN-END:initComponents
 
     private void imageLabelToCheckoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelToCheckoutMouseClicked
@@ -158,15 +161,52 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
     private void imageLabelEmptyCartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelEmptyCartMouseClicked
         userData.getShoppingCart().clear();
         jPanel1.removeAll();
+        avp.clear();
     }//GEN-LAST:event_imageLabelEmptyCartMouseClicked
+
     
     
     List<Product> avp = new ArrayList<>();
+    List<Product> avp2 = new ArrayList<>();
+    List<ShoppingItem> lastCart = new ArrayList<>();
+    int items;
     
     @Override
     public void shoppingCartChanged(CartEvent evt){
         jPanel1.removeAll();
-        jPanel1.setLayout(new GridLayout(30 ,0));
+        
+        avp2.clear();
+        for (int i = userData.getShoppingCart().getItems().size() -1; i >= 0 ; i--) {
+
+            ShoppingItem si2 = userData.getShoppingCart().getItems().get(i);
+
+            if (si2 != null && !avp2.contains(si2.getProduct())) {
+                avp2.add(si2.getProduct());
+            }
+
+        }
+        
+        
+        
+        /*if (lastCart.size() < userData.getShoppingCart().getItems().size()){
+            items = avp.size();
+        } else {
+            items = avp.size() +1;
+        }
+        
+        if (items < 10){
+            items = 10;
+        }*/
+        
+        if (avp2.size() < 11){
+            items = 11;
+        } else {
+            items = avp2.size();
+        }
+        
+        jPanel1.setLayout(new GridLayout(items ,0, 0, 10));
+        
+        
         if(evt.getShoppingItem() != null && !avp.contains(evt.getShoppingItem().getProduct())){
           
             if (userData.getShoppingCart().getItems().size() > 0){    
@@ -216,8 +256,10 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
             }
             
             jLabelAntalProdukter.setText(totAntalProdukter + " produkter");
-            jLabelTotalKostnad.setText(userData.getShoppingCart().getTotal() + " kr");
+            jLabelTotalKostnad.setText(Math.round(userData.getShoppingCart().getTotal()*100)/100.0 + " kr");
+            
         
+        lastCart = userData.getShoppingCart().getItems();
         revalidate();
         repaint();
     }
