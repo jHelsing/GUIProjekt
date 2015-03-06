@@ -63,10 +63,17 @@ public class ProductCard extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(200, 200));
         setMinimumSize(new java.awt.Dimension(200, 200));
         setPreferredSize(new java.awt.Dimension(200, 200));
-        setSize(new java.awt.Dimension(200, 200));
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                formMouseMoved(evt);
+            }
+        });
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                formMouseExited(evt);
             }
         });
 
@@ -75,7 +82,6 @@ public class ProductCard extends javax.swing.JPanel {
         productImage.setMinimumSize(new java.awt.Dimension(60, 60));
         productImage.setPreferredSize(new java.awt.Dimension(60, 60));
         productImage.setRequestFocusEnabled(false);
-        productImage.setSize(new java.awt.Dimension(60, 60));
 
         addToCartButton.setText("imageLabel1");
         addToCartButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -157,7 +163,7 @@ public class ProductCard extends javax.swing.JPanel {
                                 .addGap(34, 34, 34)
                                 .addComponent(productUnitsLabel))))
                     .addComponent(productImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(addToShoppingListButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addToCartButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -191,6 +197,14 @@ public class ProductCard extends javax.swing.JPanel {
             favoriteButton.imageHover();
         }
     }//GEN-LAST:event_favoriteButtonMouseClicked
+
+    private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
+        this.setBackground(Color.lightGray);
+    }//GEN-LAST:event_formMouseMoved
+
+    private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
+        this.setBackground(Color.GRAY);
+    }//GEN-LAST:event_formMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

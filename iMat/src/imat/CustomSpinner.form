@@ -52,6 +52,7 @@
         <Property name="text" type="java.lang.String" value="imageLabel1"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="decrementMouseMoved"/>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="decrementMouseClicked"/>
       </Events>
     </Component>
@@ -60,6 +61,7 @@
         <Property name="text" type="java.lang.String" value="imageLabel1"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="incrementMouseMoved"/>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="incrementMouseClicked"/>
       </Events>
     </Component>

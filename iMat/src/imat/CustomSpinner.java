@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.Cursor;
 import javax.swing.JOptionPane;
 
 /**
@@ -41,6 +42,11 @@ public class CustomSpinner extends javax.swing.JPanel {
         });
 
         decrement.setText("imageLabel1");
+        decrement.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                decrementMouseMoved(evt);
+            }
+        });
         decrement.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 decrementMouseClicked(evt);
@@ -48,6 +54,11 @@ public class CustomSpinner extends javax.swing.JPanel {
         });
 
         increment.setText("imageLabel1");
+        increment.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                incrementMouseMoved(evt);
+            }
+        });
         increment.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 incrementMouseClicked(evt);
@@ -97,6 +108,14 @@ public class CustomSpinner extends javax.swing.JPanel {
         // TODO should increase the nbr of products with 1
         increment();
     }//GEN-LAST:event_incrementMouseClicked
+
+    private void incrementMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_incrementMouseMoved
+        increment.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_incrementMouseMoved
+
+    private void decrementMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decrementMouseMoved
+        decrement.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_decrementMouseMoved
     
     private void increment() {
         int value = Integer.parseInt(nbrTextField.getText());
