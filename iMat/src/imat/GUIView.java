@@ -5,6 +5,7 @@
  */
 package imat;
 
+import com.sun.prism.paint.Color;
 import java.awt.CardLayout;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -98,11 +99,19 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
 
         homeLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         homeLabel.setForeground(new java.awt.Color(255, 255, 255));
-        homeLabel.setText("Hem");
-        homeLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        homeLabel.setText("  Hem");
+        homeLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        homeLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                homeLabelMouseMoved(evt);
+            }
+        });
         homeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 homeLabelMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                homeLabelMouseExited(evt);
             }
         });
 
@@ -111,7 +120,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         productLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         productLabel.setForeground(new java.awt.Color(255, 255, 255));
         productLabel.setText("Produkter");
-        productLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        productLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         productLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 productLabelMouseClicked(evt);
@@ -122,8 +131,8 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
 
         recipieLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         recipieLabel.setForeground(new java.awt.Color(255, 255, 255));
-        recipieLabel.setText("Recept");
-        recipieLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        recipieLabel.setText(" Recept");
+        recipieLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         recipieLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 recipieLabelMouseClicked(evt);
@@ -134,8 +143,8 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
 
         shoppingListLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         shoppingListLabel.setForeground(new java.awt.Color(255, 255, 255));
-        shoppingListLabel.setText("Inköpslistor");
-        shoppingListLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        shoppingListLabel.setText(" Inköpslistor");
+        shoppingListLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         shoppingListLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shoppingListLabelMouseClicked(evt);
@@ -147,7 +156,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         purchaseHistoryLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         purchaseHistoryLabel.setForeground(new java.awt.Color(255, 255, 255));
         purchaseHistoryLabel.setText("Köphistorik");
-        purchaseHistoryLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        purchaseHistoryLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         purchaseHistoryLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 purchaseHistoryLabelMouseClicked(evt);
@@ -223,24 +232,23 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         mainMenuLayout.setHorizontalGroup(
             mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(homeLabel)
-                .addGap(12, 12, 12)
+                .addComponent(homeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(productLabel)
-                .addGap(12, 12, 12)
+                .addComponent(productLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(recipieLabel)
-                .addGap(24, 24, 24)
+                .addComponent(recipieLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
-                .addComponent(shoppingListLabel)
-                .addGap(18, 18, 18)
+                .addComponent(shoppingListLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(purchaseHistoryLabel)
+                .addComponent(purchaseHistoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -259,34 +267,31 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         );
         mainMenuLayout.setVerticalGroup(
             mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainMenuLayout.createSequentialGroup()
+            .addGroup(mainMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(profileImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(helpImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(searchField, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1)
-                    .addComponent(jSeparator2)
-                    .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator6)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainMenuLayout.createSequentialGroup()
-                        .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainMenuLayout.createSequentialGroup()
+                    .addComponent(searchField)
+                    .addComponent(jSeparator5)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSeparator3)
+                    .addComponent(jSeparator4)
+                    .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(mainMenuLayout.createSequentialGroup()
+                        .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mainMenuLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(firstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lastNameLabel))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainMenuLayout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(homeLabel)
-                                    .addComponent(productLabel)
-                                    .addComponent(recipieLabel)
-                                    .addComponent(shoppingListLabel)
-                                    .addComponent(purchaseHistoryLabel))))
+                            .addComponent(homeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(productLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(recipieLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(shoppingListLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(purchaseHistoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -472,6 +477,14 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     private void helpImageMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpImageMouseMoved
         helpImage.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_helpImageMouseMoved
+
+    private void homeLabelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeLabelMouseMoved
+        homeLabel.setForeground(java.awt.Color.red);
+    }//GEN-LAST:event_homeLabelMouseMoved
+
+    private void homeLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeLabelMouseExited
+        homeLabel.setOpaque(false);
+    }//GEN-LAST:event_homeLabelMouseExited
 
     private void setFullScreen(JFrame jFrame) {
         Toolkit tk = Toolkit.getDefaultToolkit();
