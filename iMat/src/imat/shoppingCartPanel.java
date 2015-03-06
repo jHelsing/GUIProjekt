@@ -9,7 +9,6 @@ import java.awt.GridLayout;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.List;
-import javax.swing.JPanel;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
@@ -174,7 +173,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
     @Override
     public void shoppingCartChanged(CartEvent evt){
         jPanel1.removeAll();
-        if(!avp.contains(evt.getShoppingItem().getProduct())){
+        if(evt.getShoppingItem() != null && !avp.contains(evt.getShoppingItem().getProduct())){
           
             if (userData.getShoppingCart().getItems().size() > 0){    
                 
@@ -206,10 +205,8 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
             for (Product pr: avp){
                 int antalPr = 0;
                 for (int i = 0; i < userData.getShoppingCart().getItems().size(); i++){
-                    System.out.println("1");
                     if (userData.getShoppingCart().getItems().get(i).getProduct().equals(pr)){
                         antalPr += (int)userData.getShoppingCart().getItems().get(i).getAmount();
-                        System.out.println("2");
                     }  
                 }
                 if (antalPr > 0){
