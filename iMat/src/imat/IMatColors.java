@@ -22,8 +22,8 @@ public class IMatColors {
     private final static Color BUTTONCOLOR_HOOVER = new Color(0,0,0);
     private final static Color BUTTONCOLOR_PRESSED = new Color(0,0,0);
     private final static Color BUTTONCOLOR_HIGHLIGHT = new Color(30, 105, 18);
-    private final static Color TEXTCOLOR_LIGHT = new Color(0,0,0);
-    private final static Color TEXTCOLOR_DARK = new Color(0,0,0);
+    private final static Color TEXTCOLOR_LIGHT = new Color(210, 246, 157);
+    private final static Color TEXTCOLOR_DARK = new Color(1,47,17);
     private final static Color TRANSPARENT = new Color(0,0,0,1);
     
     private IMatColors() {}
