@@ -84,6 +84,11 @@ public class ProductCard extends javax.swing.JPanel {
         productImage.setRequestFocusEnabled(false);
 
         addToCartButton.setText("imageLabel1");
+        addToCartButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                addToCartButtonMouseMoved(evt);
+            }
+        });
         addToCartButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addToCartButtonMouseClicked(evt);
@@ -102,6 +107,11 @@ public class ProductCard extends javax.swing.JPanel {
         addToShoppingListButton.setMaximumSize(new java.awt.Dimension(40, 40));
         addToShoppingListButton.setMinimumSize(new java.awt.Dimension(40, 40));
         addToShoppingListButton.setPreferredSize(new java.awt.Dimension(40, 40));
+        addToShoppingListButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                addToShoppingListButtonMouseMoved(evt);
+            }
+        });
         addToShoppingListButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addToShoppingListButtonMouseClicked(evt);
@@ -205,6 +215,14 @@ public class ProductCard extends javax.swing.JPanel {
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
         this.setBackground(Color.GRAY);
     }//GEN-LAST:event_formMouseExited
+
+    private void addToShoppingListButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addToShoppingListButtonMouseMoved
+        this.setBackground(Color.lightGray);
+    }//GEN-LAST:event_addToShoppingListButtonMouseMoved
+
+    private void addToCartButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addToCartButtonMouseMoved
+        this.setBackground(Color.lightGray);
+    }//GEN-LAST:event_addToCartButtonMouseMoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

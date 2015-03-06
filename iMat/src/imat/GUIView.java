@@ -78,6 +78,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         confirmRegPanel = new imat.confirmRegPanel();
         firstRegPanel = new imat.firstRegPanel();
         secondRegPanel = new imat.secondRegPanel();
+        historyPanel = new imat.HistoryPanel();
         splitPanel = new javax.swing.JPanel();
         splitPanelContent = new javax.swing.JPanel();
         productSplitPanel = new javax.swing.JSplitPane();
@@ -351,6 +352,19 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         wholePanel.add(confirmRegPanel, "confirmRegPanel");
         wholePanel.add(firstRegPanel, "firstRegPanel");
         wholePanel.add(secondRegPanel, "secondRegPanel");
+
+        javax.swing.GroupLayout historyPanelLayout = new javax.swing.GroupLayout(historyPanel);
+        historyPanel.setLayout(historyPanelLayout);
+        historyPanelLayout.setHorizontalGroup(
+            historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1319, Short.MAX_VALUE)
+        );
+        historyPanelLayout.setVerticalGroup(
+            historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 656, Short.MAX_VALUE)
+        );
+
+        wholePanel.add(historyPanel, "card10");
 
         contentPanel.add(wholePanel, "wholePanel");
 
@@ -673,6 +687,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     private imat.firstRegPanel firstRegPanel;
     private imat.ImageLabel helpImage;
     private imat.helpPanel helpPanel;
+    private imat.HistoryPanel historyPanel;
     private javax.swing.JLabel homeLabel;
     private imat.homePanel homePanel;
     private javax.swing.JSeparator jSeparator1;

@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.Color;
 import java.awt.Cursor;
 import java.util.List;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
@@ -31,6 +32,7 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         initComponents();
         this.p = p;
         this.antal = antal;
+        this.setBackground(Color.lightGray);
         jLabelAntal.setText(antal + " " + p.getUnitSuffix());
         jLabelProduktnamn.setText(p.getName());
         jLabelPris.setText(p.getPrice() + " kr/" + p.getUnitSuffix());
@@ -60,7 +62,18 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         imageLabelMinska = new imat.ImageLabel("checkoutMinusButton.png");
         imageLabelÖka = new imat.ImageLabel("checkoutPlusButton.png");
 
+        setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         setMaximumSize(new java.awt.Dimension(282, 25));
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                formMouseMoved(evt);
+            }
+        });
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                formMouseExited(evt);
+            }
+        });
 
         jLabelAntal.setText("Xst");
 
@@ -119,7 +132,7 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
                 .addComponent(jLabelProduktnamn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelPris)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(imageLabelTaBort, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -166,15 +179,26 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
 
     private void imageLabelTaBortMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelTaBortMouseMoved
         imageLabelTaBort.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        this.setBackground(Color.gray);
     }//GEN-LAST:event_imageLabelTaBortMouseMoved
 
     private void imageLabelÖkaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelÖkaMouseMoved
         imageLabelÖka.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        this.setBackground(Color.gray);
     }//GEN-LAST:event_imageLabelÖkaMouseMoved
 
     private void imageLabelMinskaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMinskaMouseMoved
         imageLabelMinska.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        this.setBackground(Color.gray);
     }//GEN-LAST:event_imageLabelMinskaMouseMoved
+
+    private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
+        this.setBackground(Color.gray);
+    }//GEN-LAST:event_formMouseMoved
+
+    private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
+        this.setBackground(Color.lightGray);
+    }//GEN-LAST:event_formMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
