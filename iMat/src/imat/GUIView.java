@@ -5,15 +5,12 @@
  */
 package imat;
 
-import com.sun.prism.paint.Color;
 import java.awt.CardLayout;
 import java.awt.Cursor;
-import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.beans.PropertyChangeEvent;
 import javax.swing.JFrame;
 import se.chalmers.ait.dat215.project.*;
-import se.chalmers.ait.dat215.project.util.*;
 import java.beans.PropertyChangeListener;
 import java.util.List;
 
