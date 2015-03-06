@@ -31,8 +31,7 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         initComponents();
         this.p = p;
         this.antal = antal;
-        jLabelAntal.setText("" + antal);
-        jLabelAntalStEllerKg.setText(p.getUnitSuffix());
+        jLabelAntal.setText(antal + " " + p.getUnitSuffix());
         jLabelProduktnamn.setText(p.getName());
         jLabelPris.setText(p.getPrice() + " kr/" + p.getUnitSuffix());
     }
@@ -55,17 +54,15 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabelAntal = new javax.swing.JLabel();
-        jLabelAntalStEllerKg = new javax.swing.JLabel();
         jLabelProduktnamn = new javax.swing.JLabel();
         jLabelPris = new javax.swing.JLabel();
         imageLabelTaBort = new imat.ImageLabel("deleteItemCheckoutButton.png");
         imageLabelMinska = new imat.ImageLabel("checkoutMinusButton.png");
         imageLabelÖka = new imat.ImageLabel("checkoutPlusButton.png");
 
-        jLabelAntal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelAntal.setText("X");
+        setMaximumSize(new java.awt.Dimension(282, 25));
 
-        jLabelAntalStEllerKg.setText("st");
+        jLabelAntal.setText("Xst");
 
         jLabelProduktnamn.setText("<produktnamn>");
 
@@ -112,18 +109,17 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(imageLabelMinska, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addComponent(imageLabelÖka, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelAntal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelAntalStEllerKg)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(jLabelProduktnamn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelPris)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(imageLabelTaBort, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -135,8 +131,7 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
                 .addComponent(imageLabelTaBort, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jLabelPris)
                 .addComponent(jLabelProduktnamn)
-                .addComponent(jLabelAntalStEllerKg))
-            .addComponent(jLabelAntal)
+                .addComponent(jLabelAntal))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -187,7 +182,6 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
     private imat.ImageLabel imageLabelTaBort;
     private imat.ImageLabel imageLabelÖka;
     private javax.swing.JLabel jLabelAntal;
-    private javax.swing.JLabel jLabelAntalStEllerKg;
     private javax.swing.JLabel jLabelPris;
     private javax.swing.JLabel jLabelProduktnamn;
     // End of variables declaration//GEN-END:variables

@@ -337,9 +337,9 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
             splitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, splitPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(shoppingCartPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(splitPanelContent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(shoppingCartPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
                 .addContainerGap())
         );
         splitPanelLayout.setVerticalGroup(
@@ -350,7 +350,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(splitPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -368,7 +368,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
             .addGroup(layout.createSequentialGroup()
                 .addComponent(mainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 656, Short.MAX_VALUE))
+                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE))
         );
 
         pack();
@@ -536,8 +536,8 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 card = (CardLayout)splitPanelContent.getLayout();
                 card.show(splitPanelContent, "productPanel");
             } else if (evt.getPropertyName().equals("setInfo")) {
-                //profilePanel.setProfileInfo();
-                //checkoutPanel.setCheckoutInfo();
+                profilePanel.setProfileInfo();
+                checkoutPanel.setCheckoutInfo();
                 firstNameLabel.setText(userData.getCustomer().getFirstName());
                 lastNameLabel.setText(userData.getCustomer().getLastName());
             }
