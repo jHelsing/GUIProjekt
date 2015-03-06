@@ -37,14 +37,14 @@ public class CategoryPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        category1 = new javax.swing.JLabel();
-        category2 = new javax.swing.JLabel();
-        category3 = new javax.swing.JLabel();
-        category4 = new javax.swing.JLabel();
-        category5 = new javax.swing.JLabel();
-        category6 = new javax.swing.JLabel();
-        category7 = new javax.swing.JLabel();
-        category8 = new javax.swing.JLabel();
+        fruit = new javax.swing.JLabel();
+        bread = new javax.swing.JLabel();
+        fish = new javax.swing.JLabel();
+        meat = new javax.swing.JLabel();
+        dairy = new javax.swing.JLabel();
+        drinks = new javax.swing.JLabel();
+        sweets = new javax.swing.JLabel();
+        bake = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
@@ -55,75 +55,147 @@ public class CategoryPanel extends javax.swing.JPanel {
         jSeparator9 = new javax.swing.JSeparator();
         favorites = new javax.swing.JLabel();
 
-        category1.setText("Frukt & Grönt");
-        category1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        category1.addMouseListener(new java.awt.event.MouseAdapter() {
+        fruit.setText("Frukt & Grönt");
+        fruit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        fruit.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                fruitMouseMoved(evt);
+            }
+        });
+        fruit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                category1MouseClicked(evt);
+                fruitMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                fruitMouseExited(evt);
             }
         });
 
-        category2.setText("Bröd");
-        category2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        category2.addMouseListener(new java.awt.event.MouseAdapter() {
+        bread.setText("Bröd");
+        bread.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bread.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                breadMouseMoved(evt);
+            }
+        });
+        bread.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                category2MouseClicked(evt);
+                breadMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                breadMouseExited(evt);
             }
         });
 
-        category3.setText("Fisk & Skaldjur");
-        category3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        category3.addMouseListener(new java.awt.event.MouseAdapter() {
+        fish.setText("Fisk & Skaldjur");
+        fish.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        fish.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                fishMouseMoved(evt);
+            }
+        });
+        fish.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                category3MouseClicked(evt);
+                fishMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                fishMouseExited(evt);
             }
         });
 
-        category4.setText("Kött");
-        category4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        category4.addMouseListener(new java.awt.event.MouseAdapter() {
+        meat.setText("Kött");
+        meat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        meat.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                meatMouseMoved(evt);
+            }
+        });
+        meat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                category4MouseClicked(evt);
+                meatMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                meatMouseExited(evt);
             }
         });
 
-        category5.setText("Mejeriprodukter");
-        category5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        category5.addMouseListener(new java.awt.event.MouseAdapter() {
+        dairy.setText("Mejeriprodukter");
+        dairy.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        dairy.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                dairyMouseMoved(evt);
+            }
+        });
+        dairy.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                category5MouseClicked(evt);
+                dairyMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                dairyMouseExited(evt);
             }
         });
 
-        category6.setText("Kalla drycker");
-        category6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        category6.addMouseListener(new java.awt.event.MouseAdapter() {
+        drinks.setText("Kalla drycker");
+        drinks.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        drinks.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                drinksMouseMoved(evt);
+            }
+        });
+        drinks.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                category6MouseClicked(evt);
+                drinksMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                drinksMouseExited(evt);
             }
         });
 
-        category7.setText("Sötsaker");
-        category7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        category7.addMouseListener(new java.awt.event.MouseAdapter() {
+        sweets.setText("Sötsaker");
+        sweets.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        sweets.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                sweetsMouseMoved(evt);
+            }
+        });
+        sweets.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                category7MouseClicked(evt);
+                sweetsMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                sweetsMouseExited(evt);
             }
         });
 
-        category8.setText("Skafferi");
-        category8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        category8.addMouseListener(new java.awt.event.MouseAdapter() {
+        bake.setText("Skafferi");
+        bake.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bake.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                bakeMouseMoved(evt);
+            }
+        });
+        bake.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                category8MouseClicked(evt);
+                bakeMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bakeMouseExited(evt);
             }
         });
 
         favorites.setText("Favoriter");
         favorites.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        favorites.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                favoritesMouseMoved(evt);
+            }
+        });
         favorites.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 favoritesMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                favoritesMouseExited(evt);
             }
         });
 
@@ -135,23 +207,23 @@ public class CategoryPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(category8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bake, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSeparator9)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(category6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(drinks, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(category5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(dairy, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(category1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(category2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(category3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(category4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(category7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(fruit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bread, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(fish, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(meat, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sweets, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(favorites, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -164,40 +236,40 @@ public class CategoryPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(category1)
+                .addComponent(fruit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(category2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(bread)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(category3)
+                .addComponent(fish, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(category4)
+                .addComponent(meat)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(category5)
+                .addComponent(dairy)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(category6)
+                .addComponent(drinks)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(category7)
+                .addComponent(sweets)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(category8)
+                .addComponent(bake)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void category1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_category1MouseClicked
+    private void fruitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fruitMouseClicked
         // Visar upp sökresultat på de kategorier som tillhör Frukt och grönt
         List<Product> categoryProducts = data.getProducts(ProductCategory.CITRUS_FRUIT);
         categoryProducts.addAll(data.getProducts(ProductCategory.EXOTIC_FRUIT));
@@ -216,63 +288,63 @@ public class CategoryPanel extends javax.swing.JPanel {
         // Skicka dessa produkter till sökvyn
         SearchResultPanel search = (SearchResultPanel)SearchResultPanel.getInstance();
         search.displayResults(categoryProducts);
-    }//GEN-LAST:event_category1MouseClicked
+    }//GEN-LAST:event_fruitMouseClicked
 
-    private void category2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_category2MouseClicked
+    private void breadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_breadMouseClicked
         // Visar upp sökresultat på de kategorier som tillhör Bröd
         List<Product> categoryProducts = data.getProducts(ProductCategory.BREAD);
         
         // Skicka dessa produkter till sökvyn
         SearchResultPanel search = (SearchResultPanel)SearchResultPanel.getInstance();
         search.displayResults(categoryProducts);
-    }//GEN-LAST:event_category2MouseClicked
+    }//GEN-LAST:event_breadMouseClicked
 
-    private void category3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_category3MouseClicked
+    private void fishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fishMouseClicked
         // Visar upp de sökresultat på de kategorier som tillhör Fisk & Skaldjur
         List<Product> categoryProducts = data.getProducts(ProductCategory.FISH);
         
         // Skicka dessa produkter till sökvyn
         SearchResultPanel search = (SearchResultPanel)SearchResultPanel.getInstance();
         search.displayResults(categoryProducts);
-    }//GEN-LAST:event_category3MouseClicked
+    }//GEN-LAST:event_fishMouseClicked
 
-    private void category4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_category4MouseClicked
+    private void meatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_meatMouseClicked
         // Visar upp de sökresultat på de kategorier som tillhör Kött
         List<Product> categoryProducts = data.getProducts(ProductCategory.MEAT);
         
         // Skicka dessa produkter till sökvyn
         SearchResultPanel search = (SearchResultPanel)SearchResultPanel.getInstance();
         search.displayResults(categoryProducts);
-    }//GEN-LAST:event_category4MouseClicked
+    }//GEN-LAST:event_meatMouseClicked
 
-    private void category5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_category5MouseClicked
+    private void dairyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dairyMouseClicked
         // Visar upp de sökresultat på de kategorier som tillhör Mejeriprodukter
         List<Product> categoryProducts = data.getProducts(ProductCategory.DAIRIES);
         
         // Skicka dessa produkter till sökvyn
         SearchResultPanel search = (SearchResultPanel)SearchResultPanel.getInstance();
         search.displayResults(categoryProducts);
-    }//GEN-LAST:event_category5MouseClicked
+    }//GEN-LAST:event_dairyMouseClicked
 
-    private void category6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_category6MouseClicked
+    private void drinksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_drinksMouseClicked
         // Visar upp de sökresultat på de kategorier som tillhör Kalla drycker
         List<Product> categoryProducts = data.getProducts(ProductCategory.COLD_DRINKS);
         
         // Skicka dessa produkter till sökvyn
         SearchResultPanel search = (SearchResultPanel)SearchResultPanel.getInstance();
         search.displayResults(categoryProducts);
-    }//GEN-LAST:event_category6MouseClicked
+    }//GEN-LAST:event_drinksMouseClicked
 
-    private void category7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_category7MouseClicked
+    private void sweetsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sweetsMouseClicked
         // Visar de sökresultat på de kategorier som tillhör Sötsaker
         List<Product> categoryProducts = data.getProducts(ProductCategory.SWEET);
         
         // Skicka dessa produkter till sökvyn
         SearchResultPanel search = (SearchResultPanel)SearchResultPanel.getInstance();
         search.displayResults(categoryProducts);
-    }//GEN-LAST:event_category7MouseClicked
+    }//GEN-LAST:event_sweetsMouseClicked
 
-    private void category8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_category8MouseClicked
+    private void bakeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bakeMouseClicked
         // Visar de sökresultat på de kategorier som tillhör Skafferi
         List<Product> categoryProducts = data.getProducts(ProductCategory.FLOUR_SUGAR_SALT);
         categoryProducts = data.getProducts(ProductCategory.PASTA);
@@ -286,7 +358,7 @@ public class CategoryPanel extends javax.swing.JPanel {
         // Skicka dessa produkter till sökvyn
         SearchResultPanel search = (SearchResultPanel)SearchResultPanel.getInstance();
         search.displayResults(categoryProducts);
-    }//GEN-LAST:event_category8MouseClicked
+    }//GEN-LAST:event_bakeMouseClicked
 
     private void favoritesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favoritesMouseClicked
         // Visar de sökresultat på de varor som tillhör kundens favoriter
@@ -297,17 +369,87 @@ public class CategoryPanel extends javax.swing.JPanel {
         search.displayResults(categoryProducts);
     }//GEN-LAST:event_favoritesMouseClicked
 
+    private void fruitMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fruitMouseMoved
+        fruit.setForeground(java.awt.Color.white);
+    }//GEN-LAST:event_fruitMouseMoved
+
+    private void fruitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fruitMouseExited
+        fruit.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_fruitMouseExited
+
+    private void favoritesMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favoritesMouseMoved
+        favorites.setForeground(java.awt.Color.white);
+    }//GEN-LAST:event_favoritesMouseMoved
+
+    private void favoritesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favoritesMouseExited
+        favorites.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_favoritesMouseExited
+
+    private void breadMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_breadMouseMoved
+        bread.setForeground(java.awt.Color.white);
+    }//GEN-LAST:event_breadMouseMoved
+
+    private void breadMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_breadMouseExited
+        bread.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_breadMouseExited
+
+    private void fishMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fishMouseMoved
+        fish.setForeground(java.awt.Color.white);
+    }//GEN-LAST:event_fishMouseMoved
+
+    private void fishMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fishMouseExited
+        fish.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_fishMouseExited
+
+    private void meatMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_meatMouseMoved
+        meat.setForeground(java.awt.Color.white);
+    }//GEN-LAST:event_meatMouseMoved
+
+    private void meatMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_meatMouseExited
+        meat.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_meatMouseExited
+
+    private void dairyMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dairyMouseMoved
+        dairy.setForeground(java.awt.Color.white);
+    }//GEN-LAST:event_dairyMouseMoved
+
+    private void dairyMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dairyMouseExited
+        dairy.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_dairyMouseExited
+
+    private void drinksMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_drinksMouseMoved
+        drinks.setForeground(java.awt.Color.white);
+    }//GEN-LAST:event_drinksMouseMoved
+
+    private void drinksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_drinksMouseExited
+        drinks.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_drinksMouseExited
+
+    private void sweetsMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sweetsMouseMoved
+        sweets.setForeground(java.awt.Color.white);
+    }//GEN-LAST:event_sweetsMouseMoved
+
+    private void sweetsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sweetsMouseExited
+        sweets.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_sweetsMouseExited
+
+    private void bakeMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bakeMouseMoved
+        bake.setForeground(java.awt.Color.white);
+    }//GEN-LAST:event_bakeMouseMoved
+
+    private void bakeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bakeMouseExited
+        bake.setForeground(java.awt.Color.black);
+    }//GEN-LAST:event_bakeMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel category1;
-    private javax.swing.JLabel category2;
-    private javax.swing.JLabel category3;
-    private javax.swing.JLabel category4;
-    private javax.swing.JLabel category5;
-    private javax.swing.JLabel category6;
-    private javax.swing.JLabel category7;
-    private javax.swing.JLabel category8;
+    private javax.swing.JLabel bake;
+    private javax.swing.JLabel bread;
+    private javax.swing.JLabel dairy;
+    private javax.swing.JLabel drinks;
     private javax.swing.JLabel favorites;
+    private javax.swing.JLabel fish;
+    private javax.swing.JLabel fruit;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -316,5 +458,7 @@ public class CategoryPanel extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JLabel meat;
+    private javax.swing.JLabel sweets;
     // End of variables declaration//GEN-END:variables
 }

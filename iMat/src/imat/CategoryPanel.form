@@ -20,23 +20,23 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jSeparator8" alignment="1" max="32767" attributes="0"/>
-                  <Component id="category8" alignment="0" max="32767" attributes="0"/>
+                  <Component id="bake" alignment="0" max="32767" attributes="0"/>
                   <Component id="jSeparator9" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="jSeparator7" alignment="0" max="32767" attributes="0"/>
-                          <Component id="category6" alignment="0" max="32767" attributes="0"/>
+                          <Component id="drinks" alignment="0" max="32767" attributes="0"/>
                           <Component id="jSeparator6" alignment="0" max="32767" attributes="0"/>
                           <Component id="jSeparator5" alignment="0" max="32767" attributes="0"/>
-                          <Component id="category5" alignment="0" max="32767" attributes="0"/>
+                          <Component id="dairy" alignment="0" max="32767" attributes="0"/>
                           <Component id="jSeparator4" alignment="0" max="32767" attributes="0"/>
                           <Component id="jSeparator3" alignment="0" max="32767" attributes="0"/>
                           <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="category1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="category2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="category3" alignment="0" max="32767" attributes="0"/>
-                          <Component id="category4" alignment="0" max="32767" attributes="0"/>
-                          <Component id="category7" max="32767" attributes="0"/>
+                          <Component id="fruit" alignment="0" max="32767" attributes="0"/>
+                          <Component id="bread" alignment="0" max="32767" attributes="0"/>
+                          <Component id="fish" alignment="0" max="32767" attributes="0"/>
+                          <Component id="meat" alignment="0" max="32767" attributes="0"/>
+                          <Component id="sweets" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -54,42 +54,42 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator9" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="category1" min="-2" max="-2" attributes="0"/>
+              <Component id="fruit" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="category2" min="-2" pref="16" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <Component id="bread" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="category3" min="-2" max="-2" attributes="0"/>
+              <Component id="fish" min="-2" pref="20" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="category4" min="-2" max="-2" attributes="0"/>
+              <Component id="meat" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator5" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="category5" min="-2" max="-2" attributes="0"/>
+              <Component id="dairy" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator6" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="category6" min="-2" max="-2" attributes="0"/>
+              <Component id="drinks" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator7" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="category7" min="-2" max="-2" attributes="0"/>
+              <Component id="sweets" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator8" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="category8" min="-2" max="-2" attributes="0"/>
+              <Component id="bake" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="category1">
+    <Component class="javax.swing.JLabel" name="fruit">
       <Properties>
         <Property name="text" type="java.lang.String" value="Frukt &amp; Gr&#xf6;nt"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -97,10 +97,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="category1MouseClicked"/>
+        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="fruitMouseMoved"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="fruitMouseClicked"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="fruitMouseExited"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="category2">
+    <Component class="javax.swing.JLabel" name="bread">
       <Properties>
         <Property name="text" type="java.lang.String" value="Br&#xf6;d"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -108,10 +110,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="category2MouseClicked"/>
+        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="breadMouseMoved"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="breadMouseClicked"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="breadMouseExited"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="category3">
+    <Component class="javax.swing.JLabel" name="fish">
       <Properties>
         <Property name="text" type="java.lang.String" value="Fisk &amp; Skaldjur"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -119,10 +123,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="category3MouseClicked"/>
+        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="fishMouseMoved"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="fishMouseClicked"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="fishMouseExited"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="category4">
+    <Component class="javax.swing.JLabel" name="meat">
       <Properties>
         <Property name="text" type="java.lang.String" value="K&#xf6;tt"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -130,10 +136,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="category4MouseClicked"/>
+        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="meatMouseMoved"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="meatMouseClicked"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="meatMouseExited"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="category5">
+    <Component class="javax.swing.JLabel" name="dairy">
       <Properties>
         <Property name="text" type="java.lang.String" value="Mejeriprodukter"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -141,10 +149,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="category5MouseClicked"/>
+        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="dairyMouseMoved"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dairyMouseClicked"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dairyMouseExited"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="category6">
+    <Component class="javax.swing.JLabel" name="drinks">
       <Properties>
         <Property name="text" type="java.lang.String" value="Kalla drycker"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -152,10 +162,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="category6MouseClicked"/>
+        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="drinksMouseMoved"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="drinksMouseClicked"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="drinksMouseExited"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="category7">
+    <Component class="javax.swing.JLabel" name="sweets">
       <Properties>
         <Property name="text" type="java.lang.String" value="S&#xf6;tsaker"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -163,10 +175,12 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="category7MouseClicked"/>
+        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="sweetsMouseMoved"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sweetsMouseClicked"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sweetsMouseExited"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="category8">
+    <Component class="javax.swing.JLabel" name="bake">
       <Properties>
         <Property name="text" type="java.lang.String" value="Skafferi"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -174,7 +188,9 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="category8MouseClicked"/>
+        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="bakeMouseMoved"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bakeMouseClicked"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bakeMouseExited"/>
       </Events>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator2">
@@ -201,7 +217,9 @@
         </Property>
       </Properties>
       <Events>
+        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="favoritesMouseMoved"/>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="favoritesMouseClicked"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="favoritesMouseExited"/>
       </Events>
     </Component>
   </SubComponents>
