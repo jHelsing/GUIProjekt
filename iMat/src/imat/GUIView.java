@@ -597,7 +597,8 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 CardLayout card = (CardLayout)contentPanel.getLayout();
                 card.show(contentPanel, "wholePanel");
                 card = (CardLayout)wholePanel.getLayout();
-                card.show(wholePanel,"checkoutPanel");   
+                card.show(wholePanel,"checkoutPanel");  
+                updateCheckout();
             } else if(evt.getPropertyName().equals("ToFirstRegPanel")){
                 CardLayout card = (CardLayout)contentPanel.getLayout();
                 card.show(contentPanel, "wholePanel");
@@ -630,6 +631,10 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 lastNameLabel.setText(userData.getCustomer().getLastName());
             }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    private void updateCheckout(){
+        checkoutPanel.updatePanels();
     }
     
     

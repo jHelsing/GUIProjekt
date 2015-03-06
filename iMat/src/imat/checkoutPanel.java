@@ -5,7 +5,14 @@
  */
 package imat;
 
+import java.awt.GridLayout;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.util.ArrayList;
+import java.util.List;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.ShoppingItem;
 /**
  *
  * @author Johan
@@ -13,6 +20,7 @@ import se.chalmers.ait.dat215.project.IMatDataHandler;
 public class checkoutPanel extends javax.swing.JPanel {
 
     private IMatDataHandler userData = IMatDataHandler.getInstance();
+    List<Product> avp = new ArrayList<>();
     
     /**
      * Creates new form checkoutPanel
@@ -20,7 +28,53 @@ public class checkoutPanel extends javax.swing.JPanel {
     public checkoutPanel() {
         initComponents();
     }
+   
+    public void updatePanels(){
+        int items;
+        avp.clear();
+        for (int i = userData.getShoppingCart().getItems().size() -1; i >= 0 ; i--) {
 
+            ShoppingItem si = userData.getShoppingCart().getItems().get(i);
+
+            if (si != null && !avp.contains(si.getProduct())) {
+                avp.add(si.getProduct());
+            }
+
+        }
+        
+        if (avp.size() < 8){
+            items = 8;
+        } else {
+            items = avp.size();
+        }
+        
+        
+        jPanelAllProducts.removeAll();
+        jPanelAllProducts.setLayout(new GridLayout(items, 0));
+        
+        
+        List<Product> avt = new ArrayList<>();
+        
+        for (int i = 0; i < userData.getShoppingCart().getItems().size(); i++){
+            if (!avt.contains(userData.getShoppingCart().getItems().get(i))){
+                int antalP = (int)userData.getShoppingCart().getItems().get(i).getAmount();
+                
+                for (int k = i+1; k < userData.getShoppingCart().getItems().size(); k++){
+                    if (userData.getShoppingCart().getItems().get(i).equals(userData.getShoppingCart().getItems().get(k))){
+                        antalP += (int)userData.getShoppingCart().getItems().get(k).getAmount();
+                    }
+                }
+                jPanelAllProducts.add(new CheckoutProductPanel(antalP, userData.getShoppingCart().getItems().get(i).getProduct()));
+                avt.add(userData.getShoppingCart().getItems().get(i).getProduct());
+            }
+            
+        }
+        
+        revalidate();
+        repaint();
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -62,6 +116,9 @@ public class checkoutPanel extends javax.swing.JPanel {
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jTextField1.setText("Kassa");
         jTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         javax.swing.GroupLayout jPanelAllProductsLayout = new javax.swing.GroupLayout(jPanelAllProducts);
         jPanelAllProducts.setLayout(jPanelAllProductsLayout);
@@ -345,4 +402,6 @@ public class checkoutPanel extends javax.swing.JPanel {
     private javax.swing.JTextField totalAmountTF;
     private javax.swing.JTextField totalPriceTF;
     // End of variables declaration//GEN-END:variables
+
+    
 }

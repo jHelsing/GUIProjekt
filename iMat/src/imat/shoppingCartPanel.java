@@ -33,6 +33,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
      */
     public shoppingCartPanel() {
         initComponents();
+        userData.getShoppingCart().addShoppingCartListener(this);
         jPanel1.setMaximumSize(new Dimension(305, 406));
         jPanel1.setLayout(new GridLayout(10, 1));
         
@@ -40,7 +41,6 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
     
     public void addObserver(PropertyChangeListener observer){
         pcs.addPropertyChangeListener(observer);
-        userData.getShoppingCart().addShoppingCartListener(this);
     }
 
     /**
@@ -153,6 +153,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
     private void imageLabelToCheckoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelToCheckoutMouseClicked
         if (userData.isCustomerComplete()) {
             pcs.firePropertyChange("ToCheckout", 0 , 1);
+            
         } else {
             pcs.firePropertyChange("ToFirstRegPanel", 0, 1);
         }
