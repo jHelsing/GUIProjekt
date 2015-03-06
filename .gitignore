@@ -3,3 +3,8 @@ iMat/build/
 iMat/dist/
 iMat/build/built-jar.properties
 iMat/nbproject/private/private.xml
+iMat/build
+iMat/build/built-jar.properties
+
+
+*.properties
