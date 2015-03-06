@@ -90,10 +90,10 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         jLabel2.setText("Totalt:");
 
         jLabelAntalProdukter.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelAntalProdukter.setText("X produkter");
+        jLabelAntalProdukter.setText("0 produkter");
 
         jLabelTotalKostnad.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelTotalKostnad.setText("X kr");
+        jLabelTotalKostnad.setText("0 kr");
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -204,7 +204,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
             items = avp2.size();
         }
         
-        jPanel1.setLayout(new GridLayout(items ,0, 0, 10));
+        jPanel1.setLayout(new GridLayout(items ,0, 0, 0));
         
         
         if(evt.getShoppingItem() != null && !avp.contains(evt.getShoppingItem().getProduct())){
