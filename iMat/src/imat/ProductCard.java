@@ -63,7 +63,8 @@ public class ProductCard extends javax.swing.JPanel {
         setToolTipText("");
         setMaximumSize(new java.awt.Dimension(176, 169));
         setMinimumSize(new java.awt.Dimension(176, 169));
-        setPreferredSize(null);
+        setPreferredSize(new java.awt.Dimension(176, 169));
+        setSize(new java.awt.Dimension(176, 169));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);

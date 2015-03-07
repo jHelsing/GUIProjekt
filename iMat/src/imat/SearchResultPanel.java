@@ -6,6 +6,7 @@
 package imat;
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -102,7 +103,10 @@ public class SearchResultPanel extends JPanel {
         
         //Se till att korten visas på rätt sätt:
         int nbrOfRows = 0;
-        if(nbrOfResults % 2 == 0) {
+        if(nbrOfResults == 1) {
+            searchResultCardContainer.setLayout(new FlowLayout());
+            nbrOfRows = 1;
+        } else if(nbrOfResults % 2 == 0) {
             //Jämnt antal kort
             nbrOfRows = nbrOfResults/4;
             if (nbrOfRows < 4)
@@ -117,41 +121,23 @@ public class SearchResultPanel extends JPanel {
             
         }
         
-        
-        
-        
-        
-        int height = nbrOfRows*179 + (nbrOfRows-2)*10 + 20;
-        int width = 4*169 + 30;
-        
-        if(height < minHeight)
-            height = minHeight;
-        if(width < minWidth)
-            width = minWidth;
-        
-        Dimension d = new Dimension(width,height);
-        
-        searchResultCardContainer.setPreferredSize(d);
-        searchResultCardContainer.setMaximumSize(d);
-        searchResultCardContainer.setMinimumSize(d);
-        searchResultCardContainer.setSize(d);
-        
-        areaOfSearchResult.setPreferredSize(d);
-        areaOfSearchResult.setMaximumSize(d);
-        areaOfSearchResult.setMinimumSize(d);
-        areaOfSearchResult.setSize(d);
-        
         ArrayList<ProductCard> pc = new ArrayList(results.size());
         
         // Skapar ProductCard för alla sökresultat
         for(int i=0; i<nbrOfResults; i++) {
             pc.add(new ProductCard(results.get(i)));
             pc.get(i).setVisible(true);
+            pc.get(i).setPreferredSize(new Dimension(176,169));
+            pc.get(i).setMinimumSize(new Dimension(176,169));
+            pc.get(i).setMaximumSize(new Dimension(176,169));
         }
         
         for(int i=0; i<nbrOfResults; i++) {
             searchResultCardContainer.add(pc.get(i), i);
         }
+        searchResultCardContainer.setMinimumSize(new Dimension(nbrOfRows*176, 4*169));
+        searchResultCardContainer.setMaximumSize(new Dimension(nbrOfRows*176, 4*169));
+        searchResultCardContainer.setPreferredSize(searchResultCardContainer.getPreferredSize());
         
         searchResultCardContainer.repaint();
         searchResultCardContainer.revalidate();
