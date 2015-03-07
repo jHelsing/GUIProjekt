@@ -7,11 +7,10 @@ package imat;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.beans.PropertyChangeEvent;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
-import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
 import se.chalmers.ait.dat215.project.Product;
 import javax.swing.JPanel;
 
@@ -90,12 +89,45 @@ public class SearchResultPanel extends JPanel {
         revalidate();
         int nbrOfResults = results.size();
         
-        // Räkna ut antalet rader för layouten av areaOfSearchResult
-        int nbrOfRows = nbrOfResults/2;
-        searchResultCardContainer.setLayout(new GridLayout(nbrOfRows,2));
+        Collections.sort(results, new Comparator<Product>() {
+            @Override
+            public int compare(Product p1, Product p2) {
+                return p1.getName().compareToIgnoreCase(p2.getName());
+            }
+        });
         
-        int height = nbrOfRows*200 + (nbrOfRows-2)*10 + 20;
-        int width = 2*200 + 30;
+        //Minsta antal kort som får plats:
+        int minHeight = 176*4;
+        int minWidth = 3*169;
+        
+        //Se till att korten visas på rätt sätt:
+        int nbrOfRows = 0;
+        if(nbrOfResults % 2 == 0) {
+            //Jämnt antal kort
+            nbrOfRows = nbrOfResults/4;
+            if (nbrOfRows < 4)
+                nbrOfRows = 4;
+            searchResultCardContainer.setLayout(new GridLayout(nbrOfRows,4,10,10));
+        } else {
+            //Ojämnt antal kort
+            nbrOfRows = nbrOfResults/3;
+            if (nbrOfRows < 4)
+                nbrOfRows = 4;
+            searchResultCardContainer.setLayout(new GridLayout(nbrOfRows,3,10,10));
+            
+        }
+        
+        
+        
+        
+        
+        int height = nbrOfRows*179 + (nbrOfRows-2)*10 + 20;
+        int width = 4*169 + 30;
+        
+        if(height < minHeight)
+            height = minHeight;
+        if(width < minWidth)
+            width = minWidth;
         
         Dimension d = new Dimension(width,height);
         
