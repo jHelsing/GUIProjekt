@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import se.chalmers.ait.dat215.project.CartEvent;
 import se.chalmers.ait.dat215.project.ShoppingCartListener;
 
-
 /**
  *
  * @author Johan
@@ -27,12 +26,14 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
 
     private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
     private IMatDataHandler userData = IMatDataHandler.getInstance();
+    private boolean goStraightToPayment;
     
     /**
      * Creates new form shoppingCartPanel
      */
     public shoppingCartPanel() {
         initComponents();
+        goStraightToPayment = false;
         userData.getShoppingCart().addShoppingCartListener(this);
         jPanel1.setMaximumSize(new Dimension(305, 406));
         jPanel1.setLayout(new GridLayout(10, 1));
@@ -41,6 +42,10 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
     
     public void addObserver(PropertyChangeListener observer){
         pcs.addPropertyChangeListener(observer);
+    }
+    
+    public boolean getGoStraightToPayment() {
+        return goStraightToPayment;
     }
 
     /**
@@ -155,6 +160,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
             pcs.firePropertyChange("ToCheckout", 0 , 1);
             
         } else {
+            goStraightToPayment = true;
             pcs.firePropertyChange("ToFirstRegPanel", 0, 1);
         }
     }//GEN-LAST:event_imageLabelToCheckoutMouseClicked

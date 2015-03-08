@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.Color;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
@@ -15,12 +16,20 @@ import java.beans.PropertyChangeSupport;
 public class confirmRegPanel extends javax.swing.JPanel {
 
     private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
-    
+
     /**
      * Creates new form confirmRegPanel
      */
     public confirmRegPanel() {
         initComponents();
+        straightToPayLabel.setBackground(Color.lightGray);
+        straightToPayLabel.setVisible(false);
+        straightToPayLabel.setEnabled(false);
+    }
+    
+    public void enableSTPLabel(boolean b) {
+        straightToPayLabel.setVisible(b);
+        straightToPayLabel.setEnabled(b);
     }
     
     public void addObserver(PropertyChangeListener observer){
@@ -40,6 +49,7 @@ public class confirmRegPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         imageLabel1 = new imat.ImageLabel();
+        straightToPayLabel = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Välkommen till iMat!");
@@ -52,6 +62,23 @@ public class confirmRegPanel extends javax.swing.JPanel {
         imageLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabel1MouseClicked(evt);
+            }
+        });
+
+        straightToPayLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        straightToPayLabel.setText("Fortsätt direkt till kassan");
+        straightToPayLabel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        straightToPayLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                straightToPayLabelMouseMoved(evt);
+            }
+        });
+        straightToPayLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                straightToPayLabelMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                straightToPayLabelMouseExited(evt);
             }
         });
 
@@ -69,11 +96,14 @@ public class confirmRegPanel extends javax.swing.JPanel {
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(425, 425, 425)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(557, 557, 557)
-                        .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(429, Short.MAX_VALUE))
+                        .addComponent(jLabel3)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(359, Short.MAX_VALUE)
+                .addComponent(straightToPayLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101)
+                .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(510, 510, 510))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,9 +114,11 @@ public class confirmRegPanel extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addGap(70, 70, 70)
-                .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(241, Short.MAX_VALUE))
+                .addGap(78, 78, 78)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(straightToPayLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -94,10 +126,23 @@ public class confirmRegPanel extends javax.swing.JPanel {
         pcs.firePropertyChange("ToProducts", 0, 1);
     }//GEN-LAST:event_imageLabel1MouseClicked
 
+    private void straightToPayLabelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_straightToPayLabelMouseMoved
+        straightToPayLabel.setBackground(Color.gray);
+    }//GEN-LAST:event_straightToPayLabelMouseMoved
+
+    private void straightToPayLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_straightToPayLabelMouseExited
+        straightToPayLabel.setBackground(Color.lightGray);
+    }//GEN-LAST:event_straightToPayLabelMouseExited
+
+    private void straightToPayLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_straightToPayLabelMouseClicked
+        pcs.firePropertyChange("ToCheckout", 0, 1);
+    }//GEN-LAST:event_straightToPayLabelMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private imat.ImageLabel imageLabel1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel straightToPayLabel;
     // End of variables declaration//GEN-END:variables
 }

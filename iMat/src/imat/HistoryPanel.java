@@ -5,11 +5,9 @@
  */
 package imat;
 
-import java.util.List;
+import java.text.SimpleDateFormat;
 import javax.swing.DefaultListModel;
-import javax.swing.ListModel;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
-import se.chalmers.ait.dat215.project.Order;
 
 /**
  *
@@ -18,7 +16,11 @@ import se.chalmers.ait.dat215.project.Order;
 public class HistoryPanel extends javax.swing.JPanel {
 
     private IMatDataHandler data = IMatDataHandler.getInstance();
-    private List<Order> buys;
+ //   private List<Order> buys;
+ //   private Date todaysDate;
+    private DefaultListModel model;
+    private SimpleDateFormat sdf;
+    private int historyIndex;
     
     
     /**
@@ -26,26 +28,53 @@ public class HistoryPanel extends javax.swing.JPanel {
      */
     public HistoryPanel() {
         initComponents();
-        List<Order> buys = data.getOrders();
+        sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+        model = new DefaultListModel();
+        historyList.setModel(model);
+        historyIndex = 0;
     }
-    /*
+    
+    public void incHistoryIndex() {
+        historyIndex++;
+    }
+    
     public void addToHistory() {
-        buys = data.getOrders();
-        String buySummary;
-        String[] historyList = {};
-        for (int i = 0; i < data.getOrders().size(); i++) {
-            String datum = buys.get(i).getDate().toString();
-            int prodNbr = buys.get(i).getItems().size();
-            double totalPrice = 0;
-            for (int j = 0; j < buys.get(i).getItems().size(); j++) {
-                totalPrice = totalPrice + buys.get(i).getItems().get(j).getProduct().getPrice();
-            }
-            buySummary = datum + "    " + Integer.toString(prodNbr) + "st" + "     " + Double.toString(totalPrice) + "kr";
-            historyList = {buySummary};
+    //    model = new DefaultListModel();
+    //    historyList.setModel(model);
+    //    todaysDate = new Date();
+        double price = 0;
+        double nbrOfItems = 0;
+    //    data.getOrders().get(-1).setDate(todaysDate);
+        for (int i = 0; i < data.getOrders().get(historyIndex).getItems().size(); i++) {
+            price = price + data.getOrders().get(historyIndex).getItems().get(i).getTotal();
+            nbrOfItems = nbrOfItems + data.getOrders().get(historyIndex).getItems().get(i).getAmount();
         }
-        historyList.setModel();
-    } */
-
+        String priceS = Double.toString(price);
+        String nbrOfItemsS = Integer.toString((int)nbrOfItems);
+        String dateNicelyDisplayed = sdf.format(data.getOrders().get(historyIndex).getDate());
+        String total = dateNicelyDisplayed + "           " + nbrOfItemsS + "                    " + priceS + " kr";
+        model.add(0, total);
+        /*
+        for (int i = 0; i < data.getOrders().size(); i++) {
+            price = 0;
+            nbrOfItems = 0;
+            //Sums the total order price and number of items. 
+            for (int j = 0; j < data.getOrders().get(i).getItems().size(); j++) {
+                price = price + data.getOrders().get(i).getItems().get(j).getTotal();
+                nbrOfItems = nbrOfItems + data.getOrders().get(i).getItems().get(j).getAmount();
+            } 
+            data.getOrders().get(i).setDate(todaysDate);
+            
+            Date date = (data.getOrders().get(i).getDate());
+            
+            String priceS = Double.toString(price);
+            String nbrOfItemsS = Integer.toString((int)nbrOfItems);
+            String dateNicelyDisplayed = sdf.format(date);
+            String total = dateNicelyDisplayed + "           " + nbrOfItemsS + "                    " + priceS + " kr";
+            model.addElement(total);
+        } */
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -62,10 +91,15 @@ public class HistoryPanel extends javax.swing.JPanel {
         itemList = new javax.swing.JList();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        historyList = new javax.swing.JList();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setText("Köphistorik");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("Nedan visas de senaste beställningarna du gjort hos iMat. Klicka på en av dem för att få mer");
@@ -77,10 +111,11 @@ public class HistoryPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(itemList);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText(" Datum          Antal produkter       Totalbelopp");
+        jLabel4.setText(" Datum                               Antal produkter               Totalbelopp");
 
-        jList1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jScrollPane2.setViewportView(jList1);
+        historyList.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        historyList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane2.setViewportView(historyList);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -89,17 +124,17 @@ public class HistoryPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1070, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1101, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
                             .addComponent(jScrollPane2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 672, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -111,24 +146,28 @@ public class HistoryPanel extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addGap(8, 8, 8)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        this.addToHistory();
+    }//GEN-LAST:event_jLabel1MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JList historyList;
     private javax.swing.JList itemList;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JList jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables

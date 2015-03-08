@@ -8,6 +8,7 @@ package imat;
 import java.awt.GridLayout;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
 import java.util.List;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
@@ -21,6 +22,7 @@ public class checkoutPanel extends javax.swing.JPanel {
 
     private IMatDataHandler userData = IMatDataHandler.getInstance();
     List<Product> avp = new ArrayList<>();
+    private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
     
     /**
      * Creates new form checkoutPanel
@@ -29,6 +31,10 @@ public class checkoutPanel extends javax.swing.JPanel {
         initComponents();
     }
    
+    public void addObserver(PropertyChangeListener observer){
+        pcs.addPropertyChangeListener(observer);
+    }
+    
     public void updatePanels(){
         int items;
         avp.clear();
@@ -190,10 +196,8 @@ public class checkoutPanel extends javax.swing.JPanel {
         checkoutAddressTF.setText("Addressgatan 14");
         checkoutAddressTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        jComboBox1.setEditable(true);
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Idag", "Imorgon", "Fredag(6/3)", "Lördag(7/3)" }));
 
-        jComboBox2.setEditable(true);
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "mellan 15-18", "mellan 18-21" }));
 
         jTextField12.setEditable(false);
@@ -235,6 +239,11 @@ public class checkoutPanel extends javax.swing.JPanel {
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton1.setText("Betala");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -284,7 +293,7 @@ public class checkoutPanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(checkoutPhoneNbrTF, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+                            .addComponent(jTextField16, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))))
@@ -362,6 +371,12 @@ public class checkoutPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        userData.placeOrder();
+        userData.getShoppingCart().clear();
+        pcs.firePropertyChange("buyCompleted", 0, 1);
+    }//GEN-LAST:event_jButton1MouseClicked
     /**
      * Autofills the info from user profile.
      */

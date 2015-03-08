@@ -5,6 +5,8 @@
  */
 package imat;
 
+import java.awt.Color;
+import java.awt.Cursor;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.List;
@@ -28,6 +30,7 @@ public class CheckoutProductPanel extends javax.swing.JPanel {
      */
     public CheckoutProductPanel() {
         initComponents();
+        this.setBackground(Color.lightGray);
     }
     
     public CheckoutProductPanel(int antal, Product p) {
@@ -62,24 +65,59 @@ public class CheckoutProductPanel extends javax.swing.JPanel {
         jLabelProduktNamn = new javax.swing.JLabel();
         jLabelPrisPerSuffix = new javax.swing.JLabel();
 
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                formMouseMoved(evt);
+            }
+        });
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                formMouseExited(evt);
+            }
+        });
+
         imageLabelTaBort.setText("imageLabel2");
+        imageLabelTaBort.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                imageLabelTaBortMouseMoved(evt);
+            }
+        });
         imageLabelTaBort.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelTaBortMouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                imageLabelTaBortMouseExited(evt);
+            }
         });
 
         imageLabelMinska.setText("imageLabel2");
+        imageLabelMinska.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                imageLabelMinskaMouseMoved(evt);
+            }
+        });
         imageLabelMinska.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelMinskaMouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                imageLabelMinskaMouseExited(evt);
+            }
         });
 
         imageLabelÖka.setText("imageLabel2");
+        imageLabelÖka.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                imageLabelÖkaMouseMoved(evt);
+            }
+        });
         imageLabelÖka.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelÖkaMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                imageLabelÖkaMouseExited(evt);
             }
         });
 
@@ -88,6 +126,16 @@ public class CheckoutProductPanel extends javax.swing.JPanel {
 
         jTextFieldAntal.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextFieldAntal.setText("1");
+        jTextFieldAntal.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jTextFieldAntalMouseMoved(evt);
+            }
+        });
+        jTextFieldAntal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jTextFieldAntalMouseExited(evt);
+            }
+        });
 
         jLabelProduktNamn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelProduktNamn.setText("<Kycklingbröstfile>");
@@ -175,6 +223,49 @@ public class CheckoutProductPanel extends javax.swing.JPanel {
         }
         
     }//GEN-LAST:event_imageLabelTaBortMouseClicked
+
+    private void imageLabelÖkaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelÖkaMouseMoved
+        this.setBackground(Color.gray);
+        imageLabelÖka.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_imageLabelÖkaMouseMoved
+
+    private void imageLabelÖkaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelÖkaMouseExited
+        this.setBackground(Color.lightGray);
+    }//GEN-LAST:event_imageLabelÖkaMouseExited
+
+    private void imageLabelMinskaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMinskaMouseMoved
+        this.setBackground(Color.gray);
+        imageLabelMinska.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_imageLabelMinskaMouseMoved
+
+    private void imageLabelMinskaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMinskaMouseExited
+        this.setBackground(Color.lightGray);
+    }//GEN-LAST:event_imageLabelMinskaMouseExited
+
+    private void imageLabelTaBortMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelTaBortMouseMoved
+        this.setBackground(Color.gray);
+        imageLabelTaBort.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_imageLabelTaBortMouseMoved
+
+    private void imageLabelTaBortMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelTaBortMouseExited
+        this.setBackground(Color.lightGray);
+    }//GEN-LAST:event_imageLabelTaBortMouseExited
+
+    private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
+        this.setBackground(Color.gray);
+    }//GEN-LAST:event_formMouseMoved
+
+    private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
+        this.setBackground(Color.lightGray);
+    }//GEN-LAST:event_formMouseExited
+
+    private void jTextFieldAntalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldAntalMouseExited
+        this.setBackground(Color.lightGray);
+    }//GEN-LAST:event_jTextFieldAntalMouseExited
+
+    private void jTextFieldAntalMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldAntalMouseMoved
+        this.setBackground(Color.gray);
+    }//GEN-LAST:event_jTextFieldAntalMouseMoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

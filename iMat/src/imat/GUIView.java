@@ -37,6 +37,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         thirdRegPanel.addObserver(this);
         confirmRegPanel.addObserver(this);
         profilePanel.addObserver(this);
+        checkoutPanel.addObserver(this);
     }
     
     /**
@@ -349,19 +350,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         wholePanel.add(confirmRegPanel, "confirmRegPanel");
         wholePanel.add(firstRegPanel, "firstRegPanel");
         wholePanel.add(secondRegPanel, "secondRegPanel");
-
-        javax.swing.GroupLayout historyPanelLayout = new javax.swing.GroupLayout(historyPanel);
-        historyPanel.setLayout(historyPanelLayout);
-        historyPanelLayout.setHorizontalGroup(
-            historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1319, Short.MAX_VALUE)
-        );
-        historyPanelLayout.setVerticalGroup(
-            historyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 656, Short.MAX_VALUE)
-        );
-
-        wholePanel.add(historyPanel, "card10");
+        wholePanel.add(historyPanel, "historyPanel");
 
         contentPanel.add(wholePanel, "wholePanel");
 
@@ -450,6 +439,11 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     }//GEN-LAST:event_shoppingListLabelMouseClicked
 
     private void purchaseHistoryLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_purchaseHistoryLabelMouseClicked
+         // changes the content panel to contain the history page
+        CardLayout card = (CardLayout)contentPanel.getLayout();
+        card.show(contentPanel, "wholePanel");
+        card = (CardLayout)wholePanel.getLayout();
+        card.show(wholePanel, "historyPanel");
         userData.getShoppingCart().addProduct(userData.getProducts().get(1));
     }//GEN-LAST:event_purchaseHistoryLabelMouseClicked
 
@@ -600,6 +594,9 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 card.show(wholePanel,"checkoutPanel");  
                 updateCheckout();
             } else if(evt.getPropertyName().equals("ToFirstRegPanel")){
+                if (shoppingCartPanel.getGoStraightToPayment()) {
+                    confirmRegPanel.enableSTPLabel(true);
+                }
                 CardLayout card = (CardLayout)contentPanel.getLayout();
                 card.show(contentPanel, "wholePanel");
                 card = (CardLayout)wholePanel.getLayout();
@@ -629,6 +626,9 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 checkoutPanel.setCheckoutInfo();
                 firstNameLabel.setText(userData.getCustomer().getFirstName());
                 lastNameLabel.setText(userData.getCustomer().getLastName());
+            } else if (evt.getPropertyName().equals("buyCompleted")) {
+                historyPanel.addToHistory();
+                historyPanel.incHistoryIndex();
             }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
