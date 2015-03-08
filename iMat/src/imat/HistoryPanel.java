@@ -171,7 +171,7 @@ public class HistoryPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void historyListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_historyListMouseClicked
-        historyList.getSelectedValue().
+        historyList.getSelectedValue();
     }//GEN-LAST:event_historyListMouseClicked
 
 
