@@ -75,6 +75,7 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         jLabelPris.setText("x kr/st");
 
         imageLabelTaBort.setText("imageLabel1");
+        imageLabelTaBort.setToolTipText("Ta bort alla varor av denna sort");
         imageLabelTaBort.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 imageLabelTaBortMouseMoved(evt);
@@ -87,6 +88,7 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         });
 
         imageLabelMinska.setText("imageLabel1");
+        imageLabelMinska.setToolTipText("Ta bort en vara av denna sort");
         imageLabelMinska.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 imageLabelMinskaMouseMoved(evt);
@@ -99,6 +101,7 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         });
 
         imageLabelÖka.setText("imageLabel1");
+        imageLabelÖka.setToolTipText("Lägg till en vara av denna sort");
         imageLabelÖka.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 imageLabelÖkaMouseMoved(evt);

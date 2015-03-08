@@ -21,6 +21,10 @@ import java.util.List;
 public class GUIView extends javax.swing.JFrame implements PropertyChangeListener {
     
     private IMatDataHandler userData;
+    private int[] cardNumber;
+    private int ccv, expireYear, expireMonth;
+    private String cardholderName;
+    
     //PropertyChangeListener pcl;
     /**
      * Creates new form GUIView
@@ -568,6 +572,52 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         purchaseHistoryLabel.setForeground(java.awt.Color.white);
     }//GEN-LAST:event_purchaseHistoryLabelMouseExited
 
+    public void setCCV(int ccv){
+        this.ccv = ccv;
+    }
+    
+    public void setExpireYear(int ey){
+        this.expireYear = ey;
+    }
+    
+    public void setExpireMonth(int em){
+        this.expireMonth = em;
+    }
+    
+    public void setCardholderName(String chn){
+        this.cardholderName = chn;
+    }
+    
+    public void setCardnumber(int[] cn) {
+        if (cn.length >= 4){
+            cardNumber[0] = cn[0];
+            cardNumber[1] = cn[1];
+            cardNumber[2] = cn[2];
+            cardNumber[3] = cn[3];
+        }
+    }
+    
+    public int getCCV(){
+        return ccv;
+    }
+    
+    public int getExpireYear() {
+        return expireYear;
+    }
+    
+    public int getExpireMonth() {
+        return expireMonth;
+    }
+    
+    public String getCardholderName() {
+        return cardholderName;
+    }
+    
+    public int[] getCardnumber(){
+        return cardNumber.clone();
+    }
+    
+    
     private void setFullScreen(JFrame jFrame) {
         Toolkit tk = Toolkit.getDefaultToolkit();
         int xSize = ((int) tk.getScreenSize().getWidth());

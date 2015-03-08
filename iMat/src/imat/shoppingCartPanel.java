@@ -77,6 +77,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         imageLabel1.setText("imageLabel1");
 
         imageLabelEmptyCart.setText("imageLabel2");
+        imageLabelEmptyCart.setToolTipText("Ta bort alla varor från kundvagnen");
         imageLabelEmptyCart.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelEmptyCartMouseClicked(evt);
@@ -85,6 +86,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
 
         imageLabelToCheckout.setBackground(new java.awt.Color(255, 255, 255));
         imageLabelToCheckout.setText("imageLabel3");
+        imageLabelToCheckout.setToolTipText("Gå vidare till kassan");
         imageLabelToCheckout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelToCheckoutMouseClicked(evt);

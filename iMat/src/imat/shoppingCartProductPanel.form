@@ -79,6 +79,7 @@
     <Component class="imat.ImageLabel" name="imageLabelTaBort">
       <Properties>
         <Property name="text" type="java.lang.String" value="imageLabel1"/>
+        <Property name="toolTipText" type="java.lang.String" value="Ta bort alla varor av denna sort"/>
       </Properties>
       <Events>
         <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="imageLabelTaBortMouseMoved"/>
@@ -91,6 +92,7 @@
     <Component class="imat.ImageLabel" name="imageLabelMinska">
       <Properties>
         <Property name="text" type="java.lang.String" value="imageLabel1"/>
+        <Property name="toolTipText" type="java.lang.String" value="Ta bort en vara av denna sort"/>
       </Properties>
       <Events>
         <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="imageLabelMinskaMouseMoved"/>
@@ -103,6 +105,7 @@
     <Component class="imat.ImageLabel" name="imageLabel&#xd6;ka">
       <Properties>
         <Property name="text" type="java.lang.String" value="imageLabel1"/>
+        <Property name="toolTipText" type="java.lang.String" value="L&#xe4;gg till en vara av denna sort"/>
       </Properties>
       <Events>
         <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="imageLabel&#xd6;kaMouseMoved"/>

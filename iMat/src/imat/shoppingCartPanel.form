@@ -100,6 +100,7 @@
     <Component class="imat.ImageLabel" name="imageLabelEmptyCart">
       <Properties>
         <Property name="text" type="java.lang.String" value="imageLabel2"/>
+        <Property name="toolTipText" type="java.lang.String" value="Ta bort alla varor fr&#xe5;n kundvagnen"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="imageLabelEmptyCartMouseClicked"/>
@@ -114,6 +115,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="imageLabel3"/>
+        <Property name="toolTipText" type="java.lang.String" value="G&#xe5; vidare till kassan"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="imageLabelToCheckoutMouseClicked"/>
