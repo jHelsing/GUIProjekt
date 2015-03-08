@@ -128,6 +128,7 @@ public class checkoutPanel extends javax.swing.JPanel {
         jCheckBox1 = new javax.swing.JCheckBox();
         jButtonPay = new javax.swing.JButton();
         cartEmptyError = new javax.swing.JLabel();
+        jTextFieldBack = new javax.swing.JTextField();
 
         jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -265,6 +266,16 @@ public class checkoutPanel extends javax.swing.JPanel {
         cartEmptyError.setForeground(java.awt.Color.red);
         cartEmptyError.setText("Kundvagnen är tom");
 
+        jTextFieldBack.setEditable(false);
+        jTextFieldBack.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldBack.setText("<< Tillbaka");
+        jTextFieldBack.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jTextFieldBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextFieldBackMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -329,7 +340,9 @@ public class checkoutPanel extends javax.swing.JPanel {
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(465, 465, 465)
+                .addContainerGap()
+                .addComponent(jTextFieldBack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(362, 362, 362)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -337,12 +350,14 @@ public class checkoutPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldBack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField2)
                             .addComponent(totalAmountTF, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
@@ -409,6 +424,11 @@ public class checkoutPanel extends javax.swing.JPanel {
     private void jButtonPayFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButtonPayFocusLost
         cartEmptyError.setVisible(false);
     }//GEN-LAST:event_jButtonPayFocusLost
+
+    private void jTextFieldBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldBackMouseClicked
+        pcs.firePropertyChange("checkoutBack", 0, 1);
+        System.out.println("back");
+    }//GEN-LAST:event_jTextFieldBackMouseClicked
  
     /**
      * Autofills the info from user profile.
@@ -448,6 +468,7 @@ public class checkoutPanel extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField jTextFieldBack;
     private javax.swing.JTextField totalAmountTF;
     private javax.swing.JTextField totalPriceTF;
     // End of variables declaration//GEN-END:variables

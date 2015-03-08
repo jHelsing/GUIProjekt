@@ -38,8 +38,7 @@ public class CheckoutProductPanel extends javax.swing.JPanel {
         
         this.antal = antal;
         this.p = p;
-        jTextFieldAntal.setText(antal + "");
-        jLabelSuffix.setText(p.getUnitSuffix());
+        jLabelAntal.setText(antal + " " + p.getUnitSuffix());
         jLabelProduktNamn.setText(p.getName());
         jLabelPrisPerSuffix.setText(p.getPrice() + " kr/" + p.getUnitSuffix());
     }
@@ -57,11 +56,7 @@ public class CheckoutProductPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        imageLabelTaBort = new imat.ImageLabel("deleteItemCheckoutButton.png");
-        imageLabelMinska = new imat.ImageLabel("checkoutMinusButton.png");
-        imageLabelÖka = new imat.ImageLabel("checkoutPlusButton.png");
-        jLabelSuffix = new javax.swing.JLabel();
-        jTextFieldAntal = new javax.swing.JTextField();
+        jLabelAntal = new javax.swing.JLabel();
         jLabelProduktNamn = new javax.swing.JLabel();
         jLabelPrisPerSuffix = new javax.swing.JLabel();
 
@@ -76,66 +71,8 @@ public class CheckoutProductPanel extends javax.swing.JPanel {
             }
         });
 
-        imageLabelTaBort.setText("imageLabel2");
-        imageLabelTaBort.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                imageLabelTaBortMouseMoved(evt);
-            }
-        });
-        imageLabelTaBort.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                imageLabelTaBortMouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                imageLabelTaBortMouseExited(evt);
-            }
-        });
-
-        imageLabelMinska.setText("imageLabel2");
-        imageLabelMinska.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                imageLabelMinskaMouseMoved(evt);
-            }
-        });
-        imageLabelMinska.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                imageLabelMinskaMouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                imageLabelMinskaMouseExited(evt);
-            }
-        });
-
-        imageLabelÖka.setText("imageLabel2");
-        imageLabelÖka.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                imageLabelÖkaMouseMoved(evt);
-            }
-        });
-        imageLabelÖka.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                imageLabelÖkaMouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                imageLabelÖkaMouseExited(evt);
-            }
-        });
-
-        jLabelSuffix.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelSuffix.setText("st");
-
-        jTextFieldAntal.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextFieldAntal.setText("1");
-        jTextFieldAntal.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jTextFieldAntalMouseMoved(evt);
-            }
-        });
-        jTextFieldAntal.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jTextFieldAntalMouseExited(evt);
-            }
-        });
+        jLabelAntal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelAntal.setText("0 st");
 
         jLabelProduktNamn.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelProduktNamn.setText("<Kycklingbröstfile>");
@@ -148,108 +85,25 @@ public class CheckoutProductPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addComponent(jTextFieldAntal, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelSuffix)
+                .addContainerGap()
+                .addComponent(jLabelAntal)
                 .addGap(26, 26, 26)
                 .addComponent(jLabelProduktNamn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
                 .addComponent(jLabelPrisPerSuffix)
-                .addGap(10, 10, 10)
-                .addComponent(imageLabelTaBort, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(20, 20, 20)
-                    .addComponent(imageLabelMinska, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(650, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(81, 81, 81)
-                    .addComponent(imageLabelÖka, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(589, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextFieldAntal, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                        .addComponent(jLabelSuffix)
-                        .addComponent(jLabelProduktNamn)
-                        .addComponent(jLabelPrisPerSuffix))
-                    .addComponent(imageLabelTaBort, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelAntal)
+                    .addComponent(jLabelProduktNamn)
+                    .addComponent(jLabelPrisPerSuffix))
                 .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(imageLabelMinska, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addContainerGap()))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(imageLabelÖka, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addContainerGap()))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void imageLabelMinskaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMinskaMouseClicked
-        antal--;
-        List<ShoppingItem> items = userData.getShoppingCart().getItems();
-        
-        for (int i = items.size() - 1; i >= 0; i--){
-            if (items.get(i).getProduct().getName().equals(this.jLabelProduktNamn.getText())){
-                userData.getShoppingCart().removeItem(i);
-            }
-        }
-        if (antal > 0){
-            userData.getShoppingCart().addProduct(p, antal);
-        }
-    }//GEN-LAST:event_imageLabelMinskaMouseClicked
-
-    private void imageLabelÖkaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelÖkaMouseClicked
-        userData.getShoppingCart().addProduct(p);
-    }//GEN-LAST:event_imageLabelÖkaMouseClicked
-
-    private void imageLabelTaBortMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelTaBortMouseClicked
-        List<ShoppingItem> items = userData.getShoppingCart().getItems();
-        
-        for (int i = items.size() - 1; i >= 0; i--){
-            if (items.get(i).getProduct().getName().equals(this.jLabelProduktNamn.getText())){
-                userData.getShoppingCart().removeItem(i);
-            }
-        }
-        
-    }//GEN-LAST:event_imageLabelTaBortMouseClicked
-
-    private void imageLabelÖkaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelÖkaMouseMoved
-        this.setBackground(Color.gray);
-        imageLabelÖka.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_imageLabelÖkaMouseMoved
-
-    private void imageLabelÖkaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelÖkaMouseExited
-        this.setBackground(Color.lightGray);
-    }//GEN-LAST:event_imageLabelÖkaMouseExited
-
-    private void imageLabelMinskaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMinskaMouseMoved
-        this.setBackground(Color.gray);
-        imageLabelMinska.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_imageLabelMinskaMouseMoved
-
-    private void imageLabelMinskaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMinskaMouseExited
-        this.setBackground(Color.lightGray);
-    }//GEN-LAST:event_imageLabelMinskaMouseExited
-
-    private void imageLabelTaBortMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelTaBortMouseMoved
-        this.setBackground(Color.gray);
-        imageLabelTaBort.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_imageLabelTaBortMouseMoved
-
-    private void imageLabelTaBortMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelTaBortMouseExited
-        this.setBackground(Color.lightGray);
-    }//GEN-LAST:event_imageLabelTaBortMouseExited
 
     private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
         this.setBackground(Color.gray);
@@ -259,22 +113,10 @@ public class CheckoutProductPanel extends javax.swing.JPanel {
         this.setBackground(Color.lightGray);
     }//GEN-LAST:event_formMouseExited
 
-    private void jTextFieldAntalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldAntalMouseExited
-        this.setBackground(Color.lightGray);
-    }//GEN-LAST:event_jTextFieldAntalMouseExited
-
-    private void jTextFieldAntalMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldAntalMouseMoved
-        this.setBackground(Color.gray);
-    }//GEN-LAST:event_jTextFieldAntalMouseMoved
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private imat.ImageLabel imageLabelMinska;
-    private imat.ImageLabel imageLabelTaBort;
-    private imat.ImageLabel imageLabelÖka;
+    private javax.swing.JLabel jLabelAntal;
     private javax.swing.JLabel jLabelPrisPerSuffix;
     private javax.swing.JLabel jLabelProduktNamn;
-    private javax.swing.JLabel jLabelSuffix;
-    private javax.swing.JTextField jTextFieldAntal;
     // End of variables declaration//GEN-END:variables
 }

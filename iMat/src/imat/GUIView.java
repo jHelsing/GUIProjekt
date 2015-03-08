@@ -77,6 +77,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         firstRegPanel = new imat.firstRegPanel();
         secondRegPanel = new imat.secondRegPanel();
         historyPanel = new imat.HistoryPanel();
+        confirmCheckoutPanel = new imat.confirmCheckoutPanel();
         splitPanel = new javax.swing.JPanel();
         splitPanelContent = new javax.swing.JPanel();
         productSplitPanel = new javax.swing.JSplitPane();
@@ -99,7 +100,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         homeLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         homeLabel.setForeground(new java.awt.Color(255, 255, 255));
         homeLabel.setText("  Hem");
-        homeLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        homeLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         homeLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 homeLabelMouseMoved(evt);
@@ -119,7 +120,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         productLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         productLabel.setForeground(new java.awt.Color(255, 255, 255));
         productLabel.setText("Produkter");
-        productLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        productLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         productLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 productLabelMouseMoved(evt);
@@ -139,7 +140,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         recipieLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         recipieLabel.setForeground(new java.awt.Color(255, 255, 255));
         recipieLabel.setText(" Recept");
-        recipieLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        recipieLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         recipieLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 recipieLabelMouseMoved(evt);
@@ -159,7 +160,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         shoppingListLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         shoppingListLabel.setForeground(new java.awt.Color(255, 255, 255));
         shoppingListLabel.setText(" Inköpslistor");
-        shoppingListLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        shoppingListLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         shoppingListLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 shoppingListLabelMouseMoved(evt);
@@ -179,7 +180,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         purchaseHistoryLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         purchaseHistoryLabel.setForeground(new java.awt.Color(255, 255, 255));
         purchaseHistoryLabel.setText("Köphistorik");
-        purchaseHistoryLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        purchaseHistoryLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         purchaseHistoryLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 purchaseHistoryLabelMouseMoved(evt);
@@ -352,6 +353,19 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         wholePanel.add(secondRegPanel, "secondRegPanel");
         wholePanel.add(historyPanel, "historyPanel");
 
+        javax.swing.GroupLayout confirmCheckoutPanelLayout = new javax.swing.GroupLayout(confirmCheckoutPanel);
+        confirmCheckoutPanel.setLayout(confirmCheckoutPanelLayout);
+        confirmCheckoutPanelLayout.setHorizontalGroup(
+            confirmCheckoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1319, Short.MAX_VALUE)
+        );
+        confirmCheckoutPanelLayout.setVerticalGroup(
+            confirmCheckoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 656, Short.MAX_VALUE)
+        );
+
+        wholePanel.add(confirmCheckoutPanel, "confirmCheckoutPanel");
+
         contentPanel.add(wholePanel, "wholePanel");
 
         splitPanelContent.setLayout(new java.awt.CardLayout());
@@ -387,7 +401,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(splitPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(splitPanelContent, javax.swing.GroupLayout.PREFERRED_SIZE, 644, Short.MAX_VALUE)
+                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -435,7 +449,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     }//GEN-LAST:event_recipieLabelMouseClicked
 
     private void shoppingListLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shoppingListLabelMouseClicked
-        userData.getShoppingCart().addProduct(userData.getProducts().get(0));
+        // TODO add your handling code here:
     }//GEN-LAST:event_shoppingListLabelMouseClicked
 
     private void purchaseHistoryLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_purchaseHistoryLabelMouseClicked
@@ -444,7 +458,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         card.show(contentPanel, "wholePanel");
         card = (CardLayout)wholePanel.getLayout();
         card.show(wholePanel, "historyPanel");
-        userData.getShoppingCart().addProduct(userData.getProducts().get(1));
     }//GEN-LAST:event_purchaseHistoryLabelMouseClicked
 
     private void searchFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyTyped
@@ -629,6 +642,13 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
             } else if (evt.getPropertyName().equals("buyCompleted")) {
                 historyPanel.addToHistory();
                 historyPanel.incHistoryIndex();
+                CardLayout card = (CardLayout)contentPanel.getLayout();
+                card.show(contentPanel, "wholePanel");
+                card = (CardLayout)wholePanel.getLayout();
+                card.show(wholePanel, "confirmCheckoutPanel");
+            } else if (evt.getPropertyName().equals("checkoutBack")) {
+                CardLayout card = (CardLayout)contentPanel.getLayout();
+                card.show(contentPanel, "splitPanel");
             }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -682,6 +702,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     private imat.CategoryPanel categoryPanel;
     private imat.CategoryPanel categorySearchPanel;
     private imat.checkoutPanel checkoutPanel;
+    private imat.confirmCheckoutPanel confirmCheckoutPanel;
     private imat.confirmRegPanel confirmRegPanel;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel firstNameLabel;
