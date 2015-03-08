@@ -5,7 +5,6 @@
  */
 package imat;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import se.chalmers.ait.dat215.project.*;
 
@@ -15,7 +14,7 @@ import se.chalmers.ait.dat215.project.*;
  */
 public class ProductCard extends javax.swing.JPanel {
     
-    private IMatDataHandler data = IMatDataHandler.getInstance();
+    private final IMatDataHandler data = IMatDataHandler.getInstance();
     
     private final Dimension IMGDIMENSION = new Dimension(50,50);
     
@@ -36,7 +35,7 @@ public class ProductCard extends javax.swing.JPanel {
         productUnitsLabel.setText(p.getUnitSuffix());
         productNameLabel.setText(p.getName());
         productPriceLabel.setText(p.getPrice() + " " + p.getUnit());
-        this.setBackground(new Color(130,130,130));
+        this.setBackground(IMatColors.getpanelBackgroundDark());
         this.setVisible(true);
         repaint();
         revalidate();
@@ -60,11 +59,12 @@ public class ProductCard extends javax.swing.JPanel {
         addToShoppingListButton = new imat.ImageLabel("addToShoppingListButton.png");
         favoriteButton = new imat.ImageLabel("unmarkedFavButton.png", "markedFavButton.png");
 
+        setForeground(IMatColors.getpanelBackgroundDark());
         setToolTipText("");
-        setMaximumSize(new java.awt.Dimension(176, 169));
-        setMinimumSize(new java.awt.Dimension(176, 169));
-        setPreferredSize(new java.awt.Dimension(176, 169));
-        setSize(new java.awt.Dimension(176, 169));
+        setMaximumSize(this.getPreferredSize());
+        setMinimumSize(this.getPreferredSize());
+        setPreferredSize(this.getPreferredSize());
+        setSize(this.getPreferredSize());
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
@@ -93,6 +93,12 @@ public class ProductCard extends javax.swing.JPanel {
         addToCartButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 addToCartButtonMouseMoved(evt);
+            }
+        });
+
+        nbrOfProductsSpinner.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                nbrOfProductsSpinnerMouseMoved(evt);
             }
         });
 
@@ -214,21 +220,24 @@ public class ProductCard extends javax.swing.JPanel {
     }//GEN-LAST:event_favoriteButtonMouseClicked
 
     private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
-        this.setBackground(Color.lightGray);
+        this.setBackground(IMatColors.getpanelBackgroundLight());
     }//GEN-LAST:event_formMouseMoved
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
-        this.setBackground(Color.GRAY);
+        this.setBackground(IMatColors.getpanelBackgroundDark());
     }//GEN-LAST:event_formMouseExited
 
     private void addToShoppingListButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addToShoppingListButtonMouseMoved
-        this.setBackground(Color.lightGray);
+        this.setBackground(IMatColors.getpanelBackgroundLight());
     }//GEN-LAST:event_addToShoppingListButtonMouseMoved
 
     private void addToCartButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addToCartButtonMouseMoved
-        this.setBackground(Color.lightGray);
+        this.setBackground(IMatColors.getpanelBackgroundLight());
     }//GEN-LAST:event_addToCartButtonMouseMoved
 
+    private void nbrOfProductsSpinnerMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nbrOfProductsSpinnerMouseMoved
+        this.setBackground(IMatColors.getpanelBackgroundLight());
+    }//GEN-LAST:event_nbrOfProductsSpinnerMouseMoved
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private imat.ImageLabel addToCartButton;

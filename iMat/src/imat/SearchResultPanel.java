@@ -135,9 +135,13 @@ public class SearchResultPanel extends JPanel {
         for(int i=0; i<nbrOfResults; i++) {
             searchResultCardContainer.add(pc.get(i), i);
         }
+        /*
         searchResultCardContainer.setMinimumSize(new Dimension(nbrOfRows*176, 4*169));
         searchResultCardContainer.setMaximumSize(new Dimension(nbrOfRows*176, 4*169));
         searchResultCardContainer.setPreferredSize(searchResultCardContainer.getPreferredSize());
+        */
+        
+        searchResultCardContainer.setSize(searchResultCardContainer.getPreferredSize());
         
         searchResultCardContainer.repaint();
         searchResultCardContainer.revalidate();
