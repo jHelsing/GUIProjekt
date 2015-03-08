@@ -53,11 +53,11 @@ public class HistoryPanel extends javax.swing.JPanel {
         String nbrOfItemsS = Integer.toString((int)nbrOfItems);
         String dateNicelyDisplayed = sdf.format(data.getOrders().get(historyIndex).getDate());
         
-        String formatStr = "%-20s %-15s %-15s%n";
         String total;
-        total = String.format(formatStr, dateNicelyDisplayed, nbrOfItems, priceS);
+   /*   String formatStr = "%-20s %-15s %-15s%n";
+        total = String.format(formatStr, dateNicelyDisplayed, nbrOfItems, priceS); */
         
-      //  total = dateNicelyDisplayed + "%5" + nbrOfItemsS + "%5" + priceS + " kr";
+        total = dateNicelyDisplayed + "           " + nbrOfItemsS + "                     " + priceS + " kr";
         model.add(0, total);
         /*
         for (int i = 0; i < data.getOrders().size(); i++) {
@@ -120,6 +120,11 @@ public class HistoryPanel extends javax.swing.JPanel {
 
         historyList.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         historyList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        historyList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                historyListMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(historyList);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -164,6 +169,10 @@ public class HistoryPanel extends javax.swing.JPanel {
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         this.addToHistory();
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void historyListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_historyListMouseClicked
+        historyList.getSelectedValue().
+    }//GEN-LAST:event_historyListMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
