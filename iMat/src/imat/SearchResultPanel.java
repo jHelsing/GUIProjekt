@@ -7,6 +7,8 @@ package imat;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -90,6 +92,7 @@ public class SearchResultPanel extends JPanel {
         revalidate();
         int nbrOfResults = results.size();
         
+        //Sorterar listan efter produktnamn i alfabetiskordning
         Collections.sort(results, new Comparator<Product>() {
             @Override
             public int compare(Product p1, Product p2) {
@@ -97,51 +100,41 @@ public class SearchResultPanel extends JPanel {
             }
         });
         
-        //Minsta antal kort som får plats:
-        int minHeight = 176*4;
-        int minWidth = 3*169;
-        
-        //Se till att korten visas på rätt sätt:
-        int nbrOfRows = 0;
-        if(nbrOfResults == 1) {
+        if (nbrOfResults == 1) {
+            // Centrera ett resultat
+            System.out.println("Ett");
             searchResultCardContainer.setLayout(new FlowLayout());
-            nbrOfRows = 1;
-        } else if(nbrOfResults % 2 == 0) {
-            //Jämnt antal kort
-            nbrOfRows = nbrOfResults/4;
-            if (nbrOfRows < 4)
-                nbrOfRows = 4;
-            searchResultCardContainer.setLayout(new GridLayout(nbrOfRows,4,10,10));
+            ProductCard pc = new ProductCard(results.get(0));
+            pc.setVisible(true);
+            searchResultCardContainer.add(pc);
         } else {
-            //Ojämnt antal kort
-            nbrOfRows = nbrOfResults/3;
-            if (nbrOfRows < 4)
-                nbrOfRows = 4;
-            searchResultCardContainer.setLayout(new GridLayout(nbrOfRows,3,10,10));
+            //Rita ut allt på 4 kolumner
+            int nbrOfRows = nbrOfResults/3;
+            int nbrOfColumns = 3;
+            searchResultCardContainer.removeAll();
+            searchResultCardContainer.repaint();
+            searchResultCardContainer.revalidate();
+            GridLayout grid = new GridLayout();
+            grid.setRows(nbrOfRows);
+            grid.setColumns(nbrOfColumns);
+            grid.setHgap(10);
+            grid.setVgap(10);
+            searchResultCardContainer.setLayout(grid);
+            ArrayList<ProductCard> pc = new ArrayList(results.size());
+            for (int i=0; i<nbrOfResults; i++) {
+                pc.add(new ProductCard(results.get(i)));
+            }
+            
+            for(int i=0; i<results.size(); i++) {
+                searchResultCardContainer.add(pc.get(i));
+            }
+            Dimension cardDimension = new Dimension(nbrOfColumns*176, nbrOfRows*169);
+            searchResultCardContainer.setMinimumSize(cardDimension);
+            searchResultCardContainer.setMaximumSize(cardDimension);
+            searchResultCardContainer.setPreferredSize(cardDimension);
+            searchResultCardContainer.setSize(cardDimension);
             
         }
-        
-        ArrayList<ProductCard> pc = new ArrayList(results.size());
-        
-        // Skapar ProductCard för alla sökresultat
-        for(int i=0; i<nbrOfResults; i++) {
-            pc.add(new ProductCard(results.get(i)));
-            pc.get(i).setVisible(true);
-            pc.get(i).setPreferredSize(new Dimension(176,169));
-            pc.get(i).setMinimumSize(new Dimension(176,169));
-            pc.get(i).setMaximumSize(new Dimension(176,169));
-        }
-        
-        for(int i=0; i<nbrOfResults; i++) {
-            searchResultCardContainer.add(pc.get(i), i);
-        }
-        /*
-        searchResultCardContainer.setMinimumSize(new Dimension(nbrOfRows*176, 4*169));
-        searchResultCardContainer.setMaximumSize(new Dimension(nbrOfRows*176, 4*169));
-        searchResultCardContainer.setPreferredSize(searchResultCardContainer.getPreferredSize());
-        */
-        
-        searchResultCardContainer.setSize(searchResultCardContainer.getPreferredSize());
         
         searchResultCardContainer.repaint();
         searchResultCardContainer.revalidate();

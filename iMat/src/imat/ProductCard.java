@@ -72,6 +72,9 @@ public class ProductCard extends javax.swing.JPanel {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 formMouseExited(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                formMouseEntered(evt);
+            }
         });
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -96,6 +99,11 @@ public class ProductCard extends javax.swing.JPanel {
             }
         });
 
+        nbrOfProductsSpinner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                nbrOfProductsSpinnerMouseEntered(evt);
+            }
+        });
         nbrOfProductsSpinner.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 nbrOfProductsSpinnerMouseMoved(evt);
@@ -238,6 +246,14 @@ public class ProductCard extends javax.swing.JPanel {
     private void nbrOfProductsSpinnerMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nbrOfProductsSpinnerMouseMoved
         this.setBackground(IMatColors.getpanelBackgroundLight());
     }//GEN-LAST:event_nbrOfProductsSpinnerMouseMoved
+
+    private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
+        this.setBackground(IMatColors.getpanelBackgroundLight());
+    }//GEN-LAST:event_formMouseEntered
+
+    private void nbrOfProductsSpinnerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nbrOfProductsSpinnerMouseEntered
+        this.setBackground(IMatColors.getpanelBackgroundLight());
+    }//GEN-LAST:event_nbrOfProductsSpinnerMouseEntered
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private imat.ImageLabel addToCartButton;
