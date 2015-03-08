@@ -22,6 +22,7 @@ public class checkoutPanel extends javax.swing.JPanel {
 
     private IMatDataHandler userData = IMatDataHandler.getInstance();
     List<Product> avp = new ArrayList<>();
+    List<Product> avp2 = new ArrayList<>();
     private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
     
     /**
@@ -38,41 +39,49 @@ public class checkoutPanel extends javax.swing.JPanel {
     
     public void updatePanels(){
         int items;
-        avp.clear();
+        jPanelAllProducts.removeAll();
+        avp2.clear();
+        
+        //Lägger till alla olika produkter i en lista avp2
         for (int i = userData.getShoppingCart().getItems().size() -1; i >= 0 ; i--) {
 
-            ShoppingItem si = userData.getShoppingCart().getItems().get(i);
+            ShoppingItem si2 = userData.getShoppingCart().getItems().get(i);
 
-            if (si != null && !avp.contains(si.getProduct())) {
-                avp.add(si.getProduct());
+            if (si2 != null && !avp2.contains(si2.getProduct())) {
+                avp2.add(si2.getProduct());
             }
-
         }
         
-        if (avp.size() < 8){
+        //Bestämmer storleken på GridLayouten
+        if (avp2.size() < 8){
             items = 8;
         } else {
-            items = avp.size();
+            items = avp2.size();
         }
         
+        //Sätter GridLayouten
+        jPanelAllProducts.setLayout(new GridLayout(items, 1));
         
-        jPanelAllProducts.removeAll();
-        jPanelAllProducts.setLayout(new GridLayout(items, 0));
-        
-        
-        List<Product> avt = new ArrayList<>();
-        
+        //Kör igenom alla produkter i kundvagnen
         for (int i = 0; i < userData.getShoppingCart().getItems().size(); i++){
-            if (!avt.contains(userData.getShoppingCart().getItems().get(i))){
+            
+            //Kollar så att produkten inte redan finns i kundvagnen
+            if (!avp.contains(userData.getShoppingCart().getItems().get(i).getProduct())){
+                
                 int antalP = (int)userData.getShoppingCart().getItems().get(i).getAmount();
                 
+                //Kör igenom alla produkter efter i
                 for (int k = i+1; k < userData.getShoppingCart().getItems().size(); k++){
-                    if (userData.getShoppingCart().getItems().get(i).equals(userData.getShoppingCart().getItems().get(k))){
+                    
+                    if (userData.getShoppingCart().getItems().get(i).getProduct().getName().equals(
+                                    userData.getShoppingCart().getItems().get(k).getProduct().getName())){
+                        
                         antalP += (int)userData.getShoppingCart().getItems().get(k).getAmount();
+                        
                     }
                 }
                 jPanelAllProducts.add(new CheckoutProductPanel(antalP, userData.getShoppingCart().getItems().get(i).getProduct()));
-                avt.add(userData.getShoppingCart().getItems().get(i).getProduct());
+                avp.add(userData.getShoppingCart().getItems().get(i).getProduct());
             }
             
         }
@@ -117,7 +126,7 @@ public class checkoutPanel extends javax.swing.JPanel {
         jTextField18 = new javax.swing.JTextField();
         jTextField19 = new javax.swing.JTextField();
         jCheckBox1 = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
+        jButtonPay = new javax.swing.JButton();
         cartEmptyError = new javax.swing.JLabel();
 
         jTextField1.setEditable(false);
@@ -239,16 +248,16 @@ public class checkoutPanel extends javax.swing.JPanel {
         jTextField19.setText("Spara inköpslista");
         jTextField19.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton1.setText("Betala");
-        jButton1.addFocusListener(new java.awt.event.FocusAdapter() {
+        jButtonPay.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButtonPay.setText("Betala");
+        jButtonPay.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jButton1FocusLost(evt);
+                jButtonPayFocusLost(evt);
             }
         });
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButtonPay.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                jButtonPayMouseClicked(evt);
             }
         });
 
@@ -284,7 +293,7 @@ public class checkoutPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jCheckBox1)
                         .addGap(29, 29, 29)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButtonPay, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -381,13 +390,13 @@ public class checkoutPanel extends javax.swing.JPanel {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButtonPay, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(29, 29, 29)))))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void jButtonPayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPayMouseClicked
         if (userData.getShoppingCart().getTotal() != 0) {
             userData.placeOrder();
             userData.getShoppingCart().clear();
@@ -395,11 +404,11 @@ public class checkoutPanel extends javax.swing.JPanel {
         } else {
             cartEmptyError.setVisible(true);
         }
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_jButtonPayMouseClicked
 
-    private void jButton1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton1FocusLost
+    private void jButtonPayFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButtonPayFocusLost
         cartEmptyError.setVisible(false);
-    }//GEN-LAST:event_jButton1FocusLost
+    }//GEN-LAST:event_jButtonPayFocusLost
  
     /**
      * Autofills the info from user profile.
@@ -418,7 +427,7 @@ public class checkoutPanel extends javax.swing.JPanel {
     private javax.swing.JTextField checkoutCityTF;
     private javax.swing.JTextField checkoutPhoneNbrTF;
     private javax.swing.JTextField checkoutPostalCodeTF;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonPay;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;

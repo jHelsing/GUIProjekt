@@ -183,6 +183,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         jPanel1.removeAll();
         
         avp2.clear();
+        //Lägger till alla olika produkter i en lista avp2
         for (int i = userData.getShoppingCart().getItems().size() -1; i >= 0 ; i--) {
 
             ShoppingItem si2 = userData.getShoppingCart().getItems().get(i);
@@ -194,49 +195,43 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         }
         
         
-        
-        /*if (lastCart.size() < userData.getShoppingCart().getItems().size()){
-            items = avp.size();
-        } else {
-            items = avp.size() +1;
-        }
-        
-        if (items < 10){
-            items = 10;
-        }*/
-        
+        //Bestämmer storleken på GridLayouten
         if (avp2.size() < 11){
             items = 11;
         } else {
             items = avp2.size();
         }
         
+        //Sätter GridLayouten
         jPanel1.setLayout(new GridLayout(items ,0, 0, 0));
         
-        
+        //Kollar om händelsens produkt redan innan fanns i varukorgen
         if(evt.getShoppingItem() != null && !avp.contains(evt.getShoppingItem().getProduct())){
           
             if (userData.getShoppingCart().getItems().size() > 0){    
-                
-                int visibleItems = 0;
                 avp.clear();
 
+                //Kollar om det finns flera produkter av samma sort och 
+                //gör en gemensam shoppingCartProductPanel för dem
                 for (int i = userData.getShoppingCart().getItems().size() -1; i >= 0 ; i--) {
 
                     ShoppingItem si = userData.getShoppingCart().getItems().get(i);
 
-                    if (/*visibleItems < 10 &&*/ si != null && !avp.contains(si.getProduct())) {
+                    //Kollar så att produkten inte redan är utskriven
+                    if ( si != null && !avp.contains(si.getProduct())) {
                         int antal = (int)si.getAmount();
 
+                        //Kollar efter fler produkter av samma sort
                         for (int k = i-1; k >= 0; k--){
-                            if (userData.getShoppingCart().getItems().get(k).getProduct().getName().equals(si.getProduct().getName())){
+                            if (userData.getShoppingCart().getItems().get(k).getProduct().getName().equals(
+                                                                                    si.getProduct().getName())){
+                                
                                 antal += (int)userData.getShoppingCart().getItems().get(k).getAmount();
                             }
                         }
                         jPanel1.add(new shoppingCartProductPanel(antal, si.getProduct()));
                         
                         avp.add(si.getProduct());
-                        visibleItems++;
                     }
 
                 }
