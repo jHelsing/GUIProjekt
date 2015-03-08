@@ -16,6 +16,7 @@ import java.util.Comparator;
 import java.util.List;
 import se.chalmers.ait.dat215.project.Product;
 import javax.swing.JPanel;
+import javax.swing.ScrollPaneConstants;
 
 /**
  *
@@ -50,6 +51,8 @@ public class SearchResultPanel extends JPanel {
         areaOfSearchResult = new javax.swing.JScrollPane();
         searchResultCardContainer = new javax.swing.JPanel();
 
+        areaOfSearchResult.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        areaOfSearchResult.setToolTipText("");
         areaOfSearchResult.setMaximumSize(new java.awt.Dimension(734, 281));
         areaOfSearchResult.setMinimumSize(new java.awt.Dimension(734, 281));
         areaOfSearchResult.setPreferredSize(new java.awt.Dimension(734, 281));
@@ -109,12 +112,19 @@ public class SearchResultPanel extends JPanel {
             searchResultCardContainer.add(pc);
         } else {
             //Rita ut allt på 4 kolumner
-            int nbrOfRows = nbrOfResults/3;
-            int nbrOfColumns = 3;
+            int nbrOfRows = nbrOfResults/4 + 1;
+            int nbrOfColumns = 4;
             searchResultCardContainer.removeAll();
             searchResultCardContainer.repaint();
             searchResultCardContainer.revalidate();
             GridLayout grid = new GridLayout();
+            if(nbrOfRows<3) {
+                nbrOfRows=3;
+                areaOfSearchResult.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+                areaOfSearchResult.updateUI();
+            } else {
+                areaOfSearchResult.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+            }
             grid.setRows(nbrOfRows);
             grid.setColumns(nbrOfColumns);
             grid.setHgap(10);
@@ -128,12 +138,18 @@ public class SearchResultPanel extends JPanel {
             for(int i=0; i<results.size(); i++) {
                 searchResultCardContainer.add(pc.get(i));
             }
-            Dimension cardDimension = new Dimension(nbrOfColumns*176, nbrOfRows*169);
+            
+            if(nbrOfResults<(nbrOfColumns*nbrOfRows)) {
+                for(int i=nbrOfResults+1; i<(nbrOfColumns*nbrOfRows); i++) {
+                    searchResultCardContainer.add(new JPanel());
+                }
+            }
+            
+            Dimension cardDimension = new Dimension(nbrOfColumns*157, nbrOfRows*173);
             searchResultCardContainer.setMinimumSize(cardDimension);
             searchResultCardContainer.setMaximumSize(cardDimension);
             searchResultCardContainer.setPreferredSize(cardDimension);
             searchResultCardContainer.setSize(cardDimension);
-            
         }
         
         searchResultCardContainer.repaint();
