@@ -52,7 +52,12 @@ public class HistoryPanel extends javax.swing.JPanel {
         String priceS = Double.toString(price);
         String nbrOfItemsS = Integer.toString((int)nbrOfItems);
         String dateNicelyDisplayed = sdf.format(data.getOrders().get(historyIndex).getDate());
-        String total = dateNicelyDisplayed + "           " + nbrOfItemsS + "                    " + priceS + " kr";
+        
+        String formatStr = "%-20s %-15s %-15s%n";
+        String total;
+        total = String.format(formatStr, dateNicelyDisplayed, nbrOfItems, priceS);
+        
+      //  total = dateNicelyDisplayed + "%5" + nbrOfItemsS + "%5" + priceS + " kr";
         model.add(0, total);
         /*
         for (int i = 0; i < data.getOrders().size(); i++) {

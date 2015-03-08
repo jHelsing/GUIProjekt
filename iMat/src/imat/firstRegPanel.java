@@ -22,6 +22,7 @@ public class firstRegPanel extends javax.swing.JPanel {
     public firstRegPanel() {
         initComponents();
         userData = IMatDataHandler.getInstance();
+        errorLabel.setVisible(false);
     }
     
     public void addObserver(PropertyChangeListener observer){
@@ -53,7 +54,8 @@ public class firstRegPanel extends javax.swing.JPanel {
         jTextFieldMobilnr = new javax.swing.JTextField();
         jLabelOrt = new javax.swing.JLabel();
         nextStepButton = new imat.ImageLabel("nextStepButton.png");
-        errorTF = new javax.swing.JTextField();
+        errorLabel = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         jLabelFornamn.setText("Förnamn:");
 
@@ -74,17 +76,23 @@ public class firstRegPanel extends javax.swing.JPanel {
 
         nextStepButton.setIcon(null);
         nextStepButton.setText("imageLabel2");
+        nextStepButton.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                nextStepButtonFocusLost(evt);
+            }
+        });
         nextStepButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 nextStepButtonMouseClicked(evt);
             }
         });
 
-        errorTF.setEditable(false);
-        errorTF.setForeground(new java.awt.Color(200, 20, 20));
-        errorTF.setText("                             ");
-        errorTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        errorTF.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        errorLabel.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        errorLabel.setForeground(java.awt.Color.red);
+        errorLabel.setText("Var god fyll i alla fält");
+
+        jTextField1.setEditable(false);
+        jTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -92,44 +100,45 @@ public class firstRegPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(168, 168, 168)
+                            .addComponent(imageLabelRegPil1, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(258, 258, 258)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabelMobilnr)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jTextFieldMobilnr, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabelAdress)
+                                        .addComponent(jLabelFornamn)
+                                        .addComponent(jLabelOrt))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextFieldFornamn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextFieldAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextFieldOrt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGap(128, 128, 128)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabelEfternamn)
+                                .addComponent(jLabelPostnr, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabelEmail, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldPostnr, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldEfternamn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGap(512, 512, 512)
+                            .addComponent(nextStepButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(imageLabelRegPil1, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(258, 258, 258)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelMobilnr)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextFieldMobilnr, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabelAdress)
-                                    .addComponent(jLabelFornamn)
-                                    .addComponent(jLabelOrt))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldFornamn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldOrt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(128, 128, 128)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelEfternamn)
-                                    .addComponent(jLabelPostnr, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabelEmail, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldPostnr, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldEfternamn, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nextStepButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(470, 470, 470)
-                        .addComponent(errorTF, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(495, 495, 495)
+                        .addComponent(errorLabel)
+                        .addGap(60, 60, 60)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(168, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -138,8 +147,10 @@ public class firstRegPanel extends javax.swing.JPanel {
                 .addGap(50, 50, 50)
                 .addComponent(imageLabelRegPil1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(errorTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(errorLabel)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -171,7 +182,7 @@ public class firstRegPanel extends javax.swing.JPanel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabelMobilnr)
                         .addComponent(jTextFieldMobilnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -187,7 +198,8 @@ public class firstRegPanel extends javax.swing.JPanel {
         if (userData.isCustomerComplete()){
             pcs.firePropertyChange("ToSecondRegPanel", 0, 1);
         } else {
-            errorTF.setText("Var god fyll i alla fält nedan.");
+            errorLabel.setVisible(true);
+            nextStepButton.grabFocus();
         }
         
 
@@ -195,9 +207,13 @@ public class firstRegPanel extends javax.swing.JPanel {
         //wholePanelCard.show(wholePanel, "secondRegPanel");
     }//GEN-LAST:event_nextStepButtonMouseClicked
 
+    private void nextStepButtonFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nextStepButtonFocusLost
+        errorLabel.setVisible(false);
+    }//GEN-LAST:event_nextStepButtonFocusLost
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField errorTF;
+    private javax.swing.JLabel errorLabel;
     private imat.ImageLabel imageLabelRegPil1;
     private javax.swing.JLabel jLabelAdress;
     private javax.swing.JLabel jLabelEfternamn;
@@ -206,6 +222,7 @@ public class firstRegPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelMobilnr;
     private javax.swing.JLabel jLabelOrt;
     private javax.swing.JLabel jLabelPostnr;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextFieldAdress;
     private javax.swing.JTextField jTextFieldEfternamn;
     private javax.swing.JTextField jTextFieldEmail;
