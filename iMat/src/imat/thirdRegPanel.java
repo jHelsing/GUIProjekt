@@ -139,7 +139,6 @@ public class thirdRegPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_imageLabelForegaendestegMouseClicked
 
     private void imageLabelSkapaKontoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelSkapaKontoMouseClicked
-        
         if (jCheckBoxVillkor.isSelected()){
             pcs.firePropertyChange("ToConfirmRegPanel", 0, 1);
             pcs.firePropertyChange("setInfo", 0, 1);
