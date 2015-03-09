@@ -215,6 +215,23 @@ public class secondRegPanel extends javax.swing.JPanel {
 
     private void imageLabelNastaStegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelNastaStegMouseClicked
         pcs.firePropertyChange("ToThirdRegPanel", 0, 1);
+        userData.getCreditCard().setCardNumber(jTextFieldKortnummer1.getText() + "-" + 
+                                                jTextFieldKortnummer2.getText() + "-" +
+                                                jTextFieldKortnummer3.getText() + "-" + 
+                                                jTextFieldKortnummer4.getText());
+        userData.getCreditCard().setHoldersName(jLabelKortNamn.getText());
+        
+        if ((String)jComboBoxGiltMånad.getSelectedItem() != "mm"){
+            userData.getCreditCard().setValidMonth(Integer.parseInt((String)jComboBoxGiltMånad.getSelectedItem()));
+        }
+        if ((String)jComboBoxGiltAr.getSelectedItem() != "åååå"){
+            userData.getCreditCard().setValidYear(Integer.parseInt((String)jComboBoxGiltAr.getSelectedItem()));
+        }
+        try {
+            userData.getCreditCard().setVerificationCode(Integer.parseInt(jTextFieldCCV.getText()));
+        } catch (NumberFormatException e){
+            System.out.println("FEL");
+        }
     }//GEN-LAST:event_imageLabelNastaStegMouseClicked
 
     private void jTextFieldKortnummer1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer1KeyPressed
