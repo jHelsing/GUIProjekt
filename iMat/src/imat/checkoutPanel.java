@@ -115,8 +115,8 @@ public class checkoutPanel extends javax.swing.JPanel {
         jTextField9 = new javax.swing.JTextField();
         checkoutCityTF = new javax.swing.JTextField();
         checkoutAddressTF = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox();
-        jComboBox2 = new javax.swing.JComboBox();
+        deliveryDayCombo = new javax.swing.JComboBox();
+        deliveryTimeCombo = new javax.swing.JComboBox();
         jTextField12 = new javax.swing.JTextField();
         jTextField13 = new javax.swing.JTextField();
         jTextField14 = new javax.swing.JTextField();
@@ -208,9 +208,9 @@ public class checkoutPanel extends javax.swing.JPanel {
         checkoutAddressTF.setText("Addressgatan 14");
         checkoutAddressTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Idag", "Imorgon", "Fredag(6/3)", "Lördag(7/3)" }));
+        deliveryDayCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Idag", "Imorgon", "Fredag(6/3)", "Lördag(7/3)" }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "mellan 15-18", "mellan 18-21" }));
+        deliveryTimeCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "mellan 15-18", "mellan 18-21" }));
 
         jTextField12.setEditable(false);
         jTextField12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -259,6 +259,11 @@ public class checkoutPanel extends javax.swing.JPanel {
         jButtonPay.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonPayMouseClicked(evt);
+            }
+        });
+        jButtonPay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPayActionPerformed(evt);
             }
         });
 
@@ -330,13 +335,14 @@ public class checkoutPanel extends javax.swing.JPanel {
                                 .addComponent(checkoutCityTF))
                             .addComponent(checkoutAddressTF)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(deliveryDayCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(checkoutPhoneNbrTF, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(deliveryTimeCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jTextField16, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(checkoutPhoneNbrTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -367,9 +373,9 @@ public class checkoutPanel extends javax.swing.JPanel {
                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox2)
+                            .addComponent(deliveryTimeCombo)
                             .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                            .addComponent(jComboBox1))
+                            .addComponent(deliveryDayCombo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -415,6 +421,7 @@ public class checkoutPanel extends javax.swing.JPanel {
         if (userData.getShoppingCart().getTotal() != 0) {
             userData.placeOrder();
             userData.getShoppingCart().clear();
+            checkoutAddressTF.getText();
             pcs.firePropertyChange("buyCompleted", 0, 1);
         } else {
             cartEmptyError.setVisible(true);
@@ -429,15 +436,39 @@ public class checkoutPanel extends javax.swing.JPanel {
         pcs.firePropertyChange("checkoutBack", 0, 1);
         System.out.println("back");
     }//GEN-LAST:event_jTextFieldBackMouseClicked
+
+    private void jButtonPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonPayActionPerformed
  
     /**
      * Autofills the info from user profile.
      */
-        public void setCheckoutInfo() {
+    public void setCheckoutInfo() {
         checkoutAddressTF.setText(userData.getCustomer().getAddress());
         checkoutPostalCodeTF.setText(userData.getCustomer().getPostCode());
         checkoutCityTF.setText(userData.getCustomer().getPostAddress());
         checkoutPhoneNbrTF.setText(userData.getCustomer().getPhoneNumber());
+    }
+    
+    public String getDeliveryDay() {
+        return deliveryDayCombo.getSelectedItem().toString();
+    }
+    
+    public String getDeliveryTime() {
+        return deliveryTimeCombo.getSelectedItem().toString();
+    }
+    
+    public String getDeliveryAddress() {
+        return checkoutAddressTF.getText();
+    }
+    
+    public String getDeliveryPost() {
+        return checkoutPostalCodeTF.getText();
+    }
+    
+    public String getDeliveryCity() {
+        return checkoutCityTF.getText();
     }
     
 
@@ -447,10 +478,10 @@ public class checkoutPanel extends javax.swing.JPanel {
     private javax.swing.JTextField checkoutCityTF;
     private javax.swing.JTextField checkoutPhoneNbrTF;
     private javax.swing.JTextField checkoutPostalCodeTF;
+    private javax.swing.JComboBox deliveryDayCombo;
+    private javax.swing.JComboBox deliveryTimeCombo;
     private javax.swing.JButton jButtonPay;
     private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JPanel jPanelAllProducts;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;

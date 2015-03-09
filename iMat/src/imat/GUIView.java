@@ -356,18 +356,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         wholePanel.add(firstRegPanel, "firstRegPanel");
         wholePanel.add(secondRegPanel, "secondRegPanel");
         wholePanel.add(historyPanel, "historyPanel");
-
-        javax.swing.GroupLayout confirmCheckoutPanelLayout = new javax.swing.GroupLayout(confirmCheckoutPanel);
-        confirmCheckoutPanel.setLayout(confirmCheckoutPanelLayout);
-        confirmCheckoutPanelLayout.setHorizontalGroup(
-            confirmCheckoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1319, Short.MAX_VALUE)
-        );
-        confirmCheckoutPanelLayout.setVerticalGroup(
-            confirmCheckoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 656, Short.MAX_VALUE)
-        );
-
         wholePanel.add(confirmCheckoutPanel, "confirmCheckoutPanel");
 
         contentPanel.add(wholePanel, "wholePanel");
@@ -405,7 +393,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(splitPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
+                .addComponent(splitPanelContent, javax.swing.GroupLayout.PREFERRED_SIZE, 644, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -691,6 +679,10 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 lastNameLabel.setText(userData.getCustomer().getLastName());
             } else if (evt.getPropertyName().equals("buyCompleted")) {
                 historyPanel.addToHistory();
+                confirmCheckoutPanel.setReceiptInfo(checkoutPanel.getDeliveryDay(),
+                        checkoutPanel.getDeliveryTime(), checkoutPanel.getDeliveryAddress(),
+                        checkoutPanel.getDeliveryPost(), checkoutPanel.getDeliveryCity());
+                confirmCheckoutPanel.updateReceipt();
                 CardLayout card = (CardLayout)contentPanel.getLayout();
                 card.show(contentPanel, "wholePanel");
                 card = (CardLayout)wholePanel.getLayout();
