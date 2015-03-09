@@ -35,7 +35,7 @@ public class CheckoutProductPanel extends javax.swing.JPanel {
     
     public CheckoutProductPanel(int antal, Product p) {
         initComponents();
-        
+        this.setBackground(Color.lightGray);
         this.antal = antal;
         this.p = p;
         jLabelAntal.setText(antal + " " + p.getUnitSuffix());

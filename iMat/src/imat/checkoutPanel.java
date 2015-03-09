@@ -219,7 +219,7 @@ public class checkoutPanel extends javax.swing.JPanel {
 
         jTextField13.setEditable(false);
         jTextField13.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
-        jTextField13.setText("kort nummer");
+        jTextField13.setText("kortnummer");
         jTextField13.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jTextField14.setEditable(false);

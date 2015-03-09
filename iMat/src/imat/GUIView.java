@@ -691,7 +691,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 lastNameLabel.setText(userData.getCustomer().getLastName());
             } else if (evt.getPropertyName().equals("buyCompleted")) {
                 historyPanel.addToHistory();
-                historyPanel.incHistoryIndex();
                 CardLayout card = (CardLayout)contentPanel.getLayout();
                 card.show(contentPanel, "wholePanel");
                 card = (CardLayout)wholePanel.getLayout();
