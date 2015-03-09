@@ -25,6 +25,7 @@ public class thirdRegPanel extends javax.swing.JPanel {
     public thirdRegPanel() {
         initComponents();
         userData = IMatDataHandler.getInstance();
+        jLabel1.setVisible(false);
     }
 
     public void addObserver(PropertyChangeListener observer){
@@ -47,6 +48,7 @@ public class thirdRegPanel extends javax.swing.JPanel {
         jCheckBoxNyhetsbrev = new javax.swing.JCheckBox();
         imageLabelSkapaKonto = new imat.ImageLabel("createAccButton.png");
         imageLabelForegaendesteg = new imat.ImageLabel("prevStepButton.png");
+        jLabel1 = new javax.swing.JLabel();
 
         imageLabelRegPil3.setIcon(null);
         imageLabelRegPil3.setText("imageLabel1");
@@ -80,6 +82,9 @@ public class thirdRegPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel1.setText("Du måste acceptera våra villkor för att kunna skapa ett konto!");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,17 +92,20 @@ public class thirdRegPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(168, 168, 168)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(imageLabelForegaendesteg, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(imageLabelSkapaKonto, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(713, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBoxNyhetsbrev)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBoxNyhetsbrev)
-                            .addComponent(jCheckBoxVillkor)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(168, Short.MAX_VALUE))))
+                            .addComponent(imageLabelForegaendesteg, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCheckBoxVillkor))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(236, 236, 236)
+                                .addComponent(imageLabelSkapaKonto, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(130, 130, 130)
+                                .addComponent(jLabel1)))))
+                .addContainerGap(168, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(168, 168, 168)
@@ -107,16 +115,18 @@ public class thirdRegPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(172, 172, 172)
+                .addGap(161, 161, 161)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBoxVillkor)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBoxVillkor)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckBoxNyhetsbrev)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(imageLabelSkapaKonto, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(imageLabelForegaendesteg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(imageLabelForegaendesteg, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(imageLabelSkapaKonto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(38, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -131,8 +141,15 @@ public class thirdRegPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_imageLabelForegaendestegMouseClicked
 
     private void imageLabelSkapaKontoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelSkapaKontoMouseClicked
-        pcs.firePropertyChange("ToConfirmRegPanel", 0, 1);
-        pcs.firePropertyChange("setInfo", 0, 1);
+        
+        if (jCheckBoxVillkor.isSelected()){
+            pcs.firePropertyChange("ToConfirmRegPanel", 0, 1);
+            pcs.firePropertyChange("setInfo", 0, 1);
+            jLabel1.setVisible(false);
+            
+        } else {
+            jLabel1.setVisible(true);
+        }
     }//GEN-LAST:event_imageLabelSkapaKontoMouseClicked
 
 
@@ -142,6 +159,7 @@ public class thirdRegPanel extends javax.swing.JPanel {
     private imat.ImageLabel imageLabelSkapaKonto;
     private javax.swing.JCheckBox jCheckBoxNyhetsbrev;
     private javax.swing.JCheckBox jCheckBoxVillkor;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaVillkor;
     // End of variables declaration//GEN-END:variables

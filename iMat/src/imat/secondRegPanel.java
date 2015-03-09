@@ -84,7 +84,37 @@ public class secondRegPanel extends javax.swing.JPanel {
 
         jLabelKortNamn.setText("Kortinnehavarens namn:");
 
+        jTextFieldKortnummer1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldKortnummer1KeyPressed(evt);
+            }
+        });
+
+        jTextFieldCCV.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldCCVKeyPressed(evt);
+            }
+        });
+
         jComboBoxGiltMånad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "mm", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+
+        jTextFieldKortnummer2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldKortnummer2KeyPressed(evt);
+            }
+        });
+
+        jTextFieldKortnummer3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldKortnummer3KeyPressed(evt);
+            }
+        });
+
+        jTextFieldKortnummer4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldKortnummer4KeyPressed(evt);
+            }
+        });
 
         jLabel1.setText("-");
 
@@ -186,6 +216,36 @@ public class secondRegPanel extends javax.swing.JPanel {
     private void imageLabelNastaStegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelNastaStegMouseClicked
         pcs.firePropertyChange("ToThirdRegPanel", 0, 1);
     }//GEN-LAST:event_imageLabelNastaStegMouseClicked
+
+    private void jTextFieldKortnummer1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer1KeyPressed
+        if (jTextFieldKortnummer1.getDocument().getLength() >= 4){
+            jTextFieldKortnummer1.setText(jTextFieldKortnummer1.getText().substring(0, 3));
+        } 
+    }//GEN-LAST:event_jTextFieldKortnummer1KeyPressed
+
+    private void jTextFieldKortnummer2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer2KeyPressed
+        if (jTextFieldKortnummer2.getDocument().getLength() >= 4){
+            jTextFieldKortnummer2.setText(jTextFieldKortnummer2.getText().substring(0, 3));
+        }
+    }//GEN-LAST:event_jTextFieldKortnummer2KeyPressed
+
+    private void jTextFieldKortnummer3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer3KeyPressed
+        if (jTextFieldKortnummer3.getDocument().getLength() >= 4){
+            jTextFieldKortnummer3.setText(jTextFieldKortnummer3.getText().substring(0, 3));
+        }
+    }//GEN-LAST:event_jTextFieldKortnummer3KeyPressed
+
+    private void jTextFieldKortnummer4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer4KeyPressed
+        if (jTextFieldKortnummer4.getDocument().getLength() >= 4){
+            jTextFieldKortnummer4.setText(jTextFieldKortnummer4.getText().substring(0, 3));
+        }
+    }//GEN-LAST:event_jTextFieldKortnummer4KeyPressed
+
+    private void jTextFieldCCVKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCCVKeyPressed
+        if (jTextFieldCCV.getDocument().getLength() >= 3){
+            jTextFieldCCV.setText(jTextFieldCCV.getText().substring(0, 2));
+        }
+    }//GEN-LAST:event_jTextFieldCCVKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
