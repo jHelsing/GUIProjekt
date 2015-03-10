@@ -61,7 +61,7 @@ public class checkoutPanel extends javax.swing.JPanel {
         
         //Sätter GridLayouten
         jPanelAllProducts.setLayout(new GridLayout(items, 1));
-        
+        avp.clear();
         //Kör igenom alla produkter i kundvagnen
         for (int i = 0; i < userData.getShoppingCart().getItems().size(); i++){
             
