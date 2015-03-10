@@ -104,7 +104,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         homeLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         homeLabel.setForeground(new java.awt.Color(255, 255, 255));
         homeLabel.setText("  Hem");
-        homeLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        homeLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         homeLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 homeLabelMouseMoved(evt);
@@ -124,7 +124,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         productLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         productLabel.setForeground(new java.awt.Color(255, 255, 255));
         productLabel.setText("Produkter");
-        productLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        productLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         productLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 productLabelMouseMoved(evt);
@@ -144,7 +144,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         recipieLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         recipieLabel.setForeground(new java.awt.Color(255, 255, 255));
         recipieLabel.setText(" Recept");
-        recipieLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        recipieLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         recipieLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 recipieLabelMouseMoved(evt);
@@ -164,7 +164,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         shoppingListLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         shoppingListLabel.setForeground(new java.awt.Color(255, 255, 255));
         shoppingListLabel.setText(" Inköpslistor");
-        shoppingListLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        shoppingListLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         shoppingListLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 shoppingListLabelMouseMoved(evt);
@@ -184,7 +184,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         purchaseHistoryLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         purchaseHistoryLabel.setForeground(new java.awt.Color(255, 255, 255));
         purchaseHistoryLabel.setText("Köphistorik");
-        purchaseHistoryLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        purchaseHistoryLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         purchaseHistoryLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 purchaseHistoryLabelMouseMoved(evt);
@@ -393,7 +393,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(splitPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(splitPanelContent, javax.swing.GroupLayout.PREFERRED_SIZE, 644, Short.MAX_VALUE)
+                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
