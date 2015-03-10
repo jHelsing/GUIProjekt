@@ -418,6 +418,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     }// </editor-fold>//GEN-END:initComponents
 
     private void homeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeLabelMouseClicked
+        homePanel.displayAllRandomProducts();
         // changes the content panel to contain the shopping cart and the homepage
         CardLayout card = (CardLayout)contentPanel.getLayout();
         card.show(contentPanel, "splitPanel");

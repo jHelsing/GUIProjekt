@@ -42,12 +42,6 @@ public class HistoryPanel extends javax.swing.JPanel {
         historyIndex++;
     }
     
-/*    private void fillListModel(DefaultListModel listModel) {
-        for (int k = 0; k < 13; k++) {
-            listModel.addElement(" ");
-        }
-    }*/
-    
     public void addToHistory() {
         if (historyListModel.getSize() == 13) {
             historyListModel.remove(13);
@@ -164,7 +158,8 @@ public class HistoryPanel extends javax.swing.JPanel {
             itemListModel.clear();
             int selectedValue = historyList.getSelectedIndex();
             
-            int wtf = selectedValue + historyListModel.getSize();
+            //vill invertera listan..
+            
             for (int j = 0; j < data.getOrders().get(selectedValue).getItems().size(); j++) {
                 String item = data.getOrders().get(selectedValue).getItems().get(j).getProduct().getName();
                 String itemNbr = Double.toString(data.getOrders().get(selectedValue).getItems().get(j).getAmount());
