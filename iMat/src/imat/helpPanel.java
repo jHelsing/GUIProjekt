@@ -16,7 +16,7 @@ public class helpPanel extends javax.swing.JPanel {
      */
     public helpPanel() {
         initComponents();
-        this.setBackground(IMatColors.getpanelBackgroundLight());
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
     }
 
     /**

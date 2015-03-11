@@ -42,9 +42,9 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         confirmRegPanel.addObserver(this);
         profilePanel.addObserver(this);
         checkoutPanel.addObserver(this);
-        this.setBackground(IMatColors.getpanelBackgroundLight());
-        splitPanel.setBackground(IMatColors.getpanelBackgroundLight());
-        wholePanel.setBackground(IMatColors.getpanelBackgroundLight());
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
+        splitPanel.setBackground(IMatColors.getpanelBackgroundNormal());
+        wholePanel.setBackground(IMatColors.getpanelBackgroundNormal());
     }
     
     /**

@@ -27,7 +27,7 @@ public class profilePanel extends javax.swing.JPanel {
         profileNotEditable = true;
         expDateMonth.setEnabled(false);
         expDateYear.setEnabled(false);
-        this.setBackground(IMatColors.getpanelBackgroundLight());
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
     }
     
     public void addObserver(PropertyChangeListener observer){

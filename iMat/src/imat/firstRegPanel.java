@@ -24,9 +24,9 @@ public class firstRegPanel extends javax.swing.JPanel {
         initComponents();
         userData = IMatDataHandler.getInstance();
         errorLabel.setVisible(false);
-        this.setBackground(IMatColors.getpanelBackgroundLight());
-        hemligRuta.setBackground(IMatColors.getpanelBackgroundLight());
-     //   setTextFieldColors(new Color(255, 254, 213));
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
+        hemligRuta.setBackground(IMatColors.getpanelBackgroundNormal());
+        setTextFieldColors(new Color(236, 254, 211));
     }
     
     private void setTextFieldColors(Color c) {

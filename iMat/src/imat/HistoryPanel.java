@@ -36,7 +36,7 @@ public class HistoryPanel extends javax.swing.JPanel {
         historyList.setCellRenderer(zebra);
         itemList.setModel(itemListModel);
         itemList.setCellRenderer(zebra);
-        this.setBackground(IMatColors.getpanelBackgroundLight());
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
     }
     
     private void incHistoryIndex() {
@@ -56,7 +56,7 @@ public class HistoryPanel extends javax.swing.JPanel {
         String priceS = Double.toString(price);
         String nbrOfItemsS = Integer.toString((int)nbrOfItems);
         String dateNicelyDisplayed = sdf.format(data.getOrders().get(historyIndex).getDate());
-        String total = dateNicelyDisplayed + "" + nbrOfItemsS + "" + priceS + " kr";
+        String total = dateNicelyDisplayed + "         " + nbrOfItemsS + "         " + priceS + " kr";
         historyListModel.addElement(total);
         this.incHistoryIndex();
     }
@@ -165,7 +165,7 @@ public class HistoryPanel extends javax.swing.JPanel {
                 String item = data.getOrders().get(selectedValue).getItems().get(j).getProduct().getName();
                 String itemNbr = Double.toString(data.getOrders().get(selectedValue).getItems().get(j).getAmount());
                 String itemCost = Double.toString(data.getOrders().get(selectedValue).getItems().get(j).getTotal());
-                String productSum = item + "                 " + itemNbr + "                   " + itemCost;
+                String productSum = item + StringSizeHelper.getEmptyString(item.length()) + "       " + itemNbr + "                   " + itemCost;
                 itemListModel.addElement(productSum);
             }
         }

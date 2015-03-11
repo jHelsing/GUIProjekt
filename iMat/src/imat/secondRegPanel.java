@@ -25,7 +25,7 @@ public class secondRegPanel extends javax.swing.JPanel {
      */
     public secondRegPanel() {
         initComponents();
-        this.setBackground(IMatColors.getpanelBackgroundLight());
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
     }
     
     public void addObserver(PropertyChangeListener observer){

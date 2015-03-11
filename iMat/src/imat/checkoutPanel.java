@@ -34,8 +34,8 @@ public class checkoutPanel extends javax.swing.JPanel {
     public checkoutPanel() {
         initComponents();
         cartEmptyError.setVisible(false);
-        this.setBackground(IMatColors.getpanelBackgroundLight());
-        jCheckBox1.setBackground(IMatColors.getpanelBackgroundLight());
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
+        jCheckBox1.setBackground(IMatColors.getpanelBackgroundNormal());
     }
    
     public void addObserver(PropertyChangeListener observer){
