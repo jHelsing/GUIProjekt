@@ -6,6 +6,7 @@
 package imat;
 
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.util.Random;
 import javax.swing.JTextField;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
@@ -17,7 +18,7 @@ import se.chalmers.ait.dat215.project.IMatDataHandler;
 public class homePanel extends javax.swing.JPanel {
 
     private IMatDataHandler userData = IMatDataHandler.getInstance();
-    private final Dimension homeProdDim;
+    
     
     
     /**
@@ -25,66 +26,18 @@ public class homePanel extends javax.swing.JPanel {
      */
     public homePanel() {
         initComponents();
-        homeProdDim = new Dimension(50,50);
+        jPanel1.setLayout(new GridLayout(2,0, 10, 10));
+        jPanel1.add(new HomeProductCard(userData.getProducts().get(59)));
+        jPanel1.add(new HomeProductCard(userData.getProducts().get(123)));
+        
     }
     
-    public void displayAllRandomProducts() {
-        displayRandomProduct(1);
-        displayRandomProduct(2);
-        displayRandomProduct(3);
-        displayRandomProduct(4);
-    }
     
-    private void displayRandomProduct(int n) {
-        int max = userData.getProducts().size() - 1;
-        int min = 1;
-        int number = randInt(min, max);
-        System.out.println(number);
-        if (n == 1) {
-            System.out.println(1);
-            displayPicture(prodPic1, number);
-            displayName(prodName1, number);
-            displayPrice(prodPrice1, number);
-        } else if (n == 2) {
-            System.out.println(2);
-            displayPicture(prodPic2, number);
-            displayName(prodName2, number);
-            displayPrice(prodPrice2, number);
-        } else if (n == 3) {
-            System.out.println(3);
-            displayPicture(prodPic3, number);
-            displayName(prodName3, number);
-            displayPrice(prodPrice3, number);
-        } else if (n == 4) {
-            System.out.println(4);
-            displayPicture(prodPic4, number);
-            displayName(prodName4, number);
-            displayPrice(prodPrice4, number);
-        }
-    }
     
-    private void displayPicture(ImageLabel label, int number) {
-        System.out.println("displayPicture");
-        label.setIcon(userData.getImageIcon(userData.getProduct(number),homeProdDim));
-        label.repaint();
-        label.revalidate();
-    }
     
-    private void displayName(JTextField textField, int number) {
-        System.out.println("displayName");
-        textField.setText(userData.getProduct(number).getName());
-    }
     
-    private void displayPrice(JTextField textField, int number) {
-        System.out.println("displayPrice");
-        textField.setText(Double.toString(userData.getProduct(number).getPrice()) + " kr");
-    }
     
-    private int randInt(int min, int max) {
-        Random rand = new Random();
-        int randomNum = rand.nextInt((max-min) + 1) + min;
-        return randomNum;
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -95,154 +48,55 @@ public class homePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        prodPic1 = new imat.ImageLabel();
-        prodPic2 = new imat.ImageLabel();
-        prodPic3 = new imat.ImageLabel();
-        prodPic4 = new imat.ImageLabel();
-        prodName1 = new javax.swing.JTextField();
-        prodPrice1 = new javax.swing.JTextField();
-        prodName2 = new javax.swing.JTextField();
-        prodPrice2 = new javax.swing.JTextField();
-        prodPrice3 = new javax.swing.JTextField();
-        prodName3 = new javax.swing.JTextField();
-        prodName4 = new javax.swing.JTextField();
-        prodPrice4 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(10, 200, 100));
+        setBackground(IMatColors.getpanelBackgroundNormal());
 
-        prodPic1.setText("imageLabel1");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setText("Veckans Erbjudanden!!");
 
-        prodPic2.setText("imageLabel1");
+        jPanel1.setBackground(IMatColors.getpanelBackgroundNormal());
 
-        prodPic3.setText("imageLabel1");
-
-        prodPic4.setText("imageLabel1");
-
-        prodName1.setEditable(false);
-        prodName1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        prodName1.setText("Produkt 1");
-        prodName1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        prodPrice1.setEditable(false);
-        prodPrice1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        prodPrice1.setText("20 kr / kg");
-        prodPrice1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        prodName2.setEditable(false);
-        prodName2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        prodName2.setText("Produkt 2");
-        prodName2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        prodPrice2.setEditable(false);
-        prodPrice2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        prodPrice2.setText("20 kr / kg");
-        prodPrice2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        prodPrice3.setEditable(false);
-        prodPrice3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        prodPrice3.setText("20 kr / kg");
-        prodPrice3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        prodName3.setEditable(false);
-        prodName3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        prodName3.setText("Produkt 3");
-        prodName3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        prodName4.setEditable(false);
-        prodName4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        prodName4.setText("Produkt 4");
-        prodName4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        prodPrice4.setEditable(false);
-        prodPrice4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        prodPrice4.setText("20 kr / kg");
-        prodPrice4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("Dina favoriter");
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 555, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(prodName3, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(prodPrice3))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(prodName1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(prodPrice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(prodPic1, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(prodPic3, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(prodName4, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(prodPrice4, javax.swing.GroupLayout.DEFAULT_SIZE, 2, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(prodName2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(365, 365, 365))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(prodPrice2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(prodPic2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
-                            .addComponent(prodPic4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(277, 277, 277)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(prodPic2, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(prodPic1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
-                    .addComponent(prodPrice1)
-                    .addComponent(prodName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(prodPrice2)
-                    .addComponent(prodName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(prodPic4, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
-                    .addComponent(prodPic3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(prodName4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(prodPrice4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(prodPrice3)
-                    .addComponent(prodName3))
-                .addGap(8, 8, 8))
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField prodName1;
-    private javax.swing.JTextField prodName2;
-    private javax.swing.JTextField prodName3;
-    private javax.swing.JTextField prodName4;
-    private imat.ImageLabel prodPic1;
-    private imat.ImageLabel prodPic2;
-    private imat.ImageLabel prodPic3;
-    private imat.ImageLabel prodPic4;
-    private javax.swing.JTextField prodPrice1;
-    private javax.swing.JTextField prodPrice2;
-    private javax.swing.JTextField prodPrice3;
-    private javax.swing.JTextField prodPrice4;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

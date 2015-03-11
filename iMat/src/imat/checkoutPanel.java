@@ -107,7 +107,7 @@ public class checkoutPanel extends javax.swing.JPanel {
         }
         
         jLabelTotalAmount.setText(totalItems + " produkter");
-        jLabelTotalPrice.setText(userData.getShoppingCart().getTotal() + " kr");
+        jLabelTotalPrice.setText(Math.round(userData.getShoppingCart().getTotal()*100)/100.0 + " kr");
         revalidate();
         repaint();
     }
