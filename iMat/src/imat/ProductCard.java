@@ -96,6 +96,7 @@ public class ProductCard extends javax.swing.JPanel {
         productImage.setRequestFocusEnabled(false);
 
         addToCartButton.setText("imageLabel1");
+        addToCartButton.setToolTipText("");
         addToCartButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 addToCartButtonMouseMoved(evt);
@@ -120,7 +121,7 @@ public class ProductCard extends javax.swing.JPanel {
         productPriceLabel.setText("Price");
 
         addToShoppingListButton.setText("imageLabel1");
-        addToShoppingListButton.setToolTipText("");
+        addToShoppingListButton.setToolTipText("Lägg till produkten till en inköpslista");
         addToShoppingListButton.setMaximumSize(new java.awt.Dimension(40, 40));
         addToShoppingListButton.setMinimumSize(new java.awt.Dimension(40, 40));
         addToShoppingListButton.setPreferredSize(new java.awt.Dimension(40, 40));
@@ -139,6 +140,7 @@ public class ProductCard extends javax.swing.JPanel {
         });
 
         favoriteButton.setText("imageLabel1");
+        favoriteButton.setToolTipText("Lägg till produkten som favorit");
         favoriteButton.setMaximumSize(new java.awt.Dimension(30, 30));
         favoriteButton.setMinimumSize(new java.awt.Dimension(30, 30));
         favoriteButton.setPreferredSize(new java.awt.Dimension(30, 30));
@@ -227,7 +229,7 @@ public class ProductCard extends javax.swing.JPanel {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(productUnitsLabel)
                             .addGap(9, 9, 9)))))
-            .addComponent(productImage, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
+            .addComponent(productImage, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,7 +250,7 @@ public class ProductCard extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addToCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addToShoppingListButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addContainerGap(19, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
