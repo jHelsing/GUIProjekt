@@ -26,6 +26,7 @@ public class thirdRegPanel extends javax.swing.JPanel {
         initComponents();
         userData = IMatDataHandler.getInstance();
         jLabel1.setVisible(false);
+        this.setBackground(IMatColors.getpanelBackgroundLight());
     }
 
     public void addObserver(PropertyChangeListener observer){

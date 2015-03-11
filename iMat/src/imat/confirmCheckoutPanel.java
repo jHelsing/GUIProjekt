@@ -33,6 +33,7 @@ public class confirmCheckoutPanel extends javax.swing.JPanel {
         receiptList.setCellRenderer(new StripeRenderer());
         receiptList.setModel(receiptListModel);
         confirmationLabel.setVisible(false);
+        this.setBackground(IMatColors.getpanelBackgroundLight());
     }
     
     public void updateReceipt() {

@@ -23,6 +23,8 @@ public class firstRegPanel extends javax.swing.JPanel {
         initComponents();
         userData = IMatDataHandler.getInstance();
         errorLabel.setVisible(false);
+        this.setBackground(IMatColors.getpanelBackgroundLight());
+       // jTextFieldFornamn.setBackground();
     }
     
     public void addObserver(PropertyChangeListener observer){

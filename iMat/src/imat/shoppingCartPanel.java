@@ -38,6 +38,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         userData.getShoppingCart().addShoppingCartListener(this);
         jPanel1.setMaximumSize(new Dimension(305, 406));
         jPanel1.setLayout(new GridLayout(10, 1));
+        this.setBackground(IMatColors.getpanelBackgroundLight());
         
     }
     

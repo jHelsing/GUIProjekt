@@ -32,6 +32,7 @@ public class SearchResultPanel extends JPanel {
     
     public SearchResultPanel() {
         initComponents();
+        this.setBackground(IMatColors.getpanelBackgroundLight());
     }
     
     private SearchResultPanel(String s) {
