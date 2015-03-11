@@ -107,14 +107,14 @@ public class SearchResultPanel extends JPanel {
         if (nbrOfResults == 1) {
             // Centrera ett resultat
             System.out.println("Ett");
-            searchResultCardContainer.setLayout(new FlowLayout());
+            searchResultCardContainer.setLayout(new FlowLayout(5));
             ProductCard pc = new ProductCard(results.get(0));
             pc.setVisible(true);
             searchResultCardContainer.add(pc);
         } else {
             //Rita ut allt på 4 kolumner
-            int nbrOfRows = nbrOfResults/4 + 1;
-            int nbrOfColumns = 4;
+            int nbrOfRows = nbrOfResults/3 + 1;
+            int nbrOfColumns = 3;
             searchResultCardContainer.removeAll();
             searchResultCardContainer.repaint();
             searchResultCardContainer.revalidate();
@@ -146,7 +146,7 @@ public class SearchResultPanel extends JPanel {
                 }
             }
             
-            Dimension cardDimension = new Dimension(nbrOfColumns*157, nbrOfRows*173);
+            Dimension cardDimension = new Dimension(nbrOfColumns*210, nbrOfRows*227);
             searchResultCardContainer.setMinimumSize(cardDimension);
             searchResultCardContainer.setMaximumSize(cardDimension);
             searchResultCardContainer.setPreferredSize(cardDimension);

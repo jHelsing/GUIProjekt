@@ -26,7 +26,7 @@ public class firstRegPanel extends javax.swing.JPanel {
         errorLabel.setVisible(false);
         this.setBackground(IMatColors.getpanelBackgroundNormal());
         hemligRuta.setBackground(IMatColors.getpanelBackgroundNormal());
-        setTextFieldColors(new Color(236, 254, 211));
+        setTextFieldColors(IMatColors.getpanelBackgroundLight());
     }
     
     private void setTextFieldColors(Color c) {
@@ -71,13 +71,25 @@ public class firstRegPanel extends javax.swing.JPanel {
         errorLabel = new javax.swing.JLabel();
         hemligRuta = new javax.swing.JTextField();
 
+        jTextFieldFornamn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        jTextFieldEfternamn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
         jLabelFornamn.setText("Förnamn:");
+
+        jTextFieldPostnr.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabelAdress.setText("Adress:");
 
+        jTextFieldEmail.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
         jLabelMobilnr.setText("Telefonnr:");
 
+        jTextFieldAdress.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
         jLabelEmail.setText("E-mail:");
+
+        jTextFieldOrt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabelEfternamn.setText("Efternamn:");
 
@@ -85,6 +97,8 @@ public class firstRegPanel extends javax.swing.JPanel {
         imageLabelRegPil1.setText("imageLabel1");
 
         jLabelPostnr.setText("Postnr:");
+
+        jTextFieldMobilnr.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabelOrt.setText("Ort:");
 
@@ -196,7 +210,7 @@ public class firstRegPanel extends javax.swing.JPanel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabelMobilnr)
                         .addComponent(jTextFieldMobilnr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
