@@ -54,8 +54,12 @@ public class profilePanel extends javax.swing.JPanel {
         }
         
         cardHolderTF.setText(userData.getCreditCard().getHoldersName());
-        expDateMonth.setSelectedIndex(userData.getCreditCard().getValidMonth() - 1);
-        expDateYear.setSelectedIndex(userData.getCreditCard().getValidYear() - 2015);
+        if (userData.getCreditCard().getValidMonth() < 13 && userData.getCreditCard().getValidMonth() > 0){
+            expDateMonth.setSelectedIndex(userData.getCreditCard().getValidMonth() - 1);
+        }
+        if (userData.getCreditCard().getValidYear() < 2100 && userData.getCreditCard().getValidYear() > 2000){
+            expDateYear.setSelectedIndex(userData.getCreditCard().getValidYear() - 2015);
+        }
         System.out.println(userData.getCreditCard().getValidYear());
     }
     

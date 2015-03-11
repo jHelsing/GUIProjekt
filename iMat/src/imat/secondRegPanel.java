@@ -61,7 +61,7 @@ public class secondRegPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabelError = new javax.swing.JLabel();
 
-        jComboBoxGiltAr.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "åååå", "2015", "2016", "2017", "2018", "2019" }));
+        jComboBoxGiltAr.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2015", "2016", "2017", "2018", "2019" }));
 
         imageLabelRegPil2.setIcon(null);
         imageLabelRegPil2.setText("imageLabel1");
@@ -100,7 +100,7 @@ public class secondRegPanel extends javax.swing.JPanel {
             }
         });
 
-        jComboBoxGiltMånad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "mm", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        jComboBoxGiltMånad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
         jTextFieldKortnummer2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
