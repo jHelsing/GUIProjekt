@@ -2,6 +2,9 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+      <Connection code="IMatColors.getpanelBackgroundNormal()" type="code"/>
+    </Property>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[337, 604]"/>
     </Property>
@@ -34,7 +37,7 @@
                   <Component id="imageLabelEmptyCart" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                   <Component id="jLabelError" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="21" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabelTotalKostnad" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelAntalProdukter" min="-2" max="-2" attributes="0"/>
@@ -43,9 +46,9 @@
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="29" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="imageLabel1" min="-2" pref="75" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
           </Group>
@@ -55,12 +58,11 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="imageLabel1" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Component id="jScrollPane1" pref="411" max="32767" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -165,6 +167,11 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="jPanel1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="IMatColors.getpanelBackgroundLight()" type="code"/>
+            </Property>
+          </Properties>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
             <Property name="columns" type="int" value="0"/>

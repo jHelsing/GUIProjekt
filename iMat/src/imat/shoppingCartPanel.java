@@ -37,9 +37,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         goStraightToPayment = false;
         userData.getShoppingCart().addShoppingCartListener(this);
         jPanel1.setMaximumSize(new Dimension(305, 406));
-        jPanel1.setLayout(new GridLayout(10, 1));
-        this.setBackground(IMatColors.getpanelBackgroundLight());
-        
+        jPanel1.setLayout(new GridLayout(10, 1));        
     }
     
     public void addObserver(PropertyChangeListener observer){
@@ -70,6 +68,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         jPanel1 = new javax.swing.JPanel();
         jLabelError = new javax.swing.JLabel();
 
+        setBackground(IMatColors.getpanelBackgroundNormal());
         setMaximumSize(new java.awt.Dimension(337, 604));
         setMinimumSize(new java.awt.Dimension(337, 604));
         setPreferredSize(new java.awt.Dimension(337, 604));
@@ -108,6 +107,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
+        jPanel1.setBackground(IMatColors.getpanelBackgroundLight());
         jPanel1.setLayout(new java.awt.GridLayout(1, 0));
         jScrollPane1.setViewportView(jPanel1);
 
@@ -125,16 +125,16 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
                     .addComponent(jLabel2)
                     .addComponent(imageLabelEmptyCart, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelError))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelTotalKostnad)
                     .addComponent(jLabelAntalProdukter)
                     .addComponent(imageLabelToCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel1)
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
             .addComponent(jScrollPane1)
@@ -142,11 +142,10 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(17, 17, 17)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

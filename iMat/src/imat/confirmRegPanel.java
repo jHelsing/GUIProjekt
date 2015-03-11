@@ -25,7 +25,7 @@ public class confirmRegPanel extends javax.swing.JPanel {
         straightToPayLabel.setBackground(Color.lightGray);
         straightToPayLabel.setVisible(false);
         straightToPayLabel.setEnabled(false);
-        this.setBackground(IMatColors.getpanelBackgroundLight());
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
     }
     
     public void enableSTPLabel(boolean b) {

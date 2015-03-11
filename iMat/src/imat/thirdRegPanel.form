@@ -118,7 +118,7 @@
     <Component class="javax.swing.JCheckBox" name="jCheckBoxVillkor">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="IMatColors.getpanelBackgroundLight()" type="code"/>
+          <Connection code="IMatColors.getpanelBackgroundNormal()" type="code"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Jag accepterar iMat:s villkor"/>
       </Properties>
@@ -126,7 +126,7 @@
     <Component class="javax.swing.JCheckBox" name="jCheckBoxNyhetsbrev">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="IMatColors.getpanelBackgroundLight()" type="code"/>
+          <Connection code="IMatColors.getpanelBackgroundNormal()" type="code"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Jag vill f&#xe5; iMat:s nyhetsbrev till min mejladress"/>
       </Properties>
