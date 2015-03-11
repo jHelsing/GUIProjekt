@@ -32,7 +32,7 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         initComponents();
         this.p = p;
         this.antal = antal;
-        this.setBackground(Color.lightGray);
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
         jLabelAntal.setText(antal + " " + p.getUnitSuffix());
         jLabelProduktnamn.setText(p.getName());
         jLabelPris.setText(p.getPrice() + " kr/" + p.getUnitSuffix());
@@ -85,6 +85,9 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelTaBortMouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                imageLabelTaBortMouseExited(evt);
+            }
         });
 
         imageLabelMinska.setText("imageLabel1");
@@ -98,6 +101,9 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelMinskaMouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                imageLabelMinskaMouseExited(evt);
+            }
         });
 
         imageLabelÖka.setText("imageLabel1");
@@ -110,6 +116,9 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
         imageLabelÖka.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelÖkaMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                imageLabelÖkaMouseExited(evt);
             }
         });
 
@@ -175,26 +184,38 @@ public class shoppingCartProductPanel extends javax.swing.JPanel {
 
     private void imageLabelTaBortMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelTaBortMouseMoved
         imageLabelTaBort.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        this.setBackground(Color.gray);
+        this.setBackground(IMatColors.getpanelBackgroundLight());
     }//GEN-LAST:event_imageLabelTaBortMouseMoved
 
     private void imageLabelÖkaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelÖkaMouseMoved
         imageLabelÖka.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        this.setBackground(Color.gray);
+        this.setBackground(IMatColors.getpanelBackgroundLight());
     }//GEN-LAST:event_imageLabelÖkaMouseMoved
 
     private void imageLabelMinskaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMinskaMouseMoved
         imageLabelMinska.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        this.setBackground(Color.gray);
+        this.setBackground(IMatColors.getpanelBackgroundLight());
     }//GEN-LAST:event_imageLabelMinskaMouseMoved
 
     private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
-        this.setBackground(Color.gray);
+        this.setBackground(IMatColors.getpanelBackgroundLight());
     }//GEN-LAST:event_formMouseMoved
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
-        this.setBackground(Color.lightGray);
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
     }//GEN-LAST:event_formMouseExited
+
+    private void imageLabelÖkaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelÖkaMouseExited
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
+    }//GEN-LAST:event_imageLabelÖkaMouseExited
+
+    private void imageLabelMinskaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMinskaMouseExited
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
+    }//GEN-LAST:event_imageLabelMinskaMouseExited
+
+    private void imageLabelTaBortMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelTaBortMouseExited
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
+    }//GEN-LAST:event_imageLabelTaBortMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -107,7 +107,7 @@ public class SearchResultPanel extends JPanel {
         if (nbrOfResults == 1) {
             // Centrera ett resultat
             System.out.println("Ett");
-            searchResultCardContainer.setLayout(new FlowLayout(5));
+            searchResultCardContainer.setLayout(new FlowLayout());
             ProductCard pc = new ProductCard(results.get(0));
             pc.setVisible(true);
             searchResultCardContainer.add(pc);
@@ -146,7 +146,7 @@ public class SearchResultPanel extends JPanel {
                 }
             }
             
-            Dimension cardDimension = new Dimension(nbrOfColumns*210, nbrOfRows*227);
+            Dimension cardDimension = new Dimension(nbrOfColumns*282, nbrOfRows*442);
             searchResultCardContainer.setMinimumSize(cardDimension);
             searchResultCardContainer.setMaximumSize(cardDimension);
             searchResultCardContainer.setPreferredSize(cardDimension);
