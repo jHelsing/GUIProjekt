@@ -67,6 +67,7 @@ public class recipePanel extends javax.swing.JPanel {
         jLabel2.setText("Här kan du hitta recept och lägga till alla ingredienser i din kundvagn.");
 
         jPanelRecept1.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelRecept1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanelRecept1MouseClicked(evt);
@@ -116,6 +117,7 @@ public class recipePanel extends javax.swing.JPanel {
         );
 
         jPanelRecept2.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelRecept2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanelRecept2MouseClicked(evt);
@@ -165,6 +167,7 @@ public class recipePanel extends javax.swing.JPanel {
         );
 
         jPanelRecept3.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelRecept3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanelRecept3MouseClicked(evt);
@@ -214,6 +217,7 @@ public class recipePanel extends javax.swing.JPanel {
         );
 
         jPanelRecept4.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelRecept4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanelRecept4MouseClicked(evt);
@@ -263,6 +267,7 @@ public class recipePanel extends javax.swing.JPanel {
         );
 
         jPanelRecept5.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelRecept5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanelRecept5MouseClicked(evt);
@@ -312,6 +317,7 @@ public class recipePanel extends javax.swing.JPanel {
         );
 
         jPanelRecept6.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelRecept6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanelRecept6MouseClicked(evt);
@@ -474,39 +480,13 @@ public class recipePanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private imat.ImageLabel imageLabel1;
-    private imat.ImageLabel imageLabel10;
-    private imat.ImageLabel imageLabel11;
-    private imat.ImageLabel imageLabel12;
     private imat.ImageLabel imageLabel13;
     private imat.ImageLabel imageLabel14;
     private imat.ImageLabel imageLabel15;
     private imat.ImageLabel imageLabel16;
-    private imat.ImageLabel imageLabel2;
-    private imat.ImageLabel imageLabel3;
     private imat.ImageLabel imageLabel4;
-    private imat.ImageLabel imageLabel5;
-    private imat.ImageLabel imageLabel6;
-    private imat.ImageLabel imageLabel7;
-    private imat.ImageLabel imageLabel8;
-    private imat.ImageLabel imageLabel9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
@@ -516,22 +496,8 @@ public class recipePanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel jPanelRecept1;
     private javax.swing.JPanel jPanelRecept2;
     private javax.swing.JPanel jPanelRecept3;

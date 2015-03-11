@@ -42,6 +42,8 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         confirmRegPanel.addObserver(this);
         profilePanel.addObserver(this);
         checkoutPanel.addObserver(this);
+        detailedRecipe.addObserver(this);
+        recipePanel.addObserver(this);
         this.setBackground(IMatColors.getpanelBackgroundNormal());
         splitPanel.setBackground(IMatColors.getpanelBackgroundNormal());
         wholePanel.setBackground(IMatColors.getpanelBackgroundNormal());
@@ -95,6 +97,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         categorySearchPanel = new imat.CategoryPanel();
         searchResultPanel = SearchResultPanel.getInstance();
         recipePanel = new imat.recipePanel();
+        detailedRecipe = new imat.DetailedRecipe();
         shoppingCartPanel = new imat.shoppingCartPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -107,7 +110,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         homeLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         homeLabel.setForeground(new java.awt.Color(255, 255, 255));
         homeLabel.setText("  Hem");
-        homeLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        homeLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         homeLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 homeLabelMouseMoved(evt);
@@ -127,7 +130,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         productLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         productLabel.setForeground(new java.awt.Color(255, 255, 255));
         productLabel.setText("Produkter");
-        productLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        productLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         productLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 productLabelMouseMoved(evt);
@@ -147,7 +150,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         recipieLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         recipieLabel.setForeground(new java.awt.Color(255, 255, 255));
         recipieLabel.setText(" Recept");
-        recipieLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        recipieLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         recipieLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 recipieLabelMouseMoved(evt);
@@ -167,7 +170,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         shoppingListLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         shoppingListLabel.setForeground(new java.awt.Color(255, 255, 255));
         shoppingListLabel.setText(" Inköpslistor");
-        shoppingListLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        shoppingListLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         shoppingListLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 shoppingListLabelMouseMoved(evt);
@@ -187,7 +190,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         purchaseHistoryLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         purchaseHistoryLabel.setForeground(new java.awt.Color(255, 255, 255));
         purchaseHistoryLabel.setText("Köphistorik");
-        purchaseHistoryLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        purchaseHistoryLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         purchaseHistoryLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 purchaseHistoryLabelMouseMoved(evt);
@@ -376,6 +379,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
 
         splitPanelContent.add(searchSplitPanel, "searchPanel");
         splitPanelContent.add(recipePanel, "recipePanel");
+        splitPanelContent.add(detailedRecipe, "detailedRecipe");
 
         javax.swing.GroupLayout splitPanelLayout = new javax.swing.GroupLayout(splitPanel);
         splitPanel.setLayout(splitPanelLayout);
@@ -407,7 +411,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(mainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1319, Short.MAX_VALUE)
-            .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1319, Short.MAX_VALUE)
+            .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1319, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -694,6 +698,14 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
             } else if (evt.getPropertyName().equals("checkoutBack")) {
                 CardLayout card = (CardLayout)contentPanel.getLayout();
                 card.show(contentPanel, "splitPanel");
+            } else if (evt.getPropertyName().equals("toRecipe")) {
+                CardLayout card = (CardLayout)contentPanel.getLayout();
+                card.show(contentPanel, "splitPanel");
+                card = (CardLayout)splitPanelContent.getLayout();
+                card.show(splitPanelContent, "recipePanel");
+            } else if (evt.getPropertyName().equals("ToDetailedRecipe")){
+                CardLayout card = (CardLayout)splitPanelContent.getLayout();
+                card.show(splitPanelContent, "detailedRecipe");
             }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -750,6 +762,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     private imat.confirmCheckoutPanel confirmCheckoutPanel;
     private imat.confirmRegPanel confirmRegPanel;
     private javax.swing.JPanel contentPanel;
+    private imat.DetailedRecipe detailedRecipe;
     private javax.swing.JLabel firstNameLabel;
     private javax.swing.JPanel firstPanel;
     private imat.firstRegPanel firstRegPanel;
