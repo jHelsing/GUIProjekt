@@ -19,6 +19,7 @@ public class CustomSpinner extends javax.swing.JPanel {
      */
     public CustomSpinner() {
         initComponents();
+        this.setBackground(IMatColors.getpanelBackgroundLight());
     }
 
     /**
