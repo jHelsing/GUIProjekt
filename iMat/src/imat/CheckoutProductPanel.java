@@ -35,7 +35,7 @@ public class CheckoutProductPanel extends javax.swing.JPanel {
     
     public CheckoutProductPanel(int antal, Product p) {
         initComponents();
-        this.setBackground(Color.lightGray);
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
         this.antal = antal;
         this.p = p;
         jLabelAntal.setText(antal + " " + p.getUnitSuffix());
@@ -60,6 +60,7 @@ public class CheckoutProductPanel extends javax.swing.JPanel {
         jLabelProduktNamn = new javax.swing.JLabel();
         jLabelPrisPerSuffix = new javax.swing.JLabel();
 
+        setBackground(IMatColors.getpanelBackgroundLight());
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 formMouseMoved(evt);
@@ -106,11 +107,11 @@ public class CheckoutProductPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
-        this.setBackground(Color.gray);
+        this.setBackground(IMatColors.getpanelBackgroundDark());
     }//GEN-LAST:event_formMouseMoved
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
-        this.setBackground(Color.lightGray);
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
     }//GEN-LAST:event_formMouseExited
 
 

@@ -65,8 +65,10 @@ public class thirdRegPanel extends javax.swing.JPanel {
         jTextAreaVillkor.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextAreaVillkor);
 
+        jCheckBoxVillkor.setBackground(IMatColors.getpanelBackgroundLight());
         jCheckBoxVillkor.setText("Jag accepterar iMat:s villkor");
 
+        jCheckBoxNyhetsbrev.setBackground(IMatColors.getpanelBackgroundLight());
         jCheckBoxNyhetsbrev.setText("Jag vill få iMat:s nyhetsbrev till min mejladress");
 
         imageLabelSkapaKonto.setText("imageLabel1");
