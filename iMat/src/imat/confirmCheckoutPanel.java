@@ -127,6 +127,7 @@ public class confirmCheckoutPanel extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel2.setText("Tack för att du handlar hos iMat!");
 
+        receiptList.setBackground(IMatColors.getpanelBackgroundLight());
         receiptList.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jScrollPane1.setViewportView(receiptList);
 
@@ -160,6 +161,7 @@ public class confirmCheckoutPanel extends javax.swing.JPanel {
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
 
+        emailTF.setBackground(IMatColors.getpanelBackgroundLight());
         emailTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         emailTF.setText("johannes.hilden@gmail.com");
 

@@ -89,6 +89,7 @@ public class HistoryPanel extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setText("detaljerad information om köpet.");
 
+        itemList.setBackground(IMatColors.getpanelBackgroundLight());
         itemList.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
         itemList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(itemList);
@@ -96,6 +97,7 @@ public class HistoryPanel extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText(" Datum                               Antal produkter               Totalbelopp");
 
+        historyList.setBackground(IMatColors.getpanelBackgroundLight());
         historyList.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         historyList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         historyList.addMouseListener(new java.awt.event.MouseAdapter() {
