@@ -139,6 +139,7 @@
         <Property name="text" type="java.lang.String" value="imageLabel1"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="imageLabelSkapaKontoMouseMoved"/>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="imageLabelSkapaKontoMouseClicked"/>
       </Events>
       <AuxValues>
@@ -150,6 +151,7 @@
         <Property name="text" type="java.lang.String" value="imageLabel1"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="imageLabelForegaendestegMouseMoved"/>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="imageLabelForegaendestegMouseClicked"/>
       </Events>
       <AuxValues>

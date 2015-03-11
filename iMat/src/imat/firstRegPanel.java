@@ -6,6 +6,7 @@
 package imat;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
@@ -104,6 +105,11 @@ public class firstRegPanel extends javax.swing.JPanel {
 
         nextStepButton.setIcon(null);
         nextStepButton.setText("imageLabel2");
+        nextStepButton.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                nextStepButtonMouseMoved(evt);
+            }
+        });
         nextStepButton.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 nextStepButtonFocusLost(evt);
@@ -238,6 +244,10 @@ public class firstRegPanel extends javax.swing.JPanel {
     private void nextStepButtonFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nextStepButtonFocusLost
         errorLabel.setVisible(false);
     }//GEN-LAST:event_nextStepButtonFocusLost
+
+    private void nextStepButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextStepButtonMouseMoved
+        nextStepButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_nextStepButtonMouseMoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

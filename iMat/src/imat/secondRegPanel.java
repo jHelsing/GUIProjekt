@@ -7,6 +7,7 @@ package imat;
 
 import com.sun.glass.events.KeyEvent;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import javafx.scene.input.KeyCode;
@@ -40,6 +41,7 @@ public class secondRegPanel extends javax.swing.JPanel {
         jTextFieldKortnummer2.setBackground(c);
         jTextFieldKortnummer3.setBackground(c);
         jTextFieldKortnummer4.setBackground(c);
+        jTextFieldCCV.setBackground(c);
     }
 
     /**
@@ -79,6 +81,11 @@ public class secondRegPanel extends javax.swing.JPanel {
         jLabelKortnummer.setText("Kortnummer:");
 
         imageLabelForegaendeSteg.setText("imageLabel1");
+        imageLabelForegaendeSteg.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                imageLabelForegaendeStegMouseMoved(evt);
+            }
+        });
         imageLabelForegaendeSteg.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelForegaendeStegMouseClicked(evt);
@@ -88,6 +95,11 @@ public class secondRegPanel extends javax.swing.JPanel {
         jLabelGiltighetstid.setText("Giltighetstid:");
 
         imageLabelNastaSteg.setText("imageLabel3");
+        imageLabelNastaSteg.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                imageLabelNastaStegMouseMoved(evt);
+            }
+        });
         imageLabelNastaSteg.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelNastaStegMouseClicked(evt);
@@ -296,6 +308,14 @@ public class secondRegPanel extends javax.swing.JPanel {
             jTextFieldCCV.setText(jTextFieldCCV.getText().substring(0, 2));
         }
     }//GEN-LAST:event_jTextFieldCCVKeyPressed
+
+    private void imageLabelForegaendeStegMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelForegaendeStegMouseMoved
+        imageLabelForegaendeSteg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_imageLabelForegaendeStegMouseMoved
+
+    private void imageLabelNastaStegMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelNastaStegMouseMoved
+        imageLabelNastaSteg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_imageLabelNastaStegMouseMoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

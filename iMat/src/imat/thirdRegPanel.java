@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.Cursor;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
@@ -74,6 +75,11 @@ public class thirdRegPanel extends javax.swing.JPanel {
         jCheckBoxNyhetsbrev.setText("Jag vill få iMat:s nyhetsbrev till min mejladress");
 
         imageLabelSkapaKonto.setText("imageLabel1");
+        imageLabelSkapaKonto.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                imageLabelSkapaKontoMouseMoved(evt);
+            }
+        });
         imageLabelSkapaKonto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelSkapaKontoMouseClicked(evt);
@@ -81,6 +87,11 @@ public class thirdRegPanel extends javax.swing.JPanel {
         });
 
         imageLabelForegaendesteg.setText("imageLabel1");
+        imageLabelForegaendesteg.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                imageLabelForegaendestegMouseMoved(evt);
+            }
+        });
         imageLabelForegaendesteg.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelForegaendestegMouseClicked(evt);
@@ -153,6 +164,14 @@ public class thirdRegPanel extends javax.swing.JPanel {
             jLabel1.setVisible(true);
         }
     }//GEN-LAST:event_imageLabelSkapaKontoMouseClicked
+
+    private void imageLabelForegaendestegMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelForegaendestegMouseMoved
+        imageLabelForegaendesteg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_imageLabelForegaendestegMouseMoved
+
+    private void imageLabelSkapaKontoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelSkapaKontoMouseMoved
+        imageLabelSkapaKonto.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_imageLabelSkapaKontoMouseMoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
