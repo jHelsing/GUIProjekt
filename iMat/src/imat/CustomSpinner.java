@@ -19,7 +19,7 @@ public class CustomSpinner extends javax.swing.JPanel {
      */
     public CustomSpinner() {
         initComponents();
-        this.setBackground(IMatColors.getpanelBackgroundLight());
+        this.setBackground(IMatColors.getpanelBackgroundDark());
     }
 
     /**
@@ -34,6 +34,17 @@ public class CustomSpinner extends javax.swing.JPanel {
         nbrTextField = new javax.swing.JTextField();
         decrement = new imat.ImageLabel();
         increment = new imat.ImageLabel();
+
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                formMouseMoved(evt);
+            }
+        });
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                formMouseExited(evt);
+            }
+        });
 
         nbrTextField.setText("1");
         nbrTextField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -117,6 +128,14 @@ public class CustomSpinner extends javax.swing.JPanel {
     private void decrementMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decrementMouseMoved
         decrement.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_decrementMouseMoved
+
+    private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
+        this.setBackground(IMatColors.getpanelBackgroundLight());
+    }//GEN-LAST:event_formMouseMoved
+
+    private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
+        this.setBackground(IMatColors.getpanelBackgroundDark());
+    }//GEN-LAST:event_formMouseExited
     
     private void increment() {
         int value = Integer.parseInt(nbrTextField.getText());
