@@ -6,6 +6,7 @@
 package imat;
 
 import com.sun.glass.events.KeyEvent;
+import java.awt.Color;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import javafx.scene.input.KeyCode;
@@ -26,10 +27,19 @@ public class secondRegPanel extends javax.swing.JPanel {
     public secondRegPanel() {
         initComponents();
         this.setBackground(IMatColors.getpanelBackgroundNormal());
+        this.setTFColors(IMatColors.getpanelBackgroundLight());
     }
     
     public void addObserver(PropertyChangeListener observer){
         pcs.addPropertyChangeListener(observer);
+    }
+    
+    private void setTFColors(Color c) {
+        jTextFieldKortNamn.setBackground(c);
+        jTextFieldKortnummer1.setBackground(c);
+        jTextFieldKortnummer2.setBackground(c);
+        jTextFieldKortnummer3.setBackground(c);
+        jTextFieldKortnummer4.setBackground(c);
     }
 
     /**
