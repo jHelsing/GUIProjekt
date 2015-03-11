@@ -33,8 +33,8 @@ public class SearchResultPanel extends JPanel {
     public SearchResultPanel() {
         initComponents();
         this.setBackground(IMatColors.getpanelBackgroundLight());
-        areaOfSearchResult.setBackground(IMatColors.getpanelBackgroundLight());
-        searchResultCardContainer.setBackground(IMatColors.getpanelBackgroundLight());
+        areaOfSearchResult.setBackground(IMatColors.getpanelBackgroundNormal());
+        searchResultCardContainer.setBackground(IMatColors.getpanelBackgroundNormal());
     }
     
     private SearchResultPanel(String s) {
@@ -104,14 +104,14 @@ public class SearchResultPanel extends JPanel {
             }
         });
         
-        if (nbrOfResults == 1) {
+ /*       if (nbrOfResults == 1) {
             // Centrera ett resultat
             System.out.println("Ett");
             searchResultCardContainer.setLayout(new FlowLayout());
             ProductCard pc = new ProductCard(results.get(0));
             pc.setVisible(true);
             searchResultCardContainer.add(pc);
-        } else {
+        } else { */
             //Rita ut allt på 4 kolumner
             int nbrOfRows = nbrOfResults/3 + 1;
             int nbrOfColumns = 3;
@@ -151,7 +151,7 @@ public class SearchResultPanel extends JPanel {
             searchResultCardContainer.setMaximumSize(cardDimension);
             searchResultCardContainer.setPreferredSize(cardDimension);
             searchResultCardContainer.setSize(cardDimension);
-        }
+//        }
         
         searchResultCardContainer.repaint();
         searchResultCardContainer.revalidate();

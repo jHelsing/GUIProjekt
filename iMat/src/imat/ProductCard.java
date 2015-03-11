@@ -37,7 +37,7 @@ public class ProductCard extends javax.swing.JPanel {
         productUnitsLabel.setText(p.getUnitSuffix());
         productNameLabel.setText(p.getName());
         productPriceLabel.setText(p.getPrice() + " " + p.getUnit());
-        this.setBackground(IMatColors.getpanelBackgroundDark());
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
         this.setVisible(true);
         repaint();
         revalidate();
@@ -157,6 +157,7 @@ public class ProductCard extends javax.swing.JPanel {
         });
 
         nbrOfProductsTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        nbrOfProductsTF.setText("1");
         nbrOfProductsTF.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 nbrOfProductsTFMouseMoved(evt);
@@ -212,8 +213,9 @@ public class ProductCard extends javax.swing.JPanel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(addToShoppingListButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(94, 94, 94)
-                            .addComponent(addToCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(77, 77, 77)
+                            .addComponent(addToCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(productPriceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -225,7 +227,7 @@ public class ProductCard extends javax.swing.JPanel {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(productUnitsLabel)
                             .addGap(9, 9, 9)))))
-            .addComponent(productImage, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
+            .addComponent(productImage, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -325,15 +327,17 @@ public class ProductCard extends javax.swing.JPanel {
     }//GEN-LAST:event_formMouseMoved
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
-        this.setBackground(IMatColors.getpanelBackgroundDark());
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
     }//GEN-LAST:event_formMouseExited
 
     private void addToShoppingListButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addToShoppingListButtonMouseMoved
         this.setBackground(IMatColors.getpanelBackgroundLight());
+        addToShoppingListButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_addToShoppingListButtonMouseMoved
 
     private void addToCartButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addToCartButtonMouseMoved
         this.setBackground(IMatColors.getpanelBackgroundLight());
+        addToCartButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_addToCartButtonMouseMoved
 
     private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
@@ -354,7 +358,7 @@ public class ProductCard extends javax.swing.JPanel {
     }//GEN-LAST:event_increaseLabelMouseMoved
 
     private void increaseLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseLabelMouseExited
-        this.setBackground(IMatColors.getpanelBackgroundDark());
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
     }//GEN-LAST:event_increaseLabelMouseExited
 
     private void decreaseLabelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseLabelMouseMoved
@@ -363,7 +367,7 @@ public class ProductCard extends javax.swing.JPanel {
     }//GEN-LAST:event_decreaseLabelMouseMoved
 
     private void decreaseLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseLabelMouseExited
-        this.setBackground(IMatColors.getpanelBackgroundDark());
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
     }//GEN-LAST:event_decreaseLabelMouseExited
 
     private void nbrOfProductsTFMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nbrOfProductsTFMouseMoved
@@ -371,19 +375,19 @@ public class ProductCard extends javax.swing.JPanel {
     }//GEN-LAST:event_nbrOfProductsTFMouseMoved
 
     private void nbrOfProductsTFMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nbrOfProductsTFMouseExited
-        this.setBackground(IMatColors.getpanelBackgroundDark());
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
     }//GEN-LAST:event_nbrOfProductsTFMouseExited
 
     private void addToCartButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addToCartButtonMouseExited
-        this.setBackground(IMatColors.getpanelBackgroundDark());
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
     }//GEN-LAST:event_addToCartButtonMouseExited
 
     private void addToShoppingListButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addToShoppingListButtonMouseExited
-        this.setBackground(IMatColors.getpanelBackgroundDark());
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
     }//GEN-LAST:event_addToShoppingListButtonMouseExited
 
     private void favoriteButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favoriteButtonMouseExited
-        this.setBackground(IMatColors.getpanelBackgroundDark());
+        this.setBackground(IMatColors.getpanelBackgroundNormal());
     }//GEN-LAST:event_favoriteButtonMouseExited
 
     private void favoriteButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favoriteButtonMouseMoved
