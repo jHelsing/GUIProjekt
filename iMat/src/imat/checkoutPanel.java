@@ -88,7 +88,7 @@ public class checkoutPanel extends javax.swing.JPanel {
                     }
                 }
                 if (nbrOfProductPanels()%2 == 0){
-                    c = Color.WHITE;
+                    c = IMatColors.getpanelBackgroundLight();
                 } else {
                     c = IMatColors.getpanelBackgroundNormal();
                 }
