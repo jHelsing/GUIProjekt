@@ -6,12 +6,14 @@
 package imat;
 
 import com.sun.glass.events.KeyEvent;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
@@ -44,6 +46,7 @@ public class checkoutPanel extends javax.swing.JPanel {
         int items;
         jPanelAllProducts.removeAll();
         avp2.clear();
+        Color c;
         
         //Lägger till alla olika produkter i en lista avp2
         for (int i = userData.getShoppingCart().getItems().size() -1; i >= 0 ; i--) {
@@ -84,7 +87,19 @@ public class checkoutPanel extends javax.swing.JPanel {
                         
                     }
                 }
-                jPanelAllProducts.add(new CheckoutProductPanel(antalP, userData.getShoppingCart().getItems().get(i).getProduct()));
+                /*if (nbrOfProductPanels()%2 == 0){
+                    c = Color.WHITE;
+                } else {
+                    c = IMatColors.getpanelBackgroundNormal();
+                }*/
+                Random rnd = new Random();
+                int x1 = rnd.nextInt(255);
+                int x2 = rnd.nextInt(255);
+                int x3 = rnd.nextInt(255);
+                
+                c = new Color(x1, x2, x3);
+                
+                jPanelAllProducts.add(new CheckoutProductPanel(antalP, userData.getShoppingCart().getItems().get(i).getProduct(), c));
                 avp.add(userData.getShoppingCart().getItems().get(i).getProduct());
                 totalItems += antalP;
             }
@@ -466,6 +481,10 @@ public class checkoutPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButtonPayMouseClicked
 
+    public int nbrOfProductPanels(){
+        return jPanelAllProducts.getComponents().length;
+    }
+    
     private boolean isReadyToPay(){
         String cardNumber = jTextFieldCardnumber1.getText() + "-" 
                             + jTextFieldCardnumber2.getText() + "-" 

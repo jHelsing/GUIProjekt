@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.event.KeyEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
@@ -44,6 +45,18 @@ public class profilePanel extends javax.swing.JPanel {
         cityTF.setText(userData.getCustomer().getPostAddress());
         emailTF.setText(userData.getCustomer().getEmail());
         phoneNbrTF.setText(userData.getCustomer().getPhoneNumber());
+        
+        if (!userData.getCreditCard().getCardNumber().equals("")){
+            cardNumberTF1.setText(userData.getCreditCard().getCardNumber().substring(0, 4));
+            cardNumberTF2.setText(userData.getCreditCard().getCardNumber().substring(5, 9));
+            cardNumberTF3.setText(userData.getCreditCard().getCardNumber().substring(10, 14));
+            cardNumberTF4.setText(userData.getCreditCard().getCardNumber().substring(15));
+        }
+        
+        cardHolderTF.setText(userData.getCreditCard().getHoldersName());
+        expDateMonth.setSelectedIndex(userData.getCreditCard().getValidMonth() - 1);
+        expDateYear.setSelectedIndex(userData.getCreditCard().getValidYear() - 2015);
+        System.out.println(userData.getCreditCard().getValidYear());
     }
     
     /**
@@ -90,6 +103,7 @@ public class profilePanel extends javax.swing.JPanel {
         surNameTF.setEditable(false);
         surNameTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         surNameTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        surNameTF.setNextFocusableComponent(addressTF);
         surNameTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 surNameTFActionPerformed(evt);
@@ -97,16 +111,22 @@ public class profilePanel extends javax.swing.JPanel {
         });
 
         editProfileInfo.setText("Ändra");
+        editProfileInfo.setNextFocusableComponent(firstNameTF);
         editProfileInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editProfileInfoActionPerformed(evt);
             }
         });
+        editProfileInfo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                editProfileInfoKeyPressed(evt);
+            }
+        });
 
         cardNumberTF1.setEditable(false);
         cardNumberTF1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cardNumberTF1.setText("       ");
         cardNumberTF1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cardNumberTF1.setNextFocusableComponent(cardNumberTF2);
         cardNumberTF1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cardNumberTF1ActionPerformed(evt);
@@ -116,6 +136,7 @@ public class profilePanel extends javax.swing.JPanel {
         expDateMonth.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         expDateMonth.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December" }));
         expDateMonth.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        expDateMonth.setNextFocusableComponent(expDateYear);
         expDateMonth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 expDateMonthActionPerformed(evt);
@@ -125,14 +146,17 @@ public class profilePanel extends javax.swing.JPanel {
         expDateYear.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         expDateYear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2015", "2016", "2017", "2018", "2019", "2020", "2021" }));
         expDateYear.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        expDateYear.setNextFocusableComponent(editProfileInfo);
 
         cityTF.setEditable(false);
         cityTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cityTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cityTF.setNextFocusableComponent(phoneNbrTF);
 
         firstNameTF.setEditable(false);
         firstNameTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         firstNameTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        firstNameTF.setNextFocusableComponent(surNameTF);
         firstNameTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 firstNameTFActionPerformed(evt);
@@ -142,6 +166,7 @@ public class profilePanel extends javax.swing.JPanel {
         postalCodeTF.setEditable(false);
         postalCodeTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         postalCodeTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        postalCodeTF.setNextFocusableComponent(cityTF);
         postalCodeTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 postalCodeTFActionPerformed(evt);
@@ -151,6 +176,7 @@ public class profilePanel extends javax.swing.JPanel {
         cardHolderTF.setEditable(false);
         cardHolderTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cardHolderTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cardHolderTF.setNextFocusableComponent(cardNumberTF1);
         cardHolderTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cardHolderTFActionPerformed(evt);
@@ -160,6 +186,7 @@ public class profilePanel extends javax.swing.JPanel {
         addressTF.setEditable(false);
         addressTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addressTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        addressTF.setNextFocusableComponent(postalCodeTF);
         addressTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addressTFActionPerformed(evt);
@@ -169,10 +196,12 @@ public class profilePanel extends javax.swing.JPanel {
         phoneNbrTF.setEditable(false);
         phoneNbrTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         phoneNbrTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        phoneNbrTF.setNextFocusableComponent(emailTF);
 
         emailTF.setEditable(false);
         emailTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         emailTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        emailTF.setNextFocusableComponent(cardHolderTF);
         emailTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailTFActionPerformed(evt);
@@ -220,8 +249,8 @@ public class profilePanel extends javax.swing.JPanel {
 
         cardNumberTF2.setEditable(false);
         cardNumberTF2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cardNumberTF2.setText("       ");
         cardNumberTF2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cardNumberTF2.setNextFocusableComponent(cardNumberTF3);
         cardNumberTF2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cardNumberTF2ActionPerformed(evt);
@@ -230,8 +259,8 @@ public class profilePanel extends javax.swing.JPanel {
 
         cardNumberTF3.setEditable(false);
         cardNumberTF3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cardNumberTF3.setText("       ");
         cardNumberTF3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cardNumberTF3.setNextFocusableComponent(cardNumberTF4);
         cardNumberTF3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cardNumberTF3ActionPerformed(evt);
@@ -243,8 +272,8 @@ public class profilePanel extends javax.swing.JPanel {
 
         cardNumberTF4.setEditable(false);
         cardNumberTF4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cardNumberTF4.setText("        ");
         cardNumberTF4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cardNumberTF4.setNextFocusableComponent(expDateMonth);
         cardNumberTF4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cardNumberTF4ActionPerformed(evt);
@@ -305,25 +334,24 @@ public class profilePanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addComponent(cardNumberTF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cardNumberTF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cardNumberTF3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(11, 11, 11)
-                                .addComponent(cardNumberTF4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(expDateMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(expDateYear, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(cardHolderTF))
+                            .addComponent(cardHolderTF)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(cardNumberTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cardNumberTF2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cardNumberTF3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cardNumberTF4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(30, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(43, 43, 43)
@@ -425,6 +453,18 @@ public class profilePanel extends javax.swing.JPanel {
         userData.getCustomer().setPostCode(postalCodeTF.getText());
         userData.getCustomer().setEmail(emailTF.getText());
         userData.getCustomer().setPhoneNumber(phoneNbrTF.getText());
+        if (cardNumberTF1.getText().length() == 4 && 
+                cardNumberTF2.getText().length() == 4 &&
+                    cardNumberTF3.getText().length() == 4 &&
+                        cardNumberTF4.getText().length() == 4){
+            userData.getCreditCard().setCardNumber(cardNumberTF1.getText() + "-" +
+                                                    cardNumberTF2.getText() + "-" +
+                                                      cardNumberTF3.getText() + "-" +
+                                                       cardNumberTF4.getText());
+        }
+        userData.getCreditCard().setHoldersName(cardHolderTF.getText());
+        userData.getCreditCard().setValidMonth(expDateMonth.getSelectedIndex() + 1);
+        userData.getCreditCard().setValidYear(Integer.parseInt((String)expDateYear.getSelectedItem()));
         pcs.firePropertyChange("setInfo", 0, 1);
     }
     
@@ -439,6 +479,9 @@ public class profilePanel extends javax.swing.JPanel {
         emailTF.setEditable(b);
         cardHolderTF.setEditable(b);
         cardNumberTF1.setEditable(b);
+        cardNumberTF2.setEditable(b);
+        cardNumberTF3.setEditable(b);
+        cardNumberTF4.setEditable(b);
         expDateMonth.setEnabled(b);
         expDateYear.setEnabled(b);
     }
@@ -482,6 +525,12 @@ public class profilePanel extends javax.swing.JPanel {
     private void cardNumberTF4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardNumberTF4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cardNumberTF4ActionPerformed
+
+    private void editProfileInfoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_editProfileInfoKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            editProfileInfoActionPerformed(null);
+        }
+    }//GEN-LAST:event_editProfileInfoKeyPressed
 
     //Variable that tells whether or not the text fields in the profilePanel are editable.
     private boolean profileNotEditable;

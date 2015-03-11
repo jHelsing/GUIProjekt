@@ -24,18 +24,19 @@ public class CheckoutProductPanel extends javax.swing.JPanel {
     private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
     private Product p;
     private int antal;
+    private Color c;
     
     /**
      * Creates new form CheckoutProductPanel
      */
     public CheckoutProductPanel() {
         initComponents();
-        this.setBackground(Color.lightGray);
     }
     
-    public CheckoutProductPanel(int antal, Product p) {
+    public CheckoutProductPanel(int antal, Product p, Color c) {
         initComponents();
-        this.setBackground(IMatColors.getpanelBackgroundNormal());
+        this.setBackground(c);
+        this.c = c;
         this.antal = antal;
         this.p = p;
         jLabelAntal.setText(antal + " " + p.getUnitSuffix());
@@ -60,7 +61,7 @@ public class CheckoutProductPanel extends javax.swing.JPanel {
         jLabelProduktNamn = new javax.swing.JLabel();
         jLabelPrisPerSuffix = new javax.swing.JLabel();
 
-        setBackground(IMatColors.getpanelBackgroundLight());
+        setBackground(new java.awt.Color(204, 204, 204));
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 formMouseMoved(evt);
@@ -111,7 +112,8 @@ public class CheckoutProductPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_formMouseMoved
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
-        this.setBackground(IMatColors.getpanelBackgroundNormal());
+        //this.setBackground(IMatColors.getpanelBackgroundNormal());
+        this.setBackground(c);
     }//GEN-LAST:event_formMouseExited
 
 
