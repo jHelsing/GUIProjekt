@@ -55,6 +55,7 @@ public class thirdRegPanel extends javax.swing.JPanel {
         imageLabelRegPil3.setText("imageLabel1");
 
         jTextAreaVillkor.setEditable(false);
+        jTextAreaVillkor.setBackground(IMatColors.getpanelBackgroundLight());
         jTextAreaVillkor.setColumns(1);
         jTextAreaVillkor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextAreaVillkor.setLineWrap(true);
