@@ -19,7 +19,7 @@ public class StripeRenderer extends DefaultListCellRenderer {
  
      if(index%2 == 0) {
          if(! list.isSelectedIndex(index)) {
-             label.setBackground(new Color(230,255,230));
+             label.setBackground(IMatColors.getpanelBackgroundLight());
          } else {
              label.setBackground(new Color(255,255,200));            
          }

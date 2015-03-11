@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.Color;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
@@ -24,7 +25,18 @@ public class firstRegPanel extends javax.swing.JPanel {
         userData = IMatDataHandler.getInstance();
         errorLabel.setVisible(false);
         this.setBackground(IMatColors.getpanelBackgroundLight());
-       // jTextFieldFornamn.setBackground();
+        hemligRuta.setBackground(IMatColors.getpanelBackgroundLight());
+     //   setTextFieldColors(new Color(255, 254, 213));
+    }
+    
+    private void setTextFieldColors(Color c) {
+        jTextFieldFornamn.setBackground(c);
+        jTextFieldAdress.setBackground(c);
+        jTextFieldEfternamn.setBackground(c);
+        jTextFieldEmail.setBackground(c);
+        jTextFieldMobilnr.setBackground(c);
+        jTextFieldPostnr.setBackground(c);
+        jTextFieldOrt.setBackground(c);        
     }
     
     public void addObserver(PropertyChangeListener observer){
@@ -57,7 +69,7 @@ public class firstRegPanel extends javax.swing.JPanel {
         jLabelOrt = new javax.swing.JLabel();
         nextStepButton = new imat.ImageLabel("nextStepButton.png");
         errorLabel = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        hemligRuta = new javax.swing.JTextField();
 
         jLabelFornamn.setText("Förnamn:");
 
@@ -93,8 +105,8 @@ public class firstRegPanel extends javax.swing.JPanel {
         errorLabel.setForeground(java.awt.Color.red);
         errorLabel.setText("Var god fyll i alla fält");
 
-        jTextField1.setEditable(false);
-        jTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        hemligRuta.setEditable(false);
+        hemligRuta.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -140,7 +152,7 @@ public class firstRegPanel extends javax.swing.JPanel {
                         .addGap(495, 495, 495)
                         .addComponent(errorLabel)
                         .addGap(60, 60, 60)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(hemligRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(168, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -151,7 +163,7 @@ public class firstRegPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(errorLabel)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hemligRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -216,6 +228,7 @@ public class firstRegPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel errorLabel;
+    private javax.swing.JTextField hemligRuta;
     private imat.ImageLabel imageLabelRegPil1;
     private javax.swing.JLabel jLabelAdress;
     private javax.swing.JLabel jLabelEfternamn;
@@ -224,7 +237,6 @@ public class firstRegPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelMobilnr;
     private javax.swing.JLabel jLabelOrt;
     private javax.swing.JLabel jLabelPostnr;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextFieldAdress;
     private javax.swing.JTextField jTextFieldEfternamn;
     private javax.swing.JTextField jTextFieldEmail;
