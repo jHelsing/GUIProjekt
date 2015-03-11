@@ -5,17 +5,27 @@
  */
 package imat;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+
 /**
  *
  * @author Johan
  */
 public class recipePanel extends javax.swing.JPanel {
 
+    private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
+    
     /**
      * Creates new form recipePanel
      */
     public recipePanel() {
         initComponents();
+        setBackground(IMatColors.getpanelBackgroundNormal());
+    }
+    
+    public void addObserver(PropertyChangeListener observer){
+        pcs.addPropertyChangeListener(observer);
     }
 
     /**
@@ -27,34 +37,506 @@ public class recipePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
+        jPanelRecept1 = new javax.swing.JPanel();
+        imageLabel1 = new imat.ImageLabel("sOk.png");
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanelRecept2 = new javax.swing.JPanel();
+        imageLabel4 = new imat.ImageLabel("sOk.png");
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanelRecept3 = new javax.swing.JPanel();
+        imageLabel13 = new imat.ImageLabel("sOk.png");
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jPanelRecept4 = new javax.swing.JPanel();
+        imageLabel14 = new imat.ImageLabel("sOk.png");
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jPanelRecept5 = new javax.swing.JPanel();
+        imageLabel15 = new imat.ImageLabel("sOk.png");
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jPanelRecept6 = new javax.swing.JPanel();
+        imageLabel16 = new imat.ImageLabel("sOk.png");
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
 
-        jLabel1.setText("Recept");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel2.setText("Här kan du hitta recept och lägga till alla ingredienser i din kundvagn.");
+
+        jPanelRecept1.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelRecept1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanelRecept1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanelRecept1MouseExited(evt);
+            }
+        });
+
+        imageLabel1.setText("imageLabel1");
+
+        jLabel1.setText("Spaghetti med");
+
+        jLabel3.setText("köttfärssås");
+
+        javax.swing.GroupLayout jPanelRecept1Layout = new javax.swing.GroupLayout(jPanelRecept1);
+        jPanelRecept1.setLayout(jPanelRecept1Layout);
+        jPanelRecept1Layout.setHorizontalGroup(
+            jPanelRecept1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecept1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelRecept1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imageLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanelRecept1Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addGroup(jPanelRecept1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelRecept1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel3))
+                            .addComponent(jLabel1))
+                        .addGap(0, 18, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanelRecept1Layout.setVerticalGroup(
+            jPanelRecept1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecept1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(imageLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanelRecept2.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelRecept2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanelRecept2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanelRecept2MouseExited(evt);
+            }
+        });
+
+        imageLabel4.setText("imageLabel1");
+
+        jLabel8.setText("Spaghetti med");
+
+        jLabel9.setText("köttfärssås");
+
+        javax.swing.GroupLayout jPanelRecept2Layout = new javax.swing.GroupLayout(jPanelRecept2);
+        jPanelRecept2.setLayout(jPanelRecept2Layout);
+        jPanelRecept2Layout.setHorizontalGroup(
+            jPanelRecept2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecept2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelRecept2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imageLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanelRecept2Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addGroup(jPanelRecept2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelRecept2Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel9))
+                            .addComponent(jLabel8))
+                        .addGap(0, 18, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanelRecept2Layout.setVerticalGroup(
+            jPanelRecept2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecept2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(imageLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanelRecept3.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelRecept3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanelRecept3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanelRecept3MouseExited(evt);
+            }
+        });
+
+        imageLabel13.setText("imageLabel1");
+
+        jLabel26.setText("Spaghetti med");
+
+        jLabel27.setText("köttfärssås");
+
+        javax.swing.GroupLayout jPanelRecept3Layout = new javax.swing.GroupLayout(jPanelRecept3);
+        jPanelRecept3.setLayout(jPanelRecept3Layout);
+        jPanelRecept3Layout.setHorizontalGroup(
+            jPanelRecept3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecept3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelRecept3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imageLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanelRecept3Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addGroup(jPanelRecept3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelRecept3Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel27))
+                            .addComponent(jLabel26))
+                        .addGap(0, 18, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanelRecept3Layout.setVerticalGroup(
+            jPanelRecept3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecept3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(imageLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanelRecept4.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelRecept4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanelRecept4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanelRecept4MouseExited(evt);
+            }
+        });
+
+        imageLabel14.setText("imageLabel1");
+
+        jLabel28.setText("Spaghetti med");
+
+        jLabel29.setText("köttfärssås");
+
+        javax.swing.GroupLayout jPanelRecept4Layout = new javax.swing.GroupLayout(jPanelRecept4);
+        jPanelRecept4.setLayout(jPanelRecept4Layout);
+        jPanelRecept4Layout.setHorizontalGroup(
+            jPanelRecept4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecept4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelRecept4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imageLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanelRecept4Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addGroup(jPanelRecept4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelRecept4Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel29))
+                            .addComponent(jLabel28))
+                        .addGap(0, 18, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanelRecept4Layout.setVerticalGroup(
+            jPanelRecept4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecept4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(imageLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanelRecept5.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelRecept5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanelRecept5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanelRecept5MouseExited(evt);
+            }
+        });
+
+        imageLabel15.setText("imageLabel1");
+
+        jLabel30.setText("Spaghetti med");
+
+        jLabel31.setText("köttfärssås");
+
+        javax.swing.GroupLayout jPanelRecept5Layout = new javax.swing.GroupLayout(jPanelRecept5);
+        jPanelRecept5.setLayout(jPanelRecept5Layout);
+        jPanelRecept5Layout.setHorizontalGroup(
+            jPanelRecept5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecept5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelRecept5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imageLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanelRecept5Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addGroup(jPanelRecept5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelRecept5Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel31))
+                            .addComponent(jLabel30))
+                        .addGap(0, 18, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanelRecept5Layout.setVerticalGroup(
+            jPanelRecept5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecept5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(imageLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanelRecept6.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelRecept6MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanelRecept6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanelRecept6MouseExited(evt);
+            }
+        });
+
+        imageLabel16.setText("imageLabel1");
+
+        jLabel32.setText("Spaghetti med");
+
+        jLabel33.setText("köttfärssås");
+
+        javax.swing.GroupLayout jPanelRecept6Layout = new javax.swing.GroupLayout(jPanelRecept6);
+        jPanelRecept6.setLayout(jPanelRecept6Layout);
+        jPanelRecept6Layout.setHorizontalGroup(
+            jPanelRecept6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRecept6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelRecept6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imageLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanelRecept6Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addGroup(jPanelRecept6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelRecept6Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel33))
+                            .addComponent(jLabel32))
+                        .addGap(0, 18, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanelRecept6Layout.setVerticalGroup(
+            jPanelRecept6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelRecept6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(imageLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel1)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanelRecept1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanelRecept2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanelRecept3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanelRecept4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanelRecept5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanelRecept6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel1)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jLabel2)
+                .addGap(76, 76, 76)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelRecept1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanelRecept2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanelRecept3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanelRecept4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanelRecept5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanelRecept6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(259, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jPanelRecept1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept1MouseEntered
+        jPanelRecept1.setBackground(IMatColors.getpanelBackgroundLight());
+    }//GEN-LAST:event_jPanelRecept1MouseEntered
+
+    private void jPanelRecept1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept1MouseExited
+        jPanelRecept1.setBackground(IMatColors.getpanelBackgroundDark());
+    }//GEN-LAST:event_jPanelRecept1MouseExited
+
+    private void jPanelRecept1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept1MouseClicked
+        pcs.firePropertyChange("ToDetailedRecipe", 0, 1);
+    }//GEN-LAST:event_jPanelRecept1MouseClicked
+
+    private void jPanelRecept2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept2MouseClicked
+        pcs.firePropertyChange("ToDetailedRecipe", 0, 1);
+    }//GEN-LAST:event_jPanelRecept2MouseClicked
+
+    private void jPanelRecept2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept2MouseEntered
+        jPanelRecept2.setBackground(IMatColors.getpanelBackgroundLight());
+    }//GEN-LAST:event_jPanelRecept2MouseEntered
+
+    private void jPanelRecept2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept2MouseExited
+        jPanelRecept2.setBackground(IMatColors.getpanelBackgroundDark());
+    }//GEN-LAST:event_jPanelRecept2MouseExited
+
+    private void jPanelRecept3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept3MouseClicked
+        pcs.firePropertyChange("ToDetailedRecipe", 0, 1);
+    }//GEN-LAST:event_jPanelRecept3MouseClicked
+
+    private void jPanelRecept3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept3MouseEntered
+        jPanelRecept3.setBackground(IMatColors.getpanelBackgroundLight());
+    }//GEN-LAST:event_jPanelRecept3MouseEntered
+
+    private void jPanelRecept3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept3MouseExited
+        jPanelRecept3.setBackground(IMatColors.getpanelBackgroundDark());
+    }//GEN-LAST:event_jPanelRecept3MouseExited
+
+    private void jPanelRecept4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept4MouseClicked
+        pcs.firePropertyChange("ToDetailedRecipe", 0, 1);
+    }//GEN-LAST:event_jPanelRecept4MouseClicked
+
+    private void jPanelRecept4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept4MouseEntered
+        jPanelRecept4.setBackground(IMatColors.getpanelBackgroundLight());
+    }//GEN-LAST:event_jPanelRecept4MouseEntered
+
+    private void jPanelRecept4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept4MouseExited
+        jPanelRecept4.setBackground(IMatColors.getpanelBackgroundDark());
+    }//GEN-LAST:event_jPanelRecept4MouseExited
+
+    private void jPanelRecept5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept5MouseClicked
+        pcs.firePropertyChange("ToDetailedRecipe", 0, 1);
+    }//GEN-LAST:event_jPanelRecept5MouseClicked
+
+    private void jPanelRecept5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept5MouseEntered
+        jPanelRecept5.setBackground(IMatColors.getpanelBackgroundLight());
+    }//GEN-LAST:event_jPanelRecept5MouseEntered
+
+    private void jPanelRecept5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept5MouseExited
+        jPanelRecept5.setBackground(IMatColors.getpanelBackgroundDark());
+    }//GEN-LAST:event_jPanelRecept5MouseExited
+
+    private void jPanelRecept6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept6MouseClicked
+        pcs.firePropertyChange("ToDetailedRecipe", 0, 1);
+    }//GEN-LAST:event_jPanelRecept6MouseClicked
+
+    private void jPanelRecept6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept6MouseEntered
+        jPanelRecept6.setBackground(IMatColors.getpanelBackgroundLight());
+    }//GEN-LAST:event_jPanelRecept6MouseEntered
+
+    private void jPanelRecept6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept6MouseExited
+        jPanelRecept6.setBackground(IMatColors.getpanelBackgroundDark());
+    }//GEN-LAST:event_jPanelRecept6MouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private imat.ImageLabel imageLabel1;
+    private imat.ImageLabel imageLabel10;
+    private imat.ImageLabel imageLabel11;
+    private imat.ImageLabel imageLabel12;
+    private imat.ImageLabel imageLabel13;
+    private imat.ImageLabel imageLabel14;
+    private imat.ImageLabel imageLabel15;
+    private imat.ImageLabel imageLabel16;
+    private imat.ImageLabel imageLabel2;
+    private imat.ImageLabel imageLabel3;
+    private imat.ImageLabel imageLabel4;
+    private imat.ImageLabel imageLabel5;
+    private imat.ImageLabel imageLabel6;
+    private imat.ImageLabel imageLabel7;
+    private imat.ImageLabel imageLabel8;
+    private imat.ImageLabel imageLabel9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanelRecept1;
+    private javax.swing.JPanel jPanelRecept2;
+    private javax.swing.JPanel jPanelRecept3;
+    private javax.swing.JPanel jPanelRecept4;
+    private javax.swing.JPanel jPanelRecept5;
+    private javax.swing.JPanel jPanelRecept6;
     // End of variables declaration//GEN-END:variables
 }
