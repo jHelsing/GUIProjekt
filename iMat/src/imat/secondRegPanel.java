@@ -41,7 +41,6 @@ public class secondRegPanel extends javax.swing.JPanel {
         jTextFieldKortnummer2.setBackground(c);
         jTextFieldKortnummer3.setBackground(c);
         jTextFieldKortnummer4.setBackground(c);
-        jTextFieldCCV.setBackground(c);
     }
 
     /**
@@ -59,10 +58,8 @@ public class secondRegPanel extends javax.swing.JPanel {
         imageLabelForegaendeSteg = new imat.ImageLabel("prevStepButton.png");
         jLabelGiltighetstid = new javax.swing.JLabel();
         imageLabelNastaSteg = new imat.ImageLabel("nextStepButton.png");
-        jLabelCCV = new javax.swing.JLabel();
         jLabelKortNamn = new javax.swing.JLabel();
         jTextFieldKortnummer1 = new javax.swing.JTextField();
-        jTextFieldCCV = new javax.swing.JTextField();
         jTextFieldKortNamn = new javax.swing.JTextField();
         jComboBoxGiltMånad = new javax.swing.JComboBox();
         jTextFieldKortnummer2 = new javax.swing.JTextField();
@@ -106,21 +103,12 @@ public class secondRegPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabelCCV.setText("CCV:");
-
         jLabelKortNamn.setText("Kortinnehavarens namn:");
 
         jTextFieldKortnummer1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTextFieldKortnummer1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextFieldKortnummer1KeyPressed(evt);
-            }
-        });
-
-        jTextFieldCCV.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        jTextFieldCCV.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextFieldCCVKeyPressed(evt);
             }
         });
 
@@ -168,7 +156,7 @@ public class secondRegPanel extends javax.swing.JPanel {
                         .addComponent(imageLabelRegPil2, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(377, 377, 377)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(imageLabelForegaendeSteg, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -204,10 +192,7 @@ public class secondRegPanel extends javax.swing.JPanel {
                                         .addComponent(jLabel3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextFieldKortnummer4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabelCCV)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextFieldCCV, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addGap(56, 56, 56))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(525, 525, 525)
                         .addComponent(jLabelError)))
@@ -223,9 +208,7 @@ public class secondRegPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelKortnummer)
-                    .addComponent(jLabelCCV)
                     .addComponent(jTextFieldKortnummer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldCCV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldKortnummer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldKortnummer3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldKortnummer4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -303,12 +286,6 @@ public class secondRegPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jTextFieldKortnummer4KeyPressed
 
-    private void jTextFieldCCVKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCCVKeyPressed
-        if (jTextFieldCCV.getDocument().getLength() >= 3 && !(evt.getKeyCode() == KeyEvent.VK_BACKSPACE)){
-            jTextFieldCCV.setText(jTextFieldCCV.getText().substring(0, 2));
-        }
-    }//GEN-LAST:event_jTextFieldCCVKeyPressed
-
     private void imageLabelForegaendeStegMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelForegaendeStegMouseMoved
         imageLabelForegaendeSteg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_imageLabelForegaendeStegMouseMoved
@@ -327,12 +304,10 @@ public class secondRegPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabelCCV;
     private javax.swing.JLabel jLabelError;
     private javax.swing.JLabel jLabelGiltighetstid;
     private javax.swing.JLabel jLabelKortNamn;
     private javax.swing.JLabel jLabelKortnummer;
-    private javax.swing.JTextField jTextFieldCCV;
     private javax.swing.JTextField jTextFieldKortNamn;
     private javax.swing.JTextField jTextFieldKortnummer1;
     private javax.swing.JTextField jTextFieldKortnummer2;
