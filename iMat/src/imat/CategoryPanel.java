@@ -26,6 +26,7 @@ public class CategoryPanel extends javax.swing.JPanel {
      */
     public CategoryPanel() {
         initComponents();
+        this.setBackground(IMatColors.getpanelBackgroundLight());
     }
 
     /**
