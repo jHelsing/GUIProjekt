@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.Cursor;
 import java.awt.Dimension;
 import javax.swing.JOptionPane;
 import se.chalmers.ait.dat215.project.*;
@@ -138,18 +139,44 @@ public class ProductCard extends javax.swing.JPanel {
 
         nbrOfProductsTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         nbrOfProductsTF.setText("1");
+        nbrOfProductsTF.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                nbrOfProductsTFMouseMoved(evt);
+            }
+        });
+        nbrOfProductsTF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                nbrOfProductsTFMouseExited(evt);
+            }
+        });
 
         increaseLabel.setText("imageLabel1");
+        increaseLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                increaseLabelMouseMoved(evt);
+            }
+        });
         increaseLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 increaseLabelMouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                increaseLabelMouseExited(evt);
+            }
         });
 
         decreaseLabel.setText("imageLabel1");
+        decreaseLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                decreaseLabelMouseMoved(evt);
+            }
+        });
         decreaseLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 decreaseLabelMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                decreaseLabelMouseExited(evt);
             }
         });
 
@@ -308,6 +335,32 @@ public class ProductCard extends javax.swing.JPanel {
     private void decreaseLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseLabelMouseClicked
         this.decProducts();
     }//GEN-LAST:event_decreaseLabelMouseClicked
+
+    private void increaseLabelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseLabelMouseMoved
+        this.setBackground(IMatColors.getpanelBackgroundLight());
+        increaseLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_increaseLabelMouseMoved
+
+    private void increaseLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseLabelMouseExited
+        this.setBackground(IMatColors.getpanelBackgroundDark());
+    }//GEN-LAST:event_increaseLabelMouseExited
+
+    private void decreaseLabelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseLabelMouseMoved
+        this.setBackground(IMatColors.getpanelBackgroundLight());
+        decreaseLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_decreaseLabelMouseMoved
+
+    private void decreaseLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseLabelMouseExited
+        this.setBackground(IMatColors.getpanelBackgroundDark());
+    }//GEN-LAST:event_decreaseLabelMouseExited
+
+    private void nbrOfProductsTFMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nbrOfProductsTFMouseMoved
+        this.setBackground(IMatColors.getpanelBackgroundLight());
+    }//GEN-LAST:event_nbrOfProductsTFMouseMoved
+
+    private void nbrOfProductsTFMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nbrOfProductsTFMouseExited
+        this.setBackground(IMatColors.getpanelBackgroundDark());
+    }//GEN-LAST:event_nbrOfProductsTFMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private imat.ImageLabel addToCartButton;
