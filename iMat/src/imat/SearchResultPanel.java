@@ -33,6 +33,8 @@ public class SearchResultPanel extends JPanel {
     public SearchResultPanel() {
         initComponents();
         this.setBackground(IMatColors.getpanelBackgroundLight());
+        areaOfSearchResult.setBackground(IMatColors.getpanelBackgroundLight());
+        searchResultCardContainer.setBackground(IMatColors.getpanelBackgroundLight());
     }
     
     private SearchResultPanel(String s) {
@@ -70,7 +72,7 @@ public class SearchResultPanel extends JPanel {
         );
         searchResultCardContainerLayout.setVerticalGroup(
             searchResultCardContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 533, Short.MAX_VALUE)
+            .addGap(0, 637, Short.MAX_VALUE)
         );
 
         areaOfSearchResult.setViewportView(searchResultCardContainer);
@@ -83,9 +85,7 @@ public class SearchResultPanel extends JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(areaOfSearchResult, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(areaOfSearchResult, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE)
         );
 
         areaOfSearchResult.getVerticalScrollBar().setUnitIncrement(16);

@@ -53,7 +53,10 @@ public class confirmCheckoutPanel extends javax.swing.JPanel {
             name = userData.getOrders().get(lastIndex).getItems().get(i).getProduct().getName();
             amount = Integer.toString((int)userData.getOrders().get(lastIndex).getItems().get(i).getAmount());
             price = Double.toString(userData.getOrders().get(lastIndex).getItems().get(i).getProduct().getPrice());
-            total = name + "          " + amount + " st         " + price + " kr";
+            String space = StringSizeHelper.getEmptyString(25 - name.length());
+            total = name + space + amount + " " +
+                    userData.getOrders().get(lastIndex).getItems().get(i).getProduct().getUnitSuffix()
+                    + "        " +  price + " kr";
             receiptListModel.add(i, total);
         }
     }
