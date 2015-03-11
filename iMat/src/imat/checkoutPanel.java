@@ -175,22 +175,23 @@ public class checkoutPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jPanelAllProducts);
 
         checkoutPostalCodeTF.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
-        checkoutPostalCodeTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        checkoutPostalCodeTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         checkoutCityTF.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
         checkoutCityTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         checkoutAddressTF.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
+        checkoutAddressTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         deliveryDayCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Idag", "Imorgon", "Fredag(6/3)", "Lördag(7/3)" }));
 
         deliveryTimeCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "mellan 15-18", "mellan 18-21" }));
 
         checkoutPhoneNbrTF.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
-        checkoutPhoneNbrTF.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        checkoutPhoneNbrTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jTextFieldCardnumber1.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
-        jTextFieldCardnumber1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jTextFieldCardnumber1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTextFieldCardnumber1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextFieldCardnumber1KeyPressed(evt);
@@ -198,7 +199,7 @@ public class checkoutPanel extends javax.swing.JPanel {
         });
 
         jTextFieldCCV.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
-        jTextFieldCCV.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jTextFieldCCV.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTextFieldCCV.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextFieldCCVKeyPressed(evt);
@@ -225,7 +226,7 @@ public class checkoutPanel extends javax.swing.JPanel {
         cartEmptyError.setText("Du måste fylla i alla fält!");
 
         jTextFieldCardnumber2.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
-        jTextFieldCardnumber2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jTextFieldCardnumber2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTextFieldCardnumber2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextFieldCardnumber2KeyPressed(evt);
@@ -233,7 +234,7 @@ public class checkoutPanel extends javax.swing.JPanel {
         });
 
         jTextFieldCardnumber4.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
-        jTextFieldCardnumber4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jTextFieldCardnumber4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTextFieldCardnumber4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextFieldCardnumber4KeyPressed(evt);
@@ -241,7 +242,7 @@ public class checkoutPanel extends javax.swing.JPanel {
         });
 
         jTextFieldCardnumber3.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
-        jTextFieldCardnumber3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jTextFieldCardnumber3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTextFieldCardnumber3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextFieldCardnumber3KeyPressed(evt);
@@ -259,6 +260,7 @@ public class checkoutPanel extends javax.swing.JPanel {
 
         jLabelBack.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelBack.setText("<< Tillbaka");
+        jLabelBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelBack.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelBackMouseClicked(evt);
@@ -384,7 +386,7 @@ public class checkoutPanel extends javax.swing.JPanel {
                                         .addComponent(jLabel5)
                                         .addGap(0, 0, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(0, 27, Short.MAX_VALUE)
+                                        .addGap(0, 29, Short.MAX_VALUE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addComponent(jCheckBox1)
@@ -404,9 +406,9 @@ public class checkoutPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabelBack))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
