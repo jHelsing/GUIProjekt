@@ -5,8 +5,10 @@
  */
 package imat;
 
+import com.sun.glass.events.KeyEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import javafx.scene.input.KeyCode;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 /**
@@ -56,6 +58,7 @@ public class secondRegPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabelError = new javax.swing.JLabel();
 
         jComboBoxGiltAr.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "åååå", "2015", "2016", "2017", "2018", "2019" }));
 
@@ -122,6 +125,8 @@ public class secondRegPanel extends javax.swing.JPanel {
 
         jLabel3.setText("-");
 
+        jLabelError.setText(" ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -132,7 +137,7 @@ public class secondRegPanel extends javax.swing.JPanel {
                         .addGap(168, 168, 168)
                         .addComponent(imageLabelRegPil2, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(342, 342, 342)
+                        .addGap(377, 377, 377)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(imageLabelForegaendeSteg, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -153,7 +158,10 @@ public class secondRegPanel extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jComboBoxGiltMånad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jComboBoxGiltAr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
                                         .addGap(4, 4, 4)
                                         .addComponent(jLabel1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -169,10 +177,10 @@ public class secondRegPanel extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabelCCV)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextFieldCCV, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBoxGiltAr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(jTextFieldCCV, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(525, 525, 525)
+                        .addComponent(jLabelError)))
                 .addContainerGap(168, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -180,7 +188,9 @@ public class secondRegPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(imageLabelRegPil2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
+                .addGap(47, 47, 47)
+                .addComponent(jLabelError)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelKortnummer)
                     .addComponent(jLabelCCV)
@@ -203,9 +213,9 @@ public class secondRegPanel extends javax.swing.JPanel {
                     .addComponent(jTextFieldKortNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(imageLabelNastaSteg, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(imageLabelForegaendeSteg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(53, Short.MAX_VALUE))
+                    .addComponent(imageLabelNastaSteg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(imageLabelForegaendeSteg, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -214,52 +224,57 @@ public class secondRegPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_imageLabelForegaendeStegMouseClicked
 
     private void imageLabelNastaStegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelNastaStegMouseClicked
-        pcs.firePropertyChange("ToThirdRegPanel", 0, 1);
-        userData.getCreditCard().setCardNumber(jTextFieldKortnummer1.getText() + "-" + 
-                                                jTextFieldKortnummer2.getText() + "-" +
-                                                jTextFieldKortnummer3.getText() + "-" + 
-                                                jTextFieldKortnummer4.getText());
-        userData.getCreditCard().setHoldersName(jLabelKortNamn.getText());
+
+        
+        if (jTextFieldKortnummer1.getDocument().getLength() == 4 && 
+                jTextFieldKortnummer2.getDocument().getLength() == 4 &&
+                    jTextFieldKortnummer3.getDocument().getLength() == 4 &&
+                        jTextFieldKortnummer4.getDocument().getLength() == 4){
+            
+            userData.getCreditCard().setCardNumber(jTextFieldKortnummer1.getText() + "-" + 
+                                                    jTextFieldKortnummer2.getText() + "-" +
+                                                    jTextFieldKortnummer3.getText() + "-" + 
+                                                    jTextFieldKortnummer4.getText());
+            userData.getCreditCard().setHoldersName(jLabelKortNamn.getText());
+        }
         
         if ((String)jComboBoxGiltMånad.getSelectedItem() != "mm"){
             userData.getCreditCard().setValidMonth(Integer.parseInt((String)jComboBoxGiltMånad.getSelectedItem()));
         }
+        
         if ((String)jComboBoxGiltAr.getSelectedItem() != "åååå"){
             userData.getCreditCard().setValidYear(Integer.parseInt((String)jComboBoxGiltAr.getSelectedItem()));
         }
-        try {
-            userData.getCreditCard().setVerificationCode(Integer.parseInt(jTextFieldCCV.getText()));
-        } catch (NumberFormatException e){
-            System.out.println("FEL");
-        }
+        
+            pcs.firePropertyChange("ToThirdRegPanel", 0, 1);
     }//GEN-LAST:event_imageLabelNastaStegMouseClicked
 
     private void jTextFieldKortnummer1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer1KeyPressed
-        if (jTextFieldKortnummer1.getDocument().getLength() >= 4){
+        if (jTextFieldKortnummer1.getDocument().getLength() >= 4 && !(evt.getKeyCode() == KeyEvent.VK_BACKSPACE)){
             jTextFieldKortnummer1.setText(jTextFieldKortnummer1.getText().substring(0, 3));
         } 
     }//GEN-LAST:event_jTextFieldKortnummer1KeyPressed
 
     private void jTextFieldKortnummer2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer2KeyPressed
-        if (jTextFieldKortnummer2.getDocument().getLength() >= 4){
+        if (jTextFieldKortnummer2.getDocument().getLength() >= 4 && !(evt.getKeyCode() == KeyEvent.VK_BACKSPACE)){
             jTextFieldKortnummer2.setText(jTextFieldKortnummer2.getText().substring(0, 3));
         }
     }//GEN-LAST:event_jTextFieldKortnummer2KeyPressed
 
     private void jTextFieldKortnummer3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer3KeyPressed
-        if (jTextFieldKortnummer3.getDocument().getLength() >= 4){
+        if (jTextFieldKortnummer3.getDocument().getLength() >= 4 && !(evt.getKeyCode() == KeyEvent.VK_BACKSPACE)){
             jTextFieldKortnummer3.setText(jTextFieldKortnummer3.getText().substring(0, 3));
         }
     }//GEN-LAST:event_jTextFieldKortnummer3KeyPressed
 
     private void jTextFieldKortnummer4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer4KeyPressed
-        if (jTextFieldKortnummer4.getDocument().getLength() >= 4){
+        if (jTextFieldKortnummer4.getDocument().getLength() >= 4 && !(evt.getKeyCode() == KeyEvent.VK_BACKSPACE)){
             jTextFieldKortnummer4.setText(jTextFieldKortnummer4.getText().substring(0, 3));
         }
     }//GEN-LAST:event_jTextFieldKortnummer4KeyPressed
 
     private void jTextFieldCCVKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCCVKeyPressed
-        if (jTextFieldCCV.getDocument().getLength() >= 3){
+        if (jTextFieldCCV.getDocument().getLength() >= 3 && !(evt.getKeyCode() == KeyEvent.VK_BACKSPACE)){
             jTextFieldCCV.setText(jTextFieldCCV.getText().substring(0, 2));
         }
     }//GEN-LAST:event_jTextFieldCCVKeyPressed
@@ -275,6 +290,7 @@ public class secondRegPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelCCV;
+    private javax.swing.JLabel jLabelError;
     private javax.swing.JLabel jLabelGiltighetstid;
     private javax.swing.JLabel jLabelKortNamn;
     private javax.swing.JLabel jLabelKortnummer;

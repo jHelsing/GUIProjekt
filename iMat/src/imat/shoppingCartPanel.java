@@ -33,6 +33,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
      */
     public shoppingCartPanel() {
         initComponents();
+        jLabelError.setVisible(false);
         goStraightToPayment = false;
         userData.getShoppingCart().addShoppingCartListener(this);
         jPanel1.setMaximumSize(new Dimension(305, 406));
@@ -66,6 +67,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         jLabelTotalKostnad = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
+        jLabelError = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(337, 604));
         setMinimumSize(new java.awt.Dimension(337, 604));
@@ -108,6 +110,10 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         jPanel1.setLayout(new java.awt.GridLayout(1, 0));
         jScrollPane1.setViewportView(jPanel1);
 
+        jLabelError.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelError.setForeground(new java.awt.Color(255, 0, 0));
+        jLabelError.setText("Kundvagnen är tom!");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,7 +122,8 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(imageLabelEmptyCart, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(imageLabelEmptyCart, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelError))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelTotalKostnad)
@@ -124,7 +131,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
                     .addComponent(imageLabelToCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(93, Short.MAX_VALUE)
+                .addContainerGap(29, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(32, 32, 32)
                 .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -146,7 +153,10 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
                         .addComponent(jLabelAntalProdukter)
                         .addGap(7, 7, 7)
                         .addComponent(jLabelTotalKostnad))
-                    .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelError)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imageLabelToCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -158,12 +168,16 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
     }// </editor-fold>//GEN-END:initComponents
 
     private void imageLabelToCheckoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelToCheckoutMouseClicked
-        if (userData.isCustomerComplete()) {
-            pcs.firePropertyChange("ToCheckout", 0 , 1);
+        if (userData.getShoppingCart().getTotal() != 0.0){
+            if (userData.isCustomerComplete()) {
             
+                pcs.firePropertyChange("ToCheckout", 0 , 1);
+            } else {
+                goStraightToPayment = true;
+                pcs.firePropertyChange("ToFirstRegPanel", 0, 1);
+            }
         } else {
-            goStraightToPayment = true;
-            pcs.firePropertyChange("ToFirstRegPanel", 0, 1);
+                jLabelError.setVisible(true);
         }
     }//GEN-LAST:event_imageLabelToCheckoutMouseClicked
 
@@ -276,6 +290,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelAntalProdukter;
+    private javax.swing.JLabel jLabelError;
     private javax.swing.JLabel jLabelTotalKostnad;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
