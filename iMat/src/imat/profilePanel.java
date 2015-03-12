@@ -27,6 +27,10 @@ public class profilePanel extends javax.swing.JPanel {
         editProfileInfo.setText("Spara");
         editProfileInfo.setBackground(IMatColors.getpanelBackgroundLight());
         editProfileInfo.setEnabled(false);
+        expDateMonth.setEnabled(true);
+        expDateYear.setEnabled(true);
+        expDateMonth.setEditable(false);
+        expDateYear.setEditable(false);
       //  profileNotEditable = true;
       //  expDateMonth.setEnabled(false);
       //  expDateYear.setEnabled(false);
@@ -49,7 +53,7 @@ public class profilePanel extends javax.swing.JPanel {
         emailTF.setText(userData.getCustomer().getEmail());
         phoneNbrTF.setText(userData.getCustomer().getPhoneNumber());
         
-        if (!userData.getCreditCard().getCardNumber().equals("")){
+        if (userData.getCreditCard().getCardNumber() != null){
             cardNumberTF1.setText(userData.getCreditCard().getCardNumber().substring(0, 4));
             cardNumberTF2.setText(userData.getCreditCard().getCardNumber().substring(5, 9));
             cardNumberTF3.setText(userData.getCreditCard().getCardNumber().substring(10, 14));
@@ -657,19 +661,60 @@ public class profilePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_cardHolderTFKeyTyped
 
     private void cardNumberTF1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cardNumberTF1KeyTyped
-        setButtonToSave();
+        
+        if (cardNumberTF1.getText().length() < 4){
+            char caracter = evt.getKeyChar();
+            if (((caracter < '0') || (caracter > '9'))
+                    && (caracter != '\b')) {
+                evt.consume();
+            } else {
+                setButtonToSave();
+            }
+        } else {
+            evt.consume();
+        }
     }//GEN-LAST:event_cardNumberTF1KeyTyped
 
     private void cardNumberTF2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cardNumberTF2KeyTyped
-        setButtonToSave();
+        if (cardNumberTF2.getText().length() < 4){
+            char caracter = evt.getKeyChar();
+            if (((caracter < '0') || (caracter > '9'))
+                    && (caracter != '\b')) {
+                evt.consume();
+            } else {
+                setButtonToSave();
+            }
+        } else {
+            evt.consume();
+        }
     }//GEN-LAST:event_cardNumberTF2KeyTyped
 
     private void cardNumberTF3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cardNumberTF3KeyTyped
-        setButtonToSave();
+        if (cardNumberTF3.getText().length() < 4){
+            char caracter = evt.getKeyChar();
+            if (((caracter < '0') || (caracter > '9'))
+                    && (caracter != '\b')) {
+                evt.consume();
+            } else {
+                setButtonToSave();
+            }
+        } else {
+            evt.consume();
+        }
     }//GEN-LAST:event_cardNumberTF3KeyTyped
 
     private void cardNumberTF4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cardNumberTF4KeyTyped
-        setButtonToSave();
+        if (cardNumberTF4.getText().length() < 4){
+            char caracter = evt.getKeyChar();
+            if (((caracter < '0') || (caracter > '9'))
+                    && (caracter != '\b')) {
+                evt.consume();
+            } else {
+                setButtonToSave();
+            }
+        } else {
+            evt.consume();
+        }
     }//GEN-LAST:event_cardNumberTF4KeyTyped
 
     private void expDateMonthItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_expDateMonthItemStateChanged

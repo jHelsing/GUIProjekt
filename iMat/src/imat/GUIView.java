@@ -20,6 +20,7 @@ import java.util.List;
  */
 public class GUIView extends javax.swing.JFrame implements PropertyChangeListener {
     
+    private boolean RESET = true;
     private IMatDataHandler userData = IMatDataHandler.getInstance();
     private int[] cardNumber;
     private int ccv, expireYear, expireMonth;
@@ -31,11 +32,14 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
      */
     public GUIView() {
         initComponents();
-        userData.reset();
+        if (RESET){
+            userData.reset();
+        }
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         //setFullScreen(this);
         initContentPanel();
         homeLabel.requestFocus();
+        
         shoppingCartPanel.addObserver(this);
         firstRegPanel.addObserver(this);
         secondRegPanel.addObserver(this);
@@ -45,10 +49,12 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         checkoutPanel.addObserver(this);
         detailedRecipe.addObserver(this);
         recipePanel.addObserver(this);
+        
         this.setBackground(IMatColors.getpanelBackgroundNormal());
         splitPanel.setBackground(IMatColors.getpanelBackgroundNormal());
         wholePanel.setBackground(IMatColors.getpanelBackgroundNormal());
-        if (!userData.getCustomer().getFirstName().equals("")){
+        
+        if (userData.isCustomerComplete()){
             profilePanel.setProfileInfo();
             firstNameLabel.setText(userData.getCustomer().getFirstName());
             lastNameLabel.setText(userData.getCustomer().getLastName());
@@ -580,8 +586,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     }//GEN-LAST:event_purchaseHistoryLabelMouseExited
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        //userData.shutDown();
-        userData.reset();
+        userData.shutDown();
     }//GEN-LAST:event_formWindowClosing
 
     

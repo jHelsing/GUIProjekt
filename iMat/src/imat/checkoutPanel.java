@@ -198,8 +198,8 @@ public class checkoutPanel extends javax.swing.JPanel {
         jTextFieldCardnumber1.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
         jTextFieldCardnumber1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTextFieldCardnumber1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextFieldCardnumber1KeyPressed(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldCardnumber1KeyTyped(evt);
             }
         });
 
@@ -207,8 +207,8 @@ public class checkoutPanel extends javax.swing.JPanel {
         jTextFieldCCV.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
         jTextFieldCCV.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTextFieldCCV.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextFieldCCVKeyPressed(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldCCVKeyTyped(evt);
             }
         });
 
@@ -235,8 +235,8 @@ public class checkoutPanel extends javax.swing.JPanel {
         jTextFieldCardnumber2.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
         jTextFieldCardnumber2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTextFieldCardnumber2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextFieldCardnumber2KeyPressed(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldCardnumber2KeyTyped(evt);
             }
         });
 
@@ -244,8 +244,8 @@ public class checkoutPanel extends javax.swing.JPanel {
         jTextFieldCardnumber4.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
         jTextFieldCardnumber4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTextFieldCardnumber4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextFieldCardnumber4KeyPressed(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldCardnumber4KeyTyped(evt);
             }
         });
 
@@ -253,8 +253,8 @@ public class checkoutPanel extends javax.swing.JPanel {
         jTextFieldCardnumber3.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
         jTextFieldCardnumber3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTextFieldCardnumber3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextFieldCardnumber3KeyPressed(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldCardnumber3KeyTyped(evt);
             }
         });
 
@@ -505,39 +505,49 @@ public class checkoutPanel extends javax.swing.JPanel {
         cartEmptyError.setVisible(false);
     }//GEN-LAST:event_jButtonPayFocusLost
 
-    private void jTextFieldCardnumber1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCardnumber1KeyPressed
-        if (jTextFieldCardnumber1.getDocument().getLength() >= 4 && !(evt.getKeyCode() == KeyEvent.VK_BACKSPACE)){
-            jTextFieldCardnumber1.setText(jTextFieldCardnumber1.getText().substring(0, 3));
-        }
-    }//GEN-LAST:event_jTextFieldCardnumber1KeyPressed
-
-    private void jTextFieldCardnumber2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCardnumber2KeyPressed
-        if (jTextFieldCardnumber2.getDocument().getLength() >= 4 && !(evt.getKeyCode() == KeyEvent.VK_BACKSPACE)){
-            jTextFieldCardnumber2.setText(jTextFieldCardnumber2.getText().substring(0, 3));
-        }
-    }//GEN-LAST:event_jTextFieldCardnumber2KeyPressed
-
-    private void jTextFieldCardnumber3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCardnumber3KeyPressed
-        if (jTextFieldCardnumber3.getDocument().getLength() >= 4 && !(evt.getKeyCode() == KeyEvent.VK_BACKSPACE)){
-            jTextFieldCardnumber3.setText(jTextFieldCardnumber3.getText().substring(0, 3));
-        }
-    }//GEN-LAST:event_jTextFieldCardnumber3KeyPressed
-
-    private void jTextFieldCardnumber4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCardnumber4KeyPressed
-        if (jTextFieldCardnumber4.getDocument().getLength() >= 4 && !(evt.getKeyCode() == KeyEvent.VK_BACKSPACE)){
-            jTextFieldCardnumber4.setText(jTextFieldCardnumber4.getText().substring(0, 3));
-        }
-    }//GEN-LAST:event_jTextFieldCardnumber4KeyPressed
-
-    private void jTextFieldCCVKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCCVKeyPressed
-        if (jTextFieldCCV.getDocument().getLength() >= 3 && !(evt.getKeyCode() == KeyEvent.VK_BACKSPACE)){
-            jTextFieldCCV.setText(jTextFieldCCV.getText().substring(0, 2));
-        }
-    }//GEN-LAST:event_jTextFieldCCVKeyPressed
-
     private void jLabelBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBackMouseClicked
         pcs.firePropertyChange("checkoutBack", 0, 1);
     }//GEN-LAST:event_jLabelBackMouseClicked
+
+    private void jTextFieldCardnumber1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCardnumber1KeyTyped
+        char caracter = evt.getKeyChar();
+        if (((caracter < '0') || (caracter > '9') || jTextFieldCardnumber1.getText().length() > 3)
+                && (caracter != '\b')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextFieldCardnumber1KeyTyped
+
+    private void jTextFieldCardnumber2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCardnumber2KeyTyped
+        char caracter = evt.getKeyChar();
+        if (((caracter < '0') || (caracter > '9') || jTextFieldCardnumber2.getText().length() > 3)
+                && (caracter != '\b')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextFieldCardnumber2KeyTyped
+
+    private void jTextFieldCardnumber3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCardnumber3KeyTyped
+        char caracter = evt.getKeyChar();
+        if (((caracter < '0') || (caracter > '9') || jTextFieldCardnumber3.getText().length() > 3)
+                && (caracter != '\b')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextFieldCardnumber3KeyTyped
+
+    private void jTextFieldCardnumber4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCardnumber4KeyTyped
+        char caracter = evt.getKeyChar();
+        if (((caracter < '0') || (caracter > '9') || jTextFieldCardnumber4.getText().length() > 3)
+                && (caracter != '\b')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextFieldCardnumber4KeyTyped
+
+    private void jTextFieldCCVKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCCVKeyTyped
+        char caracter = evt.getKeyChar();
+        if (((caracter < '0') || (caracter > '9') || jTextFieldCCV.getText().length() > 2)
+                && (caracter != '\b')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextFieldCCVKeyTyped
  
     /**
      * Autofills the info from user profile.

@@ -107,8 +107,8 @@ public class secondRegPanel extends javax.swing.JPanel {
 
         jTextFieldKortnummer1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTextFieldKortnummer1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextFieldKortnummer1KeyPressed(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldKortnummer1KeyTyped(evt);
             }
         });
 
@@ -118,22 +118,22 @@ public class secondRegPanel extends javax.swing.JPanel {
 
         jTextFieldKortnummer2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTextFieldKortnummer2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextFieldKortnummer2KeyPressed(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldKortnummer2KeyTyped(evt);
             }
         });
 
         jTextFieldKortnummer3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTextFieldKortnummer3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextFieldKortnummer3KeyPressed(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldKortnummer3KeyTyped(evt);
             }
         });
 
         jTextFieldKortnummer4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTextFieldKortnummer4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextFieldKortnummer4KeyPressed(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldKortnummer4KeyTyped(evt);
             }
         });
 
@@ -184,15 +184,15 @@ public class secondRegPanel extends javax.swing.JPanel {
                                         .addComponent(jLabel3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextFieldKortnummer4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(imageLabelForegaendeSteg, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabelKortNamn)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextFieldKortNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(imageLabelNastaSteg, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(imageLabelForegaendeSteg, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(imageLabelNastaSteg, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabelKortNamn)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jTextFieldKortNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(525, 525, 525)
                         .addComponent(jLabelError)))
@@ -262,30 +262,6 @@ public class secondRegPanel extends javax.swing.JPanel {
             pcs.firePropertyChange("ToThirdRegPanel", 0, 1);
     }//GEN-LAST:event_imageLabelNastaStegMouseClicked
 
-    private void jTextFieldKortnummer1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer1KeyPressed
-        if (jTextFieldKortnummer1.getDocument().getLength() >= 4 && !(evt.getKeyCode() == KeyEvent.VK_BACKSPACE)){
-            jTextFieldKortnummer1.setText(jTextFieldKortnummer1.getText().substring(0, 3));
-        } 
-    }//GEN-LAST:event_jTextFieldKortnummer1KeyPressed
-
-    private void jTextFieldKortnummer2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer2KeyPressed
-        if (jTextFieldKortnummer2.getDocument().getLength() >= 4 && !(evt.getKeyCode() == KeyEvent.VK_BACKSPACE)){
-            jTextFieldKortnummer2.setText(jTextFieldKortnummer2.getText().substring(0, 3));
-        }
-    }//GEN-LAST:event_jTextFieldKortnummer2KeyPressed
-
-    private void jTextFieldKortnummer3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer3KeyPressed
-        if (jTextFieldKortnummer3.getDocument().getLength() >= 4 && !(evt.getKeyCode() == KeyEvent.VK_BACKSPACE)){
-            jTextFieldKortnummer3.setText(jTextFieldKortnummer3.getText().substring(0, 3));
-        }
-    }//GEN-LAST:event_jTextFieldKortnummer3KeyPressed
-
-    private void jTextFieldKortnummer4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer4KeyPressed
-        if (jTextFieldKortnummer4.getDocument().getLength() >= 4 && !(evt.getKeyCode() == KeyEvent.VK_BACKSPACE)){
-            jTextFieldKortnummer4.setText(jTextFieldKortnummer4.getText().substring(0, 3));
-        }
-    }//GEN-LAST:event_jTextFieldKortnummer4KeyPressed
-
     private void imageLabelForegaendeStegMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelForegaendeStegMouseMoved
         imageLabelForegaendeSteg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_imageLabelForegaendeStegMouseMoved
@@ -293,6 +269,38 @@ public class secondRegPanel extends javax.swing.JPanel {
     private void imageLabelNastaStegMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelNastaStegMouseMoved
         imageLabelNastaSteg.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_imageLabelNastaStegMouseMoved
+
+    private void jTextFieldKortnummer1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer1KeyTyped
+        char caracter = evt.getKeyChar();
+        if (((caracter < '0') || (caracter > '9') || jTextFieldKortnummer1.getText().length() > 3)
+                && (caracter != '\b')) {
+            evt.consume();
+        } 
+    }//GEN-LAST:event_jTextFieldKortnummer1KeyTyped
+
+    private void jTextFieldKortnummer2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer2KeyTyped
+        char caracter = evt.getKeyChar();
+        if (((caracter < '0') || (caracter > '9') || jTextFieldKortnummer2.getText().length() > 3)
+                && (caracter != '\b')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextFieldKortnummer2KeyTyped
+
+    private void jTextFieldKortnummer3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer3KeyTyped
+        char caracter = evt.getKeyChar();
+        if (((caracter < '0') || (caracter > '9') || jTextFieldKortnummer3.getText().length() > 3)
+                && (caracter != '\b')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextFieldKortnummer3KeyTyped
+
+    private void jTextFieldKortnummer4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKortnummer4KeyTyped
+        char caracter = evt.getKeyChar();
+        if (((caracter < '0') || (caracter > '9') || jTextFieldKortnummer4.getText().length() > 3)
+                && (caracter != '\b')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextFieldKortnummer4KeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
