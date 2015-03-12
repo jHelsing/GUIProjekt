@@ -600,14 +600,14 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
      */
     private void initContentPanel() {
         userData = IMatDataHandler.getInstance();
-        //userData.resetFirstRun();
+        userData.resetFirstRun();
         if(userData.isFirstRun()) {
             //Show the firstPanel
             CardLayout card = (CardLayout)contentPanel.getLayout();   
             card.show(contentPanel, "wholePanel");
             card = (CardLayout)wholePanel.getLayout();
             card.show(wholePanel,"firstPanel");
-        } else {
+        } else { 
             CardLayout card = (CardLayout)contentPanel.getLayout();
             card.show(contentPanel, "splitPanel");
             card = (CardLayout)splitPanelContent.getLayout();
@@ -657,6 +657,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 firstNameLabel.setText(userData.getCustomer().getFirstName());
                 lastNameLabel.setText(userData.getCustomer().getLastName());
             } else if (evt.getPropertyName().equals("buyCompleted")) {
+                confirmRegPanel.setRegInfo();
                 historyPanel.addToHistory();
                 confirmCheckoutPanel.setReceiptInfo(checkoutPanel.getDeliveryDay(),
                         checkoutPanel.getDeliveryTime(), checkoutPanel.getDeliveryAddress(),

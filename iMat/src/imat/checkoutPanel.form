@@ -72,7 +72,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="deliveryDayCombo" min="-2" pref="107" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="deliveryTimeCombo" max="32767" attributes="0"/>
+                                      <Component id="deliveryTimeCombo" pref="165" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                       <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
@@ -292,8 +292,8 @@
           <StringArray count="4">
             <StringItem index="0" value="Idag"/>
             <StringItem index="1" value="Imorgon"/>
-            <StringItem index="2" value="Fredag(6/3)"/>
-            <StringItem index="3" value="L&#xf6;rdag(7/3)"/>
+            <StringItem index="2" value="L&#xf6;rdag 14/3"/>
+            <StringItem index="3" value="S&#xf6;ndag 15/3"/>
           </StringArray>
         </Property>
       </Properties>
@@ -472,7 +472,7 @@
         </Property>
         <Property name="text" type="java.lang.String" value="&lt;&lt; Tillbaka"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Standardmark&#xf6;r"/>
+          <Color id="Default Cursor"/>
         </Property>
       </Properties>
       <Events>
