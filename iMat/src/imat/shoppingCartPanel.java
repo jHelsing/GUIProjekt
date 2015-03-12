@@ -176,6 +176,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
                 goStraightToPayment = true;
                 pcs.firePropertyChange("ToFirstRegPanel", 0, 1);
             }
+            jLabelError.setVisible(false);
         } else {
                 jLabelError.setVisible(true);
         }

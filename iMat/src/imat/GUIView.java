@@ -47,6 +47,11 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         this.setBackground(IMatColors.getpanelBackgroundNormal());
         splitPanel.setBackground(IMatColors.getpanelBackgroundNormal());
         wholePanel.setBackground(IMatColors.getpanelBackgroundNormal());
+        if (!userData.getCustomer().getFirstName().equals("")){
+            profilePanel.setProfileInfo();
+            firstNameLabel.setText(userData.getCustomer().getFirstName());
+            lastNameLabel.setText(userData.getCustomer().getLastName());
+        }
     }
     
     /**
@@ -104,6 +109,11 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMinimumSize(new java.awt.Dimension(1174, 553));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         mainMenu.setPreferredSize(new java.awt.Dimension(532, 50));
 
@@ -567,6 +577,10 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         purchaseHistoryLabel.setForeground(java.awt.Color.white);
     }//GEN-LAST:event_purchaseHistoryLabelMouseExited
 
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        userData.shutDown();
+    }//GEN-LAST:event_formWindowClosing
+
     
     
     
@@ -585,7 +599,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
      */
     private void initContentPanel() {
         userData = IMatDataHandler.getInstance();
-        userData.resetFirstRun();
+        //userData.resetFirstRun();
         if(userData.isFirstRun()) {
             //Show the firstPanel
             CardLayout card = (CardLayout)contentPanel.getLayout();   
