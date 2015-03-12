@@ -51,7 +51,7 @@ public class HomeProductCard extends javax.swing.JPanel {
         imageLabelLaggTill = new imat.ImageLabel("addToCartButton.png");
         produktBild = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 204, 0));
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLabelNamn.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelNamn.setText("<Produktnamn>");

@@ -52,6 +52,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
             firstNameLabel.setText(userData.getCustomer().getFirstName());
             lastNameLabel.setText(userData.getCustomer().getLastName());
         }
+        userData.getShoppingCart().clear();
     }
     
     /**
