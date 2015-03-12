@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import javax.swing.JOptionPane;

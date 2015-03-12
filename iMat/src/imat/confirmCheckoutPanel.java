@@ -176,7 +176,6 @@ public class confirmCheckoutPanel extends javax.swing.JPanel {
         deliveryDateLabel1.setText("Maila kvitto till:");
 
         confirmationLabel.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        confirmationLabel.setForeground(new java.awt.Color(0, 200, 0));
         confirmationLabel.setText("Kvitto skickat!");
 
         cityLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
