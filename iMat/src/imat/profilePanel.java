@@ -53,7 +53,7 @@ public class profilePanel extends javax.swing.JPanel {
         emailTF.setText(userData.getCustomer().getEmail());
         phoneNbrTF.setText(userData.getCustomer().getPhoneNumber());
         
-        if (userData.getCreditCard().getCardNumber() != null){
+        if (!userData.getCreditCard().getCardNumber().equals("")){
             cardNumberTF1.setText(userData.getCreditCard().getCardNumber().substring(0, 4));
             cardNumberTF2.setText(userData.getCreditCard().getCardNumber().substring(5, 9));
             cardNumberTF3.setText(userData.getCreditCard().getCardNumber().substring(10, 14));
@@ -549,11 +549,15 @@ public class profilePanel extends javax.swing.JPanel {
                 cardNumberTF2.getText().length() == 4 &&
                     cardNumberTF3.getText().length() == 4 &&
                         cardNumberTF4.getText().length() == 4){
+            
             userData.getCreditCard().setCardNumber(cardNumberTF1.getText() + "-" +
                                                     cardNumberTF2.getText() + "-" +
                                                       cardNumberTF3.getText() + "-" +
                                                        cardNumberTF4.getText());
+        } else {            
+            userData.getCreditCard().setCardNumber("");
         }
+        
         userData.getCreditCard().setHoldersName(cardHolderTF.getText());
         userData.getCreditCard().setValidMonth(expDateMonth.getSelectedIndex() + 1);
         userData.getCreditCard().setValidYear(Integer.parseInt((String)expDateYear.getSelectedItem()));

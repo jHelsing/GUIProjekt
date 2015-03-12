@@ -239,27 +239,24 @@ public class secondRegPanel extends javax.swing.JPanel {
     private void imageLabelNastaStegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelNastaStegMouseClicked
 
         
-        if (jTextFieldKortnummer1.getDocument().getLength() == 4 && 
-                jTextFieldKortnummer2.getDocument().getLength() == 4 &&
-                    jTextFieldKortnummer3.getDocument().getLength() == 4 &&
-                        jTextFieldKortnummer4.getDocument().getLength() == 4){
+        if (jTextFieldKortnummer1.getText().length() == 4 && 
+                jTextFieldKortnummer2.getText().length() == 4 &&
+                    jTextFieldKortnummer3.getText().length() == 4 &&
+                        jTextFieldKortnummer4.getText().length() == 4){
             
             userData.getCreditCard().setCardNumber(jTextFieldKortnummer1.getText() + "-" + 
                                                     jTextFieldKortnummer2.getText() + "-" +
                                                     jTextFieldKortnummer3.getText() + "-" + 
                                                     jTextFieldKortnummer4.getText());
             userData.getCreditCard().setHoldersName(jTextFieldKortNamn.getText());
+        } else {
+            userData.getCreditCard().setCardNumber("");
         }
         
-        if ((String)jComboBoxGiltMånad.getSelectedItem() != "mm"){
-            userData.getCreditCard().setValidMonth(Integer.parseInt((String)jComboBoxGiltMånad.getSelectedItem()));
-        }
+        userData.getCreditCard().setValidMonth(Integer.parseInt((String)jComboBoxGiltMånad.getSelectedItem()));
+        userData.getCreditCard().setValidYear(Integer.parseInt((String)jComboBoxGiltAr.getSelectedItem()));
         
-        if ((String)jComboBoxGiltAr.getSelectedItem() != "åååå"){
-            userData.getCreditCard().setValidYear(Integer.parseInt((String)jComboBoxGiltAr.getSelectedItem()));
-        }
-        
-            pcs.firePropertyChange("ToThirdRegPanel", 0, 1);
+        pcs.firePropertyChange("ToThirdRegPanel", 0, 1);
     }//GEN-LAST:event_imageLabelNastaStegMouseClicked
 
     private void imageLabelForegaendeStegMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelForegaendeStegMouseMoved
