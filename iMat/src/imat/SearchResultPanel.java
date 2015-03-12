@@ -32,9 +32,6 @@ public class SearchResultPanel extends JPanel {
     
     public SearchResultPanel() {
         initComponents();
-        this.setBackground(IMatColors.getpanelBackgroundLight());
-        areaOfSearchResult.setBackground(IMatColors.getpanelBackgroundNormal());
-        searchResultCardContainer.setBackground(IMatColors.getpanelBackgroundNormal());
     }
     
     private SearchResultPanel(String s) {
@@ -60,6 +57,7 @@ public class SearchResultPanel extends JPanel {
         areaOfSearchResult.setMinimumSize(new java.awt.Dimension(734, 281));
         areaOfSearchResult.setPreferredSize(new java.awt.Dimension(734, 281));
 
+        searchResultCardContainer.setBackground(IMatColors.getpanelBackgroundLight());
         searchResultCardContainer.setMaximumSize(new java.awt.Dimension(734, 281));
         searchResultCardContainer.setMinimumSize(new java.awt.Dimension(734, 281));
         searchResultCardContainer.setPreferredSize(new java.awt.Dimension(734, 281));

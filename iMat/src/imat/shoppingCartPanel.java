@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.Cursor;
 import java.awt.GridLayout;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -80,6 +81,11 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
 
         imageLabelEmptyCart.setText("imageLabel2");
         imageLabelEmptyCart.setToolTipText("Ta bort alla varor från kundvagnen");
+        imageLabelEmptyCart.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                imageLabelEmptyCartMouseMoved(evt);
+            }
+        });
         imageLabelEmptyCart.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelEmptyCartMouseClicked(evt);
@@ -89,6 +95,11 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         imageLabelToCheckout.setBackground(new java.awt.Color(255, 255, 255));
         imageLabelToCheckout.setText("imageLabel3");
         imageLabelToCheckout.setToolTipText("Gå vidare till kassan");
+        imageLabelToCheckout.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                imageLabelToCheckoutMouseMoved(evt);
+            }
+        });
         imageLabelToCheckout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelToCheckoutMouseClicked(evt);
@@ -187,6 +198,14 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         jPanel1.removeAll();
         avp.clear();
     }//GEN-LAST:event_imageLabelEmptyCartMouseClicked
+
+    private void imageLabelToCheckoutMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelToCheckoutMouseMoved
+        imageLabelToCheckout.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_imageLabelToCheckoutMouseMoved
+
+    private void imageLabelEmptyCartMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelEmptyCartMouseMoved
+        imageLabelEmptyCart.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_imageLabelEmptyCartMouseMoved
 
     
     

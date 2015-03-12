@@ -24,9 +24,12 @@ public class profilePanel extends javax.swing.JPanel {
      */
     public profilePanel() {
         initComponents();
-        profileNotEditable = true;
-        expDateMonth.setEnabled(false);
-        expDateYear.setEnabled(false);
+        editProfileInfo.setText("Spara");
+        editProfileInfo.setBackground(IMatColors.getpanelBackgroundLight());
+        editProfileInfo.setEnabled(false);
+      //  profileNotEditable = true;
+      //  expDateMonth.setEnabled(false);
+      //  expDateYear.setEnabled(false);
         this.setBackground(IMatColors.getpanelBackgroundNormal());
     }
     
@@ -60,7 +63,7 @@ public class profilePanel extends javax.swing.JPanel {
         if (userData.getCreditCard().getValidYear() < 2100 && userData.getCreditCard().getValidYear() > 2000){
             expDateYear.setSelectedIndex(userData.getCreditCard().getValidYear() - 2015);
         }
-        System.out.println(userData.getCreditCard().getValidYear());
+        //System.out.println(userData.getCreditCard().getValidYear());
     }
     
     /**
@@ -106,13 +109,17 @@ public class profilePanel extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
 
-        surNameTF.setEditable(false);
         surNameTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         surNameTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         surNameTF.setNextFocusableComponent(addressTF);
         surNameTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 surNameTFActionPerformed(evt);
+            }
+        });
+        surNameTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                surNameTFKeyTyped(evt);
             }
         });
 
@@ -129,7 +136,6 @@ public class profilePanel extends javax.swing.JPanel {
             }
         });
 
-        cardNumberTF1.setEditable(false);
         cardNumberTF1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cardNumberTF1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         cardNumberTF1.setNextFocusableComponent(cardNumberTF2);
@@ -138,28 +144,48 @@ public class profilePanel extends javax.swing.JPanel {
                 cardNumberTF1ActionPerformed(evt);
             }
         });
+        cardNumberTF1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cardNumberTF1KeyTyped(evt);
+            }
+        });
 
+        expDateMonth.setEditable(true);
         expDateMonth.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         expDateMonth.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December" }));
         expDateMonth.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         expDateMonth.setNextFocusableComponent(expDateYear);
+        expDateMonth.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                expDateMonthItemStateChanged(evt);
+            }
+        });
         expDateMonth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 expDateMonthActionPerformed(evt);
             }
         });
 
+        expDateYear.setEditable(true);
         expDateYear.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         expDateYear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2015", "2016", "2017", "2018", "2019", "2020", "2021" }));
         expDateYear.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         expDateYear.setNextFocusableComponent(editProfileInfo);
+        expDateYear.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                expDateYearItemStateChanged(evt);
+            }
+        });
 
-        cityTF.setEditable(false);
         cityTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cityTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         cityTF.setNextFocusableComponent(phoneNbrTF);
+        cityTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cityTFKeyTyped(evt);
+            }
+        });
 
-        firstNameTF.setEditable(false);
         firstNameTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         firstNameTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         firstNameTF.setNextFocusableComponent(surNameTF);
@@ -168,8 +194,12 @@ public class profilePanel extends javax.swing.JPanel {
                 firstNameTFActionPerformed(evt);
             }
         });
+        firstNameTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                firstNameTFKeyTyped(evt);
+            }
+        });
 
-        postalCodeTF.setEditable(false);
         postalCodeTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         postalCodeTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         postalCodeTF.setNextFocusableComponent(cityTF);
@@ -178,8 +208,12 @@ public class profilePanel extends javax.swing.JPanel {
                 postalCodeTFActionPerformed(evt);
             }
         });
+        postalCodeTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                postalCodeTFKeyTyped(evt);
+            }
+        });
 
-        cardHolderTF.setEditable(false);
         cardHolderTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cardHolderTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         cardHolderTF.setNextFocusableComponent(cardNumberTF1);
@@ -188,8 +222,12 @@ public class profilePanel extends javax.swing.JPanel {
                 cardHolderTFActionPerformed(evt);
             }
         });
+        cardHolderTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cardHolderTFKeyTyped(evt);
+            }
+        });
 
-        addressTF.setEditable(false);
         addressTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addressTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         addressTF.setNextFocusableComponent(postalCodeTF);
@@ -198,19 +236,32 @@ public class profilePanel extends javax.swing.JPanel {
                 addressTFActionPerformed(evt);
             }
         });
+        addressTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                addressTFKeyTyped(evt);
+            }
+        });
 
-        phoneNbrTF.setEditable(false);
         phoneNbrTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         phoneNbrTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         phoneNbrTF.setNextFocusableComponent(emailTF);
+        phoneNbrTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                phoneNbrTFKeyTyped(evt);
+            }
+        });
 
-        emailTF.setEditable(false);
         emailTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         emailTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         emailTF.setNextFocusableComponent(cardHolderTF);
         emailTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailTFActionPerformed(evt);
+            }
+        });
+        emailTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                emailTFKeyTyped(evt);
             }
         });
 
@@ -253,7 +304,6 @@ public class profilePanel extends javax.swing.JPanel {
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel13.setText("Expireringsdatum:");
 
-        cardNumberTF2.setEditable(false);
         cardNumberTF2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cardNumberTF2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         cardNumberTF2.setNextFocusableComponent(cardNumberTF3);
@@ -262,8 +312,12 @@ public class profilePanel extends javax.swing.JPanel {
                 cardNumberTF2ActionPerformed(evt);
             }
         });
+        cardNumberTF2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cardNumberTF2KeyTyped(evt);
+            }
+        });
 
-        cardNumberTF3.setEditable(false);
         cardNumberTF3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cardNumberTF3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         cardNumberTF3.setNextFocusableComponent(cardNumberTF4);
@@ -272,17 +326,26 @@ public class profilePanel extends javax.swing.JPanel {
                 cardNumberTF3ActionPerformed(evt);
             }
         });
+        cardNumberTF3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cardNumberTF3KeyTyped(evt);
+            }
+        });
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel16.setText("  -");
 
-        cardNumberTF4.setEditable(false);
         cardNumberTF4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cardNumberTF4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         cardNumberTF4.setNextFocusableComponent(expDateMonth);
         cardNumberTF4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cardNumberTF4ActionPerformed(evt);
+            }
+        });
+        cardNumberTF4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cardNumberTF4KeyTyped(evt);
             }
         });
 
@@ -339,38 +402,35 @@ public class profilePanel extends javax.swing.JPanel {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(postalCodeTF, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                                 .addComponent(surNameTF)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cardHolderTF, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(expDateMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(expDateYear, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(cardNumberTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cardNumberTF2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cardNumberTF3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cardNumberTF4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(editProfileInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cardHolderTF, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(editProfileInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(expDateMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(expDateYear, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cardNumberTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cardNumberTF2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cardNumberTF3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cardNumberTF4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(98, 98, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,54 +455,54 @@ public class profilePanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(surNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(firstNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cardHolderTF, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(postalCodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cardNumberTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cardNumberTF2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cardNumberTF3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16)
+                    .addComponent(cardNumberTF4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel18)
+                    .addComponent(addressTF, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(phoneNbrTF, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(expDateMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(expDateYear, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(editProfileInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(surNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(firstNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cardHolderTF, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(postalCodeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cardNumberTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cardNumberTF2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cardNumberTF3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16)
-                            .addComponent(cardNumberTF4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel18)
-                            .addComponent(addressTF, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cityTF, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(phoneNbrTF, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(expDateMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(expDateYear, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(112, 112, 112)))
+                        .addGap(112, 112, 112))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(editProfileInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40))
         );
@@ -457,14 +517,16 @@ public class profilePanel extends javax.swing.JPanel {
      * @param evt 
      */
     private void editProfileInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProfileInfoActionPerformed
-        if (profileNotEditable) {
+      /*  if (profileNotEditable) {
             makeProfileEditable(true);
             editProfileInfo.setText("Okej");
         } else {
             makeProfileEditable(false);
             this.updateProfileInfo();
             editProfileInfo.setText("Ändra");
-        }
+        } */
+        updateProfileInfo();
+        editProfileInfo.setEnabled(false);
     }//GEN-LAST:event_editProfileInfoActionPerformed
 
     
@@ -494,7 +556,7 @@ public class profilePanel extends javax.swing.JPanel {
         pcs.firePropertyChange("setInfo", 0, 1);
     }
     
-    private void makeProfileEditable(boolean b) {
+  /*  private void makeProfileEditable(boolean b) {
         profileNotEditable = !b;
         firstNameTF.setEditable(b);
         surNameTF.setEditable(b);
@@ -510,6 +572,10 @@ public class profilePanel extends javax.swing.JPanel {
         cardNumberTF4.setEditable(b);
         expDateMonth.setEnabled(b);
         expDateYear.setEnabled(b);
+    } */
+    
+    private void setButtonToSave() {
+        editProfileInfo.setEnabled(true);
     }
     
     private void cardNumberTF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardNumberTF1ActionPerformed
@@ -558,8 +624,64 @@ public class profilePanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_editProfileInfoKeyPressed
 
+    private void firstNameTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_firstNameTFKeyTyped
+        setButtonToSave();
+    }//GEN-LAST:event_firstNameTFKeyTyped
+
+    private void surNameTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_surNameTFKeyTyped
+        setButtonToSave();
+    }//GEN-LAST:event_surNameTFKeyTyped
+
+    private void addressTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addressTFKeyTyped
+        setButtonToSave();
+    }//GEN-LAST:event_addressTFKeyTyped
+
+    private void postalCodeTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_postalCodeTFKeyTyped
+        setButtonToSave();
+    }//GEN-LAST:event_postalCodeTFKeyTyped
+
+    private void cityTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cityTFKeyTyped
+        setButtonToSave();
+    }//GEN-LAST:event_cityTFKeyTyped
+
+    private void phoneNbrTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_phoneNbrTFKeyTyped
+        setButtonToSave();
+    }//GEN-LAST:event_phoneNbrTFKeyTyped
+
+    private void emailTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_emailTFKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTFKeyTyped
+
+    private void cardHolderTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cardHolderTFKeyTyped
+        setButtonToSave();
+    }//GEN-LAST:event_cardHolderTFKeyTyped
+
+    private void cardNumberTF1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cardNumberTF1KeyTyped
+        setButtonToSave();
+    }//GEN-LAST:event_cardNumberTF1KeyTyped
+
+    private void cardNumberTF2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cardNumberTF2KeyTyped
+        setButtonToSave();
+    }//GEN-LAST:event_cardNumberTF2KeyTyped
+
+    private void cardNumberTF3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cardNumberTF3KeyTyped
+        setButtonToSave();
+    }//GEN-LAST:event_cardNumberTF3KeyTyped
+
+    private void cardNumberTF4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cardNumberTF4KeyTyped
+        setButtonToSave();
+    }//GEN-LAST:event_cardNumberTF4KeyTyped
+
+    private void expDateMonthItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_expDateMonthItemStateChanged
+        setButtonToSave();
+    }//GEN-LAST:event_expDateMonthItemStateChanged
+
+    private void expDateYearItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_expDateYearItemStateChanged
+        setButtonToSave();
+    }//GEN-LAST:event_expDateYearItemStateChanged
+
     //Variable that tells whether or not the text fields in the profilePanel are editable.
-    private boolean profileNotEditable;
+   // private boolean profileNotEditable;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField addressTF;
     private javax.swing.JTextField cardHolderTF;

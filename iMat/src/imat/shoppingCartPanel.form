@@ -110,6 +110,7 @@
         <Property name="toolTipText" type="java.lang.String" value="Ta bort alla varor fr&#xe5;n kundvagnen"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="imageLabelEmptyCartMouseMoved"/>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="imageLabelEmptyCartMouseClicked"/>
       </Events>
       <AuxValues>
@@ -125,6 +126,7 @@
         <Property name="toolTipText" type="java.lang.String" value="G&#xe5; vidare till kassan"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="imageLabelToCheckoutMouseMoved"/>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="imageLabelToCheckoutMouseClicked"/>
       </Events>
       <AuxValues>
