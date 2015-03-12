@@ -248,7 +248,7 @@ public class secondRegPanel extends javax.swing.JPanel {
                                                     jTextFieldKortnummer2.getText() + "-" +
                                                     jTextFieldKortnummer3.getText() + "-" + 
                                                     jTextFieldKortnummer4.getText());
-            userData.getCreditCard().setHoldersName(jLabelKortNamn.getText());
+            userData.getCreditCard().setHoldersName(jTextFieldKortNamn.getText());
         }
         
         if ((String)jComboBoxGiltMånad.getSelectedItem() != "mm"){

@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.Cursor;
 import java.awt.Dimension;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
@@ -63,6 +64,11 @@ public class HomeProductCard extends javax.swing.JPanel {
         jLabelPrisPerEnhet.setText("X kr/Unit");
 
         imageLabelMinus.setText("imageLabel2");
+        imageLabelMinus.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                imageLabelMinusMouseMoved(evt);
+            }
+        });
         imageLabelMinus.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelMinusMouseClicked(evt);
@@ -70,6 +76,11 @@ public class HomeProductCard extends javax.swing.JPanel {
         });
 
         imageLabelPlus.setText("imageLabel2");
+        imageLabelPlus.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                imageLabelPlusMouseMoved(evt);
+            }
+        });
         imageLabelPlus.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 imageLabelPlusMouseClicked(evt);
@@ -166,6 +177,14 @@ public class HomeProductCard extends javax.swing.JPanel {
     private void imageLabelLaggTillMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelLaggTillMouseClicked
         userData.getShoppingCart().addProduct(item, Integer.parseInt(jTextFieldAntal.getText()));
     }//GEN-LAST:event_imageLabelLaggTillMouseClicked
+
+    private void imageLabelMinusMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMinusMouseMoved
+        imageLabelMinus.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_imageLabelMinusMouseMoved
+
+    private void imageLabelPlusMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelPlusMouseMoved
+        imageLabelPlus.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_imageLabelPlusMouseMoved
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

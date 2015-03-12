@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class GUIView extends javax.swing.JFrame implements PropertyChangeListener {
     
-    private IMatDataHandler userData;
+    private IMatDataHandler userData = IMatDataHandler.getInstance();
     private int[] cardNumber;
     private int ccv, expireYear, expireMonth;
     private String cardholderName;
@@ -31,6 +31,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
      */
     public GUIView() {
         initComponents();
+        userData.reset();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         //setFullScreen(this);
         initContentPanel();
@@ -422,7 +423,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(mainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1319, Short.MAX_VALUE)
-            .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1319, Short.MAX_VALUE)
+            .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1319, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -579,7 +580,8 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     }//GEN-LAST:event_purchaseHistoryLabelMouseExited
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        userData.shutDown();
+        //userData.shutDown();
+        userData.reset();
     }//GEN-LAST:event_formWindowClosing
 
     
@@ -599,7 +601,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
      * homePanel instead.
      */
     private void initContentPanel() {
-        userData = IMatDataHandler.getInstance();
         userData.resetFirstRun();
         if(userData.isFirstRun()) {
             //Show the firstPanel
@@ -646,6 +647,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 card.show(contentPanel, "wholePanel");
                 card = (CardLayout)wholePanel.getLayout();
                 card.show(wholePanel, "confirmRegPanel");
+                confirmRegPanel.setRegInfo();
             } else if(evt.getPropertyName().equals("ToProducts")){
                 CardLayout card = (CardLayout)contentPanel.getLayout();
                 card.show(contentPanel, "splitPanel");
@@ -657,7 +659,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 firstNameLabel.setText(userData.getCustomer().getFirstName());
                 lastNameLabel.setText(userData.getCustomer().getLastName());
             } else if (evt.getPropertyName().equals("buyCompleted")) {
-                confirmRegPanel.setRegInfo();
                 historyPanel.addToHistory();
                 confirmCheckoutPanel.setReceiptInfo(checkoutPanel.getDeliveryDay(),
                         checkoutPanel.getDeliveryTime(), checkoutPanel.getDeliveryAddress(),

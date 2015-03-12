@@ -53,7 +53,7 @@ public class confirmCheckoutPanel extends javax.swing.JPanel {
             name = userData.getOrders().get(lastIndex).getItems().get(i).getProduct().getName();
             amount = Integer.toString((int)userData.getOrders().get(lastIndex).getItems().get(i).getAmount());
             price = Double.toString(userData.getOrders().get(lastIndex).getItems().get(i).getProduct().getPrice());
-            String space = StringSizeHelper.getEmptyString(25 - name.length());
+            String space = StringSizeHelper.getEmptyString(20 - name.length());
             total = name + space + amount + " " +
                     userData.getOrders().get(lastIndex).getItems().get(i).getProduct().getUnitSuffix()
                     + "        " +  price + " kr";
@@ -82,7 +82,7 @@ public class confirmCheckoutPanel extends javax.swing.JPanel {
     }
     
     public void setReceiptInfo(String deliveryDay, String deliveryTime,
-            String deliveryAddress, String deliveryPost, String deliveyCity) {
+            String deliveryAddress, String deliveryPost, String deliveryCity) {
         this.deliveryDay = deliveryDay;
         this.deliveryTime = deliveryTime;
         this.deliveryAddress = deliveryAddress;

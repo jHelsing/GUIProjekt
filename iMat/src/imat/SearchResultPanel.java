@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
@@ -57,7 +58,7 @@ public class SearchResultPanel extends JPanel {
         areaOfSearchResult.setMinimumSize(new java.awt.Dimension(734, 281));
         areaOfSearchResult.setPreferredSize(new java.awt.Dimension(734, 281));
 
-        searchResultCardContainer.setBackground(IMatColors.getpanelBackgroundLight());
+        searchResultCardContainer.setBackground(IMatColors.getpanelBackgroundNormal());
         searchResultCardContainer.setMaximumSize(new java.awt.Dimension(734, 281));
         searchResultCardContainer.setMinimumSize(new java.awt.Dimension(734, 281));
         searchResultCardContainer.setPreferredSize(new java.awt.Dimension(734, 281));
@@ -140,7 +141,9 @@ public class SearchResultPanel extends JPanel {
             
             if(nbrOfResults<(nbrOfColumns*nbrOfRows)) {
                 for(int i=nbrOfResults+1; i<(nbrOfColumns*nbrOfRows); i++) {
-                    searchResultCardContainer.add(new JPanel());
+                    JPanel jp = new JPanel();
+                    jp.setBackground(IMatColors.getpanelBackgroundNormal());
+                    searchResultCardContainer.add(jp);
                 }
             }
             

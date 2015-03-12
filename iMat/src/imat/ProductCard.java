@@ -29,6 +29,7 @@ public class ProductCard extends javax.swing.JPanel {
     public ProductCard() {
         initComponents();
         this.p = null;
+        this.setBackground(Color.WHITE);
     }
     
     public ProductCard(Product p) {
@@ -38,7 +39,7 @@ public class ProductCard extends javax.swing.JPanel {
         productUnitsLabel.setText(p.getUnitSuffix());
         productNameLabel.setText(p.getName());
         productPriceLabel.setText(p.getPrice() + " " + p.getUnit());
-        this.setBackground(IMatColors.getpanelBackgroundNormal());
+        this.setBackground(Color.WHITE);
         this.setVisible(true);
         repaint();
         revalidate();
@@ -330,7 +331,7 @@ public class ProductCard extends javax.swing.JPanel {
     }//GEN-LAST:event_formMouseMoved
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
-        this.setBackground(IMatColors.getpanelBackgroundNormal());
+        this.setBackground(Color.WHITE);
     }//GEN-LAST:event_formMouseExited
 
     private void addToShoppingListButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addToShoppingListButtonMouseMoved
@@ -361,7 +362,7 @@ public class ProductCard extends javax.swing.JPanel {
     }//GEN-LAST:event_increaseLabelMouseMoved
 
     private void increaseLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseLabelMouseExited
-        this.setBackground(IMatColors.getpanelBackgroundNormal());
+        this.setBackground(Color.WHITE);
     }//GEN-LAST:event_increaseLabelMouseExited
 
     private void decreaseLabelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseLabelMouseMoved
@@ -370,7 +371,7 @@ public class ProductCard extends javax.swing.JPanel {
     }//GEN-LAST:event_decreaseLabelMouseMoved
 
     private void decreaseLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseLabelMouseExited
-        this.setBackground(IMatColors.getpanelBackgroundNormal());
+        this.setBackground(Color.WHITE);
     }//GEN-LAST:event_decreaseLabelMouseExited
 
     private void nbrOfProductsTFMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nbrOfProductsTFMouseMoved
@@ -378,19 +379,19 @@ public class ProductCard extends javax.swing.JPanel {
     }//GEN-LAST:event_nbrOfProductsTFMouseMoved
 
     private void nbrOfProductsTFMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nbrOfProductsTFMouseExited
-        this.setBackground(IMatColors.getpanelBackgroundNormal());
+        this.setBackground(Color.WHITE);
     }//GEN-LAST:event_nbrOfProductsTFMouseExited
 
     private void addToCartButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addToCartButtonMouseExited
-        this.setBackground(IMatColors.getpanelBackgroundNormal());
+        this.setBackground(Color.WHITE);
     }//GEN-LAST:event_addToCartButtonMouseExited
 
     private void addToShoppingListButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addToShoppingListButtonMouseExited
-        this.setBackground(IMatColors.getpanelBackgroundNormal());
+        this.setBackground(Color.WHITE);
     }//GEN-LAST:event_addToShoppingListButtonMouseExited
 
     private void favoriteButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favoriteButtonMouseExited
-        this.setBackground(IMatColors.getpanelBackgroundNormal());
+        this.setBackground(Color.WHITE);
     }//GEN-LAST:event_favoriteButtonMouseExited
 
     private void favoriteButtonMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_favoriteButtonMouseMoved
