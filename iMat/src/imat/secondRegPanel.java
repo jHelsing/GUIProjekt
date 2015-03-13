@@ -5,12 +5,10 @@
  */
 package imat;
 
-import com.sun.glass.events.KeyEvent;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import javafx.scene.input.KeyCode;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 /**
