@@ -48,6 +48,7 @@ public class confirmCheckoutPanel extends javax.swing.JPanel {
     }
     
     private void updateReceiptList() {
+        confirmationLabel.setVisible(false);
         receiptListModel.clear();
         /*String name;
         String amount;
