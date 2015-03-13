@@ -11,18 +11,39 @@ package imat;
  */
 public class StringSizeHelper {
     
-    public static String getEmptyString(int n) {
-        String s = "";
-        if (n >= 0 && n < 6) {
-            n = n + 1;
-        } else if (n >= 6 && n < 12) {
-            n = n + 3;
-        } else if (n >= 12 && n < 18) {
-            n = n + 6;
+    public static String getEmptyString(String string, int baseSpace) {
+        int n = string.length();
+        int nbrOfSpaces = baseSpace - string.length();
+        String space = "";
+        
+        if (n >= 0 && n < 3) {
+            nbrOfSpaces = nbrOfSpaces + 6;
+        } else if (n >= 3 && n < 6) {
+            nbrOfSpaces = nbrOfSpaces + 5;
+        } else if (n >= 6 && n < 9) {
+            nbrOfSpaces = nbrOfSpaces + 4;
+        } else if (n >= 9 && n < 12) {
+            nbrOfSpaces = nbrOfSpaces + 3;
+        } else if (n >= 12 && n < 15) {
+            nbrOfSpaces = nbrOfSpaces + 2;
+        } else if (n >= 15 && n < 18) {
+            nbrOfSpaces = nbrOfSpaces + 1;
         }
-        for (int i = 0; i < n; i++) {
-            s = s + " ";
+        
+        
+        
+        for (int j = 0; j < string.length(); j++) {
+            char c = string.charAt(j);
+            if (c == 'i') {
+                nbrOfSpaces++;
+            } else if (c == 'm') {
+                nbrOfSpaces--;
+            }
         }
-        return s;
+        
+        for (int i = 0; i < nbrOfSpaces; i++) {
+            space = space + " ";
+        }
+        return space;
     }    
 }

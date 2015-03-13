@@ -6,7 +6,10 @@
 package imat;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.DefaultListModel;
+import javax.swing.JList;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 /**
@@ -160,17 +163,49 @@ public class HistoryPanel extends javax.swing.JPanel {
         if (!historyListModel.isEmpty()) {
             itemListModel.clear();
             int selectedValue = historyList.getSelectedIndex();
+            String itemNbr;
+            String itemCost;
+            String space;
+            String productSum;
+            String itemName;
+            String name1;
+            String name2;
+            List<String> duplicateNames = new ArrayList();
+            List<String> duplicatePrices = new ArrayList();
+            List<Integer> duplicateAmount = new ArrayList();
             
             //vill invertera listan..
             
-            for (int j = 0; j < data.getOrders().get(selectedValue).getItems().size(); j++) {
-                String item = data.getOrders().get(selectedValue).getItems().get(j).getProduct().getName();
-                String itemNbr = Double.toString(data.getOrders().get(selectedValue).getItems().get(j).getAmount());
-                String itemCost = Double.toString(data.getOrders().get(selectedValue).getItems().get(j).getTotal());
-                String productSum = item + StringSizeHelper.getEmptyString(item.length()) + "           " + itemNbr + "           " + itemCost;
-                itemListModel.addElement(productSum);
+            for (int k = 0; k < data.getOrders().get(selectedValue).getItems().size(); k++) {
+                name1 = data.getOrders().get(selectedValue).getItems().get(k).getProduct().getName();
+                
+                int n = 1;
+                if (!duplicateNames.contains(name1)) {
+                    for (int l = 0; l < data.getOrders().get(selectedValue).getItems().size(); l++) {
+                        if (l != k) {
+                            name2 = data.getOrders().get(selectedValue).getItems().get(l).getProduct().getName();
+                            if (name1.equals(name2)) {
+                                n++;
+                            }
+                        }
+                    }
+                    duplicateNames.add(name1);
+                    duplicatePrices.add(Double.toString(data.getOrders().get(selectedValue).getItems().get(k).getTotal()));
+                    duplicateAmount.add(n);
+                }
             }
-        }
+            
+            for (int j = 0; j < duplicateNames.size(); j++) {
+                
+                itemName = duplicateNames.get(j);
+                itemCost = duplicatePrices.get(j);
+                itemNbr = Integer.toString(duplicateAmount.get(j));
+                space = StringSizeHelper.getEmptyString(itemName, 25);
+                
+                productSum = itemName + space + itemNbr + "             " + itemCost;
+                itemListModel.addElement(productSum); 
+            }
+        } 
     }//GEN-LAST:event_historyListMouseClicked
 
 
