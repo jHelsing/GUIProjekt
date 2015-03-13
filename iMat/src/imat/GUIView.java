@@ -618,6 +618,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 card = (CardLayout)wholePanel.getLayout();
                 card.show(wholePanel,"checkoutPanel");  
                 updateCheckout();
+                checkoutPanel.setCheckoutInfo();
             } else if(evt.getPropertyName().equals("ToFirstRegPanel")){
                 if (shoppingCartPanel.getGoStraightToPayment()) {
                     confirmRegPanel.enableSTPLabel(true);
