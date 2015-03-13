@@ -77,7 +77,7 @@ public class confirmCheckoutPanel extends javax.swing.JPanel {
                         totAntal += (int)siTemp.getAmount();
                     }
                 }
-                String totalString = si.getProduct().getName() + StringSizeHelper.getEmptyString(20 - si.getProduct().getName().length()) + totAntal + " " + si.getProduct().getUnitSuffix() + 
+                String totalString = si.getProduct().getName() + StringSizeHelper.getEmptyString(si.getProduct().getName(), 20) + totAntal + " " + si.getProduct().getUnitSuffix() + 
                                                 "      " + si.getProduct().getPrice() + "/" + si.getProduct().getUnitSuffix();
                 
                 receiptListModel.add(avp.size(), totalString);
