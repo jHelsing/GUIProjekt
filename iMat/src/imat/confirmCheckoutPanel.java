@@ -5,8 +5,12 @@
  */
 package imat;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.DefaultListModel;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.ShoppingItem;
 
 /**
  *
@@ -45,7 +49,7 @@ public class confirmCheckoutPanel extends javax.swing.JPanel {
     
     private void updateReceiptList() {
         receiptListModel.clear();
-        String name;
+        /*String name;
         String amount;
         String price;
         String total;
@@ -59,6 +63,26 @@ public class confirmCheckoutPanel extends javax.swing.JPanel {
                     userData.getOrders().get(lastIndex).getItems().get(i).getProduct().getUnitSuffix()
                     + space2 +  price + " kr";
             receiptListModel.add(i, total);
+        }*/
+        
+        List<String> avp = new ArrayList<>();
+        for (int i = 0; i < userData.getOrders().get(lastIndex).getItems().size(); i++) {
+            ShoppingItem si = userData.getOrders().get(lastIndex).getItems().get(i);
+            
+            if (!avp.contains(si.getProduct().getName())){
+                int totAntal = (int)si.getAmount();
+                for (int k = i+1; k < userData.getOrders().get(lastIndex).getItems().size(); k++){
+                    ShoppingItem siTemp = userData.getOrders().get(lastIndex).getItems().get(k);
+                    if (siTemp.getProduct().getName().equals(si.getProduct().getName())){
+                        totAntal += (int)siTemp.getAmount();
+                    }
+                }
+                String totalString = si.getProduct().getName() + StringSizeHelper.getEmptyString(20 - si.getProduct().getName().length()) + totAntal + " " + si.getProduct().getUnitSuffix() + 
+                                                "      " + si.getProduct().getPrice() + "/" + si.getProduct().getUnitSuffix();
+                
+                receiptListModel.add(avp.size(), totalString);
+                avp.add(si.getProduct().getName());
+            }
         }
     }
     
