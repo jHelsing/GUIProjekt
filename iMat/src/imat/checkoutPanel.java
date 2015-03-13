@@ -5,15 +5,12 @@
  */
 package imat;
 
-import com.sun.glass.events.KeyEvent;
 import java.awt.Color;
 import java.awt.GridLayout;
-import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
