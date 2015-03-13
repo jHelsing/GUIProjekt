@@ -22,6 +22,7 @@ public class IMat {
     public static void main(String[] args) {
         GUIView g = new GUIView();
         g.setVisible(true);
+        g.setTitle("iMat");
     }
     
 }
