@@ -172,6 +172,11 @@ public class ProductCard extends javax.swing.JPanel {
                 nbrOfProductsTFMouseExited(evt);
             }
         });
+        nbrOfProductsTF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nbrOfProductsTFKeyTyped(evt);
+            }
+        });
 
         increaseLabel.setText("imageLabel1");
         increaseLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -398,6 +403,14 @@ public class ProductCard extends javax.swing.JPanel {
         this.setBackground(IMatColors.getpanelBackgroundLight());
         favoriteButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_favoriteButtonMouseMoved
+
+    private void nbrOfProductsTFKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nbrOfProductsTFKeyTyped
+        char caracter = evt.getKeyChar();
+        if (((caracter < '0') || (caracter > '9') || nbrOfProductsTF.getText().length() > 1)
+                && (caracter != '\b')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_nbrOfProductsTFKeyTyped
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private imat.ImageLabel addToCartButton;

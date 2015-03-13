@@ -89,6 +89,11 @@ public class HomeProductCard extends javax.swing.JPanel {
 
         jTextFieldAntal.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextFieldAntal.setText("1");
+        jTextFieldAntal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldAntalKeyTyped(evt);
+            }
+        });
 
         jLabelEnhet.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelEnhet.setText("Unit");
@@ -185,6 +190,15 @@ public class HomeProductCard extends javax.swing.JPanel {
     private void imageLabelPlusMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelPlusMouseMoved
         imageLabelPlus.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_imageLabelPlusMouseMoved
+
+    private void jTextFieldAntalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldAntalKeyTyped
+        char caracter = evt.getKeyChar();
+        if (((caracter < '0') || (caracter > '9') || jTextFieldAntal.getText().length() > 1)
+                && (caracter != '\b')) {
+            evt.consume();
+        }
+        
+    }//GEN-LAST:event_jTextFieldAntalKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

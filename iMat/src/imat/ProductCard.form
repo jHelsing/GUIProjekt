@@ -209,6 +209,7 @@
       <Events>
         <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="nbrOfProductsTFMouseMoved"/>
         <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="nbrOfProductsTFMouseExited"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nbrOfProductsTFKeyTyped"/>
       </Events>
     </Component>
     <Component class="imat.ImageLabel" name="increaseLabel">
