@@ -109,6 +109,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         searchSplitPanel = new javax.swing.JSplitPane();
         categorySearchPanel = new imat.CategoryPanel();
         searchResultPanel = SearchResultPanel.getInstance();
+        shoppingListPanel1 = new imat.shoppingListPanel();
         recipePanel = new imat.recipePanel();
         detailedRecipe = new imat.DetailedRecipe();
         shoppingCartPanel = new imat.shoppingCartPanel();
@@ -396,6 +397,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         searchSplitPanel.setRightComponent(searchResultPanel);
 
         splitPanelContent.add(searchSplitPanel, "searchPanel");
+        splitPanelContent.add(shoppingListPanel1, "shoppinglistPanel");
         splitPanelContent.add(recipePanel, "recipePanel");
         splitPanelContent.add(detailedRecipe, "detailedRecipe");
 
@@ -467,6 +469,10 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
 
     private void shoppingListLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shoppingListLabelMouseClicked
         // TODO add your handling code here:
+        CardLayout card = (CardLayout) contentPanel.getLayout();
+        card.show(contentPanel, "splitPanel");
+        card = (CardLayout)splitPanelContent.getLayout();
+        card.show(splitPanelContent, "shoppinglistPanel");
     }//GEN-LAST:event_shoppingListLabelMouseClicked
 
     private void purchaseHistoryLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_purchaseHistoryLabelMouseClicked
@@ -771,6 +777,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     private imat.secondRegPanel secondRegPanel;
     private imat.shoppingCartPanel shoppingCartPanel;
     private javax.swing.JLabel shoppingListLabel;
+    private imat.shoppingListPanel shoppingListPanel1;
     private javax.swing.JPanel splitPanel;
     private javax.swing.JPanel splitPanelContent;
     private imat.thirdRegPanel thirdRegPanel;
