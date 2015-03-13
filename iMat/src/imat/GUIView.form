@@ -35,8 +35,8 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="mainMenu" pref="1319" max="32767" attributes="0"/>
-          <Component id="contentPanel" alignment="0" pref="1319" max="32767" attributes="0"/>
+          <Component id="mainMenu" pref="1404" max="32767" attributes="0"/>
+          <Component id="contentPanel" alignment="0" pref="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -85,9 +85,11 @@
                   <Component id="jSeparator5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="searchField" min="-2" pref="300" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator6" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="183" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lastNameLabel" min="-2" max="-2" attributes="0"/>
                       <Component id="firstNameLabel" min="-2" max="-2" attributes="0"/>
@@ -109,7 +111,10 @@
                           <Component id="profileImage" alignment="3" max="32767" attributes="0"/>
                           <Component id="helpImage" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="searchField" alignment="0" max="32767" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="searchField" alignment="3" max="32767" attributes="0"/>
+                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <Component id="jSeparator5" alignment="0" max="32767" attributes="0"/>
                       <Component id="jSeparator1" alignment="1" max="32767" attributes="0"/>
                       <Component id="jSeparator2" alignment="1" max="32767" attributes="0"/>
@@ -268,9 +273,6 @@
             <Property name="toolTipText" type="java.lang.String" value="S&#xf6;k bland produkter, recept och ink&#xf6;pslistor. Tryck p&#xe5; Enter f&#xf6;r att s&#xf6;ka."/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchFieldActionPerformed"/>
-            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="searchFieldFocusGained"/>
-            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="searchFieldFocusLost"/>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="searchFieldKeyTyped"/>
           </Events>
         </Component>
@@ -339,6 +341,14 @@
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new imat.ImageLabel(&quot;profilLogo.png&quot;)"/>
           </AuxValues>
         </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="S&#xf6;k"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="contentPanel">
@@ -381,7 +391,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="1319" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="1404" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">

@@ -8,6 +8,7 @@ package imat;
 import java.awt.CardLayout;
 import java.awt.Cursor;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.beans.PropertyChangeEvent;
 import javax.swing.JFrame;
 import se.chalmers.ait.dat215.project.*;
@@ -88,6 +89,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         lastNameLabel = new javax.swing.JLabel();
         helpImage = new imat.ImageLabel("helpLogo.png");
         profileImage = new imat.ImageLabel("profilLogo.png");
+        jButton1 = new javax.swing.JButton();
         contentPanel = new javax.swing.JPanel();
         wholePanel = new javax.swing.JPanel();
         thirdRegPanel = new imat.thirdRegPanel();
@@ -229,19 +231,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         searchField.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         searchField.setText("Sök...");
         searchField.setToolTipText("Sök bland produkter, recept och inköpslistor. Tryck på Enter för att söka.");
-        searchField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchFieldActionPerformed(evt);
-            }
-        });
-        searchField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                searchFieldFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                searchFieldFocusLost(evt);
-            }
-        });
         searchField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 searchFieldKeyTyped(evt);
@@ -288,6 +277,13 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
             }
         });
 
+        jButton1.setText("Sök");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout mainMenuLayout = new javax.swing.GroupLayout(mainMenu);
         mainMenu.setLayout(mainMenuLayout);
         mainMenuLayout.setHorizontalGroup(
@@ -314,9 +310,11 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
+                .addGap(154, 154, 154)
                 .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lastNameLabel)
                     .addComponent(firstNameLabel))
@@ -334,7 +332,9 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(profileImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(helpImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(searchField)
+                    .addGroup(mainMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(searchField)
+                        .addComponent(jButton1))
                     .addComponent(jSeparator5)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -367,7 +367,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         firstPanel.setLayout(firstPanelLayout);
         firstPanelLayout.setHorizontalGroup(
             firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1319, Short.MAX_VALUE)
+            .addGap(0, 1404, Short.MAX_VALUE)
         );
         firstPanelLayout.setVerticalGroup(
             firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -430,8 +430,8 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1319, Short.MAX_VALUE)
-            .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1319, Short.MAX_VALUE)
+            .addComponent(mainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1404, Short.MAX_VALUE)
+            .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -483,29 +483,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         card.show(wholePanel, "historyPanel");
     }//GEN-LAST:event_purchaseHistoryLabelMouseClicked
 
-    private void searchFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyTyped
-        // TODO lägg in sökfunktionen
-        
-        String s = searchField.getText();
-        searchField.setText(s);
-        if(s != null) {
-            searchResultPanel.displayResults(userData.findProducts(s));
-            CardLayout card = (CardLayout)contentPanel.getLayout();
-            card.show(contentPanel, "splitPanel");
-            card = (CardLayout)splitPanelContent.getLayout();
-            card.show(splitPanelContent, "searchPanel");
-        }
-        
-        
-       
-        // Fixa visningen utav search result
-        /*card = (CardLayout)splitPanel.getLayout();
-        card.show(splitPanel, "searchPanel"); */
-        
-        
-        
-    }//GEN-LAST:event_searchFieldKeyTyped
-
     private void profileImageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileImageMouseClicked
         
         CardLayout card = (CardLayout)contentPanel.getLayout();
@@ -524,24 +501,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         card = (CardLayout)wholePanel.getLayout();
         card.show(wholePanel, "helpPanel");
     }//GEN-LAST:event_helpImageMouseClicked
-
-    private void searchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchFieldActionPerformed
-
-    private void searchFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchFieldFocusGained
-        if (searchField.getText().equals("Sök...")){
-            searchField.setText("");
-        } else {
-            searchField.selectAll();
-        }
-    }//GEN-LAST:event_searchFieldFocusGained
-
-    private void searchFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchFieldFocusLost
-        if (searchField.getText().equals("")){
-            searchField.setText("Sök...");
-        }
-    }//GEN-LAST:event_searchFieldFocusLost
 
     private void profileImageMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profileImageMouseMoved
         profileImage.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -595,9 +554,33 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         userData.shutDown();
     }//GEN-LAST:event_formWindowClosing
 
-    
-    
-    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String s = searchField.getText();
+        searchField.setText(s);
+        if(s != null) {
+            searchResultPanel.displayResults(userData.findProducts(s));
+            CardLayout card = (CardLayout)contentPanel.getLayout();
+            card.show(contentPanel, "splitPanel");
+            card = (CardLayout)splitPanelContent.getLayout();
+            card.show(splitPanelContent, "searchPanel");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void searchFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyTyped
+        String s = searchField.getText();
+        searchField.setText(s);
+        if(evt.getKeyChar() == KeyEvent.VK_ENTER) {
+            if(s != null) {
+                searchResultPanel.displayResults(userData.findProducts(s));
+                CardLayout card = (CardLayout)contentPanel.getLayout();
+                card.show(contentPanel, "splitPanel");
+                card = (CardLayout)splitPanelContent.getLayout();
+                card.show(splitPanelContent, "searchPanel");
+            }
+        }
+
+    }//GEN-LAST:event_searchFieldKeyTyped
+
     private void setFullScreen(JFrame jFrame) {
         Toolkit tk = Toolkit.getDefaultToolkit();
         int xSize = ((int) tk.getScreenSize().getWidth());
@@ -755,6 +738,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     private imat.HistoryPanel historyPanel;
     private javax.swing.JLabel homeLabel;
     private imat.homePanel homePanel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
