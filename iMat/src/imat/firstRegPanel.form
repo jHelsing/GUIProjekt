@@ -291,7 +291,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="F&#xf6;r att kunna handla med iMat s&#xe5; m&#xe5;ste du regristrera dig!"/>
+        <Property name="text" type="java.lang.String" value="F&#xf6;r att kunna handla med iMat s&#xe5; m&#xe5;ste du registrera dig!"/>
       </Properties>
     </Component>
   </SubComponents>

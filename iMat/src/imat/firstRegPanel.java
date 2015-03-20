@@ -131,7 +131,7 @@ public class firstRegPanel extends javax.swing.JPanel {
         hemligRuta.setEditable(false);
         hemligRuta.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        jLabel1.setText("För att kunna handla med iMat så måste du regristrera dig!");
+        jLabel1.setText("För att kunna handla med iMat så måste du registrera dig!");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
