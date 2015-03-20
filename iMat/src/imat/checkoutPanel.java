@@ -212,7 +212,12 @@ public class checkoutPanel extends javax.swing.JPanel {
         jCheckBox1.setText("Spara inköpslista");
 
         jButtonPay.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButtonPay.setText("Betala");
+        jButtonPay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/payButton.png"))); // NOI18N
+        jButtonPay.setMaximumSize(new java.awt.Dimension(100, 42));
+        jButtonPay.setMinimumSize(new java.awt.Dimension(100, 42));
+        jButtonPay.setPreferredSize(new java.awt.Dimension(100, 42));
+        jButtonPay.setRolloverEnabled(true);
+        jButtonPay.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/Hoover/payButton_Hoover.png"))); // NOI18N
         jButtonPay.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jButtonPayFocusLost(evt);
@@ -360,7 +365,7 @@ public class checkoutPanel extends javax.swing.JPanel {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(deliveryDayCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(deliveryTimeCombo, 0, 165, Short.MAX_VALUE))
+                                        .addComponent(deliveryTimeCombo, 0, 168, Short.MAX_VALUE))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jLabel11)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -397,7 +402,7 @@ public class checkoutPanel extends javax.swing.JPanel {
                                         .addGap(2, 2, 2)
                                         .addComponent(jCheckBox1)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonPay, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButtonPay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(48, 48, 48))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -461,7 +466,7 @@ public class checkoutPanel extends javax.swing.JPanel {
                         .addGap(4, 4, 4)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonPay, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButtonPay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cartEmptyError)))
                 .addContainerGap(46, Short.MAX_VALUE))
