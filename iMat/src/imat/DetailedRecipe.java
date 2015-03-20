@@ -70,7 +70,13 @@ public class DetailedRecipe extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("4 portioner");
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/addToCartButton.png"))); // NOI18N
         jButton1.setText("<html>Lägg till alla ingredienser<br>i kundvagnen");
+        jButton1.setMaximumSize(new java.awt.Dimension(135, 40));
+        jButton1.setMinimumSize(new java.awt.Dimension(135, 40));
+        jButton1.setPreferredSize(new java.awt.Dimension(135, 40));
+        jButton1.setRolloverEnabled(true);
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/Hoover/addToCartButton_Hoover.png"))); // NOI18N
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
@@ -100,10 +106,10 @@ public class DetailedRecipe extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jLabel6)))
-                        .addGap(0, 63, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -132,7 +138,7 @@ public class DetailedRecipe extends javax.swing.JPanel {
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel8.setText("<< Tillbaka");
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel8MouseClicked(evt);
@@ -180,14 +186,14 @@ public class DetailedRecipe extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        pcs.firePropertyChange("toRecipe", 0, 1);
+    }//GEN-LAST:event_jLabel8MouseClicked
+
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         userData.getShoppingCart().addProduct(userData.getProducts().get(111), 1);
         userData.getShoppingCart().addProduct(userData.getProducts().get(75), 2);
     }//GEN-LAST:event_jButton1MouseClicked
-
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        pcs.firePropertyChange("toRecipe", 0, 1);
-    }//GEN-LAST:event_jLabel8MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
