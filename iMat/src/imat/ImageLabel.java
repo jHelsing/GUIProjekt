@@ -77,7 +77,7 @@ public class ImageLabel extends JLabel {
             File f = new File(getClass().getResource("/imat/resources/" + normal).toURI());
             normalImage = ImageIO.read(f);
             pressedImage = hoverImage;
-            f = new File(getClass().getResource("/imat/resources/Hoover/" + hover).toURI());
+            f = new File(getClass().getResource("/imat/resources/" + hover).toURI());
             hoverImage = ImageIO.read(f);
         } catch(URISyntaxException | IOException e) {
             e.printStackTrace();
