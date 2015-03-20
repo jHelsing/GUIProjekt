@@ -18,7 +18,7 @@ public class firstPanel extends BackgroundPanel {
      * Creates new form firstPanel
      */
     public firstPanel() {
-        super("firstPageImage.png");
+        super("firstPage.png");
         initComponents();
     }
 
