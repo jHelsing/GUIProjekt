@@ -26,7 +26,7 @@ public class secondRegPanel extends javax.swing.JPanel {
     public secondRegPanel() {
         initComponents();
         this.setBackground(IMatColors.getpanelBackgroundNormal());
-        this.setTFColors(IMatColors.getpanelBackgroundLight());
+        this.setTFColors(IMatColors.getpanelBackgroundNormal());
     }
     
     public void addObserver(PropertyChangeListener observer){
@@ -103,32 +103,32 @@ public class secondRegPanel extends javax.swing.JPanel {
 
         jLabelKortNamn.setText("Kortinnehavarens namn:");
 
-        jTextFieldKortnummer1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jTextFieldKortnummer1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTextFieldKortnummer1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextFieldKortnummer1KeyTyped(evt);
             }
         });
 
-        jTextFieldKortNamn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jTextFieldKortNamn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jComboBoxGiltMånad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
-        jTextFieldKortnummer2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jTextFieldKortnummer2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTextFieldKortnummer2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextFieldKortnummer2KeyTyped(evt);
             }
         });
 
-        jTextFieldKortnummer3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jTextFieldKortnummer3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTextFieldKortnummer3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextFieldKortnummer3KeyTyped(evt);
             }
         });
 
-        jTextFieldKortnummer4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jTextFieldKortnummer4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTextFieldKortnummer4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextFieldKortnummer4KeyTyped(evt);
@@ -226,7 +226,7 @@ public class secondRegPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(imageLabelForegaendeSteg, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(imageLabelNastaSteg, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -66,7 +66,8 @@ public class recipePanel extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("Här kan du hitta recept och lägga till alla ingredienser i din kundvagn.");
 
-        jPanelRecept1.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept1.setBackground(IMatColors.getpanelBackgroundNormal());
+        jPanelRecept1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelRecept1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelRecept1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -116,7 +117,8 @@ public class recipePanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jPanelRecept2.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept2.setBackground(IMatColors.getpanelBackgroundNormal());
+        jPanelRecept2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelRecept2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelRecept2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -166,7 +168,8 @@ public class recipePanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jPanelRecept3.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept3.setBackground(IMatColors.getpanelBackgroundNormal());
+        jPanelRecept3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelRecept3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelRecept3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -216,7 +219,8 @@ public class recipePanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jPanelRecept4.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept4.setBackground(IMatColors.getpanelBackgroundNormal());
+        jPanelRecept4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelRecept4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelRecept4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -266,7 +270,8 @@ public class recipePanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jPanelRecept5.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept5.setBackground(IMatColors.getpanelBackgroundNormal());
+        jPanelRecept5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelRecept5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelRecept5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -316,7 +321,8 @@ public class recipePanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jPanelRecept6.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept6.setBackground(IMatColors.getpanelBackgroundNormal());
+        jPanelRecept6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelRecept6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanelRecept6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -386,7 +392,7 @@ public class recipePanel extends javax.swing.JPanel {
                         .addComponent(jPanelRecept5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanelRecept6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -401,7 +407,7 @@ public class recipePanel extends javax.swing.JPanel {
                     .addComponent(jPanelRecept4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanelRecept5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanelRecept6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(259, Short.MAX_VALUE))
+                .addContainerGap(257, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -410,7 +416,7 @@ public class recipePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jPanelRecept1MouseEntered
 
     private void jPanelRecept1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept1MouseExited
-        jPanelRecept1.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept1.setBackground(IMatColors.getpanelBackgroundNormal());
     }//GEN-LAST:event_jPanelRecept1MouseExited
 
     private void jPanelRecept1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept1MouseClicked
@@ -426,7 +432,7 @@ public class recipePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jPanelRecept2MouseEntered
 
     private void jPanelRecept2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept2MouseExited
-        jPanelRecept2.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept2.setBackground(IMatColors.getpanelBackgroundNormal());
     }//GEN-LAST:event_jPanelRecept2MouseExited
 
     private void jPanelRecept3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept3MouseClicked
@@ -438,7 +444,7 @@ public class recipePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jPanelRecept3MouseEntered
 
     private void jPanelRecept3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept3MouseExited
-        jPanelRecept3.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept3.setBackground(IMatColors.getpanelBackgroundNormal());
     }//GEN-LAST:event_jPanelRecept3MouseExited
 
     private void jPanelRecept4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept4MouseClicked
@@ -450,7 +456,7 @@ public class recipePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jPanelRecept4MouseEntered
 
     private void jPanelRecept4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept4MouseExited
-        jPanelRecept4.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept4.setBackground(IMatColors.getpanelBackgroundNormal());
     }//GEN-LAST:event_jPanelRecept4MouseExited
 
     private void jPanelRecept5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept5MouseClicked
@@ -462,7 +468,7 @@ public class recipePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jPanelRecept5MouseEntered
 
     private void jPanelRecept5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept5MouseExited
-        jPanelRecept5.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept5.setBackground(IMatColors.getpanelBackgroundNormal());
     }//GEN-LAST:event_jPanelRecept5MouseExited
 
     private void jPanelRecept6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept6MouseClicked
@@ -474,7 +480,7 @@ public class recipePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jPanelRecept6MouseEntered
 
     private void jPanelRecept6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRecept6MouseExited
-        jPanelRecept6.setBackground(IMatColors.getpanelBackgroundDark());
+        jPanelRecept6.setBackground(IMatColors.getpanelBackgroundNormal());
     }//GEN-LAST:event_jPanelRecept6MouseExited
 
 
