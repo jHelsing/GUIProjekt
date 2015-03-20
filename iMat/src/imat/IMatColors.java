@@ -15,9 +15,9 @@ import java.awt.Color;
  */
 public class IMatColors {
     
-    private final static Color PANELBACKGROUND_DARK = new Color(106, 141, 55);
-    private final static Color PANELBACKGROUND_LIGHT = new Color(210, 246, 157);
-    private final static Color PANELBACKGROUND_NORMAL = new Color(178, 224, 112);
+    private final static Color PANELBACKGROUND_DARK = Color.GRAY;
+    private final static Color PANELBACKGROUND_LIGHT = Color.LIGHT_GRAY;
+    private final static Color PANELBACKGROUND_NORMAL = Color.WHITE;
     private final static Color BUTTONCOLOR_NORMAL = new Color(0,0,0);
     private final static Color BUTTONCOLOR_HOOVER = new Color(0,0,0);
     private final static Color BUTTONCOLOR_PRESSED = new Color(0,0,0);

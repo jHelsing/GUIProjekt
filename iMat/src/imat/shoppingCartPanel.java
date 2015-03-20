@@ -118,7 +118,7 @@ public class shoppingCartPanel extends javax.swing.JPanel implements ShoppingCar
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        jPanel1.setBackground(IMatColors.getpanelBackgroundLight());
+        jPanel1.setBackground(IMatColors.getpanelBackgroundNormal());
         jPanel1.setLayout(new java.awt.GridLayout(1, 0));
         jScrollPane1.setViewportView(jPanel1);
 
