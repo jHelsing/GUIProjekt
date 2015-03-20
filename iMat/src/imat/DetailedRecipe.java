@@ -75,7 +75,6 @@ public class DetailedRecipe extends javax.swing.JPanel {
         jButton1.setMaximumSize(new java.awt.Dimension(135, 40));
         jButton1.setMinimumSize(new java.awt.Dimension(135, 40));
         jButton1.setPreferredSize(new java.awt.Dimension(135, 40));
-        jButton1.setRolloverEnabled(true);
         jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/Hoover/addToCartButton_Hoover.png"))); // NOI18N
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -138,7 +137,7 @@ public class DetailedRecipe extends javax.swing.JPanel {
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel8.setText("<< Tillbaka");
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel8MouseClicked(evt);

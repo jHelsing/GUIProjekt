@@ -234,6 +234,11 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         searchField.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         searchField.setText("Sök...");
         searchField.setToolTipText("Sök bland produkter, recept och inköpslistor. Tryck på Enter för att söka.");
+        searchField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                searchFieldFocusGained(evt);
+            }
+        });
         searchField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 searchFieldKeyTyped(evt);
@@ -445,7 +450,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(mainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 656, Short.MAX_VALUE))
         );
 
@@ -589,6 +594,14 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         }
 
     }//GEN-LAST:event_searchFieldKeyTyped
+
+    private void searchFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchFieldFocusGained
+        if (searchField.getText().equals("Sök...")){
+            searchField.setText("");
+        } else {
+            searchField.selectAll();
+        }
+    }//GEN-LAST:event_searchFieldFocusGained
 
     private void setFullScreen(JFrame jFrame) {
         Toolkit tk = Toolkit.getDefaultToolkit();

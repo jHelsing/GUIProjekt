@@ -114,7 +114,7 @@ public class profilePanel extends javax.swing.JPanel {
         jSeparator2 = new javax.swing.JSeparator();
 
         surNameTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        surNameTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        surNameTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         surNameTF.setNextFocusableComponent(addressTF);
         surNameTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,7 +141,7 @@ public class profilePanel extends javax.swing.JPanel {
         });
 
         cardNumberTF1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cardNumberTF1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        cardNumberTF1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cardNumberTF1.setNextFocusableComponent(cardNumberTF2);
         cardNumberTF1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,7 +157,7 @@ public class profilePanel extends javax.swing.JPanel {
         expDateMonth.setEditable(true);
         expDateMonth.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         expDateMonth.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December" }));
-        expDateMonth.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        expDateMonth.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         expDateMonth.setNextFocusableComponent(expDateYear);
         expDateMonth.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -173,7 +173,7 @@ public class profilePanel extends javax.swing.JPanel {
         expDateYear.setEditable(true);
         expDateYear.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         expDateYear.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2015", "2016", "2017", "2018", "2019", "2020", "2021" }));
-        expDateYear.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        expDateYear.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         expDateYear.setNextFocusableComponent(editProfileInfo);
         expDateYear.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -182,7 +182,7 @@ public class profilePanel extends javax.swing.JPanel {
         });
 
         cityTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cityTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        cityTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cityTF.setNextFocusableComponent(phoneNbrTF);
         cityTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -191,7 +191,7 @@ public class profilePanel extends javax.swing.JPanel {
         });
 
         firstNameTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        firstNameTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        firstNameTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         firstNameTF.setNextFocusableComponent(surNameTF);
         firstNameTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,7 +205,7 @@ public class profilePanel extends javax.swing.JPanel {
         });
 
         postalCodeTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        postalCodeTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        postalCodeTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         postalCodeTF.setNextFocusableComponent(cityTF);
         postalCodeTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,7 +219,7 @@ public class profilePanel extends javax.swing.JPanel {
         });
 
         cardHolderTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cardHolderTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        cardHolderTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cardHolderTF.setNextFocusableComponent(cardNumberTF1);
         cardHolderTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,7 +233,7 @@ public class profilePanel extends javax.swing.JPanel {
         });
 
         addressTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        addressTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        addressTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         addressTF.setNextFocusableComponent(postalCodeTF);
         addressTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -247,7 +247,7 @@ public class profilePanel extends javax.swing.JPanel {
         });
 
         phoneNbrTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        phoneNbrTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        phoneNbrTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         phoneNbrTF.setNextFocusableComponent(emailTF);
         phoneNbrTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -256,7 +256,7 @@ public class profilePanel extends javax.swing.JPanel {
         });
 
         emailTF.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        emailTF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        emailTF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         emailTF.setNextFocusableComponent(cardHolderTF);
         emailTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -309,7 +309,7 @@ public class profilePanel extends javax.swing.JPanel {
         jLabel13.setText("Expireringsdatum:");
 
         cardNumberTF2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cardNumberTF2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        cardNumberTF2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cardNumberTF2.setNextFocusableComponent(cardNumberTF3);
         cardNumberTF2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -323,7 +323,7 @@ public class profilePanel extends javax.swing.JPanel {
         });
 
         cardNumberTF3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cardNumberTF3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        cardNumberTF3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cardNumberTF3.setNextFocusableComponent(cardNumberTF4);
         cardNumberTF3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -340,7 +340,7 @@ public class profilePanel extends javax.swing.JPanel {
         jLabel16.setText("  -");
 
         cardNumberTF4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cardNumberTF4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        cardNumberTF4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cardNumberTF4.setNextFocusableComponent(expDateMonth);
         cardNumberTF4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
