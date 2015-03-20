@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
@@ -29,6 +30,7 @@ public class HomeProductCard extends javax.swing.JPanel {
         jLabelNamn.setText(p.getName());
         jLabelPrisPerEnhet.setText(p.getPrice() + " kr/" + p.getUnitSuffix());
         produktBild.setIcon(userData.getImageIcon(p, size));
+        this.setBackground(new Color(252, 173, 96));
         repaint();
         revalidate();
     }
@@ -48,9 +50,9 @@ public class HomeProductCard extends javax.swing.JPanel {
         jTextFieldAntal = new javax.swing.JTextField();
         jLabelEnhet = new javax.swing.JLabel();
         produktBild = new javax.swing.JLabel();
-        minusButton = new javax.swing.JButton();
-        plusButton = new javax.swing.JButton();
         addToCartButton = new javax.swing.JButton();
+        imageLabelMinus = new imat.ImageLabel("checkoutMinusButton.png");
+        imageLabelPlus = new imat.ImageLabel("checkoutPlusButton.png");
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -74,43 +76,29 @@ public class HomeProductCard extends javax.swing.JPanel {
         jLabelEnhet.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelEnhet.setText("Unit");
 
-        minusButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/checkoutMinusButton.png"))); // NOI18N
-        minusButton.setBorderPainted(false);
-        minusButton.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        minusButton.setMaximumSize(new java.awt.Dimension(40, 40));
-        minusButton.setMinimumSize(new java.awt.Dimension(40, 40));
-        minusButton.setPreferredSize(new java.awt.Dimension(40, 40));
-        minusButton.setSize(new java.awt.Dimension(40, 40));
-        minusButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                minusButtonActionPerformed(evt);
-            }
-        });
-
-        plusButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/checkoutPlusButton.png"))); // NOI18N
-        plusButton.setBorderPainted(false);
-        plusButton.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        plusButton.setMaximumSize(new java.awt.Dimension(40, 40));
-        plusButton.setMinimumSize(new java.awt.Dimension(40, 40));
-        plusButton.setPreferredSize(new java.awt.Dimension(40, 40));
-        plusButton.setSize(new java.awt.Dimension(40, 40));
-        plusButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                plusButtonActionPerformed(evt);
-            }
-        });
-
         addToCartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/addToCartButton.png"))); // NOI18N
         addToCartButton.setMargin(new java.awt.Insets(0, 0, 0, 0));
         addToCartButton.setMaximumSize(new java.awt.Dimension(135, 40));
         addToCartButton.setMinimumSize(new java.awt.Dimension(135, 40));
         addToCartButton.setPreferredSize(new java.awt.Dimension(135, 40));
-        addToCartButton.setRolloverEnabled(true);
         addToCartButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/Hoover/addToCartButton_Hoover.png"))); // NOI18N
-        addToCartButton.setSize(new java.awt.Dimension(135, 40));
         addToCartButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addToCartButtonActionPerformed(evt);
+            }
+        });
+
+        imageLabelMinus.setText("imageLabel1");
+        imageLabelMinus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imageLabelMinusMouseClicked(evt);
+            }
+        });
+
+        imageLabelPlus.setText("imageLabel1");
+        imageLabelPlus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imageLabelPlusMouseClicked(evt);
             }
         });
 
@@ -121,29 +109,25 @@ public class HomeProductCard extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(produktBild, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
+                        .addComponent(imageLabelMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(imageLabelPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabelNamn)
-                            .addComponent(jLabelPrisPerEnhet))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextFieldAntal, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(minusButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabelPrisPerEnhet)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextFieldAntal, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(plusButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelEnhet))
-                                .addGap(197, 197, 197))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(addToCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))))
+                                .addComponent(jLabelEnhet)
+                                .addGap(26, 26, 26)
+                                .addComponent(addToCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,15 +142,16 @@ public class HomeProductCard extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabelPrisPerEnhet)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(minusButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(plusButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldAntal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelEnhet))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addComponent(addToCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(imageLabelMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(imageLabelPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTextFieldAntal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabelEnhet))
+                            .addComponent(addToCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 58, Short.MAX_VALUE))
                     .addComponent(produktBild, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -180,38 +165,37 @@ public class HomeProductCard extends javax.swing.JPanel {
         }
         
     }//GEN-LAST:event_jTextFieldAntalKeyTyped
+ 
+    private void addToCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartButtonActionPerformed
+                userData.getShoppingCart().addProduct(item, Integer.parseInt(jTextFieldAntal.getText()));
+    }//GEN-LAST:event_addToCartButtonActionPerformed
 
-    private void minusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusButtonActionPerformed
+    private void imageLabelMinusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMinusMouseClicked
         if (Integer.parseInt(jTextFieldAntal.getText()) > 1){
             jTextFieldAntal.setText(Integer.parseInt(jTextFieldAntal.getText()) - 1 + "");
         } else {
             jTextFieldAntal.setText(99 + "");
         }
+    }//GEN-LAST:event_imageLabelMinusMouseClicked
 
-    }//GEN-LAST:event_minusButtonActionPerformed
-
-    private void plusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusButtonActionPerformed
+    private void imageLabelPlusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelPlusMouseClicked
         if (Integer.parseInt(jTextFieldAntal.getText()) < 99){
             jTextFieldAntal.setText(Integer.parseInt(jTextFieldAntal.getText()) + 1 + "");
         } else {
             jTextFieldAntal.setText(1 + "");
         }
-    }//GEN-LAST:event_plusButtonActionPerformed
-
-    private void addToCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartButtonActionPerformed
-                userData.getShoppingCart().addProduct(item, Integer.parseInt(jTextFieldAntal.getText()));
-    }//GEN-LAST:event_addToCartButtonActionPerformed
+    }//GEN-LAST:event_imageLabelPlusMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addToCartButton;
+    private imat.ImageLabel imageLabelMinus;
+    private imat.ImageLabel imageLabelPlus;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelEnhet;
     private javax.swing.JLabel jLabelNamn;
     private javax.swing.JLabel jLabelPrisPerEnhet;
     private javax.swing.JTextField jTextFieldAntal;
-    private javax.swing.JButton minusButton;
-    private javax.swing.JButton plusButton;
     private javax.swing.JLabel produktBild;
     // End of variables declaration//GEN-END:variables
 }

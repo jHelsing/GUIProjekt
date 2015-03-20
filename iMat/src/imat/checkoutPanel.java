@@ -158,7 +158,7 @@ public class checkoutPanel extends javax.swing.JPanel {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        jPanelAllProducts.setBackground(IMatColors.getpanelBackgroundLight());
+        jPanelAllProducts.setBackground(IMatColors.getpanelBackgroundNormal());
 
         javax.swing.GroupLayout jPanelAllProductsLayout = new javax.swing.GroupLayout(jPanelAllProducts);
         jPanelAllProducts.setLayout(jPanelAllProductsLayout);
@@ -170,6 +170,8 @@ public class checkoutPanel extends javax.swing.JPanel {
             jPanelAllProductsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 508, Short.MAX_VALUE)
         );
+
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(16);
 
         jScrollPane1.setViewportView(jPanelAllProducts);
 
@@ -401,12 +403,12 @@ public class checkoutPanel extends javax.swing.JPanel {
                                                         .addGap(26, 26, 26)))))))
                                 .addGap(0, 20, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(cartEmptyError))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel5)
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
