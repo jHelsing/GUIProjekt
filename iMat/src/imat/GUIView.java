@@ -41,7 +41,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         }
         
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        //setFullScreen(this);
         initContentPanel();
         homeLabel.requestFocus();
         
@@ -391,10 +390,15 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
 
         splitPanelContent.setLayout(new java.awt.CardLayout());
 
+        productSplitPanel.setBorder(null);
+        productSplitPanel.setDividerLocation(0);
+        productSplitPanel.setDividerSize(0);
+        productSplitPanel.setToolTipText("");
         productSplitPanel.setLeftComponent(categoryPanel);
         productSplitPanel.setRightComponent(productPanel);
 
         splitPanelContent.add(productSplitPanel, "productPanel");
+        productSplitPanel.setDividerSize(0);
         splitPanelContent.add(homePanel, "homePanel");
 
         searchSplitPanel.setLeftComponent(categorySearchPanel);
@@ -424,7 +428,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(splitPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(splitPanelContent, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
+                .addComponent(splitPanelContent, javax.swing.GroupLayout.PREFERRED_SIZE, 644, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
