@@ -73,6 +73,7 @@ public class firstRegPanel extends javax.swing.JPanel {
         nextStepButton = new imat.ImageLabel("nextStepButton.png");
         errorLabel = new javax.swing.JLabel();
         hemligRuta = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         jTextFieldFornamn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -130,6 +131,8 @@ public class firstRegPanel extends javax.swing.JPanel {
         hemligRuta.setEditable(false);
         hemligRuta.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
+        jLabel1.setText("För att kunna handla med iMat så måste du regristrera dig!");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -173,7 +176,10 @@ public class firstRegPanel extends javax.swing.JPanel {
                         .addGap(495, 495, 495)
                         .addComponent(errorLabel)
                         .addGap(60, 60, 60)
-                        .addComponent(hemligRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(hemligRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(457, 457, 457)
+                        .addComponent(jLabel1)))
                 .addContainerGap(168, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -181,7 +187,9 @@ public class firstRegPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(imageLabelRegPil1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(39, 39, 39)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(errorLabel)
                     .addComponent(hemligRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -220,7 +228,7 @@ public class firstRegPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(nextStepButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -270,6 +278,7 @@ public class firstRegPanel extends javax.swing.JPanel {
     private javax.swing.JLabel errorLabel;
     private javax.swing.JTextField hemligRuta;
     private imat.ImageLabel imageLabelRegPil1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelAdress;
     private javax.swing.JLabel jLabelEfternamn;
     private javax.swing.JLabel jLabelEmail;
