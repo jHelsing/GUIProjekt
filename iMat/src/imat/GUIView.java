@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class GUIView extends javax.swing.JFrame implements PropertyChangeListener {
     
-    private boolean RESET = true;
+    private boolean RESET = false;
     private IMatDataHandler userData = IMatDataHandler.getInstance();
     private int[] cardNumber;
     private int ccv, expireYear, expireMonth;
@@ -35,7 +35,11 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         initComponents();
         if (RESET){
             userData.reset();
+            userData.resetFirstRun();
+            userData.getOrders().removeAll(userData.getOrders());
+            userData.getOrders().clear();
         }
+        
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         //setFullScreen(this);
         initContentPanel();
@@ -477,6 +481,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
 
     private void purchaseHistoryLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_purchaseHistoryLabelMouseClicked
          // changes the content panel to contain the history page
+        historyPanel.showHistory();
         CardLayout card = (CardLayout)contentPanel.getLayout();
         card.show(contentPanel, "wholePanel");
         card = (CardLayout)wholePanel.getLayout();
@@ -654,7 +659,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 firstNameLabel.setText(userData.getCustomer().getFirstName());
                 lastNameLabel.setText(userData.getCustomer().getLastName());
             } else if (evt.getPropertyName().equals("buyCompleted")) {
-                historyPanel.addToHistory();
+                //historyPanel.showHistory();
                 confirmCheckoutPanel.setReceiptInfo(checkoutPanel.getDeliveryDay(),
                         checkoutPanel.getDeliveryTime(), checkoutPanel.getDeliveryAddress(),
                         checkoutPanel.getDeliveryPost(), checkoutPanel.getDeliveryCity());

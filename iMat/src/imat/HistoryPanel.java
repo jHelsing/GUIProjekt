@@ -46,12 +46,35 @@ public class HistoryPanel extends javax.swing.JPanel {
         historyIndex++;
     }
     
-    public void addToHistory() {
+    public void showHistory() {
+        /*if (historyListModel.getSize() == 13) {
+            historyListModel.remove(13);
+        } */
+        historyListModel.clear();
+        for(int j=0; j < data.getOrders().size(); j++){
+            double price = 0;
+            double nbrOfItems = 0;
+            for (int i = 0; i < data.getOrders().get(j).getItems().size(); i++) {
+                price = price + data.getOrders().get(j).getItems().get(i).getTotal();
+                nbrOfItems = nbrOfItems + data.getOrders().get(j).getItems().get(i).getAmount();  
+            }
+            String priceS = Double.toString(price);
+            String nbrOfItemsS = Integer.toString((int)nbrOfItems);
+            String dateNicelyDisplayed = sdf.format(data.getOrders().get(j).getDate());
+            String total = dateNicelyDisplayed + "           " + nbrOfItemsS + "                  " + priceS + " kr";
+            historyListModel.addElement(total);
+        }
+        
+        this.incHistoryIndex();
+    }
+        
+       /* public void addToHistory() {
         if (historyListModel.getSize() == 13) {
             historyListModel.remove(13);
         }
         double price = 0;
         double nbrOfItems = 0;
+        for(int j=0; j < data.getOrders().size(); j++){
         for (int i = 0; i < data.getOrders().get(historyIndex).getItems().size(); i++) {
             price = price + data.getOrders().get(historyIndex).getItems().get(i).getTotal();
             nbrOfItems = nbrOfItems + data.getOrders().get(historyIndex).getItems().get(i).getAmount();  
@@ -62,7 +85,9 @@ public class HistoryPanel extends javax.swing.JPanel {
         String total = dateNicelyDisplayed + "           " + nbrOfItemsS + "                  " + priceS + " kr";
         historyListModel.addElement(total);
         this.incHistoryIndex();
-    }
+    }*/
+        
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
