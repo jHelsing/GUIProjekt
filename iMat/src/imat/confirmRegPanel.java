@@ -24,15 +24,13 @@ public class confirmRegPanel extends javax.swing.JPanel {
      */
     public confirmRegPanel() {
         initComponents();
-        straightToPayLabel.setBackground(Color.lightGray);
-        straightToPayLabel.setVisible(false);
-        straightToPayLabel.setEnabled(false);
+        
         this.setBackground(IMatColors.getpanelBackgroundNormal());
     }
     
     public void enableSTPLabel(boolean b) {
-        straightToPayLabel.setVisible(b);
-        straightToPayLabel.setEnabled(b);
+        jButtonToCheckout.setVisible(b);
+        jButtonToCheckout.setEnabled(b);
     }
     
     public void addObserver(PropertyChangeListener observer){
@@ -51,14 +49,13 @@ public class confirmRegPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        imageLabel1 = new imat.ImageLabel();
-        straightToPayLabel = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         namnLabel = new javax.swing.JLabel();
         adressLabel = new javax.swing.JLabel();
         emailblabla = new javax.swing.JLabel();
         emailLabel = new javax.swing.JLabel();
+        jButtonToCheckout = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Välkommen till iMat!");
@@ -66,30 +63,6 @@ public class confirmRegPanel extends javax.swing.JPanel {
         jLabel2.setText("Du kan nu börja handla!");
 
         jLabel3.setText("Om du vill ändra dina uppgifter kan du göra detta via din profilsida.");
-
-        imageLabel1.setText("imageLabel1");
-        imageLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                imageLabel1MouseClicked(evt);
-            }
-        });
-
-        straightToPayLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        straightToPayLabel.setText("Fortsätt direkt till kassan");
-        straightToPayLabel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        straightToPayLabel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                straightToPayLabelMouseMoved(evt);
-            }
-        });
-        straightToPayLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                straightToPayLabelMouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                straightToPayLabelMouseExited(evt);
-            }
-        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel4.setText("Namn:");
@@ -109,31 +82,17 @@ public class confirmRegPanel extends javax.swing.JPanel {
         emailLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         emailLabel.setText("Adress:");
 
+        jButtonToCheckout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/toCheckoutButton.png"))); // NOI18N
+        jButtonToCheckout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonToCheckoutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(451, 451, 451)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5)
-                            .addComponent(emailblabla)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(adressLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(emailLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(namnLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(straightToPayLabel)
-                        .addGap(117, 117, 117)
-                        .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(495, 495, 495))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -146,6 +105,26 @@ public class confirmRegPanel extends javax.swing.JPanel {
                         .addGap(517, 517, 517)
                         .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(451, 451, 451)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5)
+                    .addComponent(emailblabla)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(adressLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(emailLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(namnLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(495, 495, 495))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jButtonToCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,13 +147,15 @@ public class confirmRegPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailblabla)
                     .addComponent(emailLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(straightToPayLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(74, 74, 74))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addComponent(jButtonToCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonToCheckoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonToCheckoutActionPerformed
+        pcs.firePropertyChange("ToCheckout", 0, 1);
+    }//GEN-LAST:event_jButtonToCheckoutActionPerformed
 
     public void setRegInfo() {
         String fornamn = userData.getCustomer().getFirstName();
@@ -188,33 +169,16 @@ public class confirmRegPanel extends javax.swing.JPanel {
         emailLabel.setText(mail);
     }
     
-    private void imageLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabel1MouseClicked
-        pcs.firePropertyChange("ToProducts", 0, 1);
-    }//GEN-LAST:event_imageLabel1MouseClicked
-
-    private void straightToPayLabelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_straightToPayLabelMouseMoved
-        straightToPayLabel.setBackground(Color.gray);
-    }//GEN-LAST:event_straightToPayLabelMouseMoved
-
-    private void straightToPayLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_straightToPayLabelMouseExited
-        straightToPayLabel.setBackground(Color.lightGray);
-    }//GEN-LAST:event_straightToPayLabelMouseExited
-
-    private void straightToPayLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_straightToPayLabelMouseClicked
-        pcs.firePropertyChange("ToCheckout", 0, 1);
-    }//GEN-LAST:event_straightToPayLabelMouseClicked
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel adressLabel;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JLabel emailblabla;
-    private imat.ImageLabel imageLabel1;
+    private javax.swing.JButton jButtonToCheckout;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel namnLabel;
-    private javax.swing.JLabel straightToPayLabel;
     // End of variables declaration//GEN-END:variables
 }
