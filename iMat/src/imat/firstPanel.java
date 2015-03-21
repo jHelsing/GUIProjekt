@@ -6,6 +6,8 @@
 package imat;
 
 import java.awt.CardLayout;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import javax.swing.JPanel;
 
 /**
@@ -14,6 +16,12 @@ import javax.swing.JPanel;
  */
 public class firstPanel extends BackgroundPanel {
 
+    PropertyChangeSupport pcs = new PropertyChangeSupport(this);
+    
+    public void addObserver(PropertyChangeListener observer){
+        pcs.addPropertyChangeListener(observer);
+    }
+    
     /**
      * Creates new form firstPanel
      */
@@ -31,59 +39,43 @@ public class firstPanel extends BackgroundPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        imageLabel1 = new imat.ImageLabel("startUsingButton.png");
-        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(1240, 765));
         setOpaque(false);
         setRequestFocusEnabled(false);
 
-        imageLabel1.setText("Hej");
-        imageLabel1.setMaximumSize(new java.awt.Dimension(85, 40));
-        imageLabel1.setMinimumSize(new java.awt.Dimension(85, 40));
-        imageLabel1.setPreferredSize(new java.awt.Dimension(85, 40));
-        imageLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/startUsingButton.png"))); // NOI18N
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                imageLabel1MouseClicked(evt);
+                jButton1MouseClicked(evt);
             }
         });
-
-        jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 427, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(812, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(imageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addComponent(jLabel1)
-                .addGap(0, 248, Short.MAX_VALUE))
+                .addContainerGap(438, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void imageLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabel1MouseClicked
-        JPanel parentParentPanel = (JPanel)super.getParent().getParent();
-        CardLayout card = (CardLayout)parentParentPanel.getLayout();
-        card.show(parentParentPanel, "wholePanel");
-        parentParentPanel = (JPanel)super.getParent();
-        card = (CardLayout)parentParentPanel.getLayout();
-        card.show(parentParentPanel,"homePanel");
-    }//GEN-LAST:event_imageLabel1MouseClicked
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        pcs.firePropertyChange("ToProducts", 0, 1);
+    }//GEN-LAST:event_jButton1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private imat.ImageLabel imageLabel1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

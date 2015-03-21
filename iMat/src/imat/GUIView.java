@@ -54,6 +54,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         checkoutPanel.addObserver(this);
         detailedRecipe.addObserver(this);
         recipePanel.addObserver(this);
+        firstPanel.addObserver(this);
         
         this.setBackground(IMatColors.getpanelBackgroundNormal());
         splitPanel.setBackground(IMatColors.getpanelBackgroundNormal());
@@ -98,7 +99,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         wholePanel = new javax.swing.JPanel();
         thirdRegPanel = new imat.thirdRegPanel();
         profilePanel = new imat.profilePanel();
-        firstPanel = new firstPanel();
         helpPanel = new imat.helpPanel();
         checkoutPanel = new imat.checkoutPanel();
         confirmRegPanel = new imat.confirmRegPanel();
@@ -106,6 +106,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         secondRegPanel = new imat.secondRegPanel();
         historyPanel = new imat.HistoryPanel();
         confirmCheckoutPanel = new imat.confirmCheckoutPanel();
+        firstPanel = new imat.firstPanel();
         splitPanel = new javax.swing.JPanel();
         splitPanelContent = new javax.swing.JPanel();
         productSplitPanel = new javax.swing.JSplitPane();
@@ -371,19 +372,6 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         wholePanel.setLayout(new java.awt.CardLayout());
         wholePanel.add(thirdRegPanel, "thirdRegPanel");
         wholePanel.add(profilePanel, "profilePanel");
-
-        javax.swing.GroupLayout firstPanelLayout = new javax.swing.GroupLayout(firstPanel);
-        firstPanel.setLayout(firstPanelLayout);
-        firstPanelLayout.setHorizontalGroup(
-            firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1404, Short.MAX_VALUE)
-        );
-        firstPanelLayout.setVerticalGroup(
-            firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 656, Short.MAX_VALUE)
-        );
-
-        wholePanel.add(firstPanel, "firstPanel");
         wholePanel.add(helpPanel, "helpPanel");
         wholePanel.add(checkoutPanel, "checkoutPanel");
         wholePanel.add(confirmRegPanel, "confirmRegPanel");
@@ -391,6 +379,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
         wholePanel.add(secondRegPanel, "secondRegPanel");
         wholePanel.add(historyPanel, "historyPanel");
         wholePanel.add(confirmCheckoutPanel, "confirmCheckoutPanel");
+        wholePanel.add(firstPanel, "firstPanel");
 
         contentPanel.add(wholePanel, "wholePanel");
 
@@ -618,7 +607,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
      * homePanel instead.
      */
     private void initContentPanel() {
-        userData.resetFirstRun();
+        //userData.resetFirstRun();
         if(userData.isFirstRun()) {
             //Show the firstPanel
             CardLayout card = (CardLayout)contentPanel.getLayout();   
@@ -670,7 +659,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
                 CardLayout card = (CardLayout)contentPanel.getLayout();
                 card.show(contentPanel, "splitPanel");
                 card = (CardLayout)splitPanelContent.getLayout();
-                card.show(splitPanelContent, "productPanel");
+                card.show(splitPanelContent, "searchPanel");
             } else if (evt.getPropertyName().equals("setInfo")) {
                 profilePanel.setProfileInfo();
                 checkoutPanel.setCheckoutInfo();
@@ -755,7 +744,7 @@ public class GUIView extends javax.swing.JFrame implements PropertyChangeListene
     private javax.swing.JPanel contentPanel;
     private imat.DetailedRecipe detailedRecipe;
     private javax.swing.JLabel firstNameLabel;
-    private javax.swing.JPanel firstPanel;
+    private imat.firstPanel firstPanel;
     private imat.firstRegPanel firstRegPanel;
     private imat.ImageLabel helpImage;
     private imat.helpPanel helpPanel;
