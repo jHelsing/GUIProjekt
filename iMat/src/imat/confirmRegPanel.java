@@ -24,7 +24,7 @@ public class confirmRegPanel extends javax.swing.JPanel {
      */
     public confirmRegPanel() {
         initComponents();
-        
+        jButtonToCheckout.setVisible(false);
         this.setBackground(IMatColors.getpanelBackgroundNormal());
     }
     

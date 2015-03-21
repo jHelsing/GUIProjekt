@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class GUIView extends javax.swing.JFrame implements PropertyChangeListener {
     
-    private boolean RESET = true;
+    private boolean RESET = false;
     private boolean isRegistered;
     private IMatDataHandler userData = IMatDataHandler.getInstance();
     private int[] cardNumber;
